@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/premium-minds/wicket-crudifier/pull/161",
+  "project" : "wicket-crudifier",
+  "projectOrganisation" : "premium-minds",
+  "breakingCommit" : "d23bf06a2ea5e7f2440d08083dd04fb3c124caf7",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "jakarta.validation",
+    "dependencyArtifactID" : "jakarta.validation-api",
+    "previousVersion" : "2.0.2",
+    "newVersion" : "3.1.1",
+    "dependencyScope" : "provided",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:d23bf06a2ea5e7f2440d08083dd04fb3c124caf7-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:d23bf06a2ea5e7f2440d08083dd04fb3c124caf7-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

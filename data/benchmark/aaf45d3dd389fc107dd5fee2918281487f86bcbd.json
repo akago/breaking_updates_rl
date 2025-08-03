@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/volodya-lombrozo/jsmith/pull/182",
+  "project" : "jsmith",
+  "projectOrganisation" : "volodya-lombrozo",
+  "breakingCommit" : "aaf45d3dd389fc107dd5fee2918281487f86bcbd",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.eclipse.jdt",
+    "dependencyArtifactID" : "org.eclipse.jdt.core",
+    "previousVersion" : "3.10.0",
+    "newVersion" : "3.42.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:aaf45d3dd389fc107dd5fee2918281487f86bcbd-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:aaf45d3dd389fc107dd5fee2918281487f86bcbd-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

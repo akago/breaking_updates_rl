@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/bitpay/java-bitpay-client/pull/342",
+  "project" : "java-bitpay-client",
+  "projectOrganisation" : "bitpay",
+  "breakingCommit" : "de0a83ba9708170ae984b049781321f04caa82b3",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.bitcoinj",
+    "dependencyArtifactID" : "bitcoinj-core",
+    "previousVersion" : "0.16.3",
+    "newVersion" : "0.17",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:de0a83ba9708170ae984b049781321f04caa82b3-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:de0a83ba9708170ae984b049781321f04caa82b3-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

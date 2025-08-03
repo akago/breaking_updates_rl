@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/jadler-mocking/jadler/pull/337",
+  "project" : "jadler",
+  "projectOrganisation" : "jadler-mocking",
+  "breakingCommit" : "3546e088400c63ddfbca8aa55c33326e152b67e0",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.eclipse.jetty",
+    "dependencyArtifactID" : "jetty-server",
+    "previousVersion" : "8.1.11.v20130520",
+    "newVersion" : "12.0.21",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "other",
+    "dependencySection" : "dependencyManagement",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:3546e088400c63ddfbca8aa55c33326e152b67e0-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:3546e088400c63ddfbca8aa55c33326e152b67e0-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

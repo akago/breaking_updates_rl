@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/jenkinsci/office-365-connector-plugin/pull/351",
+  "project" : "office-365-connector-plugin",
+  "projectOrganisation" : "jenkinsci",
+  "breakingCommit" : "06141ad7481ff077bed8f68b9ff92eebca618597",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "commons-validator",
+    "dependencyArtifactID" : "commons-validator",
+    "previousVersion" : "1.7",
+    "newVersion" : "1.9.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:06141ad7481ff077bed8f68b9ff92eebca618597-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:06141ad7481ff077bed8f68b9ff92eebca618597-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "ENFORCER_FAILURE"
+}

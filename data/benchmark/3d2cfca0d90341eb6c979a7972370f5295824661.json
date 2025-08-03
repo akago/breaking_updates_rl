@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/GoogleCloudPlatform/google-cloud-spanner-hibernate/pull/1348",
+  "project" : "google-cloud-spanner-hibernate",
+  "projectOrganisation" : "GoogleCloudPlatform",
+  "breakingCommit" : "3d2cfca0d90341eb6c979a7972370f5295824661",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "com.google.googlejavaformat",
+    "dependencyArtifactID" : "google-java-format",
+    "previousVersion" : "1.7",
+    "newVersion" : "1.24.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "buildPluginManagement",
+    "githubCompareLink" : "https://github.com/google-java-format/compare/google-java-format-1.7...v1.24.0",
+    "mavenSourceLinkPre" : "https://repo1.maven.org/maven2/com/google/googlejavaformat/google-java-format/1.7/google-java-format-1.7-sources.jar",
+    "mavenSourceLinkBreaking" : "https://repo1.maven.org/maven2/com/google/googlejavaformat/google-java-format/1.24.0/google-java-format-1.24.0-sources.jar",
+    "updatedFileType" : "JAR",
+    "licenseInfo" : "Other",
+    "githubRepoSlug" : "google-java-format"
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:3d2cfca0d90341eb6c979a7972370f5295824661-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:3d2cfca0d90341eb6c979a7972370f5295824661-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "UNKNOWN_FAILURE"
+}

@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/apache/plc4x/pull/1668",
+  "project" : "plc4x",
+  "projectOrganisation" : "apache",
+  "breakingCommit" : "c06d43a8bc7339943410d2c250200b943fbf855b",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.apache.maven",
+    "dependencyArtifactID" : "maven-core",
+    "previousVersion" : "3.9.7",
+    "newVersion" : "3.9.8",
+    "dependencyScope" : "provided",
+    "versionUpdateType" : "patch",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:c06d43a8bc7339943410d2c250200b943fbf855b-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:c06d43a8bc7339943410d2c250200b943fbf855b-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "ENFORCER_FAILURE"
+}

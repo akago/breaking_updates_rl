@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/knowm/XChange/pull/5042",
+  "project" : "XChange",
+  "projectOrganisation" : "knowm",
+  "breakingCommit" : "9f2af24473f180098d38eddc7daf802a0a29e21e",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "com.pubnub",
+    "dependencyArtifactID" : "pubnub-gson",
+    "previousVersion" : "4.31.3",
+    "newVersion" : "10.5.2",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencyManagement",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:9f2af24473f180098d38eddc7daf802a0a29e21e-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:9f2af24473f180098d38eddc7daf802a0a29e21e-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

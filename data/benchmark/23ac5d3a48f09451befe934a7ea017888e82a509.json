@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/apache/plc4x/pull/1653",
+  "project" : "plc4x",
+  "projectOrganisation" : "apache",
+  "breakingCommit" : "23ac5d3a48f09451befe934a7ea017888e82a509",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.eclipse.jdt",
+    "dependencyArtifactID" : "ecj",
+    "previousVersion" : "3.32.0",
+    "newVersion" : "3.38.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "buildPluginManagement",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:23ac5d3a48f09451befe934a7ea017888e82a509-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:23ac5d3a48f09451befe934a7ea017888e82a509-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "UNKNOWN_FAILURE"
+}

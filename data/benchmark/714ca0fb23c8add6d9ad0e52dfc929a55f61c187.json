@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/NemProject/nem/pull/677",
+  "project" : "nem",
+  "projectOrganisation" : "NemProject",
+  "breakingCommit" : "714ca0fb23c8add6d9ad0e52dfc929a55f61c187",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.flywaydb",
+    "dependencyArtifactID" : "flyway-core",
+    "previousVersion" : "3.2.1",
+    "newVersion" : "11.10.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:714ca0fb23c8add6d9ad0e52dfc929a55f61c187-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:714ca0fb23c8add6d9ad0e52dfc929a55f61c187-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

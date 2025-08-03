@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/aliyun/dataworks-spec/pull/46",
+  "project" : "dataworks-spec",
+  "projectOrganisation" : "aliyun",
+  "breakingCommit" : "0f6e6e20f76fedb75ff6e39bf64db97f13a649df",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.springframework",
+    "dependencyArtifactID" : "spring-beans",
+    "previousVersion" : "5.3.35",
+    "newVersion" : "6.1.14",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencyManagement",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:0f6e6e20f76fedb75ff6e39bf64db97f13a649df-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:0f6e6e20f76fedb75ff6e39bf64db97f13a649df-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

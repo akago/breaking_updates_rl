@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/yegor256/jare/pull/355",
+  "project" : "jare",
+  "projectOrganisation" : "yegor256",
+  "breakingCommit" : "918bfefcaaaa5b53c24ef527ae51445efefdf0cf",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "com.jcabi",
+    "dependencyArtifactID" : "jcabi-xml",
+    "previousVersion" : "0.31.0",
+    "newVersion" : "0.35.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "https://github.com/jcabi-xml/compare/0.31.0...0.35.0",
+    "mavenSourceLinkPre" : "https://repo1.maven.org/maven2/com/jcabi/jcabi-xml/0.31.0/jcabi-xml-0.31.0-sources.jar",
+    "mavenSourceLinkBreaking" : "https://repo1.maven.org/maven2/com/jcabi/jcabi-xml/0.35.0/jcabi-xml-0.35.0-sources.jar",
+    "updatedFileType" : "JAR",
+    "licenseInfo" : "Other",
+    "githubRepoSlug" : "jcabi-xml"
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:918bfefcaaaa5b53c24ef527ae51445efefdf0cf-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:918bfefcaaaa5b53c24ef527ae51445efefdf0cf-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

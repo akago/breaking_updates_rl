@@ -1,0 +1,24 @@
+BASE_IMAGE = "ghcr.io/chains-project/breaking-updates:base-image";
+
+
+
+/** Command to compile and test the preceding commit of the breaking update */
+    private static String getPrevCmd(BreakingUpdate bu) {
+        return "set -o pipefail && git checkout %s && git checkout HEAD~1 && rm -rf .git && mvn clean test -B | tee %s.log"
+                .formatted(bu.breakingCommit, bu.breakingCommit);
+    }
+
+    /** Command to compile and test the breaking update */
+    private static String getPostCmd(BreakingUpdate bu) {
+        return "set -o pipefail && git checkout %s && rm -rf .git && mvn clean test -B | tee %s.log"
+                .formatted(bu.breakingCommit, bu.breakingCommit);
+    }
+
+    /** Command to compile and test the breaking update to be used in the final debloated image */
+    private static String getCmd() {
+        return "mvn clean test -B";
+    }
+
+
+apptainer exec --writable-tmpfs --cleanenv --containall sigfile.sif /bin/sh -c "cd /XChange && set -o pipefail && g
+it checkout HEAD~1 && mvn test -B"

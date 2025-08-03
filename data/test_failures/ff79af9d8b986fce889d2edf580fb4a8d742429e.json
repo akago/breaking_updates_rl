@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/yegor256/threecopies/pull/119",
+  "project" : "threecopies",
+  "projectOrganisation" : "yegor256",
+  "breakingCommit" : "ff79af9d8b986fce889d2edf580fb4a8d742429e",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "com.jcabi",
+    "dependencyArtifactID" : "jcabi-http",
+    "previousVersion" : "1.20.1",
+    "newVersion" : "2.0.0",
+    "dependencyScope" : "runtime",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "https://github.com/jcabi-http/compare/1.20.1...2.0.0",
+    "mavenSourceLinkPre" : "https://repo1.maven.org/maven2/com/jcabi/jcabi-http/1.20.1/jcabi-http-1.20.1-sources.jar",
+    "mavenSourceLinkBreaking" : "https://repo1.maven.org/maven2/com/jcabi/jcabi-http/2.0.0/jcabi-http-2.0.0-sources.jar",
+    "updatedFileType" : "JAR",
+    "licenseInfo" : "Other",
+    "githubRepoSlug" : "jcabi-http"
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:ff79af9d8b986fce889d2edf580fb4a8d742429e-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:ff79af9d8b986fce889d2edf580fb4a8d742429e-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "TEST_FAILURE"
+}

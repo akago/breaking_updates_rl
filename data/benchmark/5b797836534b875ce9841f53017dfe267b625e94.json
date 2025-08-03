@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/premium-minds/billy/pull/558",
+  "project" : "billy",
+  "projectOrganisation" : "premium-minds",
+  "breakingCommit" : "5b797836534b875ce9841f53017dfe267b625e94",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.jvnet.jaxb2_commons",
+    "dependencyArtifactID" : "jaxb2-basics-runtime",
+    "previousVersion" : "0.13.1",
+    "newVersion" : "2.0.12",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:5b797836534b875ce9841f53017dfe267b625e94-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:5b797836534b875ce9841f53017dfe267b625e94-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

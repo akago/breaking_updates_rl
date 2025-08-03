@@ -1,0 +1,18 @@
+Bootstrap: docker
+From: ghcr.io/chains-project/breaking-updates:base-image
+
+%post
+    apk add fakeroot
+    FAKEROOTDONTTRYCHOWN=1 fakeroot sh -c 'apk add openssh'
+    git clone https://github.com/knowm/XChange
+    cd XChange
+    git fetch --depth 2 origin 2e6aca566211d065c07ec9a60dccd8f51b6d656e
+
+%environment    
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+    export MAVEN_HOME=/usr/share/maven
+    export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+
+%runscript
+    # apptainer run bu.sif 
+    exec /bin/bash

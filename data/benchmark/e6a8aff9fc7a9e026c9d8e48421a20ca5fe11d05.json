@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/NemProject/nem/pull/610",
+  "project" : "nem",
+  "projectOrganisation" : "NemProject",
+  "breakingCommit" : "e6a8aff9fc7a9e026c9d8e48421a20ca5fe11d05",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.hibernate",
+    "dependencyArtifactID" : "hibernate-validator",
+    "previousVersion" : "5.4.3.Final",
+    "newVersion" : "8.0.2.Final",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "other",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "Relevant tags were not found in the GitHub repository hibernate-validator for the updated dependency.",
+    "mavenSourceLinkPre" : "https://repo1.maven.org/maven2/org/hibernate/hibernate-validator/5.4.3.Final/hibernate-validator-5.4.3.Final-sources.jar",
+    "mavenSourceLinkBreaking" : "https://repo1.maven.org/maven2/org/hibernate/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final-sources.jar",
+    "updatedFileType" : "JAR",
+    "licenseInfo" : "Apache License 2.0",
+    "githubRepoSlug" : "hibernate-validator"
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:e6a8aff9fc7a9e026c9d8e48421a20ca5fe11d05-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:e6a8aff9fc7a9e026c9d8e48421a20ca5fe11d05-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

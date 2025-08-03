@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/yegor256/takes/pull/1271",
+  "project" : "takes",
+  "projectOrganisation" : "yegor256",
+  "breakingCommit" : "d01e1d9741b590c12fec7edd95edf751e7850343",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "com.restfb",
+    "dependencyArtifactID" : "restfb",
+    "previousVersion" : "2.27.1",
+    "newVersion" : "2024.16.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "https://github.com/restfb/compare/v2.27.1...v2024.16.0",
+    "mavenSourceLinkPre" : "https://repo1.maven.org/maven2/com/restfb/restfb/2.27.1/restfb-2.27.1-sources.jar",
+    "mavenSourceLinkBreaking" : "https://repo1.maven.org/maven2/com/restfb/restfb/2024.16.0/restfb-2024.16.0-sources.jar",
+    "updatedFileType" : "JAR",
+    "licenseInfo" : "MIT License",
+    "githubRepoSlug" : "restfb"
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:d01e1d9741b590c12fec7edd95edf751e7850343-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:d01e1d9741b590c12fec7edd95edf751e7850343-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

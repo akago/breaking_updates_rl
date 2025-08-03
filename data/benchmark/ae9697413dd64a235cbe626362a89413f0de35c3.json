@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/mathieucarbou/license-maven-plugin/pull/956",
+  "project" : "license-maven-plugin",
+  "projectOrganisation" : "mathieucarbou",
+  "breakingCommit" : "ae9697413dd64a235cbe626362a89413f0de35c3",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.codehaus.plexus",
+    "dependencyArtifactID" : "plexus-xml",
+    "previousVersion" : "3.0.2",
+    "newVersion" : "4.1.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:ae9697413dd64a235cbe626362a89413f0de35c3-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:ae9697413dd64a235cbe626362a89413f0de35c3-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "ENFORCER_FAILURE"
+}

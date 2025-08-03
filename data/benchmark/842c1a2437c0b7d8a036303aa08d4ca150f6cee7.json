@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/assertj/assertj-vavr/pull/226",
+  "project" : "assertj-vavr",
+  "projectOrganisation" : "assertj",
+  "breakingCommit" : "842c1a2437c0b7d8a036303aa08d4ca150f6cee7",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "org.assertj",
+    "dependencyArtifactID" : "assertj-core",
+    "previousVersion" : "3.26.3",
+    "newVersion" : "3.27.1",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "minor",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "https://github.com/assertj/compare/assertj-build-3.26.3...assertj-build-3.27.1",
+    "mavenSourceLinkPre" : "https://repo1.maven.org/maven2/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3-sources.jar",
+    "mavenSourceLinkBreaking" : "https://repo1.maven.org/maven2/org/assertj/assertj-core/3.27.1/assertj-core-3.27.1-sources.jar",
+    "updatedFileType" : "JAR",
+    "licenseInfo" : "Apache License 2.0",
+    "githubRepoSlug" : "assertj"
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:842c1a2437c0b7d8a036303aa08d4ca150f6cee7-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:842c1a2437c0b7d8a036303aa08d4ca150f6cee7-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "TEST_FAILURE"
+}

@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/FalkorDB/JFalkorDB/pull/124",
+  "project" : "JFalkorDB",
+  "projectOrganisation" : "FalkorDB",
+  "breakingCommit" : "24009637735a09b1c1bac0a32e2e5609710bb418",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "redis.clients",
+    "dependencyArtifactID" : "jedis",
+    "previousVersion" : "3.10.0",
+    "newVersion" : "6.0.0",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:24009637735a09b1c1bac0a32e2e5609710bb418-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:24009637735a09b1c1bac0a32e2e5609710bb418-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

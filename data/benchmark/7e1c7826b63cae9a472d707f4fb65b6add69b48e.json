@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/yahoo/sherlock/pull/57",
+  "project" : "sherlock",
+  "projectOrganisation" : "yahoo",
+  "breakingCommit" : "7e1c7826b63cae9a472d707f4fb65b6add69b48e",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "human",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "io.lettuce",
+    "dependencyArtifactID" : "lettuce-core",
+    "previousVersion" : "5.1.6.RELEASE",
+    "newVersion" : "6.5.1.RELEASE",
+    "dependencyScope" : "compile",
+    "versionUpdateType" : "other",
+    "dependencySection" : "dependencies",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:7e1c7826b63cae9a472d707f4fb65b6add69b48e-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:7e1c7826b63cae9a472d707f4fb65b6add69b48e-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}

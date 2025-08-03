@@ -1,0 +1,29 @@
+{
+  "url" : "https://github.com/microprofile/microprofile-config/pull/805",
+  "project" : "microprofile-config",
+  "projectOrganisation" : "microprofile",
+  "breakingCommit" : "eec939be771be00631b718ade0fd78478fb27d0a",
+  "prAuthor" : "bot",
+  "preCommitAuthor" : "bot",
+  "breakingCommitAuthor" : "bot",
+  "licenseInfo" : null,
+  "updatedDependency" : {
+    "dependencyGroupID" : "biz.aQute.bnd",
+    "dependencyArtifactID" : "biz.aQute.bnd.annotation",
+    "previousVersion" : "6.4.1",
+    "newVersion" : "7.1.0",
+    "dependencyScope" : "provided",
+    "versionUpdateType" : "major",
+    "dependencySection" : "dependencyManagement",
+    "githubCompareLink" : "A GitHub repository could not be found for the updated dependency.",
+    "mavenSourceLinkPre" : null,
+    "mavenSourceLinkBreaking" : null,
+    "updatedFileType" : "JAR",
+    "licenseInfo" : null,
+    "githubRepoSlug" : null
+  },
+  "preCommitReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:eec939be771be00631b718ade0fd78478fb27d0a-pre",
+  "breakingUpdateReproductionCommand" : "docker run ghcr.io/chains-project/breaking-updates:eec939be771be00631b718ade0fd78478fb27d0a-breaking",
+  "javaVersionUsedForReproduction" : "11",
+  "failureCategory" : "COMPILATION_FAILURE"
+}
