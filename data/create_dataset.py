@@ -15,7 +15,9 @@ import logging
 from enum import Enum
 import pandas as pd
 
+logger = logging.getLogger(__name__)
 
+#=====================================CONSTATNTS=========================================#
 # The failure classification follows the implementation in bacardi
 class FailureCategory(Enum):
     JAVA_VERSION_FAILURE = "JAVA_VERSION_FAILURE"
@@ -28,9 +30,7 @@ class FailureCategory(Enum):
     DEPENDENCY_LOCK_FAILURE = "DEPENDENCY_LOCK_FAILURE"
     UNKNOWN_FAILURE = "UNKNOWN_FAILURE"
 
-
-log = logging.getLogger(__name__)
-
+# Failure patterns for failure classification
 FAILURE_PATTERNS: Iterable[Tuple[re.Pattern, FailureCategory]] = [
     (re.compile(r"(?i)(class file has wrong version (\d+\.\d+), should be (\d+\.\d+))"), 
      FailureCategory.JAVA_VERSION_FAILURE),
@@ -66,6 +66,26 @@ FAILURE_PATTERNS: Iterable[Tuple[re.Pattern, FailureCategory]] = [
     ), FailureCategory.DEPENDENCY_LOCK_FAILURE),
 ]
 
+# Dockerfile template for building containers
+DEF_TEMPLATE = """Bootstrap: docker
+From: ghcr.io/chains-project/breaking-updates:base-image
+
+%post
+    apk add fakeroot
+    FAKEROOTDONTTRYCHOWN=1 fakeroot sh -c 'apk add openssh'
+    git clone https://github.com/{organisation}/{project}.git
+    cd {project}
+    git fetch --depth 2 origin {commit_hash}
+
+%environment
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+    export MAVEN_HOME=/usr/share/maven
+    export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+
+%runscript
+    exec /bin/bash
+    """
+#=====================================CONSTATNTS=========================================#    
 
 
 class FailureCategoryExtract:
@@ -82,7 +102,7 @@ class FailureCategoryExtract:
         try:
             log_content = target.read_text(encoding="utf-8", errors="ignore")
         except OSError as e:
-            log.error("Failed to read log file: %s", str(target.resolve()))
+            logger.error("Failed to read log file: %s", str(target.resolve()))
             raise RuntimeError(f"Failed to read log file: {target}") from e
 
         for pattern, category in FAILURE_PATTERNS:
@@ -152,8 +172,32 @@ class BreakingDataset():
         except Exception as exc:  # noqa: BLE001  (broad exception is fine for top‑level tooling)
             print(f"[warning] Failed to download {url}: {exc}")
 
+    def build_container(self, desc: Dict[str, Any], commit_dir: Path):
+        
+        project = desc.get("project")
+        breakingCommit = desc.get("breakingCommit")
+        organisation = desc.get("projectOrganisation")
 
-    def clone_repo(self, desc: Dict[str, Any], commit_dir):
+        def_file = commit_dir / f"{project}.def"
+        sif_file = commit_dir / f"{project}.sif"
+
+        # generate .def file for each project
+        with open(def_file, "w") as f:
+            f.write(DEF_TEMPLATE.format(project=project, organisation=organisation, commit_hash=breakingCommit))
+
+        logger.info(f"[INFO] Building container for {project} ...")
+
+        # call apptainer build
+        self.run([
+            "apptainer", "build",
+            "--fakeroot", "--ignore-fakeroot-command",
+            str(sif_file),
+            str(def_file)
+        ])
+
+        print(f"[DONE] Container built: {sif_file}")
+        
+    def clone_repo(self, desc: Dict[str, Any], commit_dir: Path):
         sha = desc.get("breakingCommit")
         organisation = desc.get("projectOrganisation")
         project = desc.get("project")
@@ -197,9 +241,9 @@ class BreakingDataset():
             self.run(["git", "-C", str(repo_dir), "checkout", sha])
         else:
             print(f"[skipped] Repo for {sha} already exists")
-    
-    def download_jars(self, desc, commit_dir):
-        # download the previous and new verison jars of the dependency, then identify the breaking changes with roseau 
+
+    def download_jars(self, desc: Dict[str, Any], commit_dir: Path):
+        # download the previous and new verison jars of the dependency, then identify the breaking changes with roseau
         updated_dep = desc.get("updatedDependency")
         if not updated_dep:
             return
@@ -267,6 +311,9 @@ class BreakingDataset():
         
         # Clone repository (shallow, depth 2)
         self.clone_repo(desc, commit_dir)
+
+        # Build container
+        self.build_container(desc, commit_dir)
 
         # Download dependency JARs (if any)
         breaking_changes = self.download_jars(desc, commit_dir)
