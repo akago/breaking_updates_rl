@@ -268,7 +268,7 @@ class BreakingDataset():
             self.download(jar_url, jar_dest)
 
         # Get breaking changes between previous and newer version
-        report_path = commit_dir / "diff"
+        report_path = commit_dir / "api_diff.csv"
         breaking_changes = self.run([
             "java", 
             "-jar", 
@@ -337,8 +337,8 @@ def main(argv: list[str] | None = None) -> None:
 
     logging.basicConfig(level=logging.INFO)
     parser = argparse.ArgumentParser(description="Download shallow clones and dependency JARs for APR descriptors.")
-    parser.add_argument("--input", "-i",  type=Path, default=Path(__file__).parent, help="Directory containing metadata JSON files for benchmarks & build logs")
-    parser.add_argument("--output", "-o", type=Path, default=Path("output"), help="Output directory (default: ./output)")
+    parser.add_argument("--input", "-i",  type=Path, default=Path(__file__).parent.parent/"data", help="Directory containing metadata JSON files for benchmarks & build logs. default: .")
+    parser.add_argument("--output", "-o", type=Path, default=Path(__file__).parent.parent/"data"/"output1", help="Output directory (default: ./output)")
     args = parser.parse_args(argv)
 
     breaking_dataset = BreakingDataset(args.input, args.output)

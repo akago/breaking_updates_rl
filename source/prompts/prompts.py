@@ -1,7 +1,7 @@
 
 
 
-PROMPT_TEMPLATE = f"""
+PROMPT_TEMPLATE = """
 Act as an Automatic Program Repair (APR) tool, reply only with code, without explanation. 
 You are specialized in breaking dependency updates, in which the failure is caused by an external dependency. 
 To solve the failure you can only work on the client code.
