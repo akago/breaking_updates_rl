@@ -11,124 +11,94 @@ import java.util.function.Predicate;
 
 public class FqcnUtils {
 
-  /**
+  /*
    * Collect FQCNs under a CtElement (could be a field, method or an import ).
    *
-   * @param root            
-   * @param withMembers     if true, also add "Type.member" (method/field simple names)
-   * @param withSignatures  if true, also add "Type#method(paramTypes...)" signatures
-   * @param excludeJdkPkgs  if true, drop java.*, javax.*, jdk.*, sun.*, com.sun.*
+   * @param root
+   * @param withMembers if true, also add "Type.member" (method/field simple names)
+   * @param withSignatures if true, also add "Type#method(paramTypes...)" signatures
    */
-  public static Set<String> collectFqcns(CtElement root,
-                                         boolean withMembers,
-                                         boolean withSignatures,
-                                         boolean excludeJdkPkgs) {
-    Set<String> out = new LinkedHashSet<>();
-
-    // Type references 
-    for (CtTypeReference<?> tr : root.getElements(new TypeFilter<>(CtTypeReference.class))) {
-      addType(out, tr);
-    }
-
-    // Executable references (methods/constructors)
-    for (CtExecutableReference<?> execRef : root.getElements(new TypeFilter<>(CtExecutableReference.class))) {
-      CtTypeReference<?> decl = execRef.getDeclaringType();
-      if (decl != null) {
-        String typeQN = qn(decl);
-        if (typeQN != null) {
-          out.add(typeQN); // declaring type FQCN
-          if (withMembers)    out.add(typeQN + "." + execRef.getSimpleName());
-          if (withSignatures) out.add(typeQN + "#" + execRef.getSignature());
+    public static Set<String> collectFqcns(CtElement root, boolean withMembers, boolean withSignatures) {
+        Set<String> out = new LinkedHashSet<>();
+        
+        // special case for CtImport
+        if (root instanceof CtImport imp) {
+            CtReference ref = imp.getReference();
+            handleSingleReference(out, ref, withMembers, withSignatures);
+            return out;
         }
-      }
-    }
-
-    // Field references (include static fields)
-    for (CtFieldReference<?> fieldRef : root.getElements(new TypeFilter<>(CtFieldReference.class))) {
-      CtTypeReference<?> decl = fieldRef.getDeclaringType();
-      if (decl != null) {
-        String typeQN = qn(decl);
-        if (typeQN != null) {
-          out.add(typeQN);
-          if (withMembers) out.add(typeQN + "." + fieldRef.getSimpleName());
+        // find all references under the root element
+        for (CtReference ref : root.getElements(new TypeFilter<>(CtReference.class))) {
+            handleSingleReference(out, ref, withMembers, withSignatures);
         }
-      }
+        return out;
+
     }
 
-    return out;
-  }
+    private static void handleSingleReference(Set<String> out,
+                                              CtReference ref,
+                                              boolean withMembers,
+                                              boolean withSignatures) {
+        if (ref instanceof CtTypeReference<?> tr) {
+            addType(out, tr);
 
-  // ---- Helpers -------------------------------------------------------------
+        } else if (ref instanceof CtExecutableReference<?> er) {
+            CtTypeReference<?> dt = er.getDeclaringType();
+            String typeQN = qn(dt);
+            if (typeQN != null) {
+                out.add(typeQN);
+                if (withMembers)    out.add(typeQN + "." + er.getSimpleName());
+                if (withSignatures) out.add(typeQN + "#" + er.getSignature());
+            }
 
-  /* Add a type ref and everything "hidden inside" (arrays, generics, outer types)*/
-  private static void addType(Set<String> out, CtTypeReference<?> tr) {
-    if (tr == null) return;
-
-    // Skip primitives (int, boolean, …)
-    if (tr.isPrimitive()) return;
-
-    // Arrays
-    if (tr instanceof CtArrayTypeReference) {
-      CtTypeReference<?> comp = ((CtArrayTypeReference<?>) tr).getComponentType();
-      if (comp != null) addType(out, comp);
-      return;
-    }
-
-    // Record the qualified name if available.
-    String qn = qn(tr);
-    if (qn != null) out.add(qn);
-
-    // Expand generic actual type arguments
-    List actuals = tr.getActualTypeArguments();
-    if (actuals != null) {
-      for (Object o : actuals) {
-        if (o instanceof CtTypeReference) {
-          addType(out, (CtTypeReference<?>) o);
+        } else if (ref instanceof CtFieldReference<?> fr) {
+            // import static a.b.C.*;
+            if ("*".equals(fr.getSimpleName())) {
+                CtTypeReference<?> dt = fr.getDeclaringType();
+                addType(out, dt); // only record the type
+                return;
+            }
+            CtTypeReference<?> dt = fr.getDeclaringType();
+            String typeQN = qn(dt);
+            if (typeQN != null) {
+                out.add(typeQN);
+                if (withMembers) 
+                    out.add(typeQN + "." + fr.getSimpleName());
+            }
         }
-      }
     }
 
-    // For inner classes, also include the declaring (outer) type if present.
-    CtTypeReference<?> outer = tr.getDeclaringType();
-    if (outer != null) addType(out, outer);
-  }
+    // ---- Helpers ----
+    private static void addType(Set<String> out, CtTypeReference<?> tr) {
+        if (tr == null) return;
+        if (tr.isPrimitive()) return;
+        if (tr instanceof CtTypeParameterReference) return; // Skip Type Parameters like T, E
+        if (tr instanceof CtWildcardReference) return;       // Skip Wildcard annotation '?'
 
-  /* Normalize Spoon's qualified name; return null for unresolved/placeholder names. */
-  private static String qn(CtTypeReference<?> tr) {
-    String qn = tr.getQualifiedName();
-    return (qn == null || qn.isEmpty() || "?".equals(qn)) ? null : qn;
-  }
+        // Array type
+        if (tr instanceof CtArrayTypeReference<?> arr) {
+            addType(out, arr.getComponentType());
+            return;
+        }
 
+        String qn = qn(tr);
+        if (qn != null) out.add(qn);
 
-  /* Human-readable label for grouping (class#method(signature) or class.field). */
-  public static String label(CtElement e) {
-    if (e instanceof CtMethod<?> m) {
-      String owner = m.getDeclaringType() != null ? m.getDeclaringType().getQualifiedName() : "<unknown>";
-      return owner + "#" + m.getSignature();
+        // Generic type arguments
+        List<CtTypeReference<?>> actuals = tr.getActualTypeArguments();
+        if (actuals != null) {
+            for (CtTypeReference<?> a : actuals) addType(out, a);
+        }
+
+        // Inner class -> Add outer class
+        CtTypeReference<?> outer = tr.getDeclaringType();
+            if (outer != null) addType(out, outer);
     }
-    if (e instanceof CtField<?> f) {
-      String owner = f.getDeclaringType() != null ? f.getDeclaringType().getQualifiedName() : "<unknown>";
-      return owner + "." + f.getSimpleName();
-    }
-    if (e instanceof CtType<?> t) {
-      return t.getQualifiedName();
-    }
-    return e.getClass().getSimpleName();
-  }
 
-  /* Produce FQCN sets per field/method/import */
-  public static Map<String, Set<String>> listFqcnsPerMember(List<CtElement> nodes,
-                                                            boolean withMembers,
-                                                            boolean withSignatures,
-                                                            boolean excludeJdkPkgs) {
-
-    Map<String, Set<String>> result = new LinkedHashMap<>();
-    for (CtElement e : nodes) {
-      String key = label(e);
-      Set<String> fqcn = collectFqcns(e, withMembers, withSignatures, excludeJdkPkgs);
-      result.put(key, fqcn);
+    private static String qn(CtTypeReference<?> tr) {
+        String qn = tr.getQualifiedName();
+        if (qn == null || qn.isEmpty() || "?".equals(qn)) return null;
+        return qn;
     }
-    return result;
-  }
 
 }

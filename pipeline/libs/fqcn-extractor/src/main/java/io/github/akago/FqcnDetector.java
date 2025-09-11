@@ -87,7 +87,7 @@ public class FqcnDetector {
         mainClass.getPosition().getCompilationUnit().getImports().stream()
             .forEach((CtElement element) -> {
                 if(this.containsAnError(element)) {
-                    Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false, false);
+                    Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false);
                     result.addAll(fqcns);
                 }
             });
@@ -102,7 +102,7 @@ public class FqcnDetector {
         mainClass.getElements(new TypeFilter<>(CtFieldImpl.class)).stream()
             .forEach((CtElement element) -> {
                 if(this.containsAnError(element)) {
-                    Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false, false);
+                    Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false);
                     result.addAll(fqcns);
                 }
             });
@@ -116,10 +116,11 @@ public class FqcnDetector {
 
         mainClass.getElements(new TypeFilter<>(CtMethodImpl.class)).stream().forEach(element -> {
             if(this.containsAnError(element)) {
-                Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false, false);
+                Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false);
                 result.addAll(fqcns);
             }
         });
         return result;
     }
 }
+
