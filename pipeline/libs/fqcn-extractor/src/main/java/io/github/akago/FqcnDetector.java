@@ -18,6 +18,8 @@ import spoon.reflect.declaration.CtClass;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtImport;
 import spoon.reflect.declaration.CtMethod;
+import spoon.reflect.declaration.CtAnnotation;
+import spoon.reflect.code.CtTypeAccess;
 import spoon.reflect.declaration.CtType;
 import spoon.reflect.visitor.filter.TypeFilter;
 import spoon.support.reflect.declaration.CtFieldImpl;
@@ -26,6 +28,7 @@ import spoon.support.reflect.declaration.CtParameterImpl;
 
 public class FqcnDetector {
     private Set<MavenErrorLog.ErrorInfo> mavenErrorLog;
+    private static final String TEST_FILE = "Test.java";    
 
     public FqcnDetector(Set<MavenErrorLog.ErrorInfo> mavenErrorLog) {
         this.mavenErrorLog = mavenErrorLog;
@@ -44,6 +47,7 @@ public class FqcnDetector {
         result.addAll(getImportFaults(model));
         result.addAll(getFieldFaults(model));
         result.addAll(getMethodFaults(model));
+        result.addAll(getAnnotationFaults(model));
 
         return result;
     }
@@ -66,7 +70,7 @@ public class FqcnDetector {
     private boolean containsAnError(CtElement element) {
         int startLineNumber = this.getRealLinePosition(element);
         int endLineNumber = element.getPosition().getEndLine();
-
+         
         return mavenErrorLog.stream().anyMatch(mavenErrorLog -> {
             int errorLineNumber = Integer.parseInt(mavenErrorLog.getClientLinePosition());
             return errorLineNumber >= startLineNumber && errorLineNumber <= endLineNumber;
@@ -75,9 +79,13 @@ public class FqcnDetector {
 
     private int getRealLinePosition(CtElement element) {
         // Need to do this trick as getLine does not take into account for decorators, and comments
-        String[] lines = element.getOriginalSourceFragment().getSourceCode().split("\r\n|\r|\n");
-        int numberOfLines = lines.length;
-        return element.getPosition().getEndLine() - numberOfLines + 1;
+        try {
+            String[] lines = element.getOriginalSourceFragment().getSourceCode().split("\r\n|\r|\n");
+            int numberOfLines = lines.length;
+            return element.getPosition().getEndLine() - numberOfLines + 1;
+        } catch (Exception e) {
+            return element.getPosition().getLine();
+        }
     }
 
     private Set<String> getImportFaults(CtModel model) {
@@ -87,7 +95,10 @@ public class FqcnDetector {
         mainClass.getPosition().getCompilationUnit().getImports().stream()
             .forEach((CtElement element) -> {
                 if(this.containsAnError(element)) {
-                    Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false);
+                    String importFqcn = FqcnUtils.extractFromImport(element);
+                    Set<String> fqcns = importFqcn != null ?
+                                        Set.of(importFqcn) :
+                                        new HashSet<String>();
                     result.addAll(fqcns);
                 }
             });
@@ -109,6 +120,22 @@ public class FqcnDetector {
 
         return result;
     }
+
+     private Set<String> getAnnotationFaults(CtModel model) {
+        CtType<?> mainClass = model.getAllTypes().iterator().next();
+        Set<String> result = new HashSet<>();
+
+        mainClass.getElements(new TypeFilter<>(CtAnnotation.class)).stream()
+            .forEach((CtElement element) -> {
+                if(this.containsAnError(element)) {
+                    Set<String> fqcns = FqcnUtils.collectFqcns(element, true, false);
+                    result.addAll(fqcns);
+                }
+            });
+
+        return result;
+    }
+
 
     private Set<String> getMethodFaults(CtModel model) {
         CtType<?> mainClass = model.getAllTypes().iterator().next();

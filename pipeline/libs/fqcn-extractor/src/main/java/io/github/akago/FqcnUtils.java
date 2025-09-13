@@ -9,30 +9,59 @@ import spoon.reflect.CtModel;
 import java.util.*;
 import java.util.function.Predicate;
 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+
 public class FqcnUtils {
 
-  /*
-   * Collect FQCNs under a CtElement (could be a field, method or an import ).
-   *
-   * @param root
-   * @param withMembers if true, also add "Type.member" (method/field simple names)
-   * @param withSignatures if true, also add "Type#method(paramTypes...)" signatures
-   */
+  
+    private static final Pattern IMPORT_PATTERN = Pattern.compile(
+        "^import\\s+(?:static\\s+)?([\\w\\.]+)(?:\\s*\\.\\*)?\\s*;?$"
+    );
+
+
+    /*
+        * Collect FQCNs under a CtElement (could be a field or method ).
+        *
+        * @param root
+        * @param withMembers if true, also add "Type.member" (method/field simple names)
+        * @param withSignatures if true, also add "Type#method(paramTypes...)" signatures
+    */
     public static Set<String> collectFqcns(CtElement root, boolean withMembers, boolean withSignatures) {
         Set<String> out = new LinkedHashSet<>();
         
-        // special case for CtImport
-        if (root instanceof CtImport imp) {
-            CtReference ref = imp.getReference();
-            handleSingleReference(out, ref, withMembers, withSignatures);
-            return out;
-        }
         // find all references under the root element
         for (CtReference ref : root.getElements(new TypeFilter<>(CtReference.class))) {
             handleSingleReference(out, ref, withMembers, withSignatures);
         }
+
+        // for (CtTypeAccess<?> ta : root.getElements(new TypeFilter<>(CtTypeAccess.class))) {
+        //     CtTypeReference<?> tr = ta.getAccessedType();
+        //     addType(out, tr);
+        // }
+
+        for (CtAnnotation an : root.getElements(new TypeFilter<>(CtAnnotation.class))) {
+            CtTypeReference<?> tr = an.getAnnotationType();
+            addType(out, tr);
+        }
+
         return out;
 
+    }
+
+    /*
+        * Extract FQCN from an CtImport statement.
+        * Return null if the import statement is invalid
+        *
+        * @param imp
+        * @return the FQCN string, or null if not found
+    */
+    public static String extractFromImport(CtElement imp) {
+        if (imp == null) return null;
+        String s = imp.toString().trim();
+        Matcher m = IMPORT_PATTERN.matcher(s);
+        if (!m.matches()) return null;
+        return m.group(1);
     }
 
     private static void handleSingleReference(Set<String> out,
@@ -40,11 +69,13 @@ public class FqcnUtils {
                                               boolean withMembers,
                                               boolean withSignatures) {
         if (ref instanceof CtTypeReference<?> tr) {
+            // System.out.println("Type: " + tr);
             addType(out, tr);
-
         } else if (ref instanceof CtExecutableReference<?> er) {
-            CtTypeReference<?> dt = er.getDeclaringType();
-            String typeQN = qn(dt);
+            // System.out.println("Method: " + er);
+            CtTypeReference<?> decl = er.getDeclaringType();
+            if (decl == null) return; // could be null for local methods
+            String typeQN = qn(decl);
             if (typeQN != null) {
                 out.add(typeQN);
                 if (withMembers)    out.add(typeQN + "." + er.getSimpleName());
@@ -52,20 +83,15 @@ public class FqcnUtils {
             }
 
         } else if (ref instanceof CtFieldReference<?> fr) {
-            // import static a.b.C.*;
-            if ("*".equals(fr.getSimpleName())) {
-                CtTypeReference<?> dt = fr.getDeclaringType();
-                addType(out, dt); // only record the type
-                return;
-            }
-            CtTypeReference<?> dt = fr.getDeclaringType();
-            String typeQN = qn(dt);
+            CtTypeReference<?> decl = fr.getDeclaringType();
+            if (decl == null) return;
+            String typeQN = qn(decl);
             if (typeQN != null) {
                 out.add(typeQN);
                 if (withMembers) 
                     out.add(typeQN + "." + fr.getSimpleName());
             }
-        }
+        } 
     }
 
     // ---- Helpers ----
@@ -96,6 +122,7 @@ public class FqcnUtils {
     }
 
     private static String qn(CtTypeReference<?> tr) {
+        if (tr == null) return null;
         String qn = tr.getQualifiedName();
         if (qn == null || qn.isEmpty() || "?".equals(qn)) return null;
         return qn;
