@@ -9,13 +9,14 @@ import argparse
 import json
 import urllib.request
 from pathlib import Path
-from typing import Any, Dict, Iterable, Tuple
+from typing import Any, Iterable, Tuple
 import shutil
 import logging
 from enum import Enum
 import pandas as pd
 import shlex
 import tempfile
+
 
 
 
@@ -127,30 +128,53 @@ class BreakingDataset():
         self.path_to_build_logs = self.input_dir / "successfulReproductionLogs"
         self.current_dir = Path(__file__).parent
         self.dataset = []
-        
-    def build_dataset(self):
+
+    def build_dataset(self) -> None:
         """Build the dataset from the collected data."""
         # Ensure output directory exists
         self.outroot.mkdir(parents=True, exist_ok=True)
-
+        success, failure, fqcn_failure, bc_failure = [], [], [], []
         # Iterate over all JSON files in the input directory
         for json_file in self.path_to_benchmark.glob("*.json"):
+            filename = json_file.stem
             with open(json_file, "r", encoding="utf-8") as f:
                 desc = json.load(f)
                 if not isinstance(desc, dict):
                     logger.warning(f"[warning] Invalid JSON format in {json_file}; skipping")
                     continue
+                # filter out the Java version failures
+                build_log_path = self.path_to_build_logs / (str(desc.get('breakingCommit')) + ".log")
+                extractor = FailureCategoryExtract(build_log_path) 
+                failure_category = extractor.get_failure_category()
+                logger.info(f"Failure category for {desc.get('breakingCommit')}: {failure_category}")
+                if failure_category != FailureCategory.COMPILATION_FAILURE:
+                    logger.warning(f"Skipping {desc.get('breakingCommit')} due to java version failure")
+                    continue
 
                 # Process each breaking update entry
                 try:                
-                    data_dict = self.process_breaking_update(desc, self.outroot)
-                    if data_dict:
-                        self.dataset.append(data_dict) 
+                    self.process_breaking_update(desc, self.outroot)
+                    success.append(filename)
+                except RuntimeError as re:
+                    if "No relevant breaking changes found" in str(re):
+                        bc_failure.append(filename)
+                    elif "No FQCNs extracted" in str(re):
+                        fqcn_failure.append(filename)
+                    else:
+                        failure.append(filename)
                 except Exception as exc:
                     logger.error(f"Failed to handle {json_file}: {exc}")
+                    failure.append(filename)
+
+        json.dump({"total_count":len(success),"failure_count":len(failure), 
+                   "failure": failure, "bc_failure": bc_failure, 
+                   "fqcn_failure": fqcn_failure, "success": success
+                   }, 
+                  open("dataset_metadata.json", "w"), 
+                  indent=4)
         logger.info(f"Dataset built successfully at {self.outroot}")
 
-    def run(self, cmd: list[str], cwd: Path | None = None, capture_output: bool = True) -> str:
+    def run(self, cmd: list[str], cwd: Path | None=None, capture_output: bool = True) -> str:
         """Run *cmd* (list of strings) and raise if the command fails."""
         # logger.info("$", *cmd)
         cp = subprocess.run(
@@ -182,7 +206,7 @@ class BreakingDataset():
         except Exception as exc:  # noqa: BLE001  (broad exception is fine for top‑level tooling)
             logger.error(f"[error] Failed to download {url}: {exc}")
 
-    def build_container(self, desc: Dict[str, Any], commit_dir: Path):
+    def build_container(self, desc: dict[str, Any], commit_dir: Path) -> None:
         
         project = desc.get("project")
         breakingCommit = desc.get("breakingCommit")
@@ -207,7 +231,7 @@ class BreakingDataset():
 
         logger.info(f"[DONE] Container built: {sif_file}")
         
-    def clone_repo(self, desc: Dict[str, Any], commit_dir: Path):
+    def clone_repo(self, desc: dict[str, Any], commit_dir: Path) -> None:
         sha = desc.get("breakingCommit")
         organisation = desc.get("projectOrganisation")
         project = desc.get("project")
@@ -253,7 +277,7 @@ class BreakingDataset():
             logger.info(f"[skipped] Repo for {sha} already exists")
 
 
-    def snapshot_repo(self, desc: dict, commit_dir: Path):
+    def snapshot_repo(self, desc: dict, commit_dir: Path) -> None:
         """
         Create a shallow clone of the repository at the specified commit.
         This avoids cloning the entire repository history.
@@ -280,7 +304,7 @@ class BreakingDataset():
         self.run(["git", "-C", str(repo_dir), "checkout", "--detach", "FETCH_HEAD"])
     
     
-    def download_jars(self, desc: Dict[str, Any], commit_dir: Path):
+    def download_jars(self, desc: dict[str, Any], commit_dir: Path) -> None:
         """
         Download the previous and new version artifacts of the dependency.
         Fallback to Jenkins repo for for Jenkins plugins.
@@ -302,7 +326,7 @@ class BreakingDataset():
         dep_dir = commit_dir
         base = "https://repo1.maven.org/maven2" if group_id not in ["org.jenkins-ci.plugins", "org.jenkins-ci"] else "https://repo.jenkins-ci.org/releases"
 
-        def try_download(version: str) -> Path:
+        def try_download(version: str) -> None:
             url = f"{base}/{group_path}/{artifact_id}/{version}/{artifact_id}-{version}.jar"
             dst = dep_dir / f"{artifact_id}-{version}.jar"
             self.download(url, dst)
@@ -331,12 +355,6 @@ class BreakingDataset():
             ],
                                     #  capture_output=False
                                      )
-        
-        # read the diff into memory
-        with open(report_path) as f:
-            diff = json.load(f)
-            
-        return diff
 
         
         
@@ -345,11 +363,11 @@ class BreakingDataset():
         relevant_changes = []
         for change in breaking_changes:
             # Check if any FQCN or class name is part of the breaking change
-            if any(fqcn in change["element"] or fqcn.split(".")[-1] in change["element"] for fqcn in FQCNs):
+            if any(fqcn in change["element"] or fqcn.split(".")[-1] == change["element"].split(".")[-1] for fqcn in FQCNs):
                 relevant_changes.append(change)
         return relevant_changes
     
-    def generate_contexts(self, desc: Dict[str, Any], commit_dir: Path) -> None:
+    def generate_contexts(self, desc: dict[str, Any], commit_dir: Path) -> None:
         context_json = {}
         # project info
         context_json["project"] = desc.get("project")
@@ -363,46 +381,52 @@ class BreakingDataset():
         # generate the context for each buggy file in project
         with open(str(commit_dir / "api_diff.json")) as f:
             breaking_changes = json.load(f)
+            
         # Extract relevant FQCNs from the client code        
         client = commit_dir
         logger.info(f"Extracting FQCNs from client code at {client}")
         log = self.path_to_build_logs / (desc.get('breakingCommit') + ".log")
         cmd = ['java', '-jar', 'pipeline/libs/fqcn-extractor/target/FqcnExtractor.jar', '-c', str(client), '-l', str(log)]
-        FQCNs = self.run(cmd).strip()
-        logger.info("Extracted FQCNs: %s", repr(FQCNs))
-        logger.info("Type of FQCNs: %s", type(FQCNs))
-        FQCNs = json.loads(FQCNs)
+        try:
+            result = self.run(cmd).strip()
+        except RuntimeError as e:
+            logger.error(f"Failed to extract FQCNs: {e}")
+            result = "[]"
+
+        logger.info("Extracted FQCNs: %s", repr(result))
+        FQCNs = json.loads(result)
+        # No FQCNs extracted
+        if not FQCNs:
+            raise RuntimeError("No FQCNs extracted")
+        
         # filter only the breaking changes that are potentially relevant to the compilation errors
         relevant_changes = self.filter_breaking_changes(breaking_changes, FQCNs)
         logger.info("Relevant BCs: %s", relevant_changes)
+        if not relevant_changes:
+            raise RuntimeError("No relevant breaking changes found")
         context_json["breakingChanges"] = relevant_changes
         context_json["FQCNs"] = FQCNs
+        
         # get errors information from the build log
         log_parser = MavenErrorParser()
-        error_log = MavenErrorLog.from_file(log, log_parser)
-        
+        try:
+            error_log = MavenErrorLog.from_file(log, log_parser)
+        except Exception as exc:
+            logger.error(f"Failed to parse build log for {desc.get('breakingCommit')}: {exc}")
+            raise exc
+
         context_json["buggyFiles"] = error_log.to_jsonable()
         
         with open(commit_dir / "context.json", "w") as f:
             json.dump(context_json, f, indent=4)
         
 
-    def process_breaking_update(self, desc: Dict[str, Any], out_root: Path) -> None:
-        data_dict = {}
-
+    def process_breaking_update(self, desc: dict[str, Any], out_root: Path) -> None:
         # filter compilation failures only
         if desc.get("failureCategory") != "COMPILATION_FAILURE":
             return None
         commit_dir = self.outroot / Path(str(desc.get("breakingCommit")))
-        
-        # filter out the Java version failures
-        build_log_path = self.path_to_build_logs / (str(desc.get('breakingCommit')) + ".log")
-        extractor = FailureCategoryExtract(build_log_path) 
-        failure_category = extractor.get_failure_category()
-        logger.info(f"Failure category for {desc.get('breakingCommit')}: {failure_category}")
-        if failure_category != FailureCategory.COMPILATION_FAILURE:
-            logger.warning(f"Skipping {desc.get('breakingCommit')} due to java version failure")
-            return None
+        commit_dir.mkdir(parents=True, exist_ok=True)
         
         # # Pull the repo snapshot at the breaking commit
         # # self.clone_repo(desc, commit_dir)
@@ -411,8 +435,8 @@ class BreakingDataset():
         # # Build container
         # # self.build_container(desc, commit_dir)
 
-        # # Download dependency JARs (if any)
-        # breaking_changes = self.download_jars(desc, commit_dir)
+        # Download dependency JARs (if any) and identify breaking changes with roseau
+        breaking_changes = self.download_jars(desc, commit_dir)
         
         
         # # Copy the build log to the project directory
@@ -424,9 +448,12 @@ class BreakingDataset():
         #     logger.warning(f"Build log {build_log_path} does not exist; skipping copy")
 
         # Identify the error messages from the build log
-        self.generate_contexts(desc, commit_dir)        
+        try:
+            self.generate_contexts(desc, commit_dir)
+        except Exception as exc:
+            logger.error(f"Failed to generate contexts for {desc.get('breakingCommit')}: {exc}")
+            raise exc
         
-        return data_dict
         
 
 def main(argv: list[str] | None = None) -> None:
