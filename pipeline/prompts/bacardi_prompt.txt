@@ -1,7 +1,3 @@
-
-
-
-PROMPT_TEMPLATE = """
 Act as an Automatic Program Repair (APR) tool, reply only with code, without explanation. 
 You are specialized in breaking dependency updates, in which the failure is caused by an external dependency. 
 To solve the failure you can only work on the client code.
@@ -14,7 +10,7 @@ the error is triggered in the following specific lines in the previous code:
 {buggy_line}
 with the following error message:
 {error_message}
-The error is caused by a change in the API of the dependency. The new library version includes the following changes: <api diff>
+The error is caused by a change in the API of the dependency. The new library version includes the following changes:
 {api_diff}
 Before proposing a fix, please analyze the situation and plan your approach within
 <repair strategy> tags:
@@ -34,4 +30,3 @@ Before proposing a fix, please analyze the situation and plan your approach with
 - If fixing the issue requires addressing missing imports, ensure the correct package or class is used in accordance with the newer dependency version. 
 - Avoid removing any existing code unless it directly causes a compilation or functionality error. 
 - Return only the fixed class, ensuring it fully compiles and adheres to these constraints.
-"""

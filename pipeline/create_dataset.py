@@ -166,7 +166,8 @@ class BreakingDataset():
                     logger.error(f"Failed to handle {json_file}: {exc}")
                     failure.append(filename)
 
-        json.dump({"total_count":len(success),"failure_count":len(failure), 
+        json.dump({"success_count":len(success),"failure_count":len(failure), 
+                   "bc_failure_count":len(bc_failure), "fqcn_failure_count":len(fqcn_failure),
                    "failure": failure, "bc_failure": bc_failure, 
                    "fqcn_failure": fqcn_failure, "success": success
                    }, 
@@ -360,13 +361,22 @@ class BreakingDataset():
         
     def filter_breaking_changes(self, breaking_changes: list[dict], FQCNs: list[str]) -> list[dict]:
         """Filter breaking changes to include only those relevant to the client code."""
-        relevant_changes = []
+        changes = set()
         for change in breaking_changes:
-            # Check if any FQCN or class name is part of the breaking change
+            # Check if any FQCN or class name matches the changed element
             if any(fqcn in change["element"] or fqcn.split(".")[-1] == change["element"].split(".")[-1] for fqcn in FQCNs):
-                relevant_changes.append(change)
-        return relevant_changes
-    
+                change = {"element": change["element"], "nature": change["nature"], "kind": change["kind"]}
+                simplified_change = (
+                    change["element"],
+                    change["nature"],
+                    change["kind"],
+                )
+                changes.add(simplified_change)
+        return [
+            {"element": e, "nature": n, "kind": k}
+            for (e, n, k) in changes
+        ]
+
     def generate_contexts(self, desc: dict[str, Any], commit_dir: Path) -> None:
         context_json = {}
         # project info
@@ -402,8 +412,7 @@ class BreakingDataset():
         # filter only the breaking changes that are potentially relevant to the compilation errors
         relevant_changes = self.filter_breaking_changes(breaking_changes, FQCNs)
         logger.info("Relevant BCs: %s", relevant_changes)
-        if not relevant_changes:
-            raise RuntimeError("No relevant breaking changes found")
+        
         context_json["breakingChanges"] = relevant_changes
         context_json["FQCNs"] = FQCNs
         
@@ -419,6 +428,9 @@ class BreakingDataset():
         
         with open(commit_dir / "context.json", "w") as f:
             json.dump(context_json, f, indent=4)
+            
+        if not relevant_changes:
+            raise RuntimeError("No relevant breaking changes found")
         
 
     def process_breaking_update(self, desc: dict[str, Any], out_root: Path) -> None:
@@ -435,8 +447,8 @@ class BreakingDataset():
         # # Build container
         # # self.build_container(desc, commit_dir)
 
-        # Download dependency JARs (if any) and identify breaking changes with roseau
-        breaking_changes = self.download_jars(desc, commit_dir)
+        # # Download dependency JARs (if any) and identify breaking changes with roseau
+        # breaking_changes = self.download_jars(desc, commit_dir)
         
         
         # # Copy the build log to the project directory
@@ -463,7 +475,7 @@ def main(argv: list[str] | None = None) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
     parser = argparse.ArgumentParser(description="Download shallow clones and dependency JARs for APR descriptors.")
     parser.add_argument("--input", "-i",  type=Path, default=Path(__file__).parent.parent/"data", help="Directory containing metadata JSON files for benchmarks & build logs. default: data/")
-    parser.add_argument("--output", "-o", type=Path, default=Path(__file__).parent.parent/"data"/"output", help="Output directory (default: data/output/)")
+    parser.add_argument("--output", "-o", type=Path, default=Path(__file__).parent.parent/"data"/"dataset", help="Output directory (default: data/output/)")
     args = parser.parse_args(argv)
 
     breaking_dataset = BreakingDataset(args.input, args.output)

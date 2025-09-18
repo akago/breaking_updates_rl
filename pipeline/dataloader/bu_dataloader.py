@@ -27,6 +27,6 @@ class BreakingUpdateDataLoader:
                 "prompt": f"[{pid}] Please repair file src/F{fidx}.java given the breaking change.",
                 "project_id": pid,
                 "file_path": f"src/F{fidx}.java",
-                # 这里可以放 BC 相关符号、编译基线等你需要的上下文列
+                
             })
         return Dataset.from_list(rows)

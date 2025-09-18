@@ -9,7 +9,7 @@ class ErrorInfo:
     path: PurePosixPath
     line_num: int
     message: str
-    additional: str = ""
+    additional: str
 
 class MavenErrorParser:
     # The regex captures for both Path and Line number
@@ -31,18 +31,18 @@ class MavenErrorParser:
             if s.startswith("[ERROR]"):
                 return self.error_re.search(s) is None
             return False
+        
         def flush_indented(it: Iterator[str]) -> str:
             parts: list[str] = []
             for s in it:
                 if not s.startswith(" "):
-                    buf.append(s)  # 回推一行
+                    buf.append(s)  # backtrack one line
                     break
                 parts.append(s.rstrip("\n"))
             return "\n".join(parts)
 
         for line in lines:
             if buf:
-                # 先消耗被回推的行
                 line = buf.pop()
             m = self.error_re.search(line)
             if not m:
@@ -58,7 +58,7 @@ class MavenErrorLog:
 
     def add(self, info: ErrorInfo) -> bool:
         bucket = self._by_path[info.path]
-        if info.line_num in bucket:  # 一行一个错误的去重策略
+        if info.line_num in bucket: 
             return False
         bucket[info.line_num] = info
         return True
@@ -71,10 +71,10 @@ class MavenErrorLog:
     def from_file(cls, log_file: str | Path, parser: Optional[MavenErrorParser] = None,
                   encoding: str = "latin-1") -> "MavenErrorLog":
         parser = parser or MavenErrorParser()
-        inst = cls()
+        instance = cls()
         with open(log_file, "r", encoding=encoding, errors="replace") as f:
-            inst.extend(parser.iter_errors(iter(f)))
-        return inst
+            instance.extend(parser.iter_errors(iter(f)))
+        return instance
 
     def to_jsonable(self) -> dict[str, list[dict[str, str | int]]]:
         return {
@@ -90,3 +90,10 @@ class MavenErrorLog:
             ]
             for path, infos in self._by_path.items()
         }
+
+    def to_list(self) -> list[ErrorInfo]:
+        return [
+            info
+            for infos in self._by_path.values()
+            for info in infos.values()
+        ]

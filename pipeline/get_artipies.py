@@ -1,3 +1,5 @@
+# The repository structure of artipes has changed. This script pulls the repos from bump dataset.
+
 import json
 from pathlib import Path
 import subprocess
