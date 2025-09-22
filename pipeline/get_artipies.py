@@ -10,7 +10,7 @@ DATA_ROOT = HOME / "breaking_updates_rl/" / "data"
 COMMAND_TEMPLATE = [
     "apptainer", "exec",
     "--bind",
-    str(DATA_ROOT) + "/output/{breakingCommit}:/out",
+    str(DATA_ROOT) + "/dataset/{breakingCommit}:/out",
     "docker://ghcr.io/chains-project/breaking-updates:{breakingCommit}-breaking",
     "cp",
     "-r",

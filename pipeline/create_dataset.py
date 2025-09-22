@@ -75,16 +75,17 @@ FAILURE_PATTERNS: Iterable[Tuple[re.Pattern, FailureCategory]] = [
 ]
 
 # Dockerfile template for building containers
+    
 DEF_TEMPLATE = """Bootstrap: docker
 From: ghcr.io/chains-project/breaking-updates:base-image
+
+%files
+    {repo_path} /{project}
 
 %post
     apk add fakeroot
     FAKEROOTDONTTRYCHOWN=1 fakeroot sh -c 'apk add openssh'
-    git clone https://github.com/{organisation}/{project}.git
-    cd {project}
-    git fetch --depth 2 origin {commit_hash}
-    git checkout {commit_hash}
+    cd /{project}
 
 %environment
     export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
@@ -148,6 +149,16 @@ class BreakingDataset():
                 failure_category = extractor.get_failure_category()
                 logger.info(f"Failure category for {desc.get('breakingCommit')}: {failure_category}")
                 if failure_category != FailureCategory.COMPILATION_FAILURE:
+                    # move the failures to another folder
+                    failure_folder = self.outroot.parent / "failedGeneration"
+                    commit_dir = self.outroot / desc.get('breakingCommit')
+                    if commit_dir.exists():
+                        cmd = [
+                            "mv",
+                            str(commit_dir),
+                            str(failure_folder),
+                        ]
+                        self.run(cmd)
                     logger.warning(f"Skipping {desc.get('breakingCommit')} due to java version failure")
                     continue
 
@@ -178,6 +189,7 @@ class BreakingDataset():
     def run(self, cmd: list[str], cwd: Path | None=None, capture_output: bool = True) -> str:
         """Run *cmd* (list of strings) and raise if the command fails."""
         # logger.info("$", *cmd)
+        
         cp = subprocess.run(
             cmd,
             cwd=str(cwd) if cwd else None,
@@ -210,15 +222,17 @@ class BreakingDataset():
     def build_container(self, desc: dict[str, Any], commit_dir: Path) -> None:
         
         project = desc.get("project")
-        breakingCommit = desc.get("breakingCommit")
-        organisation = desc.get("projectOrganisation")
 
         def_file = commit_dir / f"{project}.def"
         sif_file = commit_dir / f"{project}.sif"
 
+        # if .sif already exists
+        if sif_file.exist():
+            return None
+        
         # generate .def file for each project
         with open(def_file, "w") as f:
-            f.write(DEF_TEMPLATE.format(project=project, organisation=organisation, commit_hash=breakingCommit))
+            f.write(DEF_TEMPLATE.format(project=project, repo_path= str(commit_dir / project)))
 
         logger.info(f"[INFO] Building container for {project} ...")
 
@@ -431,7 +445,7 @@ class BreakingDataset():
             
         if not relevant_changes:
             raise RuntimeError("No relevant breaking changes found")
-        
+                    
 
     def process_breaking_update(self, desc: dict[str, Any], out_root: Path) -> None:
         # filter compilation failures only
@@ -444,10 +458,10 @@ class BreakingDataset():
         # # self.clone_repo(desc, commit_dir)
         # self.snapshot_repo(desc, commit_dir)
 
-        # # Build container
-        # # self.build_container(desc, commit_dir)
+        # Build container
+        
 
-        # # Download dependency JARs (if any) and identify breaking changes with roseau
+        # Download dependency JARs (if any) and identify breaking changes with roseau
         # breaking_changes = self.download_jars(desc, commit_dir)
         
         
@@ -462,8 +476,18 @@ class BreakingDataset():
         # Identify the error messages from the build log
         try:
             self.generate_contexts(desc, commit_dir)
+            # self.build_container(desc, commit_dir)
         except Exception as exc:
             logger.error(f"Failed to generate contexts for {desc.get('breakingCommit')}: {exc}")
+            # move the failures to another folder
+            failure_folder = commit_dir.parent.parent / "failedGeneration"
+            if commit_dir.exists():
+                cmd = [
+                    "mv",
+                    str(commit_dir),
+                    str(failure_folder),
+                ]
+                self.run(cmd)
             raise exc
         
         

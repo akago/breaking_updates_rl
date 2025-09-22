@@ -4,7 +4,7 @@ from pipeline.types.maven_error import MavenErrorLog, MavenErrorParser
 
 if __name__ == "__main__":
     root_path = Path(__file__).parent.parent
-    log = root_path / "data/output/0e8625f492854a78c0e1ceff67b2abd7e081d42b/jadler/0e8625f492854a78c0e1ceff67b2abd7e081d42b.log"
+    log = root_path / "data/dataset/0e8625f492854a78c0e1ceff67b2abd7e081d42b/jadler/0e8625f492854a78c0e1ceff67b2abd7e081d42b.log"
     
     log_parser = MavenErrorParser()
     error_log = MavenErrorLog.from_file(log, log_parser)
