@@ -23,6 +23,17 @@ class MavenErrorParser:
 
     def iter_errors(self, lines: Iterator[str]) -> Iterator[ErrorInfo]:
         buf: list[str] = []
+        it = iter(lines)
+        
+        def next_line() -> Optional[str]:
+            """Priority: buffer -> iterator"""
+            if buf:
+                return buf.pop()
+            try:
+                return next(it)
+            except StopIteration:
+                return None
+        
         def is_continuation_line(s: str) -> bool:
             # start with space
             if s.startswith(" "):
@@ -32,24 +43,36 @@ class MavenErrorParser:
                 return self.error_re.search(s) is None
             return False
         
-        def flush_indented(it: Iterator[str]) -> str:
+        def flush_continuation() -> str:
             parts: list[str] = []
-            for s in it:
-                if not s.startswith(" "):
-                    buf.append(s)  # backtrack one line
+            while True:
+                s = next_line()
+                if s is None:
                     break
-                parts.append(s.rstrip("\n"))
+                # new error header
+                if self.error_re.search(s):
+                    buf.append(s)
+                    break
+                # additional lines
+                if is_continuation_line(s):
+                    parts.append(s.rstrip("\n"))
+                    continue
+                # unrelated line
+                buf.append(s)
+                break
+
             return "\n".join(parts)
 
-        for line in lines:
-            if buf:
-                line = buf.pop()
+        while True:
+            line = next_line()
+            if line is None:
+                break
             m = self.error_re.search(line)
             if not m:
                 continue
             path = PurePosixPath(m.group("path"))
             ln = int(m.group("line"))
-            add = flush_indented(lines)
+            add = flush_continuation()
             yield ErrorInfo(path=path, line_num=ln, message=line.rstrip("\n"), additional=add)
 
 class MavenErrorLog:
