@@ -1,0 +1,66 @@
+{
+    "absolute_path_to_file_in_container": "/lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java",
+    "errors": [
+        {
+            "line_number": 3,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[3,26] cannot find symbol",
+            "additional_info": "  symbol:   class Strings\n  location: package io.dropwizard.util",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "7dacb869-83ef-5e34-b3ad-dd1345b254a4"
+        },
+        {
+            "line_number": 7,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[7,29] package javax.ws.rs.container does not exist",
+            "additional_info": "",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "f2ab3757-555b-53e9-afe1-65650e3fa48e"
+        },
+        {
+            "line_number": 8,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[8,29] package javax.ws.rs.container does not exist",
+            "additional_info": "",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "f2ab3757-555b-53e9-afe1-65650e3fa48e"
+        },
+        {
+            "line_number": 9,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[9,23] package javax.ws.rs.ext does not exist",
+            "additional_info": "",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "ed4915a6-5553-5de6-9ccc-38b74d98db1f"
+        },
+        {
+            "line_number": 15,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[15,2] cannot find symbol",
+            "additional_info": "  symbol: class Provider",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "68f0a486-0829-576a-a3a2-92fc32b7e778"
+        },
+        {
+            "line_number": 16,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[16,49] cannot find symbol",
+            "additional_info": "  symbol: class ContainerRequestFilter",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "548bbb42-f58e-5494-a609-53623ae5c039"
+        },
+        {
+            "line_number": 18,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[18,24] cannot find symbol",
+            "additional_info": "  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.monitoring.RequestMdcFactoryFilter",
+            "file_name": "RequestMdcFactoryFilter.java",
+            "uid": "4797c755-d5f5-5e94-961c-5fc07a25fc7c"
+        }
+    ],
+    "prompt": "Act as an Automatic Program Repair (APR) tool, reply only with code, without explanation. \nYou are specialized in breaking dependency updates, in which the failure is caused by an external dependency. \nTo solve the failure you can only work on the client code.\n\nAPI upgrade: dropwizard-core 2.1.5->4.0.0\n\nthe following client code fails: \n'''java\npackage com.wire.lithium.server.monitoring;\nimport java.util.UUID;\nimport org.slf4j.MDC;\nimport io.dropwizard.util.Strings;\nimport javax.annotation.Nullable;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class RequestMdcFactoryFilter implements ContainerRequestFilter {\n    @Override\n    public void filter(ContainerRequestContext requestContext) {\n        addIfNotNull(\"forwardedFor\", requestContext.getHeaderString(\"X-Request-Id\"));\n        addIfNotNull(\"appRequest\", UUID.randomUUID().toString());\n        addIfNotNull(\"forwardedFor\", requestContext.getHeaderString(\"X-Forwarded-For\"));\n        addIfNotNull(\"realIp\", requestContext.getHeaderString(\"X-Real-IP\"));\n    }\n\n    private void addIfNotNull(final String key, @Nullable\n    String value) {\n        if (!Strings.isNullOrEmpty(value)) {\n            MDC.put(key, value);\n        }\n    }\n}\n\n'''\nthe error is triggered in the following specific lines in the previous code:\nimport io.dropwizard.util.Strings;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class RequestMdcFactoryFilter implements ContainerRequestFilter {\n    public void filter(ContainerRequestContext requestContext) {\nwith the following error message:\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[3,26] cannot find symbol  symbol:   class Strings\n  location: package io.dropwizard.util\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[7,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[8,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[9,23] package javax.ws.rs.ext does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[15,2] cannot find symbol  symbol: class Provider\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[16,49] cannot find symbol  symbol: class ContainerRequestFilter\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[18,24] cannot find symbol  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.monitoring.RequestMdcFactoryFilter\nThe error is caused by a change in the API of the dependency. The new library version includes the following changes:\nFormat: element | nature | kind\nio.dropwizard.Configuration | DELETION | TYPE_REMOVED\nio.dropwizard.Application | DELETION | TYPE_REMOVED\nio.dropwizard.setup.HealthCheckConfiguration | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Bootstrap | DELETION | TYPE_REMOVED\nio.dropwizard.cli.ConfiguredCommand | DELETION | TYPE_REMOVED\nio.dropwizard.ConfiguredBundle | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Environment | DELETION | TYPE_REMOVED\n\n- Identify the specific API changes that are causing the failure in the client code. \n- Compare the old and new API versions, noting any changes in method signatures, return types, or parameter lists. \n- Determine which parts of the client code need to be updated to accommodate these API changes. \n- Consider any constraints or requirements for the fix (e.g., not changing function signatures, potential import adjustments). \n- Plan the minimal set of changes needed to fix the issue while keeping the code functional and compliant with the new API. \n- Consider potential side effects of the proposed changes on other parts of the code. \n- Ensure that the planned changes will result in a complete and compilable class. \n- If applicable, note any additional imports that may be needed due to the API changes.  \n- Propose a patch that can be applied to the code to fix the issue. \n- Return only a complete and compilable class in a fenced code block. \n- You CANNOT change the function signature of any method but may create variables if it simplifies the code. \n- You CAN remove the @Override annotation IF AND ONLY IF the method no longer overrides a method in the updated dependency version. \n- If fixing the issue requires addressing missing imports, ensure the correct package or class is used in accordance with the newer dependency version. \n- Avoid removing any existing code unless it directly causes a compilation or functionality error. \n- Return only the fixed class, ensuring it fully compiles and adheres to these constraints.",
+    "buggy_lines": "import io.dropwizard.util.Strings;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class RequestMdcFactoryFilter implements ContainerRequestFilter {\n    public void filter(ContainerRequestContext requestContext) {",
+    "error_message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[3,26] cannot find symbol  symbol:   class Strings\n  location: package io.dropwizard.util\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[7,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[8,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[9,23] package javax.ws.rs.ext does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[15,2] cannot find symbol  symbol: class Provider\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[16,49] cannot find symbol  symbol: class ContainerRequestFilter\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java:[18,24] cannot find symbol  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.monitoring.RequestMdcFactoryFilter",
+    "api_diff": "Format: element | nature | kind\nio.dropwizard.Configuration | DELETION | TYPE_REMOVED\nio.dropwizard.Application | DELETION | TYPE_REMOVED\nio.dropwizard.setup.HealthCheckConfiguration | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Bootstrap | DELETION | TYPE_REMOVED\nio.dropwizard.cli.ConfiguredCommand | DELETION | TYPE_REMOVED\nio.dropwizard.ConfiguredBundle | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Environment | DELETION | TYPE_REMOVED",
+    "original_code": "package com.wire.lithium.server.monitoring;\nimport java.util.UUID;\nimport org.slf4j.MDC;\nimport io.dropwizard.util.Strings;\nimport javax.annotation.Nullable;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class RequestMdcFactoryFilter implements ContainerRequestFilter {\n    @Override\n    public void filter(ContainerRequestContext requestContext) {\n        addIfNotNull(\"forwardedFor\", requestContext.getHeaderString(\"X-Request-Id\"));\n        addIfNotNull(\"appRequest\", UUID.randomUUID().toString());\n        addIfNotNull(\"forwardedFor\", requestContext.getHeaderString(\"X-Forwarded-For\"));\n        addIfNotNull(\"realIp\", requestContext.getHeaderString(\"X-Real-IP\"));\n    }\n\n    private void addIfNotNull(final String key, @Nullable\n    String value) {\n        if (!Strings.isNullOrEmpty(value)) {\n            MDC.put(key, value);\n        }\n    }\n}\n",
+    "project": "lithium",
+    "libraryName": "dropwizard-core",
+    "libraryGroupID": "io.dropwizard",
+    "newVersion": "4.0.0",
+    "previousVersion": "2.1.5",
+    "breakingCommit": "686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0",
+    "patch": "```java\npackage com.wire.lithium.server.monitoring;\nimport java.util.UUID;\nimport org.slf4j.MDC;\nimport io.dropwizard.util.Strings;\nimport javax.annotation.Nullable;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.ext.Provider;\n\n@Provider\npublic class RequestMdcFactoryFilter implements ContainerRequestFilter {\n    public void filter(ContainerRequestContext requestContext) {\n        addIfNotNull(\"forwardedFor\", requestContext.getHeaderString(\"X-Request-Id\"));\n        addIfNotNull(\"appRequest\", UUID.randomUUID().toString());\n        addIfNotNull(\"forwardedFor\", requestContext.getHeaderString(\"X-Forwarded-For\"));\n        addIfNotNull(\"realIp\", requestContext.getHeaderString(\"X-Real-IP\"));\n    }\n\n    private void addIfNotNull(final String key, @Nullable\n    String value) {\n        if (Strings.isNotNullOrEmpty(value)) {\n            MDC.put(key, value);\n        }\n    }\n}\n```<end_of_turn>"
+}

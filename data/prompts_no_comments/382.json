@@ -1,0 +1,79 @@
+{
+    "absolute_path_to_file_in_container": "/lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java",
+    "errors": [
+        {
+            "line_number": 7,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[7,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "62f78959-c7c8-506a-8e35-b343f1134a7b"
+        },
+        {
+            "line_number": 8,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[8,29] package javax.ws.rs.container does not exist",
+            "additional_info": "",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "c1afc94b-ff1b-5ff1-a775-4f410d5e33bb"
+        },
+        {
+            "line_number": 9,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[9,29] package javax.ws.rs.container does not exist",
+            "additional_info": "",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "c1afc94b-ff1b-5ff1-a775-4f410d5e33bb"
+        },
+        {
+            "line_number": 10,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[10,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "c002e965-1c73-58fa-b9df-60cc1d2c6ff0"
+        },
+        {
+            "line_number": 11,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[11,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "c002e965-1c73-58fa-b9df-60cc1d2c6ff0"
+        },
+        {
+            "line_number": 12,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[12,23] package javax.ws.rs.ext does not exist",
+            "additional_info": "",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "98c9a5a7-bebb-5281-bbea-18bc25e489f1"
+        },
+        {
+            "line_number": 14,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[14,2] cannot find symbol",
+            "additional_info": "  symbol: class Provider",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "63fa29a3-0758-55cc-93d5-f8c184f86cce"
+        },
+        {
+            "line_number": 15,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[15,46] cannot find symbol",
+            "additional_info": "  symbol: class ContainerRequestFilter",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "9e4acd15-d844-5621-bafa-9bcc3f995b3f"
+        },
+        {
+            "line_number": 17,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[17,24] cannot find symbol",
+            "additional_info": "  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.filters.AuthenticationFilter",
+            "file_name": "AuthenticationFilter.java",
+            "uid": "65ed4364-8319-598e-8112-14a224ac126e"
+        }
+    ],
+    "prompt": "Act as an Automatic Program Repair (APR) tool, reply only with code, without explanation. \nYou are specialized in breaking dependency updates, in which the failure is caused by an external dependency. \nTo solve the failure you can only work on the client code.\n\nAPI upgrade: dropwizard-core 2.1.5->4.0.0\n\nthe following client code fails: \n'''java\npackage com.wire.lithium.server.filters;\nimport Response.Status;\nimport com.wire.xenon.Const;\nimport com.wire.xenon.tools.Logger;\nimport com.wire.xenon.tools.Util;\nimport javax.ws.rs.WebApplicationException;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.core.HttpHeaders;\nimport javax.ws.rs.core.Response;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class AuthenticationFilter implements ContainerRequestFilter {\n    @Override\n    public void filter(ContainerRequestContext requestContext) {\n        String auth = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);\n        if (auth == null) {\n            Exception cause = new IllegalArgumentException(\"Missing Authorization\");\n            throw new WebApplicationException(cause, Status.UNAUTHORIZED);\n        }\n        String serviceToken = System.getProperty(Const.WIRE_BOTS_SDK_TOKEN, System.getenv(\"SERVICE_TOKEN\"));\n        if (!Util.compareAuthorizations(auth, serviceToken)) {\n            Logger.warning(\"Wrong service token\");\n            Exception cause = new IllegalArgumentException(\"Wrong service token\");\n            throw new WebApplicationException(cause, Status.UNAUTHORIZED);\n        }\n        requestContext.setProperty(\"wire-auth\", Util.extractToken(auth));\n    }\n}\n\n'''\nthe error is triggered in the following specific lines in the previous code:\nimport javax.ws.rs.WebApplicationException;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.core.HttpHeaders;\nimport javax.ws.rs.core.Response;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class AuthenticationFilter implements ContainerRequestFilter {\n    public void filter(ContainerRequestContext requestContext) {\nwith the following error message:\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[7,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[8,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[9,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[10,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[11,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[12,23] package javax.ws.rs.ext does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[14,2] cannot find symbol  symbol: class Provider\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[15,46] cannot find symbol  symbol: class ContainerRequestFilter\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[17,24] cannot find symbol  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.filters.AuthenticationFilter\nThe error is caused by a change in the API of the dependency. The new library version includes the following changes:\nFormat: element | nature | kind\nio.dropwizard.Configuration | DELETION | TYPE_REMOVED\nio.dropwizard.Application | DELETION | TYPE_REMOVED\nio.dropwizard.setup.HealthCheckConfiguration | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Bootstrap | DELETION | TYPE_REMOVED\nio.dropwizard.cli.ConfiguredCommand | DELETION | TYPE_REMOVED\nio.dropwizard.ConfiguredBundle | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Environment | DELETION | TYPE_REMOVED\n\n- Identify the specific API changes that are causing the failure in the client code. \n- Compare the old and new API versions, noting any changes in method signatures, return types, or parameter lists. \n- Determine which parts of the client code need to be updated to accommodate these API changes. \n- Consider any constraints or requirements for the fix (e.g., not changing function signatures, potential import adjustments). \n- Plan the minimal set of changes needed to fix the issue while keeping the code functional and compliant with the new API. \n- Consider potential side effects of the proposed changes on other parts of the code. \n- Ensure that the planned changes will result in a complete and compilable class. \n- If applicable, note any additional imports that may be needed due to the API changes.  \n- Propose a patch that can be applied to the code to fix the issue. \n- Return only a complete and compilable class in a fenced code block. \n- You CANNOT change the function signature of any method but may create variables if it simplifies the code. \n- You CAN remove the @Override annotation IF AND ONLY IF the method no longer overrides a method in the updated dependency version. \n- If fixing the issue requires addressing missing imports, ensure the correct package or class is used in accordance with the newer dependency version. \n- Avoid removing any existing code unless it directly causes a compilation or functionality error. \n- Return only the fixed class, ensuring it fully compiles and adheres to these constraints.",
+    "buggy_lines": "import javax.ws.rs.WebApplicationException;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.core.HttpHeaders;\nimport javax.ws.rs.core.Response;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class AuthenticationFilter implements ContainerRequestFilter {\n    public void filter(ContainerRequestContext requestContext) {",
+    "error_message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[7,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[8,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[9,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[10,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[11,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[12,23] package javax.ws.rs.ext does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[14,2] cannot find symbol  symbol: class Provider\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[15,46] cannot find symbol  symbol: class ContainerRequestFilter\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java:[17,24] cannot find symbol  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.filters.AuthenticationFilter",
+    "api_diff": "Format: element | nature | kind\nio.dropwizard.Configuration | DELETION | TYPE_REMOVED\nio.dropwizard.Application | DELETION | TYPE_REMOVED\nio.dropwizard.setup.HealthCheckConfiguration | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Bootstrap | DELETION | TYPE_REMOVED\nio.dropwizard.cli.ConfiguredCommand | DELETION | TYPE_REMOVED\nio.dropwizard.ConfiguredBundle | DELETION | TYPE_REMOVED\nio.dropwizard.setup.Environment | DELETION | TYPE_REMOVED",
+    "original_code": "package com.wire.lithium.server.filters;\nimport Response.Status;\nimport com.wire.xenon.Const;\nimport com.wire.xenon.tools.Logger;\nimport com.wire.xenon.tools.Util;\nimport javax.ws.rs.WebApplicationException;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.container.ContainerRequestFilter;\nimport javax.ws.rs.core.HttpHeaders;\nimport javax.ws.rs.core.Response;\nimport javax.ws.rs.ext.Provider;\n@Provider\npublic class AuthenticationFilter implements ContainerRequestFilter {\n    @Override\n    public void filter(ContainerRequestContext requestContext) {\n        String auth = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);\n        if (auth == null) {\n            Exception cause = new IllegalArgumentException(\"Missing Authorization\");\n            throw new WebApplicationException(cause, Status.UNAUTHORIZED);\n        }\n        String serviceToken = System.getProperty(Const.WIRE_BOTS_SDK_TOKEN, System.getenv(\"SERVICE_TOKEN\"));\n        if (!Util.compareAuthorizations(auth, serviceToken)) {\n            Logger.warning(\"Wrong service token\");\n            Exception cause = new IllegalArgumentException(\"Wrong service token\");\n            throw new WebApplicationException(cause, Status.UNAUTHORIZED);\n        }\n        requestContext.setProperty(\"wire-auth\", Util.extractToken(auth));\n    }\n}\n",
+    "project": "lithium",
+    "libraryName": "dropwizard-core",
+    "libraryGroupID": "io.dropwizard",
+    "newVersion": "4.0.0",
+    "previousVersion": "2.1.5",
+    "breakingCommit": "686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0"
+}

@@ -7,6 +7,7 @@ from pathlib import Path
 LOGGING_FORMAT = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 DEBUG_LEVEL = logging.INFO
 
+
 # Prompt template
 with open("pipeline/prompts/bacardi_prompt.txt", "r") as f:
    PROMPT_TEMPLATE = f.read()

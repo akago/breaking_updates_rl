@@ -1,0 +1,86 @@
+{
+    "absolute_path_to_file_in_container": "/jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java",
+    "errors": [
+        {
+            "line_number": 8,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[8,23] package javax.mvc.event does not exist",
+            "additional_info": "",
+            "file_name": "MvcEventListener.java",
+            "uid": "ffe721bc-9be9-5c95-b0a5-288f46c6bc0c"
+        },
+        {
+            "line_number": 9,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[9,23] package javax.mvc.event does not exist",
+            "additional_info": "",
+            "file_name": "MvcEventListener.java",
+            "uid": "ffe721bc-9be9-5c95-b0a5-288f46c6bc0c"
+        },
+        {
+            "line_number": 10,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[10,23] package javax.mvc.event does not exist",
+            "additional_info": "",
+            "file_name": "MvcEventListener.java",
+            "uid": "ffe721bc-9be9-5c95-b0a5-288f46c6bc0c"
+        },
+        {
+            "line_number": 11,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[11,23] package javax.mvc.event does not exist",
+            "additional_info": "",
+            "file_name": "MvcEventListener.java",
+            "uid": "ffe721bc-9be9-5c95-b0a5-288f46c6bc0c"
+        },
+        {
+            "line_number": 12,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[12,23] package javax.mvc.event does not exist",
+            "additional_info": "",
+            "file_name": "MvcEventListener.java",
+            "uid": "ffe721bc-9be9-5c95-b0a5-288f46c6bc0c"
+        },
+        {
+            "line_number": 20,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[20,48] cannot find symbol",
+            "additional_info": "  symbol:   class BeforeControllerEvent\n  location: class com.example.MvcEventListener",
+            "file_name": "MvcEventListener.java",
+            "uid": "33c070c5-8c62-568b-a2f7-86a70930f0d5"
+        },
+        {
+            "line_number": 24,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[24,49] cannot find symbol",
+            "additional_info": "  symbol:   class BeforeProcessViewEvent\n  location: class com.example.MvcEventListener",
+            "file_name": "MvcEventListener.java",
+            "uid": "ef79f2f9-e233-5802-a046-aeb300563a10"
+        },
+        {
+            "line_number": 28,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[28,51] cannot find symbol",
+            "additional_info": "  symbol:   class AfterControllerEvent\n  location: class com.example.MvcEventListener",
+            "file_name": "MvcEventListener.java",
+            "uid": "247a3eba-0b04-571a-ad92-7b8c22fdc2e8"
+        },
+        {
+            "line_number": 32,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[32,52] cannot find symbol",
+            "additional_info": "  symbol:   class AfterProcessViewEvent\n  location: class com.example.MvcEventListener",
+            "file_name": "MvcEventListener.java",
+            "uid": "d453aca0-6226-5e64-ac72-661d3389da5c"
+        },
+        {
+            "line_number": 36,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[36,55] cannot find symbol",
+            "additional_info": "  symbol:   class ControllerRedirectEvent\n  location: class com.example.MvcEventListener",
+            "file_name": "MvcEventListener.java",
+            "uid": "f23087c7-2f56-566f-bee4-fe8b512664ee"
+        }
+    ],
+    "prompt": "Act as an Automatic Program Repair (APR) tool, reply only with code, without explanation. \nYou are specialized in breaking dependency updates, in which the failure is caused by an external dependency. \nTo solve the failure you can only work on the client code.\n\nAPI upgrade: jakarta.mvc-api 1.1.0->2.0.1\n\nthe following client code fails: \n'''java\npackage com.example;\nimport java.util.logging.Logger;\nimport javax.inject.Inject;\nimport javax.annotation.PostConstruct;\nimport javax.enterprise.context.ApplicationScoped;\nimport javax.enterprise.event.Observes;\nimport javax.mvc.event.AfterControllerEvent;\nimport javax.mvc.event.AfterProcessViewEvent;\nimport javax.mvc.event.BeforeControllerEvent;\nimport javax.mvc.event.BeforeProcessViewEvent;\nimport javax.mvc.event.ControllerRedirectEvent;\n@ApplicationScoped\npublic class MvcEventListener {\n    @Inject\n    Logger LOGGER;\n\n    private void onControllerMatched(@Observes\n    BeforeControllerEvent event) {\n        LOGGER.info(() -> \"Controller matched for \" + event.getUriInfo().getRequestUri());\n    }\n\n    private void onViewEngineSelected(@Observes\n    BeforeProcessViewEvent event) {\n        LOGGER.info(() -> \"View engine: \" + event.getEngine());\n    }\n\n    private void onAfterControllerEvent(@Observes\n    AfterControllerEvent event) {\n        LOGGER.info(() -> \"AfterControllerEvent:: \" + event.getResourceInfo());\n    }\n\n    private void onAfterProcessViewEvent(@Observes\n    AfterProcessViewEvent event) {\n        LOGGER.info(() -> \"AfterProcessViewEvent:: \" + event);\n    }\n\n    private void onControllerRedirectEvent(@Observes\n    ControllerRedirectEvent event) {\n        LOGGER.info(() -> \"ControllerRedirectEvent:: \" + event);\n    }\n\n    @PostConstruct\n    private void init() {\n        LOGGER.config(() -> this.getClass().getSimpleName() + \" created\");\n    }\n}\n\n'''\nthe error is triggered in the following specific lines in the previous code:\nimport javax.mvc.event.AfterControllerEvent;\nimport javax.mvc.event.AfterProcessViewEvent;\nimport javax.mvc.event.BeforeControllerEvent;\nimport javax.mvc.event.BeforeProcessViewEvent;\nimport javax.mvc.event.ControllerRedirectEvent;\n    private void onControllerMatched(@Observes BeforeControllerEvent event) {\n    private void onViewEngineSelected(@Observes BeforeProcessViewEvent event) {\n    private void onAfterControllerEvent(@Observes AfterControllerEvent event) {\n    private void onAfterProcessViewEvent(@Observes AfterProcessViewEvent event) {\n     private void onControllerRedirectEvent(@Observes ControllerRedirectEvent event) {\nwith the following error message:\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[8,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[9,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[10,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[11,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[12,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[20,48] cannot find symbol  symbol:   class BeforeControllerEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[24,49] cannot find symbol  symbol:   class BeforeProcessViewEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[28,51] cannot find symbol  symbol:   class AfterControllerEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[32,52] cannot find symbol  symbol:   class AfterProcessViewEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[36,55] cannot find symbol  symbol:   class ControllerRedirectEvent\n  location: class com.example.MvcEventListener\nThe error is caused by a change in the API of the dependency. The new library version includes the following changes:\nFormat: element | nature | kind\njavax.mvc.locale.LocaleResolver | DELETION | TYPE_REMOVED\njavax.mvc.event.BeforeProcessViewEvent | DELETION | TYPE_REMOVED\njavax.mvc.binding.BindingResult | DELETION | TYPE_REMOVED\njavax.mvc.MvcContext | DELETION | TYPE_REMOVED\njavax.mvc.Controller | DELETION | TYPE_REMOVED\njavax.mvc.Models | DELETION | TYPE_REMOVED\njavax.mvc.security.CsrfProtected | DELETION | TYPE_REMOVED\njavax.mvc.binding.ParamError | DELETION | TYPE_REMOVED\njavax.mvc.event.BeforeControllerEvent | DELETION | TYPE_REMOVED\njavax.mvc.locale.LocaleResolverContext | DELETION | TYPE_REMOVED\njavax.mvc.UriRef | DELETION | TYPE_REMOVED\njavax.mvc.RedirectScoped | DELETION | TYPE_REMOVED\njavax.mvc.event.AfterControllerEvent | DELETION | TYPE_REMOVED\njavax.mvc.event.AfterProcessViewEvent | DELETION | TYPE_REMOVED\njavax.mvc.View | DELETION | TYPE_REMOVED\njavax.mvc.binding.MvcBinding | DELETION | TYPE_REMOVED\njavax.mvc.event.ControllerRedirectEvent | DELETION | TYPE_REMOVED\n\n- Identify the specific API changes that are causing the failure in the client code. \n- Compare the old and new API versions, noting any changes in method signatures, return types, or parameter lists. \n- Determine which parts of the client code need to be updated to accommodate these API changes. \n- Consider any constraints or requirements for the fix (e.g., not changing function signatures, potential import adjustments). \n- Plan the minimal set of changes needed to fix the issue while keeping the code functional and compliant with the new API. \n- Consider potential side effects of the proposed changes on other parts of the code. \n- Ensure that the planned changes will result in a complete and compilable class. \n- If applicable, note any additional imports that may be needed due to the API changes.  \n- Propose a patch that can be applied to the code to fix the issue. \n- Return only a complete and compilable class in a fenced code block. \n- You CANNOT change the function signature of any method but may create variables if it simplifies the code. \n- You CAN remove the @Override annotation IF AND ONLY IF the method no longer overrides a method in the updated dependency version. \n- If fixing the issue requires addressing missing imports, ensure the correct package or class is used in accordance with the newer dependency version. \n- Avoid removing any existing code unless it directly causes a compilation or functionality error. \n- Return only the fixed class, ensuring it fully compiles and adheres to these constraints.",
+    "buggy_lines": "import javax.mvc.event.AfterControllerEvent;\nimport javax.mvc.event.AfterProcessViewEvent;\nimport javax.mvc.event.BeforeControllerEvent;\nimport javax.mvc.event.BeforeProcessViewEvent;\nimport javax.mvc.event.ControllerRedirectEvent;\n    private void onControllerMatched(@Observes BeforeControllerEvent event) {\n    private void onViewEngineSelected(@Observes BeforeProcessViewEvent event) {\n    private void onAfterControllerEvent(@Observes AfterControllerEvent event) {\n    private void onAfterProcessViewEvent(@Observes AfterProcessViewEvent event) {\n     private void onControllerRedirectEvent(@Observes ControllerRedirectEvent event) {",
+    "error_message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[8,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[9,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[10,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[11,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[12,23] package javax.mvc.event does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[20,48] cannot find symbol  symbol:   class BeforeControllerEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[24,49] cannot find symbol  symbol:   class BeforeProcessViewEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[28,51] cannot find symbol  symbol:   class AfterControllerEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[32,52] cannot find symbol  symbol:   class AfterProcessViewEvent\n  location: class com.example.MvcEventListener\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java:[36,55] cannot find symbol  symbol:   class ControllerRedirectEvent\n  location: class com.example.MvcEventListener",
+    "api_diff": "Format: element | nature | kind\njavax.mvc.locale.LocaleResolver | DELETION | TYPE_REMOVED\njavax.mvc.event.BeforeProcessViewEvent | DELETION | TYPE_REMOVED\njavax.mvc.binding.BindingResult | DELETION | TYPE_REMOVED\njavax.mvc.MvcContext | DELETION | TYPE_REMOVED\njavax.mvc.Controller | DELETION | TYPE_REMOVED\njavax.mvc.Models | DELETION | TYPE_REMOVED\njavax.mvc.security.CsrfProtected | DELETION | TYPE_REMOVED\njavax.mvc.binding.ParamError | DELETION | TYPE_REMOVED\njavax.mvc.event.BeforeControllerEvent | DELETION | TYPE_REMOVED\njavax.mvc.locale.LocaleResolverContext | DELETION | TYPE_REMOVED\njavax.mvc.UriRef | DELETION | TYPE_REMOVED\njavax.mvc.RedirectScoped | DELETION | TYPE_REMOVED\njavax.mvc.event.AfterControllerEvent | DELETION | TYPE_REMOVED\njavax.mvc.event.AfterProcessViewEvent | DELETION | TYPE_REMOVED\njavax.mvc.View | DELETION | TYPE_REMOVED\njavax.mvc.binding.MvcBinding | DELETION | TYPE_REMOVED\njavax.mvc.event.ControllerRedirectEvent | DELETION | TYPE_REMOVED",
+    "original_code": "package com.example;\nimport java.util.logging.Logger;\nimport javax.inject.Inject;\nimport javax.annotation.PostConstruct;\nimport javax.enterprise.context.ApplicationScoped;\nimport javax.enterprise.event.Observes;\nimport javax.mvc.event.AfterControllerEvent;\nimport javax.mvc.event.AfterProcessViewEvent;\nimport javax.mvc.event.BeforeControllerEvent;\nimport javax.mvc.event.BeforeProcessViewEvent;\nimport javax.mvc.event.ControllerRedirectEvent;\n@ApplicationScoped\npublic class MvcEventListener {\n    @Inject\n    Logger LOGGER;\n\n    private void onControllerMatched(@Observes\n    BeforeControllerEvent event) {\n        LOGGER.info(() -> \"Controller matched for \" + event.getUriInfo().getRequestUri());\n    }\n\n    private void onViewEngineSelected(@Observes\n    BeforeProcessViewEvent event) {\n        LOGGER.info(() -> \"View engine: \" + event.getEngine());\n    }\n\n    private void onAfterControllerEvent(@Observes\n    AfterControllerEvent event) {\n        LOGGER.info(() -> \"AfterControllerEvent:: \" + event.getResourceInfo());\n    }\n\n    private void onAfterProcessViewEvent(@Observes\n    AfterProcessViewEvent event) {\n        LOGGER.info(() -> \"AfterProcessViewEvent:: \" + event);\n    }\n\n    private void onControllerRedirectEvent(@Observes\n    ControllerRedirectEvent event) {\n        LOGGER.info(() -> \"ControllerRedirectEvent:: \" + event);\n    }\n\n    @PostConstruct\n    private void init() {\n        LOGGER.config(() -> this.getClass().getSimpleName() + \" created\");\n    }\n}\n",
+    "project": "jakartaee-mvc-sample",
+    "libraryName": "jakarta.mvc-api",
+    "libraryGroupID": "jakarta.mvc",
+    "newVersion": "2.0.1",
+    "previousVersion": "1.1.0",
+    "breakingCommit": "500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6"
+}

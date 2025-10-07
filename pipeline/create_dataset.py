@@ -95,6 +95,27 @@ From: ghcr.io/chains-project/breaking-updates:base-image
 %runscript
     exec /bin/bash
     """
+    
+
+DEF_TEMPLATE_DOWNLOAD = """Bootstrap: docker
+From: ghcr.io/chains-project/breaking-updates:base-image
+
+%post
+    apk add fakeroot
+    FAKEROOTDONTTRYCHOWN=1 fakeroot sh -c 'apk add openssh'
+    git clone https://github.com/{organisation}/{project}.git
+    cd /{project}
+    git fetch --depth 1 origin {commit_hash}
+    git checkout {commit_hash}
+
+%environment
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+    export MAVEN_HOME=/usr/share/maven
+    export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
+
+%runscript
+    exec /bin/bash
+    """
 #=====================================CONSTATNTS=========================================#    
 
 
@@ -165,7 +186,6 @@ class BreakingDataset():
                 # Process each breaking update entry
                 try:                
                     self.process_breaking_update(desc, self.outroot)
-                    success.append(filename)
                 except RuntimeError as re:
                     if "No relevant breaking changes found" in str(re):
                         bc_failure.append(filename)
@@ -176,7 +196,9 @@ class BreakingDataset():
                 except Exception as exc:
                     logger.error(f"Failed to handle {json_file}: {exc}")
                     failure.append(filename)
-
+                
+                success.append(filename)
+                
         json.dump({"success_count":len(success),"failure_count":len(failure), 
                    "bc_failure_count":len(bc_failure), "fqcn_failure_count":len(fqcn_failure),
                    "failure": failure, "bc_failure": bc_failure, 
@@ -219,15 +241,46 @@ class BreakingDataset():
         except Exception as exc:  # noqa: BLE001  (broad exception is fine for top‑level tooling)
             logger.error(f"[error] Failed to download {url}: {exc}")
 
-    def build_container(self, desc: dict[str, Any], commit_dir: Path) -> None:
+    
+    
+    
+    def build_container_download(self, desc: dict[str, Any], commit_dir: Path) -> None:
         
         project = desc.get("project")
-
+        organisation = desc.get("projectOrganisation")
+        commit_hash = desc.get("breakingCommit")
+        
         def_file = commit_dir / f"{project}.def"
         sif_file = commit_dir / f"{project}.sif"
 
         # if .sif already exists
-        if sif_file.exist():
+        if sif_file.exists():
+            return None
+        # generate .def file for each project
+        with open(def_file, "w") as f:
+            f.write(DEF_TEMPLATE_DOWNLOAD.format(project=project, organisation=organisation, commit_hash=commit_hash))
+
+        logger.info(f"[INFO] Building container for {project} ...")
+
+        # call apptainer build
+        self.run([
+            "apptainer", "build",
+            "--fakeroot", "--ignore-fakeroot-command",
+            str(sif_file),
+            str(def_file)
+        ])
+
+        logger.info(f"[DONE] Container built: {sif_file}")
+        
+    def build_container(self, desc: dict[str, Any], commit_dir: Path) -> None:
+        
+        project = desc.get("project")
+        
+        def_file = commit_dir / f"{project}.def"
+        sif_file = commit_dir / f"{project}.sif"
+
+        # if .sif already exists
+        if sif_file.exists():
             return None
         
         # generate .def file for each project
@@ -392,6 +445,8 @@ class BreakingDataset():
         ]
 
     def generate_contexts(self, desc: dict[str, Any], commit_dir: Path) -> None:
+        context_path = commit_dir / "context.json" 
+      
         context_json = {}
         # project info
         context_json["project"] = desc.get("project")
@@ -403,8 +458,11 @@ class BreakingDataset():
         context_json["newVersion"] = desc.get("updatedDependency").get("newVersion")
 
         # generate the context for each buggy file in project
-        with open(str(commit_dir / "api_diff.json")) as f:
-            breaking_changes = json.load(f)
+        try:
+            with open(str(commit_dir / "api_diff.json")) as f:
+                breaking_changes = json.load(f)
+        except Exception as e:
+            raise e
             
         # Extract relevant FQCNs from the client code        
         client = commit_dir
@@ -426,7 +484,8 @@ class BreakingDataset():
         # filter only the breaking changes that are potentially relevant to the compilation errors
         relevant_changes = self.filter_breaking_changes(breaking_changes, FQCNs)
         logger.info("Relevant BCs: %s", relevant_changes)
-        
+        if not relevant_changes:
+            raise RuntimeError("No relevant breaking changes found")
         context_json["breakingChanges"] = relevant_changes
         context_json["FQCNs"] = FQCNs
         
@@ -442,17 +501,13 @@ class BreakingDataset():
         
         with open(commit_dir / "context.json", "w") as f:
             json.dump(context_json, f, indent=4)
-            
-        if not relevant_changes:
-            raise RuntimeError("No relevant breaking changes found")
-                    
 
     def process_breaking_update(self, desc: dict[str, Any], out_root: Path) -> None:
         # filter compilation failures only
         if desc.get("failureCategory") != "COMPILATION_FAILURE":
             return None
         commit_dir = self.outroot / Path(str(desc.get("breakingCommit")))
-        commit_dir.mkdir(parents=True, exist_ok=True)
+        # commit_dir.mkdir(parents=True, exist_ok=True)
         
         # # Pull the repo snapshot at the breaking commit
         # # self.clone_repo(desc, commit_dir)
@@ -460,7 +515,6 @@ class BreakingDataset():
 
         # Build container
         
-
         # Download dependency JARs (if any) and identify breaking changes with roseau
         # breaking_changes = self.download_jars(desc, commit_dir)
         
@@ -474,21 +528,22 @@ class BreakingDataset():
         #     logger.warning(f"Build log {build_log_path} does not exist; skipping copy")
 
         # Identify the error messages from the build log
-        try:
-            self.generate_contexts(desc, commit_dir)
-            # self.build_container(desc, commit_dir)
-        except Exception as exc:
-            logger.error(f"Failed to generate contexts for {desc.get('breakingCommit')}: {exc}")
-            # move the failures to another folder
-            failure_folder = commit_dir.parent.parent / "failedGeneration"
-            if commit_dir.exists():
-                cmd = [
-                    "mv",
-                    str(commit_dir),
-                    str(failure_folder),
-                ]
-                self.run(cmd)
-            raise exc
+        # try:
+        #     self.generate_contexts(desc, commit_dir)
+        #     # self.build_container_download(desc, commit_dir)
+            
+        # except Exception as exc:
+        #     logger.error(f"Failed to generate contexts for {desc.get('breakingCommit')}: {exc}")
+        #     # move the failures to another folder
+        #     failure_folder = commit_dir.parent.parent / "failedGeneration"
+        #     if commit_dir.exists():
+        #         cmd = [
+        #             "mv",
+        #             str(commit_dir),
+        #             str(failure_folder),
+        #         ]
+        #         self.run(cmd)
+        #     raise exc
         
         
 

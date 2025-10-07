@@ -1,0 +1,31 @@
+{
+    "absolute_path_to_file_in_container": "/cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java",
+    "errors": [
+        {
+            "line_number": 5,
+            "message": "[ERROR] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java:[5,25] package javax.interceptor does not exist",
+            "additional_info": "",
+            "file_name": "Replaceable.java",
+            "uid": "caaca5cb-3bec-5ff4-ba11-63681844bc31"
+        },
+        {
+            "line_number": 13,
+            "message": "[ERROR] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java:[13,2] cannot find symbol",
+            "additional_info": "  symbol: class InterceptorBinding",
+            "file_name": "Replaceable.java",
+            "uid": "41ebb98a-97b9-5583-962d-8b3cf78b307c"
+        }
+    ],
+    "prompt": "Act as an Automatic Program Repair (APR) tool, reply only with code, without explanation. \nYou are specialized in breaking dependency updates, in which the failure is caused by an external dependency. \nTo solve the failure you can only work on the client code.\n\nAPI upgrade: jakarta.interceptor-api 1.2.5->2.0.0\n\nthe following client code fails: \n'''java\npackage de.hilling.junit.cdi.scope;\nimport Value.Immutable;\nimport java.lang.annotation.*;\nimport javax.interceptor.InterceptorBinding;\nimport org.immutables.value.Value;\n@Inherited\n@InterceptorBinding\n@Target({ ElementType.METHOD, ElementType.TYPE })\n@Retention(RetentionPolicy.RUNTIME)\n@Value.Immutable\npublic @interface Replaceable {}\n\n'''\nthe error is triggered in the following specific lines in the previous code:\nimport javax.interceptor.InterceptorBinding;\n@InterceptorBinding\nwith the following error message:\n[ERROR] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java:[5,25] package javax.interceptor does not exist\n[ERROR] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java:[13,2] cannot find symbol  symbol: class InterceptorBinding\nThe error is caused by a change in the API of the dependency. The new library version includes the following changes:\nFormat: element | nature | kind\njavax.interceptor.AroundInvoke | DELETION | TYPE_REMOVED\njavax.interceptor.Interceptors | DELETION | TYPE_REMOVED\njavax.interceptor.InterceptorBinding | DELETION | TYPE_REMOVED\njavax.interceptor.Interceptor$Priority | DELETION | TYPE_REMOVED\njavax.interceptor.InvocationContext | DELETION | TYPE_REMOVED\njavax.interceptor.Interceptor | DELETION | TYPE_REMOVED\n\n- Identify the specific API changes that are causing the failure in the client code. \n- Compare the old and new API versions, noting any changes in method signatures, return types, or parameter lists. \n- Determine which parts of the client code need to be updated to accommodate these API changes. \n- Consider any constraints or requirements for the fix (e.g., not changing function signatures, potential import adjustments). \n- Plan the minimal set of changes needed to fix the issue while keeping the code functional and compliant with the new API. \n- Consider potential side effects of the proposed changes on other parts of the code. \n- Ensure that the planned changes will result in a complete and compilable class. \n- If applicable, note any additional imports that may be needed due to the API changes.  \n- Propose a patch that can be applied to the code to fix the issue. \n- Return only a complete and compilable class in a fenced code block. \n- You CANNOT change the function signature of any method but may create variables if it simplifies the code. \n- You CAN remove the @Override annotation IF AND ONLY IF the method no longer overrides a method in the updated dependency version. \n- If fixing the issue requires addressing missing imports, ensure the correct package or class is used in accordance with the newer dependency version. \n- Avoid removing any existing code unless it directly causes a compilation or functionality error. \n- Return only the fixed class, ensuring it fully compiles and adheres to these constraints.",
+    "buggy_lines": "import javax.interceptor.InterceptorBinding;\n@InterceptorBinding",
+    "error_message": "[ERROR] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java:[5,25] package javax.interceptor does not exist\n[ERROR] /cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java:[13,2] cannot find symbol  symbol: class InterceptorBinding",
+    "api_diff": "Format: element | nature | kind\njavax.interceptor.AroundInvoke | DELETION | TYPE_REMOVED\njavax.interceptor.Interceptors | DELETION | TYPE_REMOVED\njavax.interceptor.InterceptorBinding | DELETION | TYPE_REMOVED\njavax.interceptor.Interceptor$Priority | DELETION | TYPE_REMOVED\njavax.interceptor.InvocationContext | DELETION | TYPE_REMOVED\njavax.interceptor.Interceptor | DELETION | TYPE_REMOVED",
+    "original_code": "package de.hilling.junit.cdi.scope;\nimport Value.Immutable;\nimport java.lang.annotation.*;\nimport javax.interceptor.InterceptorBinding;\nimport org.immutables.value.Value;\n@Inherited\n@InterceptorBinding\n@Target({ ElementType.METHOD, ElementType.TYPE })\n@Retention(RetentionPolicy.RUNTIME)\n@Value.Immutable\npublic @interface Replaceable {}\n",
+    "project": "cdi-test",
+    "libraryName": "jakarta.interceptor-api",
+    "libraryGroupID": "jakarta.interceptor",
+    "newVersion": "2.0.0",
+    "previousVersion": "1.2.5",
+    "breakingCommit": "3f30dfff617fd652412260ecf648a25769a27101",
+    "patch": "```java\npackage de.hilling.junit.cdi.scope;\n\nimport Value.Immutable;\nimport java.lang.annotation.*;\nimport javax.ejb.Priority;\nimport javax.ejb.TransactionName;\nimport org.immutables.value.Value;\n@Inherited\n@InterceptorBinding\n@Target({ ElementType.METHOD, ElementType.TYPE })\n@Retention(RetentionPolicy.RUNTIME)\n@Value.Immutable\npublic @interface Replaceable {}\n```<end_of_turn>"
+}
