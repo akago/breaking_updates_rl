@@ -11,28 +11,35 @@ import re
 
 from pipeline.constants.constants import LOGGING_FORMAT, DEBUG_LEVEL
 from pipeline.constants.constants import PROMPT_TEMPLATE
-
+from pipeline.types.utils import get_error_uid
 
 logging.basicConfig(level=DEBUG_LEVEL, format=LOGGING_FORMAT)
 
 
 def build_prompts(input_dir: Path) -> None:
     # Build prompt with file
-    prompt_dir = input_dir.parent / "prompts_no_comments"
+    prompt_dir = input_dir.parent / "prompts"
     sample_counter = 0
     
-    def aggregate_breaking_changes(bcs:list[dict], delimiter=" | ") -> str:
-        if not bcs:
+    def aggregate_breaking_changes(bcs:list[dict], api_additions:list[str], delimiter=" | ") -> str:
+        if not bcs and not api_additions:
             return ""
         
-        keys_join = delimiter.join(["element", "nature", "kind"])
-        header = f"Format: {keys_join}"
-        lines = [header]
+        # keys_join = delimiter.join(["element", "nature", "kind"])
+        # header = f"Format: {keys_join}"
+        # lines = [header]
+        lines = []
         
         for bc in bcs:
-            vals = [bc.get(k, "") for k in ["element", "nature", "kind"]]
-            line = delimiter.join(vals)
+            if bc["nature"] == "DELETION":
+                line = f"-- {bc["element"]}"
+            elif bc["nature"] == "ADDITION":
+                line = f"{bc["kind"]} <- {bc["element"]}"
+            else:
+                line = f"{bc["kind"]} <- {bc["element"]}"
             lines.append(line)
+            
+        lines.extend(api_additions)
         return "\n".join(lines)
     
     def aggregate_error(errors:list[dict]) -> str:
@@ -70,39 +77,15 @@ def build_prompts(input_dir: Path) -> None:
         if result.returncode != 0:
             raise RuntimeError(f"Error running jar:\n{result.stderr}")
         return result.stdout
-
-
-    def get_error_uid(message: str, additional_info: str = "") -> str:
-        """
-        generate unique id for a maven error
-        ignore line/column information [line,col]
-        """
-        # namespace
-        PROJECT_NS = uuid.uuid5(uuid.NAMESPACE_DNS, "maven_error_name_space")
-        
-        # remove white spaces
-        def norm_space(s: str = "") -> str:
-            _WS = re.compile(r"\s+")
-            return _WS.sub(" ", s.strip())
-
-        # line and column number may change after applying the patch
-        def strip_maven_positions(s: str) -> str:
-            _POS_MAVEN = re.compile(r":\[\s*\d+\s*(?:,\s*\d+)?\s*\]")
-            return _POS_MAVEN.sub("", s)
-        
-        message_clean = norm_space(strip_maven_positions(message))
-        info_clean = norm_space(additional_info)
-        
-        name = "".join((message_clean, info_clean))
-        return str(uuid.uuid5(PROJECT_NS, name))
     
     
-    for context in input_dir.glob("*/context.json"):
+    for context in input_dir.glob("*/new_context.json"):
         
         context_dict = json.loads(context.read_text())
         
         project = context_dict.get("project", "")
         breaking_changes = context_dict.get("breakingChanges", "")
+        api_additions = context_dict.get("apiAdditions", "")
         library_name = context_dict.get("libraryName", "")
         library_group_id = context_dict.get("libraryGroupID", "")
         new_version = context_dict.get("newVersion", "")
@@ -113,7 +96,7 @@ def build_prompts(input_dir: Path) -> None:
             prompt = {}
             sample_counter += 1
             # aggregate information
-            breaking_changes_str = aggregate_breaking_changes(breaking_changes)
+            breaking_changes_str = aggregate_breaking_changes(breaking_changes, api_additions)
             error_messages_str = aggregate_error(errors)
             
             # absolute path to the buggy file in the container
@@ -122,9 +105,9 @@ def build_prompts(input_dir: Path) -> None:
             prompt["absolute_path_to_file_in_container"] = str(absolute_path_to_file_in_container)
             
             # get client code
-            # client_code = absolute_path_to_file.read_text()
+            # client_code = get_client_code_without_comments(absolute_path_to_file)
             try:
-                client_code = get_client_code_without_comments(absolute_path_to_file)
+                client_code = absolute_path_to_file.read_text()
             except Exception as e:
                 print(f"failed when creating sample {sample_counter}")
                 raise e

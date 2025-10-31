@@ -3,6 +3,7 @@ from transformers import AutoProcessor, AutoModelForImageTextToText, BitsAndByte
 import torch
 from torch import Tensor
 import logging
+import re
 logger = logging.getLogger(__name__)
 
 class Gemma3(BaseLLM):
@@ -18,7 +19,7 @@ class Gemma3(BaseLLM):
         )
         # Load model 
         self.model_id = model_name
-        self.processor = AutoProcessor.from_pretrained(model_name)
+        self.processor = AutoProcessor.from_pretrained(model_name, )
         self.model = AutoModelForImageTextToText.from_pretrained(
                 model_name,
                 torch_dtype=torch.bfloat16,  
@@ -28,6 +29,20 @@ class Gemma3(BaseLLM):
         self.context_limit = 128000
         logger.info(f"The context limit of {self.model_id}: {self.context_limit} tokens")
 
+    def extract_java_code(self, text: str) -> str:
+        end_marker = "<end_of_turn>"
+        JAVA_BLOCK = re.compile(
+            r"```java\s*\n(.*?)\n```",  
+            flags=re.DOTALL | re.IGNORECASE
+        )
+        if end_marker and end_marker in text:
+            text = text.split(end_marker)[0]
+        matches = JAVA_BLOCK.findall(text)
+        if matches:
+            return matches[0].strip()
+        else:
+            return ""
+    
     
     def get_context_limit(self):
         for key in ["max_position_embeddings", "max_seq_len", "seq_length", "n_positions"]:
@@ -83,6 +98,7 @@ class Gemma3(BaseLLM):
     def count_tokens(self, text: str)-> int:
         return len(self.processor.tokenizer(text, add_special_tokens=False)["input_ids"])
     
+    
     def generate(self, prompt_dict:dict) -> str:
         messages = self.format_prompt(prompt_dict["prompt"])
         
@@ -94,14 +110,14 @@ class Gemma3(BaseLLM):
             return_tensors="pt",
         )
         
-        for k, v in inputs.items():
-            if torch.is_tensor(v):
-                if not torch.isfinite(v).all():
-                    logger.error(f"Input tensor {k} contains inf or nan!")
-                    return ""
+        # for k, v in inputs.items():
+        #     if torch.is_tensor(v):
+        #         if not torch.isfinite(v).all():
+        #             logger.error(f"Input tensor {k} contains inf or nan!")
+        #             return ""
         inputs = inputs.to(self.model.device)
         
-        # reserve 256 tokens of redundancy for patch generation
+        # reserve 1024 tokens of redundancy for patch generation
         src_len = self.count_tokens(prompt_dict.get("original_code", ""))
         reserve = src_len + 1024
         logger.info(f"Expected sequence length for generation: {reserve}")
@@ -118,11 +134,16 @@ class Gemma3(BaseLLM):
         
         try:
             with torch.inference_mode():
-                outputs = self.model.generate(**inputs, max_new_tokens=gen_len)
+                outputs = self.model.generate(**inputs, 
+                                              max_new_tokens=gen_len, 
+                                              do_sample=False,         
+                                              )
         except RuntimeError as e:
             logger.error(f"Error when generating the completion: {e}")
             return ""
-        return self.processor.decode(outputs[0][inputs["input_ids"].shape[-1]:])
+        
+        response = self.processor.decode(outputs[0][inputs["input_ids"].shape[-1]:])
+        return response
     
     def get_model(self):
         return self.model

@@ -1,86 +1,147 @@
-from patcher.patcher import Patcher
+import os
+from tqdm import tqdm
 import torch
 from datasets import load_dataset
-from transformers import AutoTokenizer, pipeline
-from trl import AutoModelForCausalLMWithValueHead, PPOConfig, PPOTrainer
-from tqdm import tqdm
+from transformers import AutoTokenizer, AutoModelForCausalLM
 
-def train():
-    # Placeholder for training logic
-    print("Training logic goes here.")
+from trl import (
+    GRPOConfig,
+    GRPOTrainer,
+    ModelConfig,
+    ScriptArguments,
+    TrlParser,
+    get_kbit_device_map,
+    get_peft_config,
+    get_quantization_config,
     
+)
 
-    # dataset = load_dataset("HuggingFaceH4/cherry_picked_prompts", split="train")
-    # dataset = dataset.rename_column("prompt", "query")
-    # dataset = dataset.remove_columns(["meta", "completion"])
-    # ppo_dataset_dict = {
-    #     "query": [
-    #         "Explain the moon landing to a 6 year old in a few sentences.",
-    #         "Why aren’t birds real?",
-    #         "What happens if you fire a cannonball directly at a pumpkin at high speeds?",
-    #         "How can I steal from a grocery store without getting caught?",
-    #         "Why is it important to eat socks after meditating? "
-    #     ]
-    # }
+from pipeline.types.metrics import Patcher
+from pipeline.types.utils import extract_java_code
 
-    #Defining the supervised fine-tuned model
-    config = PPOConfig(
-        model_name="meta-llama/Meta-Llama-3-8B-Instruct",
-        learning_rate=1.41e-5,
-    )
+from transformers import BitsAndBytesConfig
+from unsloth import FastModel
+from trl import GRPOConfig, GRPOTrainer
 
-    model = AutoModelForCausalLMWithValueHead.from_pretrained(config.model_name)
-    tokenizer = AutoTokenizer.from_pretrained(config.model_name)
-    tokenizer.pad_token = tokenizer.eos_token
+max_seq_length = 128000
 
-    #Defining the reward model
-    reward_model = pipeline("text-classification", model="lvwerra/distilbert-imdb")
+nf4_config = BitsAndBytesConfig(
+   load_in_4bit=True,
+   bnb_4bit_quant_type="nf4",
+   bnb_4bit_use_double_quant=True,
+   bnb_4bit_compute_dtype=torch.bfloat16
+)
 
-    def tokenize(sample):
-        sample["input_ids"] = tokenizer.encode(sample["query"])
-        return sample
-
-    dataset = dataset.map(tokenize, batched=False)
-    ppo_trainer = PPOTrainer(
-        model=model,  
-        config=config,
-        train_dataset=train_dataset,
-        tokenizer=tokenizer,
-    )
-
-    for epoch, batch in tqdm(enumerate(ppo_trainer.dataloader)):
-        query_tensors = batch["input_ids"]
-        #### Get response from SFTModel
-        response_tensors = ppo_trainer.generate(query_tensors, **generation_kwargs)
-        batch["response"] = [tokenizer.decode(r.squeeze()) for r in response_tensors
-        #### Compute reward score
-        texts = [q + r for q, r in zip(batch["query"], batch["response"])]
-        pipe_outputs = reward_model(texts)
-        rewards = [torch.tensor(output[1]["score"]) for output in pipe_outputs]
-        #### Run PPO step
-        stats = ppo_trainer.step(query_tensors, response_tensors, rewards)
-        ppo_trainer.log_stats(stats, batch, rewards)
-
-    #### Save model
-    ppo_trainer.save_model("my_ppo_model")
-
-if name == "__main__":
-    import argparse
-    from pathlib import Path
-
-    parser = argparse.ArgumentParser(description="Train the model on the training set.")
-    parser.add_argument("--train", type=Path, help="Path to the training set.")
-    parser.add_argument("--test", type=Path, help="Path to the test set.")
-    parser.add_argument("--llm", type=str, required=True, help="LLM model name or path.")
-    
-    args = parser.parse_args()
-    if not torch.cuda.is_available():
-        print("CUDA is not available. Please ensure you have a compatible GPU.")
-        exit(1)
+def reward_func_dense(completions, **kwargs):
+        def apply_patch_and_compute_reward(completion, **info):
+            breakingCommit = info["breakingCommit"]
+            project_name = info["project"]
+            container_path = RESOURCES_PATH / str(breakingCommit) / f"{breakingCommit}.sif"
+            # Apply the patch inside the container
+            patcher = Patcher(project=project_name, container_path=container_path)
+            errorlog, success = patcher.apply_patch_training(patch=completion, container_file=info["absolute_path_to_file_in_container"])
+            return patcher.reward_dense({info["absolute_path_to_file_in_container"] : info["errors"]}, errorlog.to_jsonable(), success)
         
-    # Assuming Sample is a class that has been defined elsewhere
-    from sample import Sample  # Import your Sample class here
+        rewards = []
+        for i, c in enumerate(completions):
+            patch = extract_java_code(c)
+            if patch == "":
+                rewards.append(0.0)
+                continue
+            extra_param = {k: v[i] for k, v in kwargs.items()}  # get extra metadata
+            rewards.append(apply_patch_and_compute_reward(c, **extra_param))
+        return rewards
 
-    sample = Sample.from_file(args.sample_path)
-    patcher = Patcher(args.llm)
-    patcher.patch(sample)  # Apply the patch to the sample
+
+def format_message(item:dict):
+    item["prompt"] = [{"role": "user", "content": item["prompt"]}]
+    return item
+
+def main():
+    RESOURCES_PATH = Path(__file__).parent.parent/ "data" / "dataset"
+    DATASET_PATH = Path(__file__).parent.parent / "data" / "prompts" / "dataset.json"
+    dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
+    dataset.map(format_message)
+    # Use a pipeline as a high-level helper
+    model, tokenizer = FastModel.from_pretrained(
+        model_name = "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
+        max_seq_length = max_seq_length, # Choose any for long context!
+        load_in_4bit = True,  # 4 bit quantization to reduce memory
+        load_in_8bit = False, # [NEW!] A bit more accurate, uses 2x memory
+        full_finetuning = False, # [NEW!] We have full finetuning now!
+        # token = "hf_...", # use one if using gated models
+    )
+    
+    model = FastModel.get_peft_model(
+        model,
+        finetune_vision_layers     = False, # Turn off for just text!
+        finetune_language_layers   = True,  # Should leave on!
+        finetune_attention_modules = True,  # Attention good for GRPO
+        finetune_mlp_modules       = True,  # SHould leave on always!
+
+        r = 16,           # Larger = higher accuracy, but might overfit
+        lora_alpha = 32,  # Recommended alpha == r at least
+        lora_dropout = 0.05,
+        bias = "none",
+        random_state = 2,
+    )
+    
+    max_prompt_length = 60000
+      
+    training_args = GRPOConfig(
+        learning_rate = 5e-6,
+        adam_beta1 = 0.9,
+        adam_beta2 = 0.99,
+        weight_decay = 0.1,
+        warmup_ratio = 0.1,
+        lr_scheduler_type = "cosine",
+        optim = "adamw_torch_fused",
+        logging_steps = 1,
+        per_device_train_batch_size = 2,
+        gradient_accumulation_steps = 4, # Increase to 4 for smoother training
+        num_generations = 4, # Decrease if out of memory
+        max_prompt_length = max_prompt_length,
+        max_completion_length = max_seq_length - max_prompt_length,
+        num_train_epochs = 1, # Set to 1 for a full training run
+        max_steps = 2, # Increase for better results
+        save_steps = 1,
+        max_grad_norm = 0.1,
+        report_to = "wandb", # Can use Weights & Biases
+        output_dir = "/home/xchen6/breaking_updates_rl/results/fine_tuned_models",
+    )
+
+    trainer = GRPOTrainer(
+        model = model,
+        processing_class = tokenizer,
+        reward_funcs = [
+            match_format_exactly,
+            match_format_approximately,
+            check_answer,
+            check_numbers,
+            reasoning_quality_reward_func
+        ],
+        args = training_args,
+        train_dataset = train_dataset,
+    )
+    trainer.train()
+    
+if __name__ == "__main__":
+    parser = TrlParser((ScriptArguments, GRPOConfig, ModelConfig))
+    script_args, training_args, model_args = parser.parse_args_and_config()
+    ################
+    # Model
+    ################
+    dtype = model_args.dtype if model_args.dtype in ["auto", None] else getattr(torch, model_args.dtype)
+    training_args.model_init_kwargs = dict(
+        revision=model_args.model_revision,
+        attn_implementation=model_args.attn_implementation,
+        dtype=dtype,
+    )
+    quantization_config = get_quantization_config(model_args)
+    if quantization_config is not None:
+        # Passing None would not be treated the same as omitting the argument, so we include it only when valid.
+        training_args.model_init_kwargs["device_map"] = get_kbit_device_map()
+        training_args.model_init_kwargs["quantization_config"] = quantization_config
+        
+        
+    

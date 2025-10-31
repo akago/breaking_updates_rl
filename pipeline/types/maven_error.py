@@ -1,3 +1,4 @@
+from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import PurePosixPath, Path
 from typing import Iterator, Optional
@@ -92,13 +93,21 @@ class MavenErrorLog:
 
     @classmethod
     def from_file(cls, log_file: str | Path, parser: Optional[MavenErrorParser] = None,
-                  encoding: str = "latin-1") -> "MavenErrorLog":
+                  encoding: str = "latin-1") -> MavenErrorLog:
         parser = parser or MavenErrorParser()
         instance = cls()
         with open(log_file, "r", encoding=encoding, errors="replace") as f:
             instance.extend(parser.iter_errors(iter(f)))
         return instance
 
+    @classmethod
+    def from_string(cls, log: str, parser: Optional[MavenErrorParser] = None) -> MavenErrorLog:
+        lines = iter(log.splitlines(keepends=True))
+        parser = parser or MavenErrorParser()
+        instance = cls()
+        instance.extend(parser.iter_errors(lines))
+        return instance
+    
     def to_jsonable(self) -> dict[str, list[dict[str, str | int]]]:
         return {
             str(path): [

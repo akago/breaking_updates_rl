@@ -15,3 +15,10 @@ class BaseLLM(ABC):
     def generate(self, prompt: str) -> str:
         """unified generation interface"""
         pass
+    
+    @staticmethod
+    @abstractmethod
+    def extract_java_code(text: str) -> str:
+        """Extract java code from the model output"""
+        pass
+        

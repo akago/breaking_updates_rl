@@ -11,6 +11,10 @@ DEBUG_LEVEL = logging.INFO
 # Prompt template
 with open("pipeline/prompts/bacardi_prompt.txt", "r") as f:
    PROMPT_TEMPLATE = f.read()
+with open("pipeline/prompts/bacardi_prompt_CoT.txt", "r") as f:
+   COT_PROMPT_TEMPLATE = f.read()
+with open("pipeline/prompts/unifed_diff_prompt_CoT.txt", "r") as f:
+   UNIFIED_PROMPT_TEMPLATE = f.read()
    
 # Maximum token length for the model
 MAX_TOKEN_LENGTH = 4096
