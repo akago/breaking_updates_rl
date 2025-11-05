@@ -1,7 +1,7 @@
 import pathlib
 import json
 
-prompts_path = pathlib.Path(__file__).parent.parent.parent / "data" / "prompts"
+prompts_path = pathlib.Path(__file__).parent.parent.parent / "data" / "prompts_diff"
 
 
 def wrap_message(raw_prompt:str)->list[dict]:

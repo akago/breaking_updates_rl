@@ -16,37 +16,12 @@ import torch
 from transformers import TextStreamer
 from datasets import load_dataset
 
+from pipeline.constants.constants import SYSTEM_PROMPT, RESOURCES_PATH
+from pipeline.types.utils import extract_sr_edits, get_patched_content_from_diffs
+
 logger = logging.getLogger(__name__)
 
-max_seq_length = 30000
-
-
-def ensure_single_trailing_newline(s: str) -> str:
-    return s.rstrip('\r\n') + '\n'
-
-def extract_java_code_gemma(text: str) -> str:
-    end_marker = "<end_of_turn>"
-    if end_marker and end_marker in text:
-        text = text.split(end_marker)[0]
-    JAVA_BLOCK = re.compile(
-        r"```java[^\n\r]*\r?\n(.*?)(?=\r?\n?```)",
-        flags=re.DOTALL | re.IGNORECASE
-    )
-    m = JAVA_BLOCK.search(text)
-    # Prevent "File does not end with a newline" error
-    return ensure_single_trailing_newline(m.group(1)) if m else ""
-
-def extract_java_code_llama(text: str) -> str:
-    end_marker = "<|eot_id|>"
-    if end_marker and end_marker in text:
-        text = text.split(end_marker)[0]
-    JAVA_BLOCK = re.compile(
-        r"```java[^\n\r]*\r?\n(.*?)(?=\r?\n?```)",
-        flags=re.DOTALL | re.IGNORECASE
-    )
-    m = JAVA_BLOCK.search(text)
-    # Prevent "File does not end with a newline" error
-    return ensure_single_trailing_newline(m.group(1)) if m else ""
+max_seq_length = 33000
 
 def evaluate(input: str, model_id: str) -> None:
     output_root = Path("/home/xchen6/breaking_updates_rl/results") / "_".join([model_id, datetime.now().strftime("%Y%m%d-%H%M%S")])
@@ -77,6 +52,7 @@ def evaluate(input: str, model_id: str) -> None:
             logger.info(f'generating patch for {data["project"]}/{data["breakingCommit"]}/{buggy_file_name}')
             
             messages = [
+                {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user",   "content": data["prompt"]}
             ]
             text = tokenizer.apply_chat_template(
@@ -94,20 +70,20 @@ def evaluate(input: str, model_id: str) -> None:
             else:
                 response = model.generate(
                     **tokenizer(text, return_tensors = "pt").to("cuda"),
-                    max_new_tokens = 30000, # Increase for longer outputs!
+                    max_new_tokens = 3000, # Increase for longer outputs!
                     # 0 temperature
                     do_sample=False,
-                    streamer = TextStreamer(tokenizer, skip_prompt = True),
+                    # streamer = TextStreamer(tokenizer, skip_prompt = True),
                 )
                 completion_ids = response[0][input_len:]              
                 completion = tokenizer.decode(completion_ids, skip_special_tokens=True)
+                
             patch = ""
-            if "Llama" in model_id:
-                patch = extract_java_code_llama(completion)
-            elif "gemma" in model_id:
-                patch = extract_java_code_gemma(completion)
-            else:
-                patch = extract_java_code_gemma(completion)
+            original_code = data["original_code"]
+            print(f"original code:{original_code}")
+            diffs = extract_sr_edits(completion)
+            print(f"diffs extracted: {diffs}")
+            patch = get_patched_content_from_diffs(diffs, original_code)
             
             result = data.copy()
             result["patch"] = patch
@@ -126,7 +102,7 @@ def main(argv: list[str] | None = None) -> None:
     logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
     parser = argparse.ArgumentParser(description="evalute the dataset")
     parser.add_argument("--input", "-i", type=str,
-                        default="/home/xchen6/breaking_updates_rl/splits_jsonl/test.jsonl",
+                        default="/home/xchen6/breaking_updates_rl/data/prompts_diff/test.jsonl",
                         help="Path to test.jsonl")
     parser.add_argument("--model", "-m", type=str,
                         default="unsloth/gemma-3-12b-it-unsloth-bnb-4bit",

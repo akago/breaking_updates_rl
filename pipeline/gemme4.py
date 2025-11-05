@@ -58,8 +58,6 @@ model = FastModel.get_peft_model(
     random_state = 2,
 )
 
-RESOURCES_PATH = Path(__file__).parent.parent/ "data" / "dataset"
-DATASET_PATH = Path(__file__).parent.parent / "data" / "prompts" / "dataset.json"
 my_dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
 
 def keep_batch(batch):
@@ -142,6 +140,39 @@ def reward_func_dense(prompts, completions, completion_ids, breakingCommit, proj
         rewards.append(reward)
         print(f"INFO {datetime.now(timezone.utc)} Reward: {rewards[-1]}")
     return rewards
+
+def strict_format_reward_func(completions, **kwargs) -> list[float]:
+    """Reward function that checks if the completion has a specific format."""
+    pattern = r"^<reasoning>\n.*?\n</reasoning>\n<answer>\n.*?\n</answer>\n$"
+    responses = [completion[0]["content"] for completion in completions]
+    matches = [re.match(pattern, r) for r in responses]
+    return [0.5 if match else 0.0 for match in matches]
+
+def soft_format_reward_func(completions, **kwargs) -> list[float]:
+    """Reward function that checks if the completion has a specific format."""
+    pattern = r"<reasoning>.*?</reasoning>\s*<answer>.*?</answer>"
+    responses = [completion[0]["content"] for completion in completions]
+    matches = [re.match(pattern, r) for r in responses]
+    return [0.5 if match else 0.0 for match in matches]
+
+def count_xml(text) -> float:
+    count = 0.0
+    if text.count("<reasoning>\n") == 1:
+        count += 0.125
+    if text.count("\n</reasoning>\n") == 1:
+        count += 0.125
+    if text.count("\n<answer>\n") == 1:
+        count += 0.125
+        count -= len(text.split("\n</answer>\n")[-1])*0.001
+    if text.count("\n</answer>") == 1:
+        count += 0.125
+        count -= (len(text.split("\n</answer>")[-1]) - 1)*0.001
+    return count
+
+def xmlcount_reward_func(completions, **kwargs) -> list[float]:
+    contents = [completion[0]["content"] for completion in completions]
+    return [count_xml(c) for c in contents]
+
 
 max_prompt_length = 5000
 

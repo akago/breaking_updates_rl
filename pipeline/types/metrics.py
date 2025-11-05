@@ -3,7 +3,7 @@ from pipeline.types.maven_error import MavenErrorLog, MavenErrorParser
 from pipeline.types.utils import get_error_uid
 # create java file with patch, binding with corresponding file in the container, compile with mvn test -DskipTests -B > breaking_commits
 import logging
-
+import re
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
@@ -142,9 +142,9 @@ class Patcher:
             # print("".join(buf))
             # build log, success status
             success = (return_code == 0)
-            return "".join(buf), success
-    
-    
+            return "".join(buf), success        
+
+            
     def get_metrics(self, original_errors: dict, current_errors: dict):
         """
         Given old and new errors in a buggy file, count the number of old errors, fixed errors and newly occurred errors in this file.
@@ -166,40 +166,6 @@ class Patcher:
             fixed_error_count = len(fixed_error_uids)
             new_errors_count = len(current_error_uids - original_error_uids)
         return original_error_count, fixed_error_count, new_errors_count
-        
-    def reward_dense(self, original_errors: dict, current_errors: dict, success: bool) -> float:
-        # orinigal errors; dict: {filname: [error1, error2]}
-        # current_errors; dict: [filname1: [error1, error2], file]
-        eta = 0.2
-        lmbda = 0.5
-        
-        # successful compilation
-        if success and not current_errors:
-            return 1.0
-        
-        # single file expected
-        (file_name, error_msgs), = original_errors.items()
-        original_error_count = float(len(error_msgs))
-                
-        original_error_uids = set(e["uid"] for e in error_msgs)
-        # if the file is fully fixed
-        if not file_name in current_errors:
-            fixed_error_count = original_error_count
-            return 1.0
-        else:
-            current_error_uids = set(get_error_uid(e["message"], e["additional_info"]) for e in current_errors[file_name])
-            # logging.info(f"Original errors uid in {file_name}: {original_error_uids}")
-            # logging.info(f"Current errors uid in {file_name}: {current_error_uids}\n")
-
-            fixed_error_uids = original_error_uids - current_error_uids
-            # logging.info(f"File {file_name} fixed errors uid: {fixed_error_uids}\n")
-            
-            fixed_error_count = float(len(fixed_error_uids))
-            new_errors_flag = 1.0 if len(current_error_uids - original_error_uids) > 0 else 0.0
-        
-        return fixed_error_count / original_error_count - new_errors_flag * eta 
-            
-        
         
     
     @staticmethod

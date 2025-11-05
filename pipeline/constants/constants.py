@@ -13,9 +13,12 @@ with open("pipeline/prompts/bacardi_prompt.txt", "r") as f:
    PROMPT_TEMPLATE = f.read()
 with open("pipeline/prompts/bacardi_prompt_CoT.txt", "r") as f:
    COT_PROMPT_TEMPLATE = f.read()
-with open("pipeline/prompts/unifed_diff_prompt_CoT.txt", "r") as f:
-   UNIFIED_PROMPT_TEMPLATE = f.read()
-   
+# with open("pipeline/prompts/unifed_diff_prompt_CoT.txt", "r") as f:
+#    UNIFIED_PROMPT_TEMPLATE = f.read()
+with open("pipeline/prompts/system_prompt.txt", "r") as f:
+   SYSTEM_PROMPT = f.read()
+with open("pipeline/prompts/user_prompt_template.txt", "r") as f:
+   USER_PROMPT_TEMPLATE = f.read()
 # Maximum token length for the model
 MAX_TOKEN_LENGTH = 4096
 
@@ -26,3 +29,9 @@ HF_CACHE_DIR = (
     or os.environ.get("HUGGINGFACE_HUB_CACHE")
     or str(Path("~/.cache/huggingface").expanduser())
 )
+
+DATA_PATH = Path(__file__).parent.parent.parent / "data"
+RESOURCES_PATH = DATA_PATH / "dataset"
+DATASET_FULL_GENERATION_PATH = DATA_PATH / "prompts"
+DATASET_DIFF_PATH = DATA_PATH / "prompts_diff"
+SFT_DATASET_PATH = DATA_PATH / "sft"

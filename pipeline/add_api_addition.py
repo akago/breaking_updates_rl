@@ -117,7 +117,7 @@ for folder in data_path.iterdir():
     missing_symbols = list(get_missing_symbols_in_errors(buggyFiles))
     
     # Filter API Additions
-    print(f"Extracting API additions from client code at {context_dict["breakingCommit"]}/{context_dict['project']}")
+    print(f"Extracting API additions from client code at {context_dict['breakingCommit']}/{context_dict['project']}")
     api_addition_cmd = ['java', '-jar', 'pipeline/libs/api_additions_lister/api-additions-lister-1.0.0.jar', str(old_jar), str(new_jar)]
     api_addition_json = folder / "api_additions.json"
     

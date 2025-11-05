@@ -10,7 +10,7 @@ import uuid
 import re
 
 from pipeline.constants.constants import LOGGING_FORMAT, DEBUG_LEVEL
-from pipeline.constants.constants import PROMPT_TEMPLATE
+from pipeline.constants.constants import SYSTEM_PROMPT, USER_PROMPT_TEMPLATE
 from pipeline.types.utils import get_error_uid
 
 logging.basicConfig(level=DEBUG_LEVEL, format=LOGGING_FORMAT)
@@ -18,7 +18,7 @@ logging.basicConfig(level=DEBUG_LEVEL, format=LOGGING_FORMAT)
 
 def build_prompts(input_dir: Path) -> None:
     # Build prompt with file
-    prompt_dir = input_dir.parent / "prompts"
+    prompt_dir = input_dir.parent / "prompts_diff"
     sample_counter = 0
     
     def aggregate_breaking_changes(bcs:list[dict], api_additions:list[str], delimiter=" | ") -> str:
@@ -34,9 +34,9 @@ def build_prompts(input_dir: Path) -> None:
             if bc["nature"] == "DELETION":
                 line = f"-- {bc["element"]}"
             elif bc["nature"] == "ADDITION":
-                line = f"{bc["kind"]} <- {bc["element"]}"
-            else:
-                line = f"{bc["kind"]} <- {bc["element"]}"
+                line = f"++ {bc["kind"]} <- {bc["element"]}"
+            else: # MUTATION
+                line = f"~~ {bc["kind"]} <- {bc["element"]}"
             lines.append(line)
             
         lines.extend(api_additions)
@@ -119,7 +119,7 @@ def build_prompts(input_dir: Path) -> None:
                 error["uid"] = get_error_uid(error["message"], error["additional_info"])
             
             prompt["errors"] = errors                            
-            prompt["prompt"] = PROMPT_TEMPLATE.format(client_code=client_code, buggy_line=buggy_line, error_message=error_messages_str, api_diff=breaking_changes_str, library_name=library_name, old_version=old_version, new_version=new_version)
+            prompt["prompt"] = USER_PROMPT_TEMPLATE.format(client_code=client_code, buggy_line=buggy_line, error_message=error_messages_str, api_diff=breaking_changes_str, library_name=library_name, old_version=old_version, new_version=new_version)
             prompt["buggy_lines"] = buggy_line
             prompt["error_message"] = error_messages_str
             prompt["api_diff"] = breaking_changes_str
@@ -130,6 +130,7 @@ def build_prompts(input_dir: Path) -> None:
             prompt["newVersion"] = new_version
             prompt["previousVersion"] = old_version
             prompt["breakingCommit"] = breaking_commit
+            
             
             with open(prompt_dir / f"{sample_counter}.json", "w") as f:
                 json.dump(prompt, f, indent=4)

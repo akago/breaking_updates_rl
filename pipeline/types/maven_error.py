@@ -5,7 +5,7 @@ from typing import Iterator, Optional
 from collections import defaultdict
 import re
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True)
 class ErrorInfo:
     path: PurePosixPath
     line_num: int

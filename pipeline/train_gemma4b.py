@@ -11,6 +11,7 @@ from pathlib import Path
 from pipeline.types.metrics import Patcher
 from pipeline.types.utils import extract_java_code
 from pipeline.types.maven_error import MavenErrorLog, MavenErrorParser
+from pipeline.constants.constants import RESOURCES_PATH, DATASET_DIFF_PATH, DATASET_FULL_GENERATION_PATH
 from datetime import datetime, timezone
 
 import json
@@ -18,7 +19,7 @@ import re
 from datasets import Dataset
 from datasets import load_dataset
 
-max_seq_length = 10000
+max_seq_length = 9000
 
 fourbit_models = [
     # 4bit dynamic quants for superior accuracy and low memory use
@@ -62,7 +63,7 @@ model = FastModel.get_peft_model(
 )
 
 RESOURCES_PATH = Path(__file__).parent.parent/ "data" / "dataset"
-DATASET_PATH = Path(__file__).parent.parent / "data" / "prompts" / "dataset.json"
+DATASET_PATH = DATASET_DIFF_PATH / "dataset.json"
 my_dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
 
 def keep_batch(batch):

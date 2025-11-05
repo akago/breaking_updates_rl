@@ -21,9 +21,8 @@ def get_prompt_text(ex: dict) -> str:
         p = ex.get("data", {}).get("prompt", "")
     return p or ""
 
-def main(out_dir="./splits_jsonl", min_bucket=10, train_ratio=0.7, seed=42):
+def main(out_dir, prompts_path, min_bucket=10, train_ratio=0.7, seed=42):
     rng = random.Random(seed)
-    prompts_path = Path(__file__).parent.parent.parent / "data" / "prompts" / "dataset.json"
     ds = load_dataset("json", data_files=str(prompts_path), split="train")
     print(f"[LOAD] 样本数: {ds.num_rows}")
 
@@ -122,7 +121,6 @@ def main(out_dir="./splits_jsonl", min_bucket=10, train_ratio=0.7, seed=42):
     else:
         print("[STATS] train 为空，无法统计 prompt 长度。")
 
-    # 汇总
     train_rows = sum(1 for _ in open(train_path, "r", encoding="utf-8"))
     test_rows  = sum(1 for _ in open(test_path,  "r", encoding="utf-8"))
     print(f"[RESULT] groups -> train: {len(train_commits)} | test: {len(test_commits)}")
@@ -134,7 +132,8 @@ def main(out_dir="./splits_jsonl", min_bucket=10, train_ratio=0.7, seed=42):
           f"'test': '{test_path.as_posix()}'}})")
 
 if __name__ == "__main__":
-    # 你可以修改输出目录/比例/种子
-    main(out_dir="./splits_jsonl", min_bucket=10, train_ratio=0.7, seed=42)
+    out_dir = Path(__file__).parent.parent.parent / "data" / "prompts_diff"
+    prompts_path = Path(__file__).parent.parent.parent / "data" / "prompts_diff" / "dataset.json"
+    main(out_dir=str(out_dir), prompts_path=prompts_path, min_bucket=10, train_ratio=0.7, seed=42)
 
 

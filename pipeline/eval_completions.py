@@ -44,6 +44,7 @@ def patch_and_evaluate_project(input:str) -> dict:
             if not completion_file.stem.isdigit():
                 continue    
             
+            print(f"loading completion file: {completion_file}")
             result_dict = json.loads(completion_file.read_text())
             
             # get neccessary information

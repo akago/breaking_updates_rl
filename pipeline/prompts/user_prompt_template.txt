@@ -1,0 +1,16 @@
+
+The following Java client code fails: 
+'''java
+{client_code}
+'''
+The error is caused by a change in the API of the dependency: {library_name} {old_version}->{new_version}. 
+The new library version includes the following relevant backward incompatible changes on API. 
+(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) 
+{api_diff}
+
+The error is triggered in the following specific lines in the previous code:
+{buggy_line}
+with the following error message:
+{error_message}
+
+Please apply your reasoning and generate the fix following the system instruction.
