@@ -1,0 +1,50 @@
+{
+    "absolute_path_to_file_in_container": "/arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java",
+    "errors": [
+        {
+            "line_number": 43,
+            "message": "[ERROR] /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java:[43,47] incompatible types: org.apache.dubbo.rpc.AsyncRpcResult cannot be converted to java.util.concurrent.CompletableFuture<?>",
+            "additional_info": "",
+            "file_name": "DubboConsumerExtractor.java",
+            "BCs": [
+                {
+                    "element": "org.apache.dubbo.rpc.AsyncRpcResult",
+                    "nature": "MUTATION",
+                    "kind": "SUPERTYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public AsyncRpcResult org.apache.dubbo.rpc.AsyncRpcResult(java.util.concurrent.CompletableFuture,org.apache.dubbo.rpc.Invocation)"
+            ],
+            "uid": "220f9ea5-bef4-5d68-bbf5-bc43ef7ee14b"
+        },
+        {
+            "line_number": 45,
+            "message": "[ERROR] /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java:[45,60] incompatible types: org.apache.dubbo.rpc.AsyncRpcResult cannot be converted to java.util.concurrent.CompletableFuture<?>",
+            "additional_info": "",
+            "file_name": "DubboConsumerExtractor.java",
+            "BCs": [
+                {
+                    "element": "org.apache.dubbo.rpc.AsyncRpcResult",
+                    "nature": "MUTATION",
+                    "kind": "SUPERTYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public AsyncRpcResult org.apache.dubbo.rpc.AsyncRpcResult(java.util.concurrent.CompletableFuture,org.apache.dubbo.rpc.Invocation)"
+            ],
+            "uid": "220f9ea5-bef4-5d68-bbf5-bc43ef7ee14b"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage io.arex.inst.dubbo.apache.v2;\n\nimport io.arex.agent.bootstrap.model.MockResult;\nimport io.arex.agent.bootstrap.model.Mocker;\nimport io.arex.inst.dubbo.common.DubboExtractor;\nimport io.arex.inst.runtime.util.IgnoreUtils;\nimport io.arex.inst.runtime.util.MockUtils;\nimport org.apache.dubbo.rpc.*;\nimport org.apache.dubbo.rpc.support.RpcUtils;\n\npublic class DubboConsumerExtractor extends DubboExtractor {\n    private final DubboAdapter adapter;\n\n    public DubboConsumerExtractor(DubboAdapter adapter) {\n        this.adapter = adapter;\n    }\n\n    public void record(Result result) {\n        adapter.execute(result, makeMocker());\n    }\n    private Mocker makeMocker() {\n        Mocker mocker = MockUtils.createDubboConsumer(adapter.getServiceOperation());\n        return buildMocker(mocker, adapter, null, null);\n    }\n    public MockResult replay() {\n        MockResult mockResult = null;\n        Object result = MockUtils.replayBody(makeMocker());\n        boolean ignoreMockResult = IgnoreUtils.ignoreMockResult(adapter.getPath(), adapter.getOperationName());\n        if (result != null && !ignoreMockResult) {\n            AsyncRpcResult asyncRpcResult;\n            Invocation invocation = adapter.getInvocation();\n            if (result instanceof Throwable) {\n                asyncRpcResult = AsyncRpcResult.newDefaultAsyncResult((Throwable) result, invocation);\n            } else {\n                asyncRpcResult = AsyncRpcResult.newDefaultAsyncResult(result, invocation);\n            }\n            mockResult = MockResult.success(ignoreMockResult, asyncRpcResult);\n            // need to set invoke mode to FUTURE if return type is CompletableFuture\n            if (invocation instanceof RpcInvocation) {\n                RpcInvocation rpcInv = (RpcInvocation) invocation;\n                rpcInv.setInvokeMode(RpcUtils.getInvokeMode(adapter.getUrl(), invocation));\n            }\n            RpcContext.getContext().setFuture(asyncRpcResult);\n            // save for 2.6.x compatibility, for example, TraceFilter in Zipkin uses com.alibaba.xxx.FutureAdapter\n            FutureContext.getContext().setCompatibleFuture(asyncRpcResult);\n        }\n        return mockResult;\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: dubbo 2.7.3->2.7.21. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n~~ SUPERTYPE_REMOVED <- org.apache.dubbo.rpc.AsyncRpcResult\n++ public AsyncRpcResult org.apache.dubbo.rpc.AsyncRpcResult(java.util.concurrent.CompletableFuture,org.apache.dubbo.rpc.Invocation)\n\nThe error is triggered in the following specific lines in the previous code:\n            RpcContext.getContext().setFuture(asyncRpcResult);\n            FutureContext.getContext().setCompatibleFuture(asyncRpcResult);\nwith the following error message:\n[ERROR] /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java:[43,47] incompatible types: org.apache.dubbo.rpc.AsyncRpcResult cannot be converted to java.util.concurrent.CompletableFuture<?>\n[ERROR] /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java:[45,60] incompatible types: org.apache.dubbo.rpc.AsyncRpcResult cannot be converted to java.util.concurrent.CompletableFuture<?>\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "            RpcContext.getContext().setFuture(asyncRpcResult);\n            FutureContext.getContext().setCompatibleFuture(asyncRpcResult);",
+    "error_message": "[ERROR] /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java:[43,47] incompatible types: org.apache.dubbo.rpc.AsyncRpcResult cannot be converted to java.util.concurrent.CompletableFuture<?>\n[ERROR] /arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java:[45,60] incompatible types: org.apache.dubbo.rpc.AsyncRpcResult cannot be converted to java.util.concurrent.CompletableFuture<?>",
+    "api_diff": "~~ SUPERTYPE_REMOVED <- org.apache.dubbo.rpc.AsyncRpcResult\n++ public AsyncRpcResult org.apache.dubbo.rpc.AsyncRpcResult(java.util.concurrent.CompletableFuture,org.apache.dubbo.rpc.Invocation)",
+    "original_code": "package io.arex.inst.dubbo.apache.v2;\n\nimport io.arex.agent.bootstrap.model.MockResult;\nimport io.arex.agent.bootstrap.model.Mocker;\nimport io.arex.inst.dubbo.common.DubboExtractor;\nimport io.arex.inst.runtime.util.IgnoreUtils;\nimport io.arex.inst.runtime.util.MockUtils;\nimport org.apache.dubbo.rpc.*;\nimport org.apache.dubbo.rpc.support.RpcUtils;\n\npublic class DubboConsumerExtractor extends DubboExtractor {\n    private final DubboAdapter adapter;\n\n    public DubboConsumerExtractor(DubboAdapter adapter) {\n        this.adapter = adapter;\n    }\n\n    public void record(Result result) {\n        adapter.execute(result, makeMocker());\n    }\n    private Mocker makeMocker() {\n        Mocker mocker = MockUtils.createDubboConsumer(adapter.getServiceOperation());\n        return buildMocker(mocker, adapter, null, null);\n    }\n    public MockResult replay() {\n        MockResult mockResult = null;\n        Object result = MockUtils.replayBody(makeMocker());\n        boolean ignoreMockResult = IgnoreUtils.ignoreMockResult(adapter.getPath(), adapter.getOperationName());\n        if (result != null && !ignoreMockResult) {\n            AsyncRpcResult asyncRpcResult;\n            Invocation invocation = adapter.getInvocation();\n            if (result instanceof Throwable) {\n                asyncRpcResult = AsyncRpcResult.newDefaultAsyncResult((Throwable) result, invocation);\n            } else {\n                asyncRpcResult = AsyncRpcResult.newDefaultAsyncResult(result, invocation);\n            }\n            mockResult = MockResult.success(ignoreMockResult, asyncRpcResult);\n            // need to set invoke mode to FUTURE if return type is CompletableFuture\n            if (invocation instanceof RpcInvocation) {\n                RpcInvocation rpcInv = (RpcInvocation) invocation;\n                rpcInv.setInvokeMode(RpcUtils.getInvokeMode(adapter.getUrl(), invocation));\n            }\n            RpcContext.getContext().setFuture(asyncRpcResult);\n            // save for 2.6.x compatibility, for example, TraceFilter in Zipkin uses com.alibaba.xxx.FutureAdapter\n            FutureContext.getContext().setCompatibleFuture(asyncRpcResult);\n        }\n        return mockResult;\n    }\n}\n",
+    "project": "arex-agent-java",
+    "libraryName": "dubbo",
+    "libraryGroupID": "org.apache.dubbo",
+    "newVersion": "2.7.21",
+    "previousVersion": "2.7.3",
+    "breakingCommit": "dc9a40fde9a9fee5aaec3f60695385ba539406d4"
+}

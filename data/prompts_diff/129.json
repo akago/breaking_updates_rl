@@ -1,0 +1,561 @@
+{
+    "absolute_path_to_file_in_container": "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java",
+    "errors": [
+        {
+            "line_number": 10,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[10,27] cannot find symbol",
+            "additional_info": "  symbol:   class Client\n  location: package redis.clients.jedis",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.Client",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "94385bcd-0ee4-5174-94cb-278c56baec45"
+        },
+        {
+            "line_number": 26,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[26,30] cannot find symbol",
+            "additional_info": "  symbol:   class Client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.Client",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "690a7aca-4466-55ab-a856-eb3a64efe612"
+        },
+        {
+            "line_number": 40,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[40,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 41,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[41,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 57,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[57,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 58,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[58,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 77,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[77,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 79,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[79,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 98,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[98,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 100,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[100,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 118,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[118,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 119,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[119,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 137,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[137,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 138,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[138,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 160,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[160,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 162,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[162,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 184,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[184,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 187,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[187,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "81bf0172-5888-5b9d-b19b-83ca2f05fd5f"
+        },
+        {
+            "line_number": 238,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[238,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 239,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[239,16] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(redis.clients.jedis.Builder<java.lang.String>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "209c2dbc-1804-509c-9ebb-171457f14090"
+        },
+        {
+            "line_number": 250,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[250,9] cannot find symbol",
+            "additional_info": "  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "1f2bb2fc-7564-505a-bbb1-a017187aae44"
+        },
+        {
+            "line_number": 251,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[251,38] cannot find symbol",
+            "additional_info": "  symbol:   method getResponse(redis.clients.jedis.Builder<java.lang.String>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+            "file_name": "GraphPipelineImpl.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "209c2dbc-1804-509c-9ebb-171457f14090"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.falkordb.impl.api;\n\nimport com.falkordb.Graph;\nimport com.falkordb.ResultSet;\nimport com.falkordb.impl.Utils;\nimport com.falkordb.impl.graph_cache.GraphCache;\nimport com.falkordb.impl.resultset.ResultSetImpl;\nimport redis.clients.jedis.Builder;\nimport redis.clients.jedis.BuilderFactory;\nimport redis.clients.jedis.Client;\nimport redis.clients.jedis.Pipeline;\nimport redis.clients.jedis.Response;\n\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * This class is extending Jedis Pipeline\n */\npublic class GraphPipelineImpl extends Pipeline implements com.falkordb.GraphPipeline {\n\n    private final Graph graph;\n    private GraphCache cache;\n    private final String graphId;\n\n    public GraphPipelineImpl(Client client, Graph graph, GraphCache cache, String graphId){\n        super.setClient(client);\n        this.graph = graph;\n        this.cache = cache;\n        this.graphId = graphId;\n    }\n\n    /**\n     * Execute a Cypher query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query) {\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Execute a Cypher read-oly query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query) {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Execute a Cypher query with timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query, long timeout) {\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Execute a Cypher read-only query with timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query, long timeout) {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query, Map<String, Object> params) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher read-only query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher query with parameters and timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query, Map<String, Object> params, long timeout) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher read-only query with parameters and timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params, long timeout) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING,\n                Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Invokes stored procedures without arguments\n     * @param procedure procedure name to invoke\n     * @return response with result set with the procedure data\n     */\n    @Override\n    public Response<ResultSet> callProcedure(String procedure){\n        return callProcedure(procedure, Utils.DUMMY_LIST, Utils.DUMMY_MAP);\n    }\n\n    /**\n     * Invokes stored procedure with arguments\n     * @param procedure procedure name to invoke\n     * @param args procedure arguments\n     * @return response with result set with the procedure data\n     */\n    @Override\n    public Response<ResultSet> callProcedure(String procedure, List<String> args  ){\n        return callProcedure(procedure, args, Utils.DUMMY_MAP);\n    }\n\n    /**\n     * Invoke a stored procedure\n     * @param procedure - procedure to execute\n     * @param args - procedure arguments\n     * @param kwargs - procedure output arguments\n     * @return response with result set with the procedure data\n     */\n    @Override\n    public Response<ResultSet> callProcedure(String procedure, List<String> args,\n                                                  Map<String, List<String>> kwargs) {\n        String preparedProcedure = Utils.prepareProcedure(procedure, args, kwargs);\n        return query(preparedProcedure);\n    }\n\n    /**\n     * Copies the graph\n     * @param destinationGraphId duplicated graph name\n     * @return response with the copy running time statistics\n     */\n    @Override\n    public Response<String> copyGraph(String destinationGraphId) {\n        client.sendCommand(GraphCommand.COPY, graphId, destinationGraphId);\n        return getResponse(BuilderFactory.STRING);\n    }\n\n\n    /**\n     * Deletes the entire graph\n     * @return response with the deletion running time statistics\n     */\n    @Override\n    public Response<String> deleteGraph(){\n\n        client.sendCommand(GraphCommand.DELETE, graphId);\n        Response<String> response =  getResponse(BuilderFactory.STRING);\n        cache.clear();\n        return response;\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: jedis 3.10.0->6.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n~~ FIELD_TYPE_CHANGED <- redis.clients.jedis.JedisMonitor.client\n-- redis.clients.jedis.commands.BasicRedisPipeline\n-- redis.clients.jedis.MultiKeyPipelineBase.client\n-- redis.clients.jedis.commands.RedisPipeline\n-- redis.clients.jedis.BinaryJedis.client\n-- redis.clients.jedis.commands.BinaryRedisPipeline\n-- redis.clients.jedis.commands.BinaryScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ClusterPipeline\n-- redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline\n-- redis.clients.jedis.commands.MultiKeyCommandsPipeline\n-- redis.clients.jedis.Client\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig,java.time.Duration)\n++ public null redis.clients.jedis.ClusterPipeline\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider,redis.clients.jedis.ClusterCommandObjects)\n\nThe error is triggered in the following specific lines in the previous code:\nimport redis.clients.jedis.Client;\n    public GraphPipelineImpl(Client client, Graph graph, GraphCache cache, String graphId){\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.COPY, graphId, destinationGraphId);\n        return getResponse(BuilderFactory.STRING);\n        client.sendCommand(GraphCommand.DELETE, graphId);\n        Response<String> response =  getResponse(BuilderFactory.STRING);\nwith the following error message:\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[10,27] cannot find symbol  symbol:   class Client\n  location: package redis.clients.jedis\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[26,30] cannot find symbol  symbol:   class Client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[40,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[41,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[57,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[58,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[77,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[79,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[98,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[100,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[118,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[119,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[137,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[138,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[160,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[162,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[184,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[187,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[238,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[239,16] cannot find symbol  symbol:   method getResponse(redis.clients.jedis.Builder<java.lang.String>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[250,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[251,38] cannot find symbol  symbol:   method getResponse(redis.clients.jedis.Builder<java.lang.String>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import redis.clients.jedis.Client;\n    public GraphPipelineImpl(Client client, Graph graph, GraphCache cache, String graphId){\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING,\n        return getResponse(new Builder<ResultSet>() {\n        client.sendCommand(GraphCommand.COPY, graphId, destinationGraphId);\n        return getResponse(BuilderFactory.STRING);\n        client.sendCommand(GraphCommand.DELETE, graphId);\n        Response<String> response =  getResponse(BuilderFactory.STRING);",
+    "error_message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[10,27] cannot find symbol  symbol:   class Client\n  location: package redis.clients.jedis\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[26,30] cannot find symbol  symbol:   class Client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[40,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[41,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[57,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[58,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[77,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[79,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[98,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[100,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[118,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[119,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[137,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[138,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[160,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[162,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[184,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[187,16] cannot find symbol  symbol:   method getResponse(<anonymous redis.clients.jedis.Builder<com.falkordb.ResultSet>>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[238,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[239,16] cannot find symbol  symbol:   method getResponse(redis.clients.jedis.Builder<java.lang.String>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[250,9] cannot find symbol  symbol:   variable client\n  location: class com.falkordb.impl.api.GraphPipelineImpl\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java:[251,38] cannot find symbol  symbol:   method getResponse(redis.clients.jedis.Builder<java.lang.String>)\n  location: class com.falkordb.impl.api.GraphPipelineImpl",
+    "api_diff": "~~ FIELD_TYPE_CHANGED <- redis.clients.jedis.JedisMonitor.client\n-- redis.clients.jedis.commands.BasicRedisPipeline\n-- redis.clients.jedis.MultiKeyPipelineBase.client\n-- redis.clients.jedis.commands.RedisPipeline\n-- redis.clients.jedis.BinaryJedis.client\n-- redis.clients.jedis.commands.BinaryRedisPipeline\n-- redis.clients.jedis.commands.BinaryScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ClusterPipeline\n-- redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline\n-- redis.clients.jedis.commands.MultiKeyCommandsPipeline\n-- redis.clients.jedis.Client\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig,java.time.Duration)\n++ public null redis.clients.jedis.ClusterPipeline\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider,redis.clients.jedis.ClusterCommandObjects)",
+    "original_code": "package com.falkordb.impl.api;\n\nimport com.falkordb.Graph;\nimport com.falkordb.ResultSet;\nimport com.falkordb.impl.Utils;\nimport com.falkordb.impl.graph_cache.GraphCache;\nimport com.falkordb.impl.resultset.ResultSetImpl;\nimport redis.clients.jedis.Builder;\nimport redis.clients.jedis.BuilderFactory;\nimport redis.clients.jedis.Client;\nimport redis.clients.jedis.Pipeline;\nimport redis.clients.jedis.Response;\n\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * This class is extending Jedis Pipeline\n */\npublic class GraphPipelineImpl extends Pipeline implements com.falkordb.GraphPipeline {\n\n    private final Graph graph;\n    private GraphCache cache;\n    private final String graphId;\n\n    public GraphPipelineImpl(Client client, Graph graph, GraphCache cache, String graphId){\n        super.setClient(client);\n        this.graph = graph;\n        this.cache = cache;\n        this.graphId = graphId;\n    }\n\n    /**\n     * Execute a Cypher query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query) {\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Execute a Cypher read-oly query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query) {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Execute a Cypher query with timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query, long timeout) {\n        client.sendCommand(GraphCommand.QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Execute a Cypher read-only query with timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query, long timeout) {\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, query, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query, Map<String, Object> params) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher read-only query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING);\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher query with parameters and timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> query(String query, Map<String, Object> params, long timeout) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.QUERY, graphId, preparedQuery, Utils.COMPACT_STRING, Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Executes a cypher read-only query with parameters and timeout.\n     *\n     * NOTE: timeout is simply sent to DB. Socket timeout will not be changed.\n     * timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    @Override\n    public Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params, long timeout) {\n        String preparedQuery = Utils.prepareQuery(query, params);\n        client.sendCommand(GraphCommand.RO_QUERY, graphId, preparedQuery, Utils.COMPACT_STRING,\n                Utils.TIMEOUT_STRING,\n                Long.toString(timeout));\n        return getResponse(new Builder<ResultSet>() {\n            @SuppressWarnings(\"unchecked\")\n            @Override\n            public ResultSet build(Object o) {\n                return new ResultSetImpl((List<Object>) o, graph, cache);\n            }\n        });\n    }\n\n    /**\n     * Invokes stored procedures without arguments\n     * @param procedure procedure name to invoke\n     * @return response with result set with the procedure data\n     */\n    @Override\n    public Response<ResultSet> callProcedure(String procedure){\n        return callProcedure(procedure, Utils.DUMMY_LIST, Utils.DUMMY_MAP);\n    }\n\n    /**\n     * Invokes stored procedure with arguments\n     * @param procedure procedure name to invoke\n     * @param args procedure arguments\n     * @return response with result set with the procedure data\n     */\n    @Override\n    public Response<ResultSet> callProcedure(String procedure, List<String> args  ){\n        return callProcedure(procedure, args, Utils.DUMMY_MAP);\n    }\n\n    /**\n     * Invoke a stored procedure\n     * @param procedure - procedure to execute\n     * @param args - procedure arguments\n     * @param kwargs - procedure output arguments\n     * @return response with result set with the procedure data\n     */\n    @Override\n    public Response<ResultSet> callProcedure(String procedure, List<String> args,\n                                                  Map<String, List<String>> kwargs) {\n        String preparedProcedure = Utils.prepareProcedure(procedure, args, kwargs);\n        return query(preparedProcedure);\n    }\n\n    /**\n     * Copies the graph\n     * @param destinationGraphId duplicated graph name\n     * @return response with the copy running time statistics\n     */\n    @Override\n    public Response<String> copyGraph(String destinationGraphId) {\n        client.sendCommand(GraphCommand.COPY, graphId, destinationGraphId);\n        return getResponse(BuilderFactory.STRING);\n    }\n\n\n    /**\n     * Deletes the entire graph\n     * @return response with the deletion running time statistics\n     */\n    @Override\n    public Response<String> deleteGraph(){\n\n        client.sendCommand(GraphCommand.DELETE, graphId);\n        Response<String> response =  getResponse(BuilderFactory.STRING);\n        cache.clear();\n        return response;\n    }\n}\n",
+    "project": "JFalkorDB",
+    "libraryName": "jedis",
+    "libraryGroupID": "redis.clients",
+    "newVersion": "6.0.0",
+    "previousVersion": "3.10.0",
+    "breakingCommit": "24009637735a09b1c1bac0a32e2e5609710bb418"
+}

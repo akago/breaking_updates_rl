@@ -1,0 +1,43 @@
+{
+    "absolute_path_to_file_in_container": "/cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java",
+    "errors": [
+        {
+            "line_number": 6,
+            "message": "[ERROR] /cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[6,24] package javax.annotation does not exist",
+            "additional_info": "",
+            "file_name": "GlobalTestImplementation.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "942941e4-b57d-50ec-8d3f-da934d238637"
+        },
+        {
+            "line_number": 27,
+            "message": "[ERROR] /cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[27,2] cannot find symbol",
+            "additional_info": "  symbol: class Priority",
+            "file_name": "GlobalTestImplementation.java",
+            "BCs": [
+                {
+                    "element": "javax.annotation.Priority",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.annotation.Priority",
+                "++ public abstract interface null jakarta.annotation.Priority"
+            ],
+            "uid": "a453629a-b30e-5e1f-8bb1-f9cb29b874e9"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage de.hilling.junit.cdi.annotations;\n\nimport de.hilling.junit.cdi.scope.TestScoped;\nimport org.immutables.value.Value;\n\nimport javax.annotation.Priority;\nimport javax.enterprise.inject.Alternative;\nimport javax.enterprise.inject.Stereotype;\nimport java.lang.annotation.ElementType;\nimport java.lang.annotation.Retention;\nimport java.lang.annotation.RetentionPolicy;\nimport java.lang.annotation.Target;\n\n/**\n * Use this annotation to mark Alternatives that should globally replace\n * production implementations.\n * <p>\n *     These services cannot be disabled or enabled on a per test basis\n *     because the container is only started once.\n * </p>\n */\n@Alternative\n@TestScoped\n@Stereotype\n@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD})\n@Retention(RetentionPolicy.RUNTIME)\n@Priority(100)\n@Value.Immutable\npublic @interface GlobalTestImplementation {\n}\n\n'''\nThe error is caused by a change in the API of the dependency: jakarta.annotation-api 1.3.5->2.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- javax.annotation.Priority\n++ public abstract interface null jakarta.annotation.Priority\n\nThe error is triggered in the following specific lines in the previous code:\nimport javax.annotation.Priority;\n@Priority(100)\nwith the following error message:\n[ERROR] /cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[6,24] package javax.annotation does not exist\n[ERROR] /cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[27,2] cannot find symbol  symbol: class Priority\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import javax.annotation.Priority;\n@Priority(100)",
+    "error_message": "[ERROR] /cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[6,24] package javax.annotation does not exist\n[ERROR] /cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java:[27,2] cannot find symbol  symbol: class Priority",
+    "api_diff": "-- javax.annotation.Priority\n++ public abstract interface null jakarta.annotation.Priority",
+    "original_code": "package de.hilling.junit.cdi.annotations;\n\nimport de.hilling.junit.cdi.scope.TestScoped;\nimport org.immutables.value.Value;\n\nimport javax.annotation.Priority;\nimport javax.enterprise.inject.Alternative;\nimport javax.enterprise.inject.Stereotype;\nimport java.lang.annotation.ElementType;\nimport java.lang.annotation.Retention;\nimport java.lang.annotation.RetentionPolicy;\nimport java.lang.annotation.Target;\n\n/**\n * Use this annotation to mark Alternatives that should globally replace\n * production implementations.\n * <p>\n *     These services cannot be disabled or enabled on a per test basis\n *     because the container is only started once.\n * </p>\n */\n@Alternative\n@TestScoped\n@Stereotype\n@Target({ElementType.TYPE, ElementType.FIELD, ElementType.METHOD})\n@Retention(RetentionPolicy.RUNTIME)\n@Priority(100)\n@Value.Immutable\npublic @interface GlobalTestImplementation {\n}\n",
+    "project": "cdi-test",
+    "libraryName": "jakarta.annotation-api",
+    "libraryGroupID": "jakarta.annotation",
+    "newVersion": "2.0.0",
+    "previousVersion": "1.3.5",
+    "breakingCommit": "4bba3fb6147e72946f64724fe55eee5d15ff6206"
+}

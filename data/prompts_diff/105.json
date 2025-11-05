@@ -1,0 +1,73 @@
+{
+    "absolute_path_to_file_in_container": "/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java",
+    "errors": [
+        {
+            "line_number": 19,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist",
+            "additional_info": "",
+            "file_name": "AggregateMojoTest.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "5f1d4546-5a5b-5a09-bc32-ca82210bc650"
+        },
+        {
+            "line_number": 30,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[30,5] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.AggregateMojoTest",
+            "file_name": "AggregateMojoTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "4feb22ac-c854-5be1-b4ab-0a97f05bf252"
+        },
+        {
+            "line_number": 31,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[31,7] method does not override or implement a method from a supertype",
+            "additional_info": "",
+            "file_name": "AggregateMojoTest.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "9cfcddb4-f53e-51f3-9c8b-f8ab55363156"
+        },
+        {
+            "line_number": 46,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[46,5] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.AggregateMojoTest",
+            "file_name": "AggregateMojoTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "4feb22ac-c854-5be1-b4ab-0a97f05bf252"
+        },
+        {
+            "line_number": 47,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[47,7] method does not override or implement a method from a supertype",
+            "additional_info": "",
+            "file_name": "AggregateMojoTest.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "9cfcddb4-f53e-51f3-9c8b-f8ab55363156"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\nimport org.junit.jupiter.api.Assertions;\nimport org.junit.jupiter.api.Test;\n\nimport java.io.File;\nimport java.util.Arrays;\nimport java.util.List;\n\nclass AggregateMojoTest {\n  @Test\n  void test_modules_ignored() throws Exception {\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\n      public List<String> getModules() {\n        return Arrays.<String>asList(\"module1\", \"module2\", \"module3\");\n      }\n    };\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check/modules\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = project;\n    check.strictCheck = true;\n    check.execute();\n  }\n\n  @Test\n  void test_modules_scanned() throws Exception {\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\n      public List<String> getModules() {\n        return Arrays.<String>asList(\"module1\", \"module2\", \"module3\");\n      }\n    };\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.project = project;\n    check.defaultBasedir = new File(\"src/test/resources/check/modules\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.aggregate = true;\n    check.strictCheck = true;\n    try {\n      check.execute();\n      Assertions.fail();\n    } catch (MojoExecutionException e) {\n      Assertions.assertEquals(\"Some files do not have the expected license header. Run license:format to update them.\", e.getMessage());\n    }\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: maven-plugin-testing-harness 4.0.0-alpha-2->4.0.0-beta-4. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.apache.maven.plugin.testing.stubs.MavenProjectStub\n-- org.apache.maven.plugin.testing.stubs.ArtifactStub\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\nwith the following error message:\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[30,5] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.AggregateMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[31,7] method does not override or implement a method from a supertype\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[46,5] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.AggregateMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[47,7] method does not override or implement a method from a supertype\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override",
+    "error_message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[30,5] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.AggregateMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[31,7] method does not override or implement a method from a supertype\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[46,5] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.AggregateMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java:[47,7] method does not override or implement a method from a supertype",
+    "api_diff": "-- org.apache.maven.plugin.testing.stubs.MavenProjectStub\n-- org.apache.maven.plugin.testing.stubs.ArtifactStub",
+    "original_code": "/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\nimport org.junit.jupiter.api.Assertions;\nimport org.junit.jupiter.api.Test;\n\nimport java.io.File;\nimport java.util.Arrays;\nimport java.util.List;\n\nclass AggregateMojoTest {\n  @Test\n  void test_modules_ignored() throws Exception {\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\n      public List<String> getModules() {\n        return Arrays.<String>asList(\"module1\", \"module2\", \"module3\");\n      }\n    };\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check/modules\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = project;\n    check.strictCheck = true;\n    check.execute();\n  }\n\n  @Test\n  void test_modules_scanned() throws Exception {\n    MavenProjectStub project = new MavenProjectStub() {\n      @Override\n      public List<String> getModules() {\n        return Arrays.<String>asList(\"module1\", \"module2\", \"module3\");\n      }\n    };\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.project = project;\n    check.defaultBasedir = new File(\"src/test/resources/check/modules\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.aggregate = true;\n    check.strictCheck = true;\n    try {\n      check.execute();\n      Assertions.fail();\n    } catch (MojoExecutionException e) {\n      Assertions.assertEquals(\"Some files do not have the expected license header. Run license:format to update them.\", e.getMessage());\n    }\n  }\n}\n",
+    "project": "license-maven-plugin",
+    "libraryName": "maven-plugin-testing-harness",
+    "libraryGroupID": "org.apache.maven.plugin-testing",
+    "newVersion": "4.0.0-beta-4",
+    "previousVersion": "4.0.0-alpha-2",
+    "breakingCommit": "fb038ef3a078e45abab4ecc6728a3d0d89bbe01f"
+}

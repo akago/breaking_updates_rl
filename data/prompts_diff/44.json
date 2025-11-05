@@ -1,0 +1,265 @@
+{
+    "absolute_path_to_file_in_container": "/jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java",
+    "errors": [
+        {
+            "line_number": 12,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[12,17] package javax.mvc does not exist",
+            "additional_info": "",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "57e09b6a-8f9e-5687-8c66-0cebb6179052"
+        },
+        {
+            "line_number": 13,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[13,17] package javax.mvc does not exist",
+            "additional_info": "",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "57e09b6a-8f9e-5687-8c66-0cebb6179052"
+        },
+        {
+            "line_number": 14,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[14,17] package javax.mvc does not exist",
+            "additional_info": "",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "57e09b6a-8f9e-5687-8c66-0cebb6179052"
+        },
+        {
+            "line_number": 15,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[15,25] package javax.mvc.binding does not exist",
+            "additional_info": "",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "589816e3-3116-5eb7-a9ee-18e975bfd7d2"
+        },
+        {
+            "line_number": 16,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[16,25] package javax.mvc.binding does not exist",
+            "additional_info": "",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "589816e3-3116-5eb7-a9ee-18e975bfd7d2"
+        },
+        {
+            "line_number": 17,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[17,26] package javax.mvc.security does not exist",
+            "additional_info": "",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "d6b26ffc-648f-5e18-908f-aed0614831d4"
+        },
+        {
+            "line_number": 33,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[33,2] cannot find symbol",
+            "additional_info": "  symbol: class Controller",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "b0d3ec23-2929-5a49-83e7-e062d75491a1"
+        },
+        {
+            "line_number": 41,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[41,13] cannot find symbol",
+            "additional_info": "  symbol:   class Models\n  location: class com.example.web.TaskController",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "javax.mvc.Models",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Models",
+                "++ public abstract interface null jakarta.mvc.Models"
+            ],
+            "uid": "19107e82-fbbd-5905-9ef2-cd122caca534"
+        },
+        {
+            "line_number": 44,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[44,13] cannot find symbol",
+            "additional_info": "  symbol:   class BindingResult\n  location: class com.example.web.TaskController",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.binding.BindingResult",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller"
+            ],
+            "uid": "fd884ab2-1304-5c0c-a23a-94f95613e431"
+        },
+        {
+            "line_number": 53,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[53,6] cannot find symbol",
+            "additional_info": "  symbol:   class View\n  location: class com.example.web.TaskController",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "javax.mvc.View",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.View",
+                "++ public abstract interface null jakarta.mvc.View"
+            ],
+            "uid": "fc25d32e-412b-5df5-b06d-d9d2beea851a"
+        },
+        {
+            "line_number": 89,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[89,6] cannot find symbol",
+            "additional_info": "  symbol:   class CsrfProtected\n  location: class com.example.web.TaskController",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "javax.mvc.security.CsrfProtected",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.security.CsrfProtected",
+                "++ public abstract interface null jakarta.mvc.security.CsrfProtected"
+            ],
+            "uid": "5e27ef35-62f4-505a-8c18-692dd684f5f7"
+        },
+        {
+            "line_number": 134,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[134,6] cannot find symbol",
+            "additional_info": "  symbol:   class CsrfProtected\n  location: class com.example.web.TaskController",
+            "file_name": "TaskController.java",
+            "BCs": [
+                {
+                    "element": "javax.mvc.Controller",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "javax.mvc.security.CsrfProtected",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.Controller",
+                "++ public abstract interface null jakarta.mvc.security.CsrfProtected",
+                "++ public abstract interface null jakarta.mvc.security.CsrfProtected"
+            ],
+            "uid": "5e27ef35-62f4-505a-8c18-692dd684f5f7"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.example.web;\n\nimport com.example.domain.Task;\nimport com.example.domain.TaskRepository;\nimport com.example.web.AlertMessage.Type;\nimport java.util.List;\nimport java.util.logging.Level;\nimport java.util.logging.Logger;\nimport javax.annotation.PostConstruct;\nimport javax.enterprise.context.RequestScoped;\nimport javax.inject.Inject;\nimport javax.mvc.Controller;\nimport javax.mvc.Models;\nimport javax.mvc.View;\nimport javax.mvc.binding.BindingResult;\nimport javax.mvc.binding.ParamError;\nimport javax.mvc.security.CsrfProtected;\nimport javax.validation.Valid;\nimport javax.validation.constraints.NotNull;\nimport javax.ws.rs.BeanParam;\nimport javax.ws.rs.DELETE;\nimport javax.ws.rs.FormParam;\nimport javax.ws.rs.GET;\nimport javax.ws.rs.POST;\nimport javax.ws.rs.PUT;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.PathParam;\nimport javax.ws.rs.core.Response;\nimport static javax.ws.rs.core.Response.Status.BAD_REQUEST;\nimport org.eclipse.krazo.engine.Viewable;\n\n@Path(\"tasks\")\n@Controller\n@RequestScoped\npublic class TaskController {\n\n    @Inject\n    Logger log;\n\n    @Inject\n    private Models models;\n\n    @Inject\n    private BindingResult validationResult;\n\n    @Inject\n    TaskRepository taskRepository;\n\n    @Inject\n    AlertMessage flashMessage;\n\n    @GET\n    @View(\"tasks.xhtml\")\n    public void allTasks() {\n        log.log(Level.INFO, \"fetching all tasks\");\n\n        List<Task> todotasks = taskRepository.findByStatus(Task.Status.TODO);\n        List<Task> doingtasks = taskRepository.findByStatus(Task.Status.DOING);\n        List<Task> donetasks = taskRepository.findByStatus(Task.Status.DONE);\n\n        log.log(Level.INFO, \"got all tasks: todotasks@{0}, doingtasks@{1}, donetasks@{2}\", new Object[]{todotasks.size(), doingtasks.size(), donetasks.size()});\n\n        models.put(\"todotasks\", todotasks);\n        models.put(\"doingtasks\", doingtasks);\n        models.put(\"donetasks\", donetasks);\n\n    }\n\n    @GET\n    @Path(\"{id}\")\n    public Viewable taskDetails(@PathParam(\"id\") @NotNull Long id) {\n        log.log(Level.INFO, \"get task by id@{0}\", id);\n        Task task = taskRepository.findById(id);\n\n        models.put(\"details\", task);\n        return new Viewable(\"details.xhtml\");\n    }\n\n    @GET\n    @Path(\"new\")\n    public String add() {\n        log.log(Level.INFO, \"add new task\");\n        TaskForm form = new TaskForm();\n        models.put(\"task\", form);\n        return \"add.xhtml\";\n    }\n\n    @POST\n    @CsrfProtected\n    //@ValidateOnExecution(type = ExecutableType.NONE)\n    public Response save(@Valid @BeanParam TaskForm form) {\n        log.log(Level.INFO, \"saving new task @{0}\", form);\n\n        if (validationResult.isFailed()) {\n            AlertMessage alert = AlertMessage.danger(\"Validation voilations!\");\n            validationResult.getAllErrors()\n                    .stream()\n                    .forEach((ParamError t) -> {\n                        alert.addError(t.getParamName(), \"\", t.getMessage());\n                    });\n            models.put(\"errors\", alert);\n            models.put(\"task\", form);\n            return Response.status(BAD_REQUEST).entity(\"add.xhtml\").build();\n        }\n\n        Task task = new Task();\n        task.setName(form.getName());\n        task.setDescription(form.getDescription());\n\n        taskRepository.save(task);\n\n        flashMessage.notify(Type.success, \"Task was created successfully!\");\n\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @GET\n    @Path(\"{id}/edit\")\n    public Viewable edit(@PathParam(\"id\") Long id) {\n        log.log(Level.INFO, \"edit task @{0}\", id);\n\n        Task task = taskRepository.findById(id);\n\n        TaskForm form = new TaskForm();\n        form.setId(task.getId());\n        form.setName(task.getName());\n        form.setDescription(task.getDescription());\n        models.put(\"task\", form);\n        return new Viewable(\"edit.xhtml\");\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @CsrfProtected\n    public Response update(@PathParam(value = \"id\") Long id, @Valid @BeanParam TaskForm form) {\n        log.log(Level.INFO, \"updating existed task@id:{0}, form data:{1}\", new Object[]{id, form});\n\n        if (validationResult.isFailed()) {\n            AlertMessage alert = AlertMessage.danger(\"Validation voilations!\");\n            validationResult.getAllErrors()\n                    .stream()\n                    .forEach((ParamError t) -> {\n                        alert.addError(t.getParamName(), \"\", t.getMessage());\n                    });\n            models.put(\"errors\", alert);\n            models.put(\"task\", form);\n            return Response.status(BAD_REQUEST).entity(\"edit.xhtml\").build();\n        }\n\n        Task task = taskRepository.findById(id);\n\n        task.setName(form.getName());\n        task.setDescription(form.getDescription());\n\n        taskRepository.update(task);\n\n        flashMessage.notify(Type.info, \"Task was updated successfully!\");\n\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @PUT\n    @Path(\"{id}/status\")\n    //@CsrfProtected\n    public Response updateStatus(@PathParam(value = \"id\") Long id, @NotNull @FormParam(value = \"status\") String status) {\n        log.log(Level.INFO, \"updating status of the existed task@id:{0}, status:{1}\", new Object[]{id, status});\n\n        Task task = taskRepository.findById(id);\n\n        task.setStatus(Task.Status.valueOf(status));\n\n        taskRepository.update(task);\n\n        flashMessage.notify(Type.info, \"Task status was updated successfully!\");\n\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response delete(@PathParam(\"id\") Long id) {\n        log.log(Level.INFO, \"deleting task @{0}\", id);\n        Task task = taskRepository.findById(id);\n        taskRepository.delete(task);\n\n        AlertMessage flashMessage = AlertMessage.danger(\"Task was deleted!\");\n        models.put(\"flashMessage\", flashMessage);\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @PostConstruct\n    private void init() {\n        log.config(() -> this.getClass().getSimpleName() + \" created\");\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: jakarta.mvc-api 1.1.0->2.0.1. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- javax.mvc.RedirectScoped\n-- javax.mvc.Controller\n-- javax.mvc.Models\n-- javax.mvc.binding.BindingResult\n-- javax.mvc.View\n-- javax.mvc.security.CsrfProtected\n-- javax.mvc.binding.MvcBinding\n-- javax.mvc.MvcContext\n-- javax.mvc.UriRef\n-- javax.mvc.event.BeforeControllerEvent\n-- javax.mvc.event.BeforeProcessViewEvent\n-- javax.mvc.event.AfterControllerEvent\n-- javax.mvc.event.AfterProcessViewEvent\n-- javax.mvc.event.ControllerRedirectEvent\n-- javax.mvc.locale.LocaleResolver\n-- javax.mvc.locale.LocaleResolverContext\n++ public abstract interface null jakarta.mvc.event.AfterControllerEvent\n++ public abstract interface null jakarta.mvc.binding.MvcBinding\n++ public abstract interface null jakarta.mvc.event.ControllerRedirectEvent\n++ public abstract interface null jakarta.mvc.Models\n++ public abstract interface null jakarta.mvc.UriRef\n++ public abstract interface null jakarta.mvc.View\n++ public abstract interface null jakarta.mvc.RedirectScoped\n++ public abstract interface null jakarta.mvc.event.BeforeProcessViewEvent\n++ public abstract interface null jakarta.mvc.Controller\n++ public abstract interface null jakarta.mvc.event.AfterProcessViewEvent\n++ public abstract interface null jakarta.mvc.event.BeforeControllerEvent\n++ public abstract interface null jakarta.mvc.security.CsrfProtected\n\nThe error is triggered in the following specific lines in the previous code:\nimport javax.mvc.Controller;\nimport javax.mvc.Models;\nimport javax.mvc.View;\nimport javax.mvc.binding.BindingResult;\nimport javax.mvc.binding.ParamError;\nimport javax.mvc.security.CsrfProtected;\n@Controller\n    private Models models;\n    private BindingResult validationResult;\n    @View(\"tasks.xhtml\")\n    @CsrfProtected\n    @CsrfProtected\nwith the following error message:\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[12,17] package javax.mvc does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[13,17] package javax.mvc does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[14,17] package javax.mvc does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[15,25] package javax.mvc.binding does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[16,25] package javax.mvc.binding does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[17,26] package javax.mvc.security does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[33,2] cannot find symbol  symbol: class Controller\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[41,13] cannot find symbol  symbol:   class Models\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[44,13] cannot find symbol  symbol:   class BindingResult\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[53,6] cannot find symbol  symbol:   class View\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[89,6] cannot find symbol  symbol:   class CsrfProtected\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[134,6] cannot find symbol  symbol:   class CsrfProtected\n  location: class com.example.web.TaskController\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import javax.mvc.Controller;\nimport javax.mvc.Models;\nimport javax.mvc.View;\nimport javax.mvc.binding.BindingResult;\nimport javax.mvc.binding.ParamError;\nimport javax.mvc.security.CsrfProtected;\n@Controller\n    private Models models;\n    private BindingResult validationResult;\n    @View(\"tasks.xhtml\")\n    @CsrfProtected\n    @CsrfProtected",
+    "error_message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[12,17] package javax.mvc does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[13,17] package javax.mvc does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[14,17] package javax.mvc does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[15,25] package javax.mvc.binding does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[16,25] package javax.mvc.binding does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[17,26] package javax.mvc.security does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[33,2] cannot find symbol  symbol: class Controller\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[41,13] cannot find symbol  symbol:   class Models\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[44,13] cannot find symbol  symbol:   class BindingResult\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[53,6] cannot find symbol  symbol:   class View\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[89,6] cannot find symbol  symbol:   class CsrfProtected\n  location: class com.example.web.TaskController\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java:[134,6] cannot find symbol  symbol:   class CsrfProtected\n  location: class com.example.web.TaskController",
+    "api_diff": "-- javax.mvc.RedirectScoped\n-- javax.mvc.Controller\n-- javax.mvc.Models\n-- javax.mvc.binding.BindingResult\n-- javax.mvc.View\n-- javax.mvc.security.CsrfProtected\n-- javax.mvc.binding.MvcBinding\n-- javax.mvc.MvcContext\n-- javax.mvc.UriRef\n-- javax.mvc.event.BeforeControllerEvent\n-- javax.mvc.event.BeforeProcessViewEvent\n-- javax.mvc.event.AfterControllerEvent\n-- javax.mvc.event.AfterProcessViewEvent\n-- javax.mvc.event.ControllerRedirectEvent\n-- javax.mvc.locale.LocaleResolver\n-- javax.mvc.locale.LocaleResolverContext\n++ public abstract interface null jakarta.mvc.event.AfterControllerEvent\n++ public abstract interface null jakarta.mvc.binding.MvcBinding\n++ public abstract interface null jakarta.mvc.event.ControllerRedirectEvent\n++ public abstract interface null jakarta.mvc.Models\n++ public abstract interface null jakarta.mvc.UriRef\n++ public abstract interface null jakarta.mvc.View\n++ public abstract interface null jakarta.mvc.RedirectScoped\n++ public abstract interface null jakarta.mvc.event.BeforeProcessViewEvent\n++ public abstract interface null jakarta.mvc.Controller\n++ public abstract interface null jakarta.mvc.event.AfterProcessViewEvent\n++ public abstract interface null jakarta.mvc.event.BeforeControllerEvent\n++ public abstract interface null jakarta.mvc.security.CsrfProtected",
+    "original_code": "package com.example.web;\n\nimport com.example.domain.Task;\nimport com.example.domain.TaskRepository;\nimport com.example.web.AlertMessage.Type;\nimport java.util.List;\nimport java.util.logging.Level;\nimport java.util.logging.Logger;\nimport javax.annotation.PostConstruct;\nimport javax.enterprise.context.RequestScoped;\nimport javax.inject.Inject;\nimport javax.mvc.Controller;\nimport javax.mvc.Models;\nimport javax.mvc.View;\nimport javax.mvc.binding.BindingResult;\nimport javax.mvc.binding.ParamError;\nimport javax.mvc.security.CsrfProtected;\nimport javax.validation.Valid;\nimport javax.validation.constraints.NotNull;\nimport javax.ws.rs.BeanParam;\nimport javax.ws.rs.DELETE;\nimport javax.ws.rs.FormParam;\nimport javax.ws.rs.GET;\nimport javax.ws.rs.POST;\nimport javax.ws.rs.PUT;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.PathParam;\nimport javax.ws.rs.core.Response;\nimport static javax.ws.rs.core.Response.Status.BAD_REQUEST;\nimport org.eclipse.krazo.engine.Viewable;\n\n@Path(\"tasks\")\n@Controller\n@RequestScoped\npublic class TaskController {\n\n    @Inject\n    Logger log;\n\n    @Inject\n    private Models models;\n\n    @Inject\n    private BindingResult validationResult;\n\n    @Inject\n    TaskRepository taskRepository;\n\n    @Inject\n    AlertMessage flashMessage;\n\n    @GET\n    @View(\"tasks.xhtml\")\n    public void allTasks() {\n        log.log(Level.INFO, \"fetching all tasks\");\n\n        List<Task> todotasks = taskRepository.findByStatus(Task.Status.TODO);\n        List<Task> doingtasks = taskRepository.findByStatus(Task.Status.DOING);\n        List<Task> donetasks = taskRepository.findByStatus(Task.Status.DONE);\n\n        log.log(Level.INFO, \"got all tasks: todotasks@{0}, doingtasks@{1}, donetasks@{2}\", new Object[]{todotasks.size(), doingtasks.size(), donetasks.size()});\n\n        models.put(\"todotasks\", todotasks);\n        models.put(\"doingtasks\", doingtasks);\n        models.put(\"donetasks\", donetasks);\n\n    }\n\n    @GET\n    @Path(\"{id}\")\n    public Viewable taskDetails(@PathParam(\"id\") @NotNull Long id) {\n        log.log(Level.INFO, \"get task by id@{0}\", id);\n        Task task = taskRepository.findById(id);\n\n        models.put(\"details\", task);\n        return new Viewable(\"details.xhtml\");\n    }\n\n    @GET\n    @Path(\"new\")\n    public String add() {\n        log.log(Level.INFO, \"add new task\");\n        TaskForm form = new TaskForm();\n        models.put(\"task\", form);\n        return \"add.xhtml\";\n    }\n\n    @POST\n    @CsrfProtected\n    //@ValidateOnExecution(type = ExecutableType.NONE)\n    public Response save(@Valid @BeanParam TaskForm form) {\n        log.log(Level.INFO, \"saving new task @{0}\", form);\n\n        if (validationResult.isFailed()) {\n            AlertMessage alert = AlertMessage.danger(\"Validation voilations!\");\n            validationResult.getAllErrors()\n                    .stream()\n                    .forEach((ParamError t) -> {\n                        alert.addError(t.getParamName(), \"\", t.getMessage());\n                    });\n            models.put(\"errors\", alert);\n            models.put(\"task\", form);\n            return Response.status(BAD_REQUEST).entity(\"add.xhtml\").build();\n        }\n\n        Task task = new Task();\n        task.setName(form.getName());\n        task.setDescription(form.getDescription());\n\n        taskRepository.save(task);\n\n        flashMessage.notify(Type.success, \"Task was created successfully!\");\n\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @GET\n    @Path(\"{id}/edit\")\n    public Viewable edit(@PathParam(\"id\") Long id) {\n        log.log(Level.INFO, \"edit task @{0}\", id);\n\n        Task task = taskRepository.findById(id);\n\n        TaskForm form = new TaskForm();\n        form.setId(task.getId());\n        form.setName(task.getName());\n        form.setDescription(task.getDescription());\n        models.put(\"task\", form);\n        return new Viewable(\"edit.xhtml\");\n    }\n\n    @PUT\n    @Path(\"{id}\")\n    @CsrfProtected\n    public Response update(@PathParam(value = \"id\") Long id, @Valid @BeanParam TaskForm form) {\n        log.log(Level.INFO, \"updating existed task@id:{0}, form data:{1}\", new Object[]{id, form});\n\n        if (validationResult.isFailed()) {\n            AlertMessage alert = AlertMessage.danger(\"Validation voilations!\");\n            validationResult.getAllErrors()\n                    .stream()\n                    .forEach((ParamError t) -> {\n                        alert.addError(t.getParamName(), \"\", t.getMessage());\n                    });\n            models.put(\"errors\", alert);\n            models.put(\"task\", form);\n            return Response.status(BAD_REQUEST).entity(\"edit.xhtml\").build();\n        }\n\n        Task task = taskRepository.findById(id);\n\n        task.setName(form.getName());\n        task.setDescription(form.getDescription());\n\n        taskRepository.update(task);\n\n        flashMessage.notify(Type.info, \"Task was updated successfully!\");\n\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @PUT\n    @Path(\"{id}/status\")\n    //@CsrfProtected\n    public Response updateStatus(@PathParam(value = \"id\") Long id, @NotNull @FormParam(value = \"status\") String status) {\n        log.log(Level.INFO, \"updating status of the existed task@id:{0}, status:{1}\", new Object[]{id, status});\n\n        Task task = taskRepository.findById(id);\n\n        task.setStatus(Task.Status.valueOf(status));\n\n        taskRepository.update(task);\n\n        flashMessage.notify(Type.info, \"Task status was updated successfully!\");\n\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @DELETE\n    @Path(\"{id}\")\n    public Response delete(@PathParam(\"id\") Long id) {\n        log.log(Level.INFO, \"deleting task @{0}\", id);\n        Task task = taskRepository.findById(id);\n        taskRepository.delete(task);\n\n        AlertMessage flashMessage = AlertMessage.danger(\"Task was deleted!\");\n        models.put(\"flashMessage\", flashMessage);\n        return Response.ok(\"redirect:tasks\").build();\n    }\n\n    @PostConstruct\n    private void init() {\n        log.config(() -> this.getClass().getSimpleName() + \" created\");\n    }\n}\n",
+    "project": "jakartaee-mvc-sample",
+    "libraryName": "jakarta.mvc-api",
+    "libraryGroupID": "jakarta.mvc",
+    "newVersion": "2.0.1",
+    "previousVersion": "1.1.0",
+    "breakingCommit": "5cf5a482bd430d81257b4ecd85b3d4f7da911621"
+}

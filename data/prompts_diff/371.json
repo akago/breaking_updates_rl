@@ -1,0 +1,88 @@
+{
+    "absolute_path_to_file_in_container": "/lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java",
+    "errors": [
+        {
+            "line_number": 10,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[10,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "87fd527e-0e3d-5789-8146-eae3910b4565"
+        },
+        {
+            "line_number": 11,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[11,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "87fd527e-0e3d-5789-8146-eae3910b4565"
+        },
+        {
+            "line_number": 12,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[12,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "87fd527e-0e3d-5789-8146-eae3910b4565"
+        },
+        {
+            "line_number": 13,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[13,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "f58da1bd-07de-55ab-98c1-350a3280432b"
+        },
+        {
+            "line_number": 14,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[14,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "f58da1bd-07de-55ab-98c1-350a3280432b"
+        },
+        {
+            "line_number": 18,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[18,2] cannot find symbol",
+            "additional_info": "  symbol: class Path",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "ec372045-4a02-559e-a938-4eb78faeddb9"
+        },
+        {
+            "line_number": 19,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[19,2] cannot find symbol",
+            "additional_info": "  symbol: class Produces",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "91fe9d18-e26e-59e3-a18a-765b67ac7b7f"
+        },
+        {
+            "line_number": 26,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[26,12] cannot find symbol",
+            "additional_info": "  symbol:   class Response\n  location: class com.wire.lithium.server.monitoring.VersionResource",
+            "file_name": "VersionResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "3dc06099-501e-58eb-a308-4e8759ea3f99"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.wire.lithium.server.monitoring;\n\nimport io.swagger.annotations.Api;\nimport io.swagger.annotations.ApiOperation;\nimport io.swagger.annotations.ApiResponse;\nimport io.swagger.annotations.ApiResponses;\n\nimport javax.validation.constraints.NotEmpty;\nimport javax.validation.constraints.NotNull;\nimport javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\nimport java.io.RandomAccessFile;\n\n@Api\n@Path(\"/version\")\n@Produces(MediaType.APPLICATION_JSON)\npublic class VersionResource {\n    @GET\n    @ApiOperation(value = \"Returns version of the running code.\")\n    @ApiResponses(value = {\n            @ApiResponse(code = 200, response = Version.class, message = \"Version\")\n    })\n    public Response get() {\n        return Response\n                .ok(getVersion())\n                .build();\n    }\n\n    private Version getVersion() {\n        final String path = System.getenv(\"RELEASE_FILE_PATH\");\n\n        String version = null;\n        if (path != null) {\n            try (final RandomAccessFile file = new RandomAccessFile(path, \"r\")) {\n                version = file.readLine();\n            } catch (Exception ignored) {\n            }\n        }\n\n        if (version == null) {\n            version = \"development\";\n        }\n        return new Version(version);\n    }\n\n    static class Version {\n        @NotNull\n        @NotEmpty\n        public final String version;\n\n        public Version(String version) {\n            this.version = version;\n        }\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: dropwizard-core 2.1.5->4.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)\n\nThe error is triggered in the following specific lines in the previous code:\nimport javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n@Path(\"/version\")\n@Produces(MediaType.APPLICATION_JSON)\n    public Response get() {\nwith the following error message:\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[10,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[11,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[12,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[13,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[14,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[18,2] cannot find symbol  symbol: class Path\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[19,2] cannot find symbol  symbol: class Produces\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[26,12] cannot find symbol  symbol:   class Response\n  location: class com.wire.lithium.server.monitoring.VersionResource\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n@Path(\"/version\")\n@Produces(MediaType.APPLICATION_JSON)\n    public Response get() {",
+    "error_message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[10,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[11,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[12,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[13,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[14,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[18,2] cannot find symbol  symbol: class Path\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[19,2] cannot find symbol  symbol: class Produces\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java:[26,12] cannot find symbol  symbol:   class Response\n  location: class com.wire.lithium.server.monitoring.VersionResource",
+    "api_diff": "-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)",
+    "original_code": "package com.wire.lithium.server.monitoring;\n\nimport io.swagger.annotations.Api;\nimport io.swagger.annotations.ApiOperation;\nimport io.swagger.annotations.ApiResponse;\nimport io.swagger.annotations.ApiResponses;\n\nimport javax.validation.constraints.NotEmpty;\nimport javax.validation.constraints.NotNull;\nimport javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\nimport java.io.RandomAccessFile;\n\n@Api\n@Path(\"/version\")\n@Produces(MediaType.APPLICATION_JSON)\npublic class VersionResource {\n    @GET\n    @ApiOperation(value = \"Returns version of the running code.\")\n    @ApiResponses(value = {\n            @ApiResponse(code = 200, response = Version.class, message = \"Version\")\n    })\n    public Response get() {\n        return Response\n                .ok(getVersion())\n                .build();\n    }\n\n    private Version getVersion() {\n        final String path = System.getenv(\"RELEASE_FILE_PATH\");\n\n        String version = null;\n        if (path != null) {\n            try (final RandomAccessFile file = new RandomAccessFile(path, \"r\")) {\n                version = file.readLine();\n            } catch (Exception ignored) {\n            }\n        }\n\n        if (version == null) {\n            version = \"development\";\n        }\n        return new Version(version);\n    }\n\n    static class Version {\n        @NotNull\n        @NotEmpty\n        public final String version;\n\n        public Version(String version) {\n            this.version = version;\n        }\n    }\n}\n",
+    "project": "lithium",
+    "libraryName": "dropwizard-core",
+    "libraryGroupID": "io.dropwizard",
+    "newVersion": "4.0.0",
+    "previousVersion": "2.1.5",
+    "breakingCommit": "686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0"
+}

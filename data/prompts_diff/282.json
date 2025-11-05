@@ -1,0 +1,85 @@
+{
+    "absolute_path_to_file_in_container": "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java",
+    "errors": [
+        {
+            "line_number": 19,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[19,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "Language.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "95557df8-e3f8-5cd8-b8e3-eece4e938cd3"
+        },
+        {
+            "line_number": 36,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[36,25] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language",
+            "file_name": "Language.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "d605fdf3-4b94-5dea-82d3-076e8f43f84b"
+        },
+        {
+            "line_number": 37,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[37,20] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language",
+            "file_name": "Language.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "d605fdf3-4b94-5dea-82d3-076e8f43f84b"
+        },
+        {
+            "line_number": 39,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[39,31] cannot find symbol",
+            "additional_info": "  symbol: class LanguagesResource",
+            "file_name": "Language.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "49ca4c42-5f28-51df-9220-1ce3cc85acc7"
+        },
+        {
+            "line_number": 84,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[84,26] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language",
+            "file_name": "Language.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "d605fdf3-4b94-5dea-82d3-076e8f43f84b"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * Copyright 2016 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.cloud.translate;\n\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.common.base.Function;\nimport com.google.common.base.MoreObjects;\nimport java.io.Serializable;\nimport java.util.Objects;\n\n/**\n * Information about a language supported by Google Translation. Objects of this class contain the\n * language's code and the language name.\n *\n * @see <a href=\"https://cloud.google.com/translate/v2/discovering-supported-languages-with-rest\">\n *     Discovering Supported Languages</a>\n * @see <a href=\"https://cloud.google.com/translate/docs/languages\">Supported Languages</a>\n */\npublic class Language implements Serializable {\n\n  private static final long serialVersionUID = 5205240279371907020L;\n  static final Function<LanguagesResource, Language> FROM_PB_FUNCTION =\n      new Function<LanguagesResource, Language>() {\n        @Override\n        public Language apply(LanguagesResource languagePb) {\n          return Language.fromPb(languagePb);\n        }\n      };\n\n  private final String code;\n  private final String name;\n\n  private Language(String code, String name) {\n    this.code = code;\n    this.name = name;\n  }\n\n  /** Returns the code of the language. */\n  public String getCode() {\n    return code;\n  }\n\n  /** Returns the name of the language. */\n  public String getName() {\n    return name;\n  }\n\n  @Override\n  public String toString() {\n    return MoreObjects.toStringHelper(this).add(\"code\", code).add(\"name\", name).toString();\n  }\n\n  @Override\n  public final int hashCode() {\n    return Objects.hash(code, name);\n  }\n\n  @Override\n  public final boolean equals(Object obj) {\n    if (obj == this) {\n      return true;\n    }\n    if (obj == null || !obj.getClass().equals(Language.class)) {\n      return false;\n    }\n    Language other = (Language) obj;\n    return Objects.equals(code, other.code) && Objects.equals(name, other.name);\n  }\n\n  static Language fromPb(LanguagesResource languagePb) {\n    return new Language(languagePb.getLanguage(), languagePb.getName());\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: google-api-services-translate v2-rev20170525-2.0.0->v3-rev20220805-2.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.google.api.services.translate.model.LanguagesResource\n-- com.google.api.services.translate.model.DetectionsResourceItems\n-- com.google.api.services.translate.model.TranslationsResource\n-- com.google.api.services.translate.Translate\n++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)\n\nThe error is triggered in the following specific lines in the previous code:\nimport com.google.api.services.translate.model.LanguagesResource;\n  static final Function<LanguagesResource, Language> FROM_PB_FUNCTION =\n      new Function<LanguagesResource, Language>() {\n        public Language apply(LanguagesResource languagePb) {\n  static Language fromPb(LanguagesResource languagePb) {\nwith the following error message:\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[19,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[36,25] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[37,20] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[39,31] cannot find symbol  symbol: class LanguagesResource\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[84,26] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import com.google.api.services.translate.model.LanguagesResource;\n  static final Function<LanguagesResource, Language> FROM_PB_FUNCTION =\n      new Function<LanguagesResource, Language>() {\n        public Language apply(LanguagesResource languagePb) {\n  static Language fromPb(LanguagesResource languagePb) {",
+    "error_message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[19,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[36,25] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[37,20] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[39,31] cannot find symbol  symbol: class LanguagesResource\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java:[84,26] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.Language",
+    "api_diff": "-- com.google.api.services.translate.model.LanguagesResource\n-- com.google.api.services.translate.model.DetectionsResourceItems\n-- com.google.api.services.translate.model.TranslationsResource\n-- com.google.api.services.translate.Translate\n++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)",
+    "original_code": "/*\n * Copyright 2016 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.cloud.translate;\n\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.common.base.Function;\nimport com.google.common.base.MoreObjects;\nimport java.io.Serializable;\nimport java.util.Objects;\n\n/**\n * Information about a language supported by Google Translation. Objects of this class contain the\n * language's code and the language name.\n *\n * @see <a href=\"https://cloud.google.com/translate/v2/discovering-supported-languages-with-rest\">\n *     Discovering Supported Languages</a>\n * @see <a href=\"https://cloud.google.com/translate/docs/languages\">Supported Languages</a>\n */\npublic class Language implements Serializable {\n\n  private static final long serialVersionUID = 5205240279371907020L;\n  static final Function<LanguagesResource, Language> FROM_PB_FUNCTION =\n      new Function<LanguagesResource, Language>() {\n        @Override\n        public Language apply(LanguagesResource languagePb) {\n          return Language.fromPb(languagePb);\n        }\n      };\n\n  private final String code;\n  private final String name;\n\n  private Language(String code, String name) {\n    this.code = code;\n    this.name = name;\n  }\n\n  /** Returns the code of the language. */\n  public String getCode() {\n    return code;\n  }\n\n  /** Returns the name of the language. */\n  public String getName() {\n    return name;\n  }\n\n  @Override\n  public String toString() {\n    return MoreObjects.toStringHelper(this).add(\"code\", code).add(\"name\", name).toString();\n  }\n\n  @Override\n  public final int hashCode() {\n    return Objects.hash(code, name);\n  }\n\n  @Override\n  public final boolean equals(Object obj) {\n    if (obj == this) {\n      return true;\n    }\n    if (obj == null || !obj.getClass().equals(Language.class)) {\n      return false;\n    }\n    Language other = (Language) obj;\n    return Objects.equals(code, other.code) && Objects.equals(name, other.name);\n  }\n\n  static Language fromPb(LanguagesResource languagePb) {\n    return new Language(languagePb.getLanguage(), languagePb.getName());\n  }\n}\n",
+    "project": "google-cloud-java",
+    "libraryName": "google-api-services-translate",
+    "libraryGroupID": "com.google.apis",
+    "newVersion": "v3-rev20220805-2.0.0",
+    "previousVersion": "v2-rev20170525-2.0.0",
+    "breakingCommit": "3eb708f53f5f1ce897c3554bb73f5de5698dd171"
+}

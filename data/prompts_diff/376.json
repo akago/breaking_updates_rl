@@ -1,0 +1,124 @@
+{
+    "absolute_path_to_file_in_container": "/lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java",
+    "errors": [
+        {
+            "line_number": 35,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[35,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "a874c875-0c90-592a-9c05-67c7cb4d1773"
+        },
+        {
+            "line_number": 36,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[36,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "a874c875-0c90-592a-9c05-67c7cb4d1773"
+        },
+        {
+            "line_number": 37,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[37,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "a874c875-0c90-592a-9c05-67c7cb4d1773"
+        },
+        {
+            "line_number": 38,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[38,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "a874c875-0c90-592a-9c05-67c7cb4d1773"
+        },
+        {
+            "line_number": 39,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[39,29] package javax.ws.rs.container does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "acdf85f7-87dc-5f03-95bc-03ca215f11ad"
+        },
+        {
+            "line_number": 40,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[40,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "e2a9bb9c-1dd2-5819-9b70-848f9c4a9987"
+        },
+        {
+            "line_number": 41,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[41,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "e2a9bb9c-1dd2-5819-9b70-848f9c4a9987"
+        },
+        {
+            "line_number": 42,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[42,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "e2a9bb9c-1dd2-5819-9b70-848f9c4a9987"
+        },
+        {
+            "line_number": 46,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[46,2] cannot find symbol",
+            "additional_info": "  symbol: class Produces",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "c5cfa9ff-cb70-595b-a5e4-6c1fecca76c9"
+        },
+        {
+            "line_number": 47,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[47,2] cannot find symbol",
+            "additional_info": "  symbol: class Consumes",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "05112cd5-5129-562c-a477-0071ccf958bc"
+        },
+        {
+            "line_number": 48,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[48,2] cannot find symbol",
+            "additional_info": "  symbol: class Path",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "cb4b70f4-47e3-5ed7-b374-8e232d546cfb"
+        },
+        {
+            "line_number": 69,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[69,37] cannot find symbol",
+            "additional_info": "  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.resources.BotsResource",
+            "file_name": "BotsResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "4d8e3eea-d634-5f2a-b256-c219f99eccd9"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n//\n// Wire\n// Copyright (C) 2016 Wire Swiss GmbH\n//\n// This program is free software: you can redistribute it and/or modify\n// it under the terms of the GNU General Public License as published by\n// the Free Software Foundation, either version 3 of the License, or\n// (at your option) any later version.\n//\n// This program is distributed in the hope that it will be useful,\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n// GNU General Public License for more details.\n//\n// You should have received a copy of the GNU General Public License\n// along with this program. If not, see http://www.gnu.org/licenses/.\n//\n\npackage com.wire.lithium.server.resources;\n\nimport com.codahale.metrics.annotation.Metered;\nimport com.wire.lithium.models.NewBotResponseModel;\nimport com.wire.lithium.server.monitoring.MDCUtils;\nimport com.wire.xenon.MessageHandlerBase;\nimport com.wire.xenon.backend.models.ErrorMessage;\nimport com.wire.xenon.backend.models.NewBot;\nimport com.wire.xenon.crypto.Crypto;\nimport com.wire.xenon.factories.CryptoFactory;\nimport com.wire.xenon.factories.StorageFactory;\nimport com.wire.xenon.tools.Logger;\nimport io.swagger.annotations.*;\n\nimport javax.validation.Valid;\nimport javax.validation.constraints.NotNull;\nimport javax.ws.rs.Consumes;\nimport javax.ws.rs.POST;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.core.Context;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\nimport java.util.UUID;\n\n@Api\n@Produces(MediaType.APPLICATION_JSON)\n@Consumes(MediaType.APPLICATION_JSON)\n@Path(\"/bots\")\npublic class BotsResource {\n    protected final MessageHandlerBase handler;\n\n    protected final StorageFactory storageF;\n    protected final CryptoFactory cryptoF;\n\n    public BotsResource(MessageHandlerBase handler, StorageFactory storageF, CryptoFactory cryptoF) {\n        this.handler = handler;\n        this.storageF = storageF;\n        this.cryptoF = cryptoF;\n    }\n\n    @POST\n    @ApiOperation(value = \"New Bot instance\", response = NewBotResponseModel.class, code = 201)\n    @ApiResponses(value = {\n            @ApiResponse(code = 401, message = \"Unauthorized\", response = ErrorMessage.class),\n            @ApiResponse(code = 409, message = \"Bot not accepted (whitelist?)\", response = ErrorMessage.class),\n            @ApiResponse(code = 201, message = \"Alles gute\")})\n    @Authorization(\"Bearer\")\n    @Metered\n    public Response newBot(@Context ContainerRequestContext context,\n                           @ApiParam @Valid @NotNull NewBot newBot) {\n\n        NewBotResponseModel ret = new NewBotResponseModel();\n\n        try {\n            UUID botId = newBot.id;\n            // put information to every log for more information\n            MDCUtils.put(\"botId\", botId);\n            MDCUtils.put(\"conversationId\", newBot.conversation.id);\n            MDCUtils.put(\"userId\", newBot.origin.id);\n\n            String token = (String) context.getProperty(\"wire-auth\");\n            if (!onNewBot(newBot, token)) {\n                return Response\n                        .status(409)\n                        .entity(new ErrorMessage(\"User not whitelisted or service does not accept new instances atm\"))\n                        .build();\n            }\n\n            boolean saveState = storageF.create(botId).saveState(newBot);\n            if (!saveState) {\n                Logger.warning(\"Failed to save the state. Bot: %s\", botId);\n            }\n\n            ret.name = handler.getName(newBot);\n            ret.accentId = handler.getAccentColour();\n            String profilePreview = handler.getSmallProfilePicture();\n            if (profilePreview != null) {\n                ret.addAsset(profilePreview, \"preview\");\n            }\n\n            String profileBig = handler.getBigProfilePicture();\n            if (profileBig != null) {\n                ret.addAsset(profileBig, \"complete\");\n            }\n\n            try (Crypto crypto = cryptoF.create(botId)) {\n                ret.lastPreKey = crypto.newLastPreKey();\n                ret.preKeys = crypto.newPreKeys(0, 50);\n            }\n\n        } catch (Exception e) {\n            Logger.exception(\"newBot: %s\", e, e.getMessage());\n            return Response.\n                    status(500).\n                    entity(new ErrorMessage(e.getMessage())).\n                    build();\n        }\n\n        return Response.\n                ok(ret).\n                status(201).\n                build();\n    }\n\n    protected boolean onNewBot(NewBot newBot, String auth) {\n        return handler.onNewBot(newBot, auth);\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: dropwizard-core 2.1.5->4.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)\n\nThe error is triggered in the following specific lines in the previous code:\nimport javax.ws.rs.Consumes;\nimport javax.ws.rs.POST;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.core.Context;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n@Produces(MediaType.APPLICATION_JSON)\n@Consumes(MediaType.APPLICATION_JSON)\n@Path(\"/bots\")\n    public Response newBot(@Context ContainerRequestContext context,\nwith the following error message:\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[35,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[36,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[37,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[38,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[39,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[40,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[41,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[42,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[46,2] cannot find symbol  symbol: class Produces\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[47,2] cannot find symbol  symbol: class Consumes\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[48,2] cannot find symbol  symbol: class Path\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[69,37] cannot find symbol  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.resources.BotsResource\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import javax.ws.rs.Consumes;\nimport javax.ws.rs.POST;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.core.Context;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n@Produces(MediaType.APPLICATION_JSON)\n@Consumes(MediaType.APPLICATION_JSON)\n@Path(\"/bots\")\n    public Response newBot(@Context ContainerRequestContext context,",
+    "error_message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[35,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[36,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[37,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[38,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[39,29] package javax.ws.rs.container does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[40,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[41,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[42,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[46,2] cannot find symbol  symbol: class Produces\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[47,2] cannot find symbol  symbol: class Consumes\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[48,2] cannot find symbol  symbol: class Path\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java:[69,37] cannot find symbol  symbol:   class ContainerRequestContext\n  location: class com.wire.lithium.server.resources.BotsResource",
+    "api_diff": "-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)",
+    "original_code": "//\n// Wire\n// Copyright (C) 2016 Wire Swiss GmbH\n//\n// This program is free software: you can redistribute it and/or modify\n// it under the terms of the GNU General Public License as published by\n// the Free Software Foundation, either version 3 of the License, or\n// (at your option) any later version.\n//\n// This program is distributed in the hope that it will be useful,\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n// GNU General Public License for more details.\n//\n// You should have received a copy of the GNU General Public License\n// along with this program. If not, see http://www.gnu.org/licenses/.\n//\n\npackage com.wire.lithium.server.resources;\n\nimport com.codahale.metrics.annotation.Metered;\nimport com.wire.lithium.models.NewBotResponseModel;\nimport com.wire.lithium.server.monitoring.MDCUtils;\nimport com.wire.xenon.MessageHandlerBase;\nimport com.wire.xenon.backend.models.ErrorMessage;\nimport com.wire.xenon.backend.models.NewBot;\nimport com.wire.xenon.crypto.Crypto;\nimport com.wire.xenon.factories.CryptoFactory;\nimport com.wire.xenon.factories.StorageFactory;\nimport com.wire.xenon.tools.Logger;\nimport io.swagger.annotations.*;\n\nimport javax.validation.Valid;\nimport javax.validation.constraints.NotNull;\nimport javax.ws.rs.Consumes;\nimport javax.ws.rs.POST;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.container.ContainerRequestContext;\nimport javax.ws.rs.core.Context;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\nimport java.util.UUID;\n\n@Api\n@Produces(MediaType.APPLICATION_JSON)\n@Consumes(MediaType.APPLICATION_JSON)\n@Path(\"/bots\")\npublic class BotsResource {\n    protected final MessageHandlerBase handler;\n\n    protected final StorageFactory storageF;\n    protected final CryptoFactory cryptoF;\n\n    public BotsResource(MessageHandlerBase handler, StorageFactory storageF, CryptoFactory cryptoF) {\n        this.handler = handler;\n        this.storageF = storageF;\n        this.cryptoF = cryptoF;\n    }\n\n    @POST\n    @ApiOperation(value = \"New Bot instance\", response = NewBotResponseModel.class, code = 201)\n    @ApiResponses(value = {\n            @ApiResponse(code = 401, message = \"Unauthorized\", response = ErrorMessage.class),\n            @ApiResponse(code = 409, message = \"Bot not accepted (whitelist?)\", response = ErrorMessage.class),\n            @ApiResponse(code = 201, message = \"Alles gute\")})\n    @Authorization(\"Bearer\")\n    @Metered\n    public Response newBot(@Context ContainerRequestContext context,\n                           @ApiParam @Valid @NotNull NewBot newBot) {\n\n        NewBotResponseModel ret = new NewBotResponseModel();\n\n        try {\n            UUID botId = newBot.id;\n            // put information to every log for more information\n            MDCUtils.put(\"botId\", botId);\n            MDCUtils.put(\"conversationId\", newBot.conversation.id);\n            MDCUtils.put(\"userId\", newBot.origin.id);\n\n            String token = (String) context.getProperty(\"wire-auth\");\n            if (!onNewBot(newBot, token)) {\n                return Response\n                        .status(409)\n                        .entity(new ErrorMessage(\"User not whitelisted or service does not accept new instances atm\"))\n                        .build();\n            }\n\n            boolean saveState = storageF.create(botId).saveState(newBot);\n            if (!saveState) {\n                Logger.warning(\"Failed to save the state. Bot: %s\", botId);\n            }\n\n            ret.name = handler.getName(newBot);\n            ret.accentId = handler.getAccentColour();\n            String profilePreview = handler.getSmallProfilePicture();\n            if (profilePreview != null) {\n                ret.addAsset(profilePreview, \"preview\");\n            }\n\n            String profileBig = handler.getBigProfilePicture();\n            if (profileBig != null) {\n                ret.addAsset(profileBig, \"complete\");\n            }\n\n            try (Crypto crypto = cryptoF.create(botId)) {\n                ret.lastPreKey = crypto.newLastPreKey();\n                ret.preKeys = crypto.newPreKeys(0, 50);\n            }\n\n        } catch (Exception e) {\n            Logger.exception(\"newBot: %s\", e, e.getMessage());\n            return Response.\n                    status(500).\n                    entity(new ErrorMessage(e.getMessage())).\n                    build();\n        }\n\n        return Response.\n                ok(ret).\n                status(201).\n                build();\n    }\n\n    protected boolean onNewBot(NewBot newBot, String auth) {\n        return handler.onNewBot(newBot, auth);\n    }\n}\n",
+    "project": "lithium",
+    "libraryName": "dropwizard-core",
+    "libraryGroupID": "io.dropwizard",
+    "newVersion": "4.0.0",
+    "previousVersion": "2.1.5",
+    "breakingCommit": "686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0"
+}

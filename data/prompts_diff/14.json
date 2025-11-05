@@ -1,0 +1,61 @@
+{
+    "absolute_path_to_file_in_container": "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java",
+    "errors": [
+        {
+            "line_number": 9,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[9,37] cannot find symbol",
+            "additional_info": "  symbol:   class CommandSource\n  location: package org.spongepowered.api.command",
+            "file_name": "SkinUploader.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.command.CommandSource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "fac1f3bb-3682-5ef8-83c7-92ea3104b7df"
+        },
+        {
+            "line_number": 15,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[15,19] cannot find symbol",
+            "additional_info": "  symbol:   class CommandSource\n  location: class com.github.games647.changeskin.sponge.task.SkinUploader",
+            "file_name": "SkinUploader.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.command.CommandSource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "2fe467bd-3bc5-5563-8b7f-e7fa15655eed"
+        },
+        {
+            "line_number": 17,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[17,50] cannot find symbol",
+            "additional_info": "  symbol:   class CommandSource\n  location: class com.github.games647.changeskin.sponge.task.SkinUploader",
+            "file_name": "SkinUploader.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.command.CommandSource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "2fe467bd-3bc5-5563-8b7f-e7fa15655eed"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.github.games647.changeskin.sponge.task;\n\nimport com.github.games647.changeskin.core.model.auth.Account;\nimport com.github.games647.changeskin.core.shared.task.SharedUploader;\nimport com.github.games647.changeskin.sponge.ChangeSkinSponge;\n\nimport java.util.concurrent.TimeUnit;\n\nimport org.spongepowered.api.command.CommandSource;\nimport org.spongepowered.api.scheduler.Task;\n\npublic class SkinUploader extends SharedUploader {\n\n    private final ChangeSkinSponge plugin;\n    private final CommandSource invoker;\n\n    public SkinUploader(ChangeSkinSponge plugin, CommandSource invoker, Account owner, String url) {\n        super(plugin.getCore(), owner, url);\n\n        this.plugin = plugin;\n        this.invoker = invoker;\n    }\n\n    @Override\n    public void sendMessageInvoker(String key) {\n        plugin.sendMessage(invoker, key);\n    }\n\n    @Override\n    protected void scheduleChangeTask(String oldSkinUrl) {\n        Runnable task = new SkinChanger(plugin, owner, url, oldSkinUrl, invoker);\n        Task.builder().delay(1, TimeUnit.MINUTES).execute(task).async().submit(plugin);\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: spongeapi 7.4.0->8.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.spongepowered.api.command.CommandManager\n-- org.spongepowered.api.command.CommandSource\n-- org.spongepowered.api.network.ChannelRegistrar\n-- org.spongepowered.api.plugin.Plugin\n-- org.spongepowered.api.event.game.state.GamePreInitializationEvent\n-- org.spongepowered.api.event.game.state.GameInitializationEvent\n-- org.spongepowered.api.event.game.state.GameStoppingServerEvent\n-- org.spongepowered.api.command.spec.CommandSpec\n-- org.spongepowered.api.network.ChannelBuf\n-- org.spongepowered.api.network.RawDataListener\n-- org.spongepowered.api.event.network.ClientConnectionEvent\n-- org.spongepowered.api.command.spec.CommandExecutor\n-- org.spongepowered.api.command.CommandException\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable,boolean)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,boolean)\n++ public abstract interface null org.spongepowered.api.command.CommandExecutor\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component)\n++ public abstract interface null org.spongepowered.api.network.channel.raw.RawDataChannel\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.spongepowered.api.command.CommandSource;\n    private final CommandSource invoker;\n    public SkinUploader(ChangeSkinSponge plugin, CommandSource invoker, Account owner, String url) {\nwith the following error message:\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[9,37] cannot find symbol  symbol:   class CommandSource\n  location: package org.spongepowered.api.command\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[15,19] cannot find symbol  symbol:   class CommandSource\n  location: class com.github.games647.changeskin.sponge.task.SkinUploader\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[17,50] cannot find symbol  symbol:   class CommandSource\n  location: class com.github.games647.changeskin.sponge.task.SkinUploader\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.spongepowered.api.command.CommandSource;\n    private final CommandSource invoker;\n    public SkinUploader(ChangeSkinSponge plugin, CommandSource invoker, Account owner, String url) {",
+    "error_message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[9,37] cannot find symbol  symbol:   class CommandSource\n  location: package org.spongepowered.api.command\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[15,19] cannot find symbol  symbol:   class CommandSource\n  location: class com.github.games647.changeskin.sponge.task.SkinUploader\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java:[17,50] cannot find symbol  symbol:   class CommandSource\n  location: class com.github.games647.changeskin.sponge.task.SkinUploader",
+    "api_diff": "-- org.spongepowered.api.command.CommandManager\n-- org.spongepowered.api.command.CommandSource\n-- org.spongepowered.api.network.ChannelRegistrar\n-- org.spongepowered.api.plugin.Plugin\n-- org.spongepowered.api.event.game.state.GamePreInitializationEvent\n-- org.spongepowered.api.event.game.state.GameInitializationEvent\n-- org.spongepowered.api.event.game.state.GameStoppingServerEvent\n-- org.spongepowered.api.command.spec.CommandSpec\n-- org.spongepowered.api.network.ChannelBuf\n-- org.spongepowered.api.network.RawDataListener\n-- org.spongepowered.api.event.network.ClientConnectionEvent\n-- org.spongepowered.api.command.spec.CommandExecutor\n-- org.spongepowered.api.command.CommandException\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable,boolean)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,boolean)\n++ public abstract interface null org.spongepowered.api.command.CommandExecutor\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component)\n++ public abstract interface null org.spongepowered.api.network.channel.raw.RawDataChannel",
+    "original_code": "package com.github.games647.changeskin.sponge.task;\n\nimport com.github.games647.changeskin.core.model.auth.Account;\nimport com.github.games647.changeskin.core.shared.task.SharedUploader;\nimport com.github.games647.changeskin.sponge.ChangeSkinSponge;\n\nimport java.util.concurrent.TimeUnit;\n\nimport org.spongepowered.api.command.CommandSource;\nimport org.spongepowered.api.scheduler.Task;\n\npublic class SkinUploader extends SharedUploader {\n\n    private final ChangeSkinSponge plugin;\n    private final CommandSource invoker;\n\n    public SkinUploader(ChangeSkinSponge plugin, CommandSource invoker, Account owner, String url) {\n        super(plugin.getCore(), owner, url);\n\n        this.plugin = plugin;\n        this.invoker = invoker;\n    }\n\n    @Override\n    public void sendMessageInvoker(String key) {\n        plugin.sendMessage(invoker, key);\n    }\n\n    @Override\n    protected void scheduleChangeTask(String oldSkinUrl) {\n        Runnable task = new SkinChanger(plugin, owner, url, oldSkinUrl, invoker);\n        Task.builder().delay(1, TimeUnit.MINUTES).execute(task).async().submit(plugin);\n    }\n}\n",
+    "project": "ChangeSkin",
+    "libraryName": "spongeapi",
+    "libraryGroupID": "org.spongepowered",
+    "newVersion": "8.0.0",
+    "previousVersion": "7.4.0",
+    "breakingCommit": "402082609522c66a3b790aedafd0570148a7d53f"
+}

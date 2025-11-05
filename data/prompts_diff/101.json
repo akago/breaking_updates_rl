@@ -1,0 +1,557 @@
+{
+    "absolute_path_to_file_in_container": "/java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java",
+    "errors": [
+        {
+            "line_number": 21,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[21,25] cannot find symbol",
+            "additional_info": "  symbol:   class Base58\n  location: package org.bitcoinj.core",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.Base58",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Base58 org.bitcoinj.base.Base58()",
+                "++ public Base58 org.bitcoinj.base.Base58()"
+            ],
+            "uid": "59928fb3-d113-5a82-8d95-701beb9533e2"
+        },
+        {
+            "line_number": 22,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[22,25] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: package org.bitcoinj.core",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "acf5bbf5-6fe8-5dcb-a2e7-16f161637a5c"
+        },
+        {
+            "line_number": 23,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[23,31] package org.bitcoinj.core.ECKey does not exist",
+            "additional_info": "",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "7da80a84-50d7-5de8-9836-e807a3cea4b8"
+        },
+        {
+            "line_number": 24,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[24,25] cannot find symbol",
+            "additional_info": "  symbol:   class Sha256Hash\n  location: package org.bitcoinj.core",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.Sha256Hash",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.base.Sha256Hash",
+                "++ public null org.bitcoinj.base.Sha256Hash"
+            ],
+            "uid": "484e9e24-fa81-5d42-823a-8435e8c2e866"
+        },
+        {
+            "line_number": 59,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[59,19] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 61,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[61,20] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 71,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[71,19] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 74,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[74,16] cannot find symbol",
+            "additional_info": "  symbol:   variable ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "925049f2-9ce7-527c-b8a4-7ba10cce56ed"
+        },
+        {
+            "line_number": 85,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[85,19] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 95,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[95,19] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 115,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[115,16] cannot find symbol",
+            "additional_info": "  symbol:   variable ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "925049f2-9ce7-527c-b8a4-7ba10cce56ed"
+        },
+        {
+            "line_number": 126,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[126,19] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 130,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[130,13] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 162,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[162,34] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 187,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[187,9] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 206,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[206,39] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 228,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[228,41] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 240,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[240,36] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 254,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[254,29] cannot find symbol",
+            "additional_info": "  symbol:   variable Sha256Hash\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.Sha256Hash",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.base.Sha256Hash",
+                "++ public null org.bitcoinj.base.Sha256Hash"
+            ],
+            "uid": "ede82d83-cda8-5ebc-8722-37080fa9f93c"
+        },
+        {
+            "line_number": 263,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[263,16] cannot find symbol",
+            "additional_info": "  symbol:   variable Base58\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.Base58",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Base58 org.bitcoinj.base.Base58()",
+                "++ public Base58 org.bitcoinj.base.Base58()"
+            ],
+            "uid": "de76ff34-bee7-56fc-9869-4683857fcc40"
+        },
+        {
+            "line_number": 275,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[275,9] cannot find symbol",
+            "additional_info": "  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.ECKey",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ public null org.bitcoinj.crypto.ECKey",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ public ECKey org.bitcoinj.crypto.ECKey()",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)",
+                "++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)"
+            ],
+            "uid": "ab95cdca-a9f2-5984-a9e7-59dc827844da"
+        },
+        {
+            "line_number": 283,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[283,13] cannot find symbol",
+            "additional_info": "  symbol:   class Sha256Hash\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [
+                {
+                    "element": "org.bitcoinj.core.Sha256Hash",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null org.bitcoinj.base.Sha256Hash",
+                "++ public null org.bitcoinj.base.Sha256Hash"
+            ],
+            "uid": "5670c31f-b305-57f2-93f8-8dbfd90616cc"
+        },
+        {
+            "line_number": 284,
+            "message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[284,13] cannot find symbol",
+            "additional_info": "  symbol:   class ECDSASignature\n  location: class com.bitpay.sdk.util.KeyUtils",
+            "file_name": "KeyUtils.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "f50b37fb-4618-5cd0-a576-a81171ab0629"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * Copyright (c) 2019 BitPay.\n * All rights reserved.\n */\n\npackage com.bitpay.sdk.util;\n\nimport com.bitpay.sdk.exceptions.BitPayExceptionProvider;\nimport com.bitpay.sdk.exceptions.BitPayGenericException;\nimport java.io.BufferedReader;\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileOutputStream;\nimport java.io.FileReader;\nimport java.io.IOException;\nimport java.io.PrintWriter;\nimport java.math.BigInteger;\nimport java.net.URI;\nimport java.net.URISyntaxException;\nimport java.nio.charset.StandardCharsets;\nimport org.bitcoinj.core.Base58;\nimport org.bitcoinj.core.ECKey;\nimport org.bitcoinj.core.ECKey.ECDSASignature;\nimport org.bitcoinj.core.Sha256Hash;\nimport org.bitcoinj.crypto.KeyCrypterException;\n\n/**\n * The type Key utils.\n */\npublic class KeyUtils {\n\n    private static final char[] hexArray = \"0123456789abcdef\".toCharArray();\n    private static String PrivateKeyFile;\n    private static URI privateKey;\n\n    /**\n     * Instantiates a new Key utils.\n     */\n    public KeyUtils() {\n    }\n\n    /**\n     * Check if private key exists.\n     *\n     * @param privateKeyFile the private key file\n     * @return the boolean\n     */\n    public static boolean privateKeyExists(String privateKeyFile) {\n        PrivateKeyFile = privateKeyFile;\n\n        return new File(privateKeyFile).exists();\n    }\n\n    /**\n     * Create EC key.\n     *\n     * @return the ec key\n     */\n    public static ECKey createEcKey() {\n        //Default constructor uses SecureRandom numbers.\n        return new ECKey();\n    }\n\n    /**\n     * Create EC key from hex string.\n     *\n     * @param privateKey the private key\n     * @return the ec key\n     * @throws BitPayGenericException BitPayGenericException class\n     */\n    public static ECKey createEcKeyFromHexString(String privateKey) throws BitPayGenericException {\n        byte[] bytes = hexToBytes(privateKey);\n\n        return ECKey.fromASN1(bytes);\n    }\n\n    /**\n     * Create EC key from hex string private key file.\n     *\n     * @param privKeyFile the priv key file\n     * @return the ec key\n     * @throws BitPayGenericException BitPayGenericException class\n     * @throws IOException the io exception\n     */\n    public static ECKey createEcKeyFromHexStringFile(String privKeyFile) throws IOException, BitPayGenericException {\n        return createEcKeyFromHexString(getKeyStringFromFile(privKeyFile));\n    }\n\n    /**\n     * Load EC key.\n     *\n     * @return the ec key\n     * @throws IOException the io exception\n     */\n    public static ECKey loadEcKey() throws IOException {\n        FileInputStream fileInputStream;\n        File file;\n\n        if (KeyUtils.privateKey == null) {\n            file = new File(PrivateKeyFile);\n        } else {\n            file = new File(KeyUtils.privateKey);\n        }\n\n        byte[] bytes = new byte[(int) file.length()];\n\n        fileInputStream = new FileInputStream(file);\n        int numBytesRead = fileInputStream.read(bytes);\n\n        fileInputStream.close();\n\n        if (numBytesRead == -1) {\n            throw new IOException(\"read nothing from the file.\");\n        }\n        return ECKey.fromASN1(bytes);\n    }\n\n    /**\n     * Load EC key.\n     *\n     * @param privateKey the private key\n     * @return the ec key\n     * @throws IOException        the io exception\n     * @throws URISyntaxException the uri syntax exception\n     */\n    public static ECKey loadEcKey(URI privateKey) throws IOException, URISyntaxException {\n        KeyUtils.privateKey = privateKey;\n        File file = new File(privateKey);\n        if (!file.exists()) {\n            ECKey key = createEcKey();\n            saveEcKey(key, KeyUtils.privateKey);\n            return key;\n        }\n        return loadEcKey();\n    }\n\n    /**\n     * Gets key string from file.\n     *\n     * @param filename the filename\n     * @return the key string from file\n     * @throws IOException the io exception\n     */\n    public static String getKeyStringFromFile(String filename) throws IOException {\n        BufferedReader br;\n\n        br = new BufferedReader(new FileReader(filename));\n\n        String line = br.readLine();\n\n        br.close();\n\n        return line;\n    }\n\n    /**\n     * Save EC key.\n     *\n     * @param ecKey the ec key\n     * @throws IOException the io exception\n     */\n    public static void saveEcKey(ECKey ecKey) throws IOException {\n        byte[] bytes = ecKey.toASN1();\n        File file;\n\n        if (KeyUtils.privateKey == null) {\n            file = new File(PrivateKeyFile);\n        } else {\n            file = new File(KeyUtils.privateKey);\n        }\n\n        FileOutputStream output = new FileOutputStream(file);\n\n        output.write(bytes);\n        output.close();\n    }\n\n    /**\n     * Save EC key.\n     *\n     * @param ecKey      the ec key\n     * @param privateKey the private key\n     * @throws IOException        the io exception\n     * @throws URISyntaxException the uri syntax exception\n     */\n    public static void saveEcKey(\n        ECKey ecKey,\n        URI privateKey\n    ) throws IOException, URISyntaxException {\n        File file = new File(privateKey);\n        //we shan't overwrite an existing file\n\n        if (file.exists()) {\n            return;\n        }\n        KeyUtils.privateKey = privateKey;\n        saveEcKey(ecKey);\n    }\n\n    /**\n     * Save EC key as hex.\n     *\n     * @param ecKey the ec key\n     * @throws IOException the io exception\n     */\n    public static void saveEcKeyAsHex(ECKey ecKey) throws IOException {\n        byte[] bytes = ecKey.toASN1();\n        PrintWriter file;\n\n        if (KeyUtils.privateKey == null) {\n            file = new PrintWriter(PrivateKeyFile);\n        } else {\n            file = new PrintWriter(String.valueOf(KeyUtils.privateKey));\n        }\n\n        String keyHex = bytesToHex(bytes);\n        file.println(keyHex);\n        file.close();\n    }\n\n    /**\n     * Load EC key as hex string.\n     *\n     * @param ecKey the ec key\n     * @return the string\n     * @throws IOException the io exception\n     */\n    public static String loadEcKeyAsHex(ECKey ecKey) throws IOException {\n        byte[] bytes = ecKey.toASN1();\n        return bytesToHex(bytes);\n    }\n\n    /**\n     * Derive sin string.\n     *\n     * @param ecKey the ec key\n     * @return the string\n     * @throws BitPayGenericException the illegal argument exception\n     */\n    public static String deriveSin(ECKey ecKey) throws BitPayGenericException {\n        // Get sha256 hash and then the RIPEMD-160 hash of the public key (this call gets the result in one step).\n        byte[] pubKeyHash = ecKey.getPubKeyHash();\n\n        // Convert binary pubKeyHash, SINtype and version to Hex\n        String version = \"0F\";\n        String sinType = \"02\";\n        String pubKeyHashHex = bytesToHex(pubKeyHash);\n\n        // Concatenate all three elements\n        String preSin = version + sinType + pubKeyHashHex;\n\n        // Convert the hex string back to binary and double sha256 hash it leaving in binary both times\n        byte[] preSinByte = hexToBytes(preSin);\n        byte[] hash2Bytes = Sha256Hash.hashTwice(preSinByte);\n\n        // Convert back to hex and take first four bytes\n        String hashString = bytesToHex(hash2Bytes);\n        String first4Bytes = hashString.substring(0, 8);\n\n        // Append first four bytes to fully appended SIN string\n        String unencoded = preSin + first4Bytes;\n        byte[] unencodedBytes = new BigInteger(unencoded, 16).toByteArray();\n        return Base58.encode(unencodedBytes);\n    }\n\n    /**\n     * Sign EC Key.\n     *\n     * @param key   the key\n     * @param input the input\n     * @return the string\n     * @throws BitPayGenericException BitPayGenericException class\n     */\n    public static String sign(\n        ECKey key,\n        String input\n    ) throws BitPayGenericException {\n        String result = null;\n\n        try {\n            byte[] data = input.getBytes(StandardCharsets.UTF_8);\n\n            Sha256Hash hash = Sha256Hash.of(data);\n            ECDSASignature sig = key.sign(hash, null);\n\n            byte[] bytes = sig.encodeToDER();\n\n            result = bytesToHex(bytes);\n        } catch (KeyCrypterException e) {\n            BitPayExceptionProvider.throwGenericExceptionWithMessage(\"Wrong ecKey. \" + e.getMessage());\n        }\n\n        return result;\n    }\n\n    private static int getHexVal(char hex) {\n        int val = hex;\n        return val - (val < 58 ? 48 : (val < 97 ? 55 : 87));\n    }\n\n    /**\n     * Convert hex to bytes.\n     *\n     * @param hex the hex\n     * @return the byte []\n     * @throws BitPayGenericException BitPayGenericException class\n     */\n    public static byte[] hexToBytes(String hex) throws BitPayGenericException {\n        char[] hexArray = hex.toCharArray();\n\n        if (hex.length() % 2 == 1) {\n            BitPayExceptionProvider.throwGenericExceptionWithMessage(\n                \"Error: The binary key cannot have an odd number of digits\");\n        }\n\n        byte[] arr = new byte[hex.length() >> 1];\n\n        for (int i = 0; i < hex.length() >> 1; ++i) {\n            arr[i] = (byte) ((getHexVal(hexArray[i << 1]) << 4) + (getHexVal(hexArray[(i << 1) + 1])));\n        }\n\n        return arr;\n    }\n\n    /**\n     * Convert bytes to hex.\n     *\n     * @param bytes the bytes\n     * @return the string\n     */\n    public static String bytesToHex(byte[] bytes) {\n        char[] hexChars = new char[bytes.length * 2];\n\n        for (int j = 0; j < bytes.length; j++) {\n            int v = bytes[j] & 0xFF;\n\n            hexChars[j * 2] = hexArray[v >>> 4];\n            hexChars[j * 2 + 1] = hexArray[v & 0x0F];\n        }\n\n        return new String(hexChars);\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: bitcoinj-core 0.16.3->0.17. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.bitcoinj.core.ECKey\n-- org.bitcoinj.core.Base58\n-- org.bitcoinj.core.Sha256Hash\n++ public null org.bitcoinj.base.Sha256Hash\n++ public ECKey org.bitcoinj.crypto.ECKey()\n++ public Base58 org.bitcoinj.base.Base58()\n++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)\n++ public null org.bitcoinj.crypto.ECKey\n++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)\n++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.bitcoinj.core.Base58;\nimport org.bitcoinj.core.ECKey;\nimport org.bitcoinj.core.ECKey.ECDSASignature;\nimport org.bitcoinj.core.Sha256Hash;\n    public static ECKey createEcKey() {\n        return new ECKey();\n    public static ECKey createEcKeyFromHexString(String privateKey) throws BitPayGenericException {\n        return ECKey.fromASN1(bytes);\n    public static ECKey createEcKeyFromHexStringFile(String privKeyFile) throws IOException, BitPayGenericException {\n    public static ECKey loadEcKey() throws IOException {\n        return ECKey.fromASN1(bytes);\n    public static ECKey loadEcKey(URI privateKey) throws IOException, URISyntaxException {\n            ECKey key = createEcKey();\n    public static void saveEcKey(ECKey ecKey) throws IOException {\n        ECKey ecKey,\n    public static void saveEcKeyAsHex(ECKey ecKey) throws IOException {\n    public static String loadEcKeyAsHex(ECKey ecKey) throws IOException {\n    public static String deriveSin(ECKey ecKey) throws BitPayGenericException {\n        byte[] hash2Bytes = Sha256Hash.hashTwice(preSinByte);\n        return Base58.encode(unencodedBytes);\n        ECKey key,\n            Sha256Hash hash = Sha256Hash.of(data);\n            ECDSASignature sig = key.sign(hash, null);\nwith the following error message:\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[21,25] cannot find symbol  symbol:   class Base58\n  location: package org.bitcoinj.core\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[22,25] cannot find symbol  symbol:   class ECKey\n  location: package org.bitcoinj.core\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[23,31] package org.bitcoinj.core.ECKey does not exist\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[24,25] cannot find symbol  symbol:   class Sha256Hash\n  location: package org.bitcoinj.core\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[59,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[61,20] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[71,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[74,16] cannot find symbol  symbol:   variable ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[85,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[95,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[115,16] cannot find symbol  symbol:   variable ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[126,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[130,13] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[162,34] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[187,9] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[206,39] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[228,41] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[240,36] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[254,29] cannot find symbol  symbol:   variable Sha256Hash\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[263,16] cannot find symbol  symbol:   variable Base58\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[275,9] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[283,13] cannot find symbol  symbol:   class Sha256Hash\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[284,13] cannot find symbol  symbol:   class ECDSASignature\n  location: class com.bitpay.sdk.util.KeyUtils\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.bitcoinj.core.Base58;\nimport org.bitcoinj.core.ECKey;\nimport org.bitcoinj.core.ECKey.ECDSASignature;\nimport org.bitcoinj.core.Sha256Hash;\n    public static ECKey createEcKey() {\n        return new ECKey();\n    public static ECKey createEcKeyFromHexString(String privateKey) throws BitPayGenericException {\n        return ECKey.fromASN1(bytes);\n    public static ECKey createEcKeyFromHexStringFile(String privKeyFile) throws IOException, BitPayGenericException {\n    public static ECKey loadEcKey() throws IOException {\n        return ECKey.fromASN1(bytes);\n    public static ECKey loadEcKey(URI privateKey) throws IOException, URISyntaxException {\n            ECKey key = createEcKey();\n    public static void saveEcKey(ECKey ecKey) throws IOException {\n        ECKey ecKey,\n    public static void saveEcKeyAsHex(ECKey ecKey) throws IOException {\n    public static String loadEcKeyAsHex(ECKey ecKey) throws IOException {\n    public static String deriveSin(ECKey ecKey) throws BitPayGenericException {\n        byte[] hash2Bytes = Sha256Hash.hashTwice(preSinByte);\n        return Base58.encode(unencodedBytes);\n        ECKey key,\n            Sha256Hash hash = Sha256Hash.of(data);\n            ECDSASignature sig = key.sign(hash, null);",
+    "error_message": "[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[21,25] cannot find symbol  symbol:   class Base58\n  location: package org.bitcoinj.core\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[22,25] cannot find symbol  symbol:   class ECKey\n  location: package org.bitcoinj.core\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[23,31] package org.bitcoinj.core.ECKey does not exist\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[24,25] cannot find symbol  symbol:   class Sha256Hash\n  location: package org.bitcoinj.core\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[59,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[61,20] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[71,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[74,16] cannot find symbol  symbol:   variable ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[85,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[95,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[115,16] cannot find symbol  symbol:   variable ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[126,19] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[130,13] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[162,34] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[187,9] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[206,39] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[228,41] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[240,36] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[254,29] cannot find symbol  symbol:   variable Sha256Hash\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[263,16] cannot find symbol  symbol:   variable Base58\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[275,9] cannot find symbol  symbol:   class ECKey\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[283,13] cannot find symbol  symbol:   class Sha256Hash\n  location: class com.bitpay.sdk.util.KeyUtils\n[ERROR] /java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java:[284,13] cannot find symbol  symbol:   class ECDSASignature\n  location: class com.bitpay.sdk.util.KeyUtils",
+    "api_diff": "-- org.bitcoinj.core.ECKey\n-- org.bitcoinj.core.Base58\n-- org.bitcoinj.core.Sha256Hash\n++ public null org.bitcoinj.base.Sha256Hash\n++ public ECKey org.bitcoinj.crypto.ECKey()\n++ public Base58 org.bitcoinj.base.Base58()\n++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bouncycastle.math.ec.ECPoint,boolean)\n++ public null org.bitcoinj.crypto.ECKey\n++ public ECKey org.bitcoinj.crypto.ECKey(java.security.SecureRandom)\n++ protected ECKey org.bitcoinj.crypto.ECKey(java.math.BigInteger,org.bitcoinj.crypto.LazyECPoint)",
+    "original_code": "/*\n * Copyright (c) 2019 BitPay.\n * All rights reserved.\n */\n\npackage com.bitpay.sdk.util;\n\nimport com.bitpay.sdk.exceptions.BitPayExceptionProvider;\nimport com.bitpay.sdk.exceptions.BitPayGenericException;\nimport java.io.BufferedReader;\nimport java.io.File;\nimport java.io.FileInputStream;\nimport java.io.FileOutputStream;\nimport java.io.FileReader;\nimport java.io.IOException;\nimport java.io.PrintWriter;\nimport java.math.BigInteger;\nimport java.net.URI;\nimport java.net.URISyntaxException;\nimport java.nio.charset.StandardCharsets;\nimport org.bitcoinj.core.Base58;\nimport org.bitcoinj.core.ECKey;\nimport org.bitcoinj.core.ECKey.ECDSASignature;\nimport org.bitcoinj.core.Sha256Hash;\nimport org.bitcoinj.crypto.KeyCrypterException;\n\n/**\n * The type Key utils.\n */\npublic class KeyUtils {\n\n    private static final char[] hexArray = \"0123456789abcdef\".toCharArray();\n    private static String PrivateKeyFile;\n    private static URI privateKey;\n\n    /**\n     * Instantiates a new Key utils.\n     */\n    public KeyUtils() {\n    }\n\n    /**\n     * Check if private key exists.\n     *\n     * @param privateKeyFile the private key file\n     * @return the boolean\n     */\n    public static boolean privateKeyExists(String privateKeyFile) {\n        PrivateKeyFile = privateKeyFile;\n\n        return new File(privateKeyFile).exists();\n    }\n\n    /**\n     * Create EC key.\n     *\n     * @return the ec key\n     */\n    public static ECKey createEcKey() {\n        //Default constructor uses SecureRandom numbers.\n        return new ECKey();\n    }\n\n    /**\n     * Create EC key from hex string.\n     *\n     * @param privateKey the private key\n     * @return the ec key\n     * @throws BitPayGenericException BitPayGenericException class\n     */\n    public static ECKey createEcKeyFromHexString(String privateKey) throws BitPayGenericException {\n        byte[] bytes = hexToBytes(privateKey);\n\n        return ECKey.fromASN1(bytes);\n    }\n\n    /**\n     * Create EC key from hex string private key file.\n     *\n     * @param privKeyFile the priv key file\n     * @return the ec key\n     * @throws BitPayGenericException BitPayGenericException class\n     * @throws IOException the io exception\n     */\n    public static ECKey createEcKeyFromHexStringFile(String privKeyFile) throws IOException, BitPayGenericException {\n        return createEcKeyFromHexString(getKeyStringFromFile(privKeyFile));\n    }\n\n    /**\n     * Load EC key.\n     *\n     * @return the ec key\n     * @throws IOException the io exception\n     */\n    public static ECKey loadEcKey() throws IOException {\n        FileInputStream fileInputStream;\n        File file;\n\n        if (KeyUtils.privateKey == null) {\n            file = new File(PrivateKeyFile);\n        } else {\n            file = new File(KeyUtils.privateKey);\n        }\n\n        byte[] bytes = new byte[(int) file.length()];\n\n        fileInputStream = new FileInputStream(file);\n        int numBytesRead = fileInputStream.read(bytes);\n\n        fileInputStream.close();\n\n        if (numBytesRead == -1) {\n            throw new IOException(\"read nothing from the file.\");\n        }\n        return ECKey.fromASN1(bytes);\n    }\n\n    /**\n     * Load EC key.\n     *\n     * @param privateKey the private key\n     * @return the ec key\n     * @throws IOException        the io exception\n     * @throws URISyntaxException the uri syntax exception\n     */\n    public static ECKey loadEcKey(URI privateKey) throws IOException, URISyntaxException {\n        KeyUtils.privateKey = privateKey;\n        File file = new File(privateKey);\n        if (!file.exists()) {\n            ECKey key = createEcKey();\n            saveEcKey(key, KeyUtils.privateKey);\n            return key;\n        }\n        return loadEcKey();\n    }\n\n    /**\n     * Gets key string from file.\n     *\n     * @param filename the filename\n     * @return the key string from file\n     * @throws IOException the io exception\n     */\n    public static String getKeyStringFromFile(String filename) throws IOException {\n        BufferedReader br;\n\n        br = new BufferedReader(new FileReader(filename));\n\n        String line = br.readLine();\n\n        br.close();\n\n        return line;\n    }\n\n    /**\n     * Save EC key.\n     *\n     * @param ecKey the ec key\n     * @throws IOException the io exception\n     */\n    public static void saveEcKey(ECKey ecKey) throws IOException {\n        byte[] bytes = ecKey.toASN1();\n        File file;\n\n        if (KeyUtils.privateKey == null) {\n            file = new File(PrivateKeyFile);\n        } else {\n            file = new File(KeyUtils.privateKey);\n        }\n\n        FileOutputStream output = new FileOutputStream(file);\n\n        output.write(bytes);\n        output.close();\n    }\n\n    /**\n     * Save EC key.\n     *\n     * @param ecKey      the ec key\n     * @param privateKey the private key\n     * @throws IOException        the io exception\n     * @throws URISyntaxException the uri syntax exception\n     */\n    public static void saveEcKey(\n        ECKey ecKey,\n        URI privateKey\n    ) throws IOException, URISyntaxException {\n        File file = new File(privateKey);\n        //we shan't overwrite an existing file\n\n        if (file.exists()) {\n            return;\n        }\n        KeyUtils.privateKey = privateKey;\n        saveEcKey(ecKey);\n    }\n\n    /**\n     * Save EC key as hex.\n     *\n     * @param ecKey the ec key\n     * @throws IOException the io exception\n     */\n    public static void saveEcKeyAsHex(ECKey ecKey) throws IOException {\n        byte[] bytes = ecKey.toASN1();\n        PrintWriter file;\n\n        if (KeyUtils.privateKey == null) {\n            file = new PrintWriter(PrivateKeyFile);\n        } else {\n            file = new PrintWriter(String.valueOf(KeyUtils.privateKey));\n        }\n\n        String keyHex = bytesToHex(bytes);\n        file.println(keyHex);\n        file.close();\n    }\n\n    /**\n     * Load EC key as hex string.\n     *\n     * @param ecKey the ec key\n     * @return the string\n     * @throws IOException the io exception\n     */\n    public static String loadEcKeyAsHex(ECKey ecKey) throws IOException {\n        byte[] bytes = ecKey.toASN1();\n        return bytesToHex(bytes);\n    }\n\n    /**\n     * Derive sin string.\n     *\n     * @param ecKey the ec key\n     * @return the string\n     * @throws BitPayGenericException the illegal argument exception\n     */\n    public static String deriveSin(ECKey ecKey) throws BitPayGenericException {\n        // Get sha256 hash and then the RIPEMD-160 hash of the public key (this call gets the result in one step).\n        byte[] pubKeyHash = ecKey.getPubKeyHash();\n\n        // Convert binary pubKeyHash, SINtype and version to Hex\n        String version = \"0F\";\n        String sinType = \"02\";\n        String pubKeyHashHex = bytesToHex(pubKeyHash);\n\n        // Concatenate all three elements\n        String preSin = version + sinType + pubKeyHashHex;\n\n        // Convert the hex string back to binary and double sha256 hash it leaving in binary both times\n        byte[] preSinByte = hexToBytes(preSin);\n        byte[] hash2Bytes = Sha256Hash.hashTwice(preSinByte);\n\n        // Convert back to hex and take first four bytes\n        String hashString = bytesToHex(hash2Bytes);\n        String first4Bytes = hashString.substring(0, 8);\n\n        // Append first four bytes to fully appended SIN string\n        String unencoded = preSin + first4Bytes;\n        byte[] unencodedBytes = new BigInteger(unencoded, 16).toByteArray();\n        return Base58.encode(unencodedBytes);\n    }\n\n    /**\n     * Sign EC Key.\n     *\n     * @param key   the key\n     * @param input the input\n     * @return the string\n     * @throws BitPayGenericException BitPayGenericException class\n     */\n    public static String sign(\n        ECKey key,\n        String input\n    ) throws BitPayGenericException {\n        String result = null;\n\n        try {\n            byte[] data = input.getBytes(StandardCharsets.UTF_8);\n\n            Sha256Hash hash = Sha256Hash.of(data);\n            ECDSASignature sig = key.sign(hash, null);\n\n            byte[] bytes = sig.encodeToDER();\n\n            result = bytesToHex(bytes);\n        } catch (KeyCrypterException e) {\n            BitPayExceptionProvider.throwGenericExceptionWithMessage(\"Wrong ecKey. \" + e.getMessage());\n        }\n\n        return result;\n    }\n\n    private static int getHexVal(char hex) {\n        int val = hex;\n        return val - (val < 58 ? 48 : (val < 97 ? 55 : 87));\n    }\n\n    /**\n     * Convert hex to bytes.\n     *\n     * @param hex the hex\n     * @return the byte []\n     * @throws BitPayGenericException BitPayGenericException class\n     */\n    public static byte[] hexToBytes(String hex) throws BitPayGenericException {\n        char[] hexArray = hex.toCharArray();\n\n        if (hex.length() % 2 == 1) {\n            BitPayExceptionProvider.throwGenericExceptionWithMessage(\n                \"Error: The binary key cannot have an odd number of digits\");\n        }\n\n        byte[] arr = new byte[hex.length() >> 1];\n\n        for (int i = 0; i < hex.length() >> 1; ++i) {\n            arr[i] = (byte) ((getHexVal(hexArray[i << 1]) << 4) + (getHexVal(hexArray[(i << 1) + 1])));\n        }\n\n        return arr;\n    }\n\n    /**\n     * Convert bytes to hex.\n     *\n     * @param bytes the bytes\n     * @return the string\n     */\n    public static String bytesToHex(byte[] bytes) {\n        char[] hexChars = new char[bytes.length * 2];\n\n        for (int j = 0; j < bytes.length; j++) {\n            int v = bytes[j] & 0xFF;\n\n            hexChars[j * 2] = hexArray[v >>> 4];\n            hexChars[j * 2 + 1] = hexArray[v & 0x0F];\n        }\n\n        return new String(hexChars);\n    }\n}\n",
+    "project": "java-bitpay-client",
+    "libraryName": "bitcoinj-core",
+    "libraryGroupID": "org.bitcoinj",
+    "newVersion": "0.17",
+    "previousVersion": "0.16.3",
+    "breakingCommit": "de0a83ba9708170ae984b049781321f04caa82b3"
+}

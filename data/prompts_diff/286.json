@@ -1,0 +1,360 @@
+{
+    "absolute_path_to_file_in_container": "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java",
+    "errors": [
+        {
+            "line_number": 25,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[25,41] package com.google.api.services.translate does not exist",
+            "additional_info": "",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "a075b46a-55bf-556f-92ee-cae8013e872d"
+        },
+        {
+            "line_number": 26,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[26,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b8bc22ca-f774-505a-a48e-d6f5990376eb"
+        },
+        {
+            "line_number": 27,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[27,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b8bc22ca-f774-505a-a48e-d6f5990376eb"
+        },
+        {
+            "line_number": 28,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[28,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b8bc22ca-f774-505a-a48e-d6f5990376eb"
+        },
+        {
+            "line_number": 42,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[42,17] cannot find symbol",
+            "additional_info": "  symbol:   class Translate\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "5b9f8748-9535-5d26-b091-2fa86e08dae3"
+        },
+        {
+            "line_number": 50,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[50,22] package Translate does not exist",
+            "additional_info": "",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "22d5234f-745a-556e-948e-0ecfa2771076"
+        },
+        {
+            "line_number": 69,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[69,20] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "5a5fec22-edd3-5c3e-9caf-40316c7e872b"
+        },
+        {
+            "line_number": 71,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[71,17] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "5a5fec22-edd3-5c3e-9caf-40316c7e872b"
+        },
+        {
+            "line_number": 73,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[73,68] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "5a5fec22-edd3-5c3e-9caf-40316c7e872b"
+        },
+        {
+            "line_number": 80,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[80,15] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "ba342eef-cd24-56c7-a8ea-0e197fd71251"
+        },
+        {
+            "line_number": 82,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[82,12] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "ba342eef-cd24-56c7-a8ea-0e197fd71251"
+        },
+        {
+            "line_number": 92,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[92,61] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "ba342eef-cd24-56c7-a8ea-0e197fd71251"
+        },
+        {
+            "line_number": 99,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[99,15] cannot find symbol",
+            "additional_info": "  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b6f99011-c900-5d74-b6de-b8b70f14440d"
+        },
+        {
+            "line_number": 104,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[104,12] cannot find symbol",
+            "additional_info": "  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b6f99011-c900-5d74-b6de-b8b70f14440d"
+        },
+        {
+            "line_number": 115,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[115,64] cannot find symbol",
+            "additional_info": "  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b6f99011-c900-5d74-b6de-b8b70f14440d"
+        },
+        {
+            "line_number": 116,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[116,24] cannot find symbol",
+            "additional_info": "  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "b6f99011-c900-5d74-b6de-b8b70f14440d"
+        },
+        {
+            "line_number": 118,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[118,47] cannot find symbol",
+            "additional_info": "  symbol: class TranslationsResource",
+            "file_name": "HttpTranslateRpc.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "39f36033-9a82-53e0-ac5e-bbe4ee0b7da8"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * Copyright 2016 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.cloud.translate.spi.v2;\n\nimport static com.google.common.base.MoreObjects.firstNonNull;\n\nimport com.google.api.client.http.GenericUrl;\nimport com.google.api.client.http.HttpRequestInitializer;\nimport com.google.api.client.http.HttpTransport;\nimport com.google.api.client.json.jackson2.JacksonFactory;\nimport com.google.api.services.translate.Translate;\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\nimport com.google.cloud.http.HttpTransportOptions;\nimport com.google.cloud.translate.TranslateException;\nimport com.google.cloud.translate.TranslateOptions;\nimport com.google.common.base.Function;\nimport com.google.common.collect.ImmutableList;\nimport com.google.common.collect.Lists;\nimport java.io.IOException;\nimport java.util.List;\nimport java.util.Map;\n\npublic class HttpTranslateRpc implements TranslateRpc {\n\n  private final TranslateOptions options;\n  private final Translate translate;\n\n  public HttpTranslateRpc(TranslateOptions options) {\n    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();\n    HttpTransport transport = transportOptions.getHttpTransportFactory().create();\n    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);\n    this.options = options;\n    translate =\n        new Translate.Builder(transport, new JacksonFactory(), initializer)\n            .setRootUrl(options.getHost())\n            .setApplicationName(options.getApplicationName())\n            .build();\n  }\n\n  private static TranslateException translate(IOException exception) {\n    return new TranslateException(exception);\n  }\n\n  private GenericUrl buildTargetUrl(String path) {\n    GenericUrl genericUrl = new GenericUrl(translate.getBaseUrl() + \"v2/\" + path);\n    if (options.getApiKey() != null) {\n      genericUrl.put(\"key\", options.getApiKey());\n    }\n    return genericUrl;\n  }\n\n  @Override\n  public List<List<DetectionsResourceItems>> detect(List<String> texts) {\n    try {\n      List<List<DetectionsResourceItems>> detections =\n          translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();\n      return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();\n    } catch (IOException ex) {\n      throw translate(ex);\n    }\n  }\n\n  @Override\n  public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {\n    try {\n      List<LanguagesResource> languages =\n          translate\n              .languages()\n              .list()\n              .setKey(options.getApiKey())\n              .setTarget(\n                  firstNonNull(\n                      Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()))\n              .execute()\n              .getLanguages();\n      return languages != null ? languages : ImmutableList.<LanguagesResource>of();\n    } catch (IOException ex) {\n      throw translate(ex);\n    }\n  }\n\n  @Override\n  public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {\n    try {\n      String targetLanguage =\n          firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());\n      final String sourceLanguage = Option.SOURCE_LANGUAGE.getString(optionMap);\n      List<TranslationsResource> translations =\n          translate\n              .translations()\n              .list(texts, targetLanguage)\n              .setSource(sourceLanguage)\n              .setKey(options.getApiKey())\n              .setModel(Option.MODEL.getString(optionMap))\n              .setFormat(Option.FORMAT.getString(optionMap))\n              .execute()\n              .getTranslations();\n      return Lists.transform(\n          translations != null ? translations : ImmutableList.<TranslationsResource>of(),\n          new Function<TranslationsResource, TranslationsResource>() {\n            @Override\n            public TranslationsResource apply(TranslationsResource translationsResource) {\n              if (translationsResource.getDetectedSourceLanguage() == null) {\n                translationsResource.setDetectedSourceLanguage(sourceLanguage);\n              }\n              return translationsResource;\n            }\n          });\n    } catch (IOException ex) {\n      throw translate(ex);\n    }\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: google-api-services-translate v2-rev20170525-2.0.0->v3-rev20220805-2.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.google.api.services.translate.model.LanguagesResource\n-- com.google.api.services.translate.model.DetectionsResourceItems\n-- com.google.api.services.translate.model.TranslationsResource\n-- com.google.api.services.translate.Translate\n++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)\n\nThe error is triggered in the following specific lines in the previous code:\nimport com.google.api.services.translate.Translate;\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\n  private final Translate translate;\n        new Translate.Builder(transport, new JacksonFactory(), initializer)\n  public List<List<DetectionsResourceItems>> detect(List<String> texts) {\n      List<List<DetectionsResourceItems>> detections =\n      return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();\n  public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {\n      List<LanguagesResource> languages =\n      return languages != null ? languages : ImmutableList.<LanguagesResource>of();\n  public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {\n      List<TranslationsResource> translations =\n          translations != null ? translations : ImmutableList.<TranslationsResource>of(),\n          new Function<TranslationsResource, TranslationsResource>() {\n            public TranslationsResource apply(TranslationsResource translationsResource) {\nwith the following error message:\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[25,41] package com.google.api.services.translate does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[26,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[27,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[28,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[42,17] cannot find symbol  symbol:   class Translate\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[50,22] package Translate does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[69,20] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[71,17] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[73,68] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[80,15] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[82,12] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[92,61] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[99,15] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[104,12] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[115,64] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[116,24] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[118,47] cannot find symbol  symbol: class TranslationsResource\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import com.google.api.services.translate.Translate;\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\n  private final Translate translate;\n        new Translate.Builder(transport, new JacksonFactory(), initializer)\n  public List<List<DetectionsResourceItems>> detect(List<String> texts) {\n      List<List<DetectionsResourceItems>> detections =\n      return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();\n  public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {\n      List<LanguagesResource> languages =\n      return languages != null ? languages : ImmutableList.<LanguagesResource>of();\n  public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {\n      List<TranslationsResource> translations =\n          translations != null ? translations : ImmutableList.<TranslationsResource>of(),\n          new Function<TranslationsResource, TranslationsResource>() {\n            public TranslationsResource apply(TranslationsResource translationsResource) {",
+    "error_message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[25,41] package com.google.api.services.translate does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[26,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[27,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[28,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[42,17] cannot find symbol  symbol:   class Translate\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[50,22] package Translate does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[69,20] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[71,17] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[73,68] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[80,15] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[82,12] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[92,61] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[99,15] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[104,12] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[115,64] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[116,24] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.spi.v2.HttpTranslateRpc\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java:[118,47] cannot find symbol  symbol: class TranslationsResource",
+    "api_diff": "-- com.google.api.services.translate.model.LanguagesResource\n-- com.google.api.services.translate.model.DetectionsResourceItems\n-- com.google.api.services.translate.model.TranslationsResource\n-- com.google.api.services.translate.Translate\n++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)",
+    "original_code": "/*\n * Copyright 2016 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.cloud.translate.spi.v2;\n\nimport static com.google.common.base.MoreObjects.firstNonNull;\n\nimport com.google.api.client.http.GenericUrl;\nimport com.google.api.client.http.HttpRequestInitializer;\nimport com.google.api.client.http.HttpTransport;\nimport com.google.api.client.json.jackson2.JacksonFactory;\nimport com.google.api.services.translate.Translate;\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\nimport com.google.cloud.http.HttpTransportOptions;\nimport com.google.cloud.translate.TranslateException;\nimport com.google.cloud.translate.TranslateOptions;\nimport com.google.common.base.Function;\nimport com.google.common.collect.ImmutableList;\nimport com.google.common.collect.Lists;\nimport java.io.IOException;\nimport java.util.List;\nimport java.util.Map;\n\npublic class HttpTranslateRpc implements TranslateRpc {\n\n  private final TranslateOptions options;\n  private final Translate translate;\n\n  public HttpTranslateRpc(TranslateOptions options) {\n    HttpTransportOptions transportOptions = (HttpTransportOptions) options.getTransportOptions();\n    HttpTransport transport = transportOptions.getHttpTransportFactory().create();\n    HttpRequestInitializer initializer = transportOptions.getHttpRequestInitializer(options);\n    this.options = options;\n    translate =\n        new Translate.Builder(transport, new JacksonFactory(), initializer)\n            .setRootUrl(options.getHost())\n            .setApplicationName(options.getApplicationName())\n            .build();\n  }\n\n  private static TranslateException translate(IOException exception) {\n    return new TranslateException(exception);\n  }\n\n  private GenericUrl buildTargetUrl(String path) {\n    GenericUrl genericUrl = new GenericUrl(translate.getBaseUrl() + \"v2/\" + path);\n    if (options.getApiKey() != null) {\n      genericUrl.put(\"key\", options.getApiKey());\n    }\n    return genericUrl;\n  }\n\n  @Override\n  public List<List<DetectionsResourceItems>> detect(List<String> texts) {\n    try {\n      List<List<DetectionsResourceItems>> detections =\n          translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();\n      return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();\n    } catch (IOException ex) {\n      throw translate(ex);\n    }\n  }\n\n  @Override\n  public List<LanguagesResource> listSupportedLanguages(Map<Option, ?> optionMap) {\n    try {\n      List<LanguagesResource> languages =\n          translate\n              .languages()\n              .list()\n              .setKey(options.getApiKey())\n              .setTarget(\n                  firstNonNull(\n                      Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()))\n              .execute()\n              .getLanguages();\n      return languages != null ? languages : ImmutableList.<LanguagesResource>of();\n    } catch (IOException ex) {\n      throw translate(ex);\n    }\n  }\n\n  @Override\n  public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {\n    try {\n      String targetLanguage =\n          firstNonNull(Option.TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());\n      final String sourceLanguage = Option.SOURCE_LANGUAGE.getString(optionMap);\n      List<TranslationsResource> translations =\n          translate\n              .translations()\n              .list(texts, targetLanguage)\n              .setSource(sourceLanguage)\n              .setKey(options.getApiKey())\n              .setModel(Option.MODEL.getString(optionMap))\n              .setFormat(Option.FORMAT.getString(optionMap))\n              .execute()\n              .getTranslations();\n      return Lists.transform(\n          translations != null ? translations : ImmutableList.<TranslationsResource>of(),\n          new Function<TranslationsResource, TranslationsResource>() {\n            @Override\n            public TranslationsResource apply(TranslationsResource translationsResource) {\n              if (translationsResource.getDetectedSourceLanguage() == null) {\n                translationsResource.setDetectedSourceLanguage(sourceLanguage);\n              }\n              return translationsResource;\n            }\n          });\n    } catch (IOException ex) {\n      throw translate(ex);\n    }\n  }\n}\n",
+    "project": "google-cloud-java",
+    "libraryName": "google-api-services-translate",
+    "libraryGroupID": "com.google.apis",
+    "newVersion": "v3-rev20220805-2.0.0",
+    "previousVersion": "v2-rev20170525-2.0.0",
+    "breakingCommit": "3eb708f53f5f1ce897c3554bb73f5de5698dd171"
+}

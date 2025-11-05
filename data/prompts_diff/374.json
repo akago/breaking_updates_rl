@@ -1,0 +1,43 @@
+{
+    "absolute_path_to_file_in_container": "/lithium/src/main/java/com/wire/lithium/ClientRepo.java",
+    "errors": [
+        {
+            "line_number": 17,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[17,21] cannot find symbol",
+            "additional_info": "  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo",
+            "file_name": "ClientRepo.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "70e6189e-12c3-5cbb-918f-1870963c26f9"
+        },
+        {
+            "line_number": 21,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[21,23] cannot find symbol",
+            "additional_info": "  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo",
+            "file_name": "ClientRepo.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "70e6189e-12c3-5cbb-918f-1870963c26f9"
+        },
+        {
+            "line_number": 44,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[44,12] cannot find symbol",
+            "additional_info": "  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo",
+            "file_name": "ClientRepo.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "70e6189e-12c3-5cbb-918f-1870963c26f9"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.wire.lithium;\n\nimport com.wire.bots.cryptobox.CryptoException;\nimport com.wire.xenon.WireAPI;\nimport com.wire.xenon.WireClient;\nimport com.wire.xenon.backend.models.NewBot;\nimport com.wire.xenon.crypto.Crypto;\nimport com.wire.xenon.factories.CryptoFactory;\nimport com.wire.xenon.factories.StorageFactory;\nimport com.wire.xenon.state.State;\n\nimport javax.ws.rs.client.Client;\nimport java.io.IOException;\nimport java.util.UUID;\n\npublic class ClientRepo {\n    protected final Client httpClient;\n    protected final CryptoFactory cf;\n    protected final StorageFactory sf;\n\n    public ClientRepo(Client httpClient, CryptoFactory cf, StorageFactory sf) {\n        this.httpClient = httpClient;\n        this.cf = cf;\n        this.sf = sf;\n    }\n\n    public WireClient getClient(UUID botId) throws IOException, CryptoException {\n        NewBot state = sf.create(botId).getState();\n        Crypto crypto = cf.create(botId);\n        WireAPI api = new API(httpClient, state.token);\n        return new BotClient(api, crypto, state);\n    }\n\n    public void purgeBot(UUID botId) throws IOException {\n        State state = sf.create(botId);\n        if (state == null)\n            return;\n\n        boolean purged = state.removeState();\n        if (!purged)\n            throw new IOException(\"Failed to purge Bot: \" + botId);\n    }\n\n    public Client getHttpClient() {\n        return httpClient;\n    }\n\n    public CryptoFactory getCf() {\n        return cf;\n    }\n\n    public StorageFactory getSf() {\n        return sf;\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: dropwizard-core 2.1.5->4.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)\n\nThe error is triggered in the following specific lines in the previous code:\n    protected final Client httpClient;\n    public ClientRepo(Client httpClient, CryptoFactory cf, StorageFactory sf) {\n    public Client getHttpClient() {\nwith the following error message:\n[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[17,21] cannot find symbol  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo\n[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[21,23] cannot find symbol  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo\n[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[44,12] cannot find symbol  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "    protected final Client httpClient;\n    public ClientRepo(Client httpClient, CryptoFactory cf, StorageFactory sf) {\n    public Client getHttpClient() {",
+    "error_message": "[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[17,21] cannot find symbol  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo\n[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[21,23] cannot find symbol  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo\n[ERROR] /lithium/src/main/java/com/wire/lithium/ClientRepo.java:[44,12] cannot find symbol  symbol:   class Client\n  location: class com.wire.lithium.ClientRepo",
+    "api_diff": "-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)",
+    "original_code": "package com.wire.lithium;\n\nimport com.wire.bots.cryptobox.CryptoException;\nimport com.wire.xenon.WireAPI;\nimport com.wire.xenon.WireClient;\nimport com.wire.xenon.backend.models.NewBot;\nimport com.wire.xenon.crypto.Crypto;\nimport com.wire.xenon.factories.CryptoFactory;\nimport com.wire.xenon.factories.StorageFactory;\nimport com.wire.xenon.state.State;\n\nimport javax.ws.rs.client.Client;\nimport java.io.IOException;\nimport java.util.UUID;\n\npublic class ClientRepo {\n    protected final Client httpClient;\n    protected final CryptoFactory cf;\n    protected final StorageFactory sf;\n\n    public ClientRepo(Client httpClient, CryptoFactory cf, StorageFactory sf) {\n        this.httpClient = httpClient;\n        this.cf = cf;\n        this.sf = sf;\n    }\n\n    public WireClient getClient(UUID botId) throws IOException, CryptoException {\n        NewBot state = sf.create(botId).getState();\n        Crypto crypto = cf.create(botId);\n        WireAPI api = new API(httpClient, state.token);\n        return new BotClient(api, crypto, state);\n    }\n\n    public void purgeBot(UUID botId) throws IOException {\n        State state = sf.create(botId);\n        if (state == null)\n            return;\n\n        boolean purged = state.removeState();\n        if (!purged)\n            throw new IOException(\"Failed to purge Bot: \" + botId);\n    }\n\n    public Client getHttpClient() {\n        return httpClient;\n    }\n\n    public CryptoFactory getCf() {\n        return cf;\n    }\n\n    public StorageFactory getSf() {\n        return sf;\n    }\n}\n",
+    "project": "lithium",
+    "libraryName": "dropwizard-core",
+    "libraryGroupID": "io.dropwizard",
+    "newVersion": "4.0.0",
+    "previousVersion": "2.1.5",
+    "breakingCommit": "686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0"
+}

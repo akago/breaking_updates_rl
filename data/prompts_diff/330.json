@@ -1,0 +1,49 @@
+{
+    "absolute_path_to_file_in_container": "/HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java",
+    "errors": [
+        {
+            "line_number": 8,
+            "message": "[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[8,35] package org.bouncycastle.crypto.tls does not exist",
+            "additional_info": "",
+            "file_name": "ChachaDecoder.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "898ea293-6cfb-529a-9573-bec1e97ecac3"
+        },
+        {
+            "line_number": 9,
+            "message": "[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[9,35] package org.bouncycastle.crypto.tls does not exist",
+            "additional_info": "",
+            "file_name": "ChachaDecoder.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "898ea293-6cfb-529a-9573-bec1e97ecac3"
+        },
+        {
+            "line_number": 31,
+            "message": "[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[31,17] cannot find symbol",
+            "additional_info": "  symbol:   class TlsFatalAlert\n  location: class io.github.hapjava.server.impl.crypto.ChachaDecoder",
+            "file_name": "ChachaDecoder.java",
+            "BCs": [
+                {
+                    "element": "org.bouncycastle.crypto.tls.TlsFatalAlert",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "40a5cce1-80d1-5798-a851-5486601e12e7"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage io.github.hapjava.server.impl.crypto;\n\nimport java.io.IOException;\nimport org.bouncycastle.crypto.engines.ChaChaEngine;\nimport org.bouncycastle.crypto.generators.Poly1305KeyGenerator;\nimport org.bouncycastle.crypto.params.KeyParameter;\nimport org.bouncycastle.crypto.params.ParametersWithIV;\nimport org.bouncycastle.crypto.tls.AlertDescription;\nimport org.bouncycastle.crypto.tls.TlsFatalAlert;\nimport org.bouncycastle.util.Arrays;\n\npublic class ChachaDecoder {\n\n  private final ChaChaEngine decryptCipher;\n\n  public ChachaDecoder(byte[] key, byte[] nonce) throws IOException {\n\n    this.decryptCipher = new ChaChaEngine(20);\n\n    this.decryptCipher.init(false, new ParametersWithIV(new KeyParameter(key), nonce));\n  }\n\n  public byte[] decodeCiphertext(byte[] receivedMAC, byte[] additionalData, byte[] ciphertext)\n      throws IOException {\n\n    KeyParameter macKey = initRecordMAC(decryptCipher);\n\n    byte[] calculatedMAC = PolyKeyCreator.create(macKey, additionalData, ciphertext);\n\n    if (!Arrays.constantTimeAreEqual(calculatedMAC, receivedMAC)) {\n      throw new TlsFatalAlert(AlertDescription.bad_record_mac);\n    }\n\n    byte[] output = new byte[ciphertext.length];\n    decryptCipher.processBytes(ciphertext, 0, ciphertext.length, output, 0);\n\n    return output;\n  }\n\n  public byte[] decodeCiphertext(byte[] receivedMAC, byte[] ciphertext) throws IOException {\n    return decodeCiphertext(receivedMAC, null, ciphertext);\n  }\n\n  private KeyParameter initRecordMAC(ChaChaEngine cipher) {\n    byte[] firstBlock = new byte[64];\n    cipher.processBytes(firstBlock, 0, firstBlock.length, firstBlock, 0);\n\n    // NOTE: The BC implementation puts 'r' after 'k'\n    System.arraycopy(firstBlock, 0, firstBlock, 32, 16);\n    KeyParameter macKey = new KeyParameter(firstBlock, 16, 32);\n    Poly1305KeyGenerator.clamp(macKey.getKey());\n    return macKey;\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: bcprov-jdk15on 1.51->1.67. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.bouncycastle.crypto.tls.TlsFatalAlert\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.bouncycastle.crypto.tls.AlertDescription;\nimport org.bouncycastle.crypto.tls.TlsFatalAlert;\n      throw new TlsFatalAlert(AlertDescription.bad_record_mac);\nwith the following error message:\n[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[8,35] package org.bouncycastle.crypto.tls does not exist\n[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[9,35] package org.bouncycastle.crypto.tls does not exist\n[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[31,17] cannot find symbol  symbol:   class TlsFatalAlert\n  location: class io.github.hapjava.server.impl.crypto.ChachaDecoder\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.bouncycastle.crypto.tls.AlertDescription;\nimport org.bouncycastle.crypto.tls.TlsFatalAlert;\n      throw new TlsFatalAlert(AlertDescription.bad_record_mac);",
+    "error_message": "[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[8,35] package org.bouncycastle.crypto.tls does not exist\n[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[9,35] package org.bouncycastle.crypto.tls does not exist\n[ERROR] /HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java:[31,17] cannot find symbol  symbol:   class TlsFatalAlert\n  location: class io.github.hapjava.server.impl.crypto.ChachaDecoder",
+    "api_diff": "-- org.bouncycastle.crypto.tls.TlsFatalAlert",
+    "original_code": "package io.github.hapjava.server.impl.crypto;\n\nimport java.io.IOException;\nimport org.bouncycastle.crypto.engines.ChaChaEngine;\nimport org.bouncycastle.crypto.generators.Poly1305KeyGenerator;\nimport org.bouncycastle.crypto.params.KeyParameter;\nimport org.bouncycastle.crypto.params.ParametersWithIV;\nimport org.bouncycastle.crypto.tls.AlertDescription;\nimport org.bouncycastle.crypto.tls.TlsFatalAlert;\nimport org.bouncycastle.util.Arrays;\n\npublic class ChachaDecoder {\n\n  private final ChaChaEngine decryptCipher;\n\n  public ChachaDecoder(byte[] key, byte[] nonce) throws IOException {\n\n    this.decryptCipher = new ChaChaEngine(20);\n\n    this.decryptCipher.init(false, new ParametersWithIV(new KeyParameter(key), nonce));\n  }\n\n  public byte[] decodeCiphertext(byte[] receivedMAC, byte[] additionalData, byte[] ciphertext)\n      throws IOException {\n\n    KeyParameter macKey = initRecordMAC(decryptCipher);\n\n    byte[] calculatedMAC = PolyKeyCreator.create(macKey, additionalData, ciphertext);\n\n    if (!Arrays.constantTimeAreEqual(calculatedMAC, receivedMAC)) {\n      throw new TlsFatalAlert(AlertDescription.bad_record_mac);\n    }\n\n    byte[] output = new byte[ciphertext.length];\n    decryptCipher.processBytes(ciphertext, 0, ciphertext.length, output, 0);\n\n    return output;\n  }\n\n  public byte[] decodeCiphertext(byte[] receivedMAC, byte[] ciphertext) throws IOException {\n    return decodeCiphertext(receivedMAC, null, ciphertext);\n  }\n\n  private KeyParameter initRecordMAC(ChaChaEngine cipher) {\n    byte[] firstBlock = new byte[64];\n    cipher.processBytes(firstBlock, 0, firstBlock.length, firstBlock, 0);\n\n    // NOTE: The BC implementation puts 'r' after 'k'\n    System.arraycopy(firstBlock, 0, firstBlock, 32, 16);\n    KeyParameter macKey = new KeyParameter(firstBlock, 16, 32);\n    Poly1305KeyGenerator.clamp(macKey.getKey());\n    return macKey;\n  }\n}\n",
+    "project": "HAP-Java",
+    "libraryName": "bcprov-jdk15on",
+    "libraryGroupID": "org.bouncycastle",
+    "newVersion": "1.67",
+    "previousVersion": "1.51",
+    "breakingCommit": "6ad104c4fb9263ad1bb29e6b33618b8225efd92d"
+}

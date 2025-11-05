@@ -1,0 +1,46 @@
+{
+    "absolute_path_to_file_in_container": "/http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java",
+    "errors": [
+        {
+            "line_number": 9,
+            "message": "[ERROR] /http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java:[9,32] cannot find symbol",
+            "additional_info": "  symbol:   class Storages\n  location: package com.artipie.asto.factory",
+            "file_name": "YamlPolicyFactory.java",
+            "BCs": [
+                {
+                    "element": "com.artipie.asto.factory.Storages",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "f8db4e08-2dca-53ab-9107-88442ff736fd"
+        },
+        {
+            "line_number": 43,
+            "message": "[ERROR] /http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java:[43,25] cannot find symbol",
+            "additional_info": "  symbol:   class Storages\n  location: class com.artipie.security.policy.YamlPolicyFactory",
+            "file_name": "YamlPolicyFactory.java",
+            "BCs": [
+                {
+                    "element": "com.artipie.asto.factory.Storages",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b5c60e9d-65e8-5e99-8122-507abd6fe7ba"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * The MIT License (MIT) Copyright (c) 2020-2022 artipie.com\n * https://github.com/artipie/http/blob/master/LICENSE.txt\n */\npackage com.artipie.security.policy;\n\nimport com.amihaiemil.eoyaml.Yaml;\nimport com.artipie.asto.blocking.BlockingStorage;\nimport com.artipie.asto.factory.Storages;\nimport java.io.IOException;\nimport java.io.UncheckedIOException;\n\n/**\n * Policy factory to create {@link YamlPolicy}. Yaml policy is read from storage, and it's required\n * to describe this storage in the configuration. Configuration format is the following:\n *\n * policy:\n *   type: yaml_policy\n *   storage:\n *     type: fs\n *     path: /some/path\n *\n * The storage itself is expected to have yaml files with permissions in the following structure:\n *\n * ..\n * \u251c\u2500\u2500 roles.yaml\n * \u251c\u2500\u2500 users\n * \u2502   \u251c\u2500\u2500 david.yaml\n * \u2502   \u251c\u2500\u2500 jane.yaml\n * \u2502   \u251c\u2500\u2500 ...\n *\n * @since 1.2\n */\n@ArtipiePolicyFactory(\"yaml_policy\")\npublic final class YamlPolicyFactory implements PolicyFactory {\n\n    @Override\n    public Policy<?> getPolicy(final PolicyConfig config) {\n        final PolicyConfig sub = config.config(\"storage\");\n        try {\n            return new YamlPolicy(\n                new BlockingStorage(\n                    new Storages().newStorage(\n                        sub.string(\"type\"), Yaml.createYamlInput(sub.toString()).readYamlMapping()\n                    )\n                )\n            );\n        } catch (final IOException err) {\n            throw new UncheckedIOException(err);\n        }\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: asto-core v1.13.0->v1.15.3. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.artipie.asto.factory.Storages\n\nThe error is triggered in the following specific lines in the previous code:\nimport com.artipie.asto.factory.Storages;\n                    new Storages().newStorage(\nwith the following error message:\n[ERROR] /http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java:[9,32] cannot find symbol  symbol:   class Storages\n  location: package com.artipie.asto.factory\n[ERROR] /http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java:[43,25] cannot find symbol  symbol:   class Storages\n  location: class com.artipie.security.policy.YamlPolicyFactory\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import com.artipie.asto.factory.Storages;\n                    new Storages().newStorage(",
+    "error_message": "[ERROR] /http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java:[9,32] cannot find symbol  symbol:   class Storages\n  location: package com.artipie.asto.factory\n[ERROR] /http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java:[43,25] cannot find symbol  symbol:   class Storages\n  location: class com.artipie.security.policy.YamlPolicyFactory",
+    "api_diff": "-- com.artipie.asto.factory.Storages",
+    "original_code": "/*\n * The MIT License (MIT) Copyright (c) 2020-2022 artipie.com\n * https://github.com/artipie/http/blob/master/LICENSE.txt\n */\npackage com.artipie.security.policy;\n\nimport com.amihaiemil.eoyaml.Yaml;\nimport com.artipie.asto.blocking.BlockingStorage;\nimport com.artipie.asto.factory.Storages;\nimport java.io.IOException;\nimport java.io.UncheckedIOException;\n\n/**\n * Policy factory to create {@link YamlPolicy}. Yaml policy is read from storage, and it's required\n * to describe this storage in the configuration. Configuration format is the following:\n *\n * policy:\n *   type: yaml_policy\n *   storage:\n *     type: fs\n *     path: /some/path\n *\n * The storage itself is expected to have yaml files with permissions in the following structure:\n *\n * ..\n * \u251c\u2500\u2500 roles.yaml\n * \u251c\u2500\u2500 users\n * \u2502   \u251c\u2500\u2500 david.yaml\n * \u2502   \u251c\u2500\u2500 jane.yaml\n * \u2502   \u251c\u2500\u2500 ...\n *\n * @since 1.2\n */\n@ArtipiePolicyFactory(\"yaml_policy\")\npublic final class YamlPolicyFactory implements PolicyFactory {\n\n    @Override\n    public Policy<?> getPolicy(final PolicyConfig config) {\n        final PolicyConfig sub = config.config(\"storage\");\n        try {\n            return new YamlPolicy(\n                new BlockingStorage(\n                    new Storages().newStorage(\n                        sub.string(\"type\"), Yaml.createYamlInput(sub.toString()).readYamlMapping()\n                    )\n                )\n            );\n        } catch (final IOException err) {\n            throw new UncheckedIOException(err);\n        }\n    }\n}\n",
+    "project": "http",
+    "libraryName": "asto-core",
+    "libraryGroupID": "com.artipie",
+    "newVersion": "v1.15.3",
+    "previousVersion": "v1.13.0",
+    "breakingCommit": "4aab2869639226035c999c282f31efba15648ea3"
+}

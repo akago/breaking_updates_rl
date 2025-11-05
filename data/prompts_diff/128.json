@@ -1,0 +1,374 @@
+{
+    "absolute_path_to_file_in_container": "/JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java",
+    "errors": [
+        {
+            "line_number": 4,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[4,36] cannot find symbol",
+            "additional_info": "  symbol:   class BasicRedisPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.BasicRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.RedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "e7e5fd71-4594-59fb-b518-c57d564684a2"
+        },
+        {
+            "line_number": 5,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[5,36] cannot find symbol",
+            "additional_info": "  symbol:   class BinaryRedisPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.BinaryRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.RedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "9375b3f3-57dc-5646-abde-834253c9d4de"
+        },
+        {
+            "line_number": 6,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[6,36] cannot find symbol",
+            "additional_info": "  symbol:   class BinaryScriptingCommandsPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.BinaryScriptingCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.ScriptingCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "9ee7d2ed-2507-5e97-82d4-56c55e59495d"
+        },
+        {
+            "line_number": 7,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[7,36] cannot find symbol",
+            "additional_info": "  symbol:   class ClusterPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.ClusterPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public null redis.clients.jedis.ClusterPipeline",
+                "++ public null redis.clients.jedis.ClusterPipeline",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider,redis.clients.jedis.ClusterCommandObjects)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider,redis.clients.jedis.ClusterCommandObjects)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig,java.time.Duration)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig,java.time.Duration)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig)",
+                "++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig)"
+            ],
+            "uid": "634225d0-9ba5-5b78-8321-28c9ba027267"
+        },
+        {
+            "line_number": 8,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[8,36] cannot find symbol",
+            "additional_info": "  symbol:   class MultiKeyBinaryRedisPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.BinaryRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.RedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "4b61e97f-542a-507d-aee9-9181b86bf143"
+        },
+        {
+            "line_number": 9,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[9,36] cannot find symbol",
+            "additional_info": "  symbol:   class MultiKeyCommandsPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.MultiKeyCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "a1466259-2ec9-5632-90d9-5316739e8fda"
+        },
+        {
+            "line_number": 10,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[10,36] cannot find symbol",
+            "additional_info": "  symbol:   class RedisPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.RedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "67207fa0-a79d-57e9-b848-2688edf67fa3"
+        },
+        {
+            "line_number": 11,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[11,36] cannot find symbol",
+            "additional_info": "  symbol:   class ScriptingCommandsPipeline\n  location: package redis.clients.jedis.commands",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.JedisMonitor.client",
+                    "nature": "MUTATION",
+                    "kind": "FIELD_TYPE_CHANGED"
+                },
+                {
+                    "element": "redis.clients.jedis.MultiKeyPipelineBase.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.ScriptingCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.BinaryJedis.client",
+                    "nature": "DELETION",
+                    "kind": "FIELD_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "bc41d0b1-49d2-5de2-9538-77bf509dcbc9"
+        },
+        {
+            "line_number": 21,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[21,9] cannot find symbol",
+            "additional_info": "  symbol: class MultiKeyBinaryRedisPipeline",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.BinaryRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.RedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "fd6e6c26-c0a1-537e-bee1-5608e73f45f8"
+        },
+        {
+            "line_number": 22,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[22,9] cannot find symbol",
+            "additional_info": "  symbol: class MultiKeyCommandsPipeline",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.MultiKeyCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "9e356db2-50aa-5334-9c11-75908488151a"
+        },
+        {
+            "line_number": 23,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[23,9] cannot find symbol",
+            "additional_info": "  symbol: class BinaryScriptingCommandsPipeline",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.BinaryScriptingCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.ScriptingCommandsPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "39739068-825b-5842-bf58-8da655ada9f2"
+        },
+        {
+            "line_number": 24,
+            "message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[24,9] cannot find symbol",
+            "additional_info": "  symbol: class BasicRedisPipeline",
+            "file_name": "GraphPipeline.java",
+            "BCs": [
+                {
+                    "element": "redis.clients.jedis.commands.BasicRedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "redis.clients.jedis.commands.RedisPipeline",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "ea2a374b-91c6-5083-a41d-28ba25680b8d"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.falkordb;\n\nimport redis.clients.jedis.Response;\nimport redis.clients.jedis.commands.BasicRedisPipeline;\nimport redis.clients.jedis.commands.BinaryRedisPipeline;\nimport redis.clients.jedis.commands.BinaryScriptingCommandsPipeline;\nimport redis.clients.jedis.commands.ClusterPipeline;\nimport redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline;\nimport redis.clients.jedis.commands.MultiKeyCommandsPipeline;\nimport redis.clients.jedis.commands.RedisPipeline;\nimport redis.clients.jedis.commands.ScriptingCommandsPipeline;\n\nimport java.io.Closeable;\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * An interface which aligned to Jedis Pipeline interface\n */\npublic interface GraphPipeline extends\n        MultiKeyBinaryRedisPipeline,\n        MultiKeyCommandsPipeline, ClusterPipeline,\n        BinaryScriptingCommandsPipeline, ScriptingCommandsPipeline,\n        BasicRedisPipeline, BinaryRedisPipeline, RedisPipeline, Closeable {\n\n    /**\n     * Execute a Cypher query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query);\n\n    /**\n     * Execute a Cypher read-only query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query);\n\n    /**\n     * Execute a Cypher query with timeout.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query, long timeout);\n\n    /**\n     * Execute a Cypher read-only query with timeout.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query, long timeout);\n\n    /**\n     * Executes a cypher query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query, Map<String, Object> params);\n\n    /**\n     * Executes a cypher read-only query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params);\n\n    /**\n     * Executes a cypher query with parameters and timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query, Map<String, Object> params, long timeout);\n\n    /**\n     * Executes a cypher read-only query with parameters and timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params, long timeout);\n\n    /**\n     * Invokes stored procedures without arguments\n     * @param procedure procedure name to invoke\n     * @return a response which builds result set with the procedure data\n     */\n    Response<ResultSet> callProcedure(String procedure);\n\n    /**\n     * Invokes stored procedure with arguments\n     * @param procedure procedure name to invoke\n     * @param args procedure arguments\n     * @return a response which builds result set with the procedure data\n     */\n    Response<ResultSet> callProcedure(String procedure, List<String> args);\n\n    /**\n     * Invoke a stored procedure\n     * @param procedure - procedure to execute\n     * @param args - procedure arguments\n     * @param kwargs - procedure output arguments\n     * @return a response which builds result set with the procedure data\n     */\n    Response<ResultSet> callProcedure(String procedure, List<String> args  , Map<String, List<String>> kwargs);\n\n    /**\n     * Copies the graph\n     * @param destinationGraphId duplicated graph name\n     * @return a response which builds the copy running time statistics\n     */\n    Response<String> copyGraph(String destinationGraphId);\n\n    /**\n     * Deletes the entire graph\n     * @return a response which builds the delete running time statistics\n     */\n    Response<String> deleteGraph();\n\n    \n    /**\n     * Synchronize pipeline by reading all responses. This operation close the pipeline. Whenever\n     * possible try to avoid using this version and use Pipeline.sync() as it won't go through all the\n     * responses and generate the right response type (usually it is a waste of time).\n     * @return A list of all the responses in the order you executed them.\n     */\n    List<Object> syncAndReturnAll();\n    \n    /**\n     * Synchronize pipeline by reading all responses. This operation close the pipeline. In order to\n     * get return values from pipelined commands, capture the different Response&lt;?&gt; of the\n     * commands you execute.\n     */\n    void sync();\n    \n    /**\n     * Blocks until all the previous write commands are successfully transferred and acknowledged by\n     * at least the specified number of replicas. If the timeout, specified in milliseconds, is\n     * reached, the command returns even if the specified number of replicas were not yet reached.\n     * @param replicas successfully transferred and acknowledged by at least the specified number of\n     *          replicas\n     * @param timeout the time to block in milliseconds, a timeout of 0 means to block forever\n     * @return the number of replicas reached by all the writes performed in the context of the\n     *         current connection\n     */\n    Response<Long> waitReplicas(int replicas, long timeout);\n}\n\n'''\nThe error is caused by a change in the API of the dependency: jedis 3.10.0->6.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n~~ FIELD_TYPE_CHANGED <- redis.clients.jedis.JedisMonitor.client\n-- redis.clients.jedis.commands.BasicRedisPipeline\n-- redis.clients.jedis.MultiKeyPipelineBase.client\n-- redis.clients.jedis.commands.RedisPipeline\n-- redis.clients.jedis.BinaryJedis.client\n-- redis.clients.jedis.commands.BinaryRedisPipeline\n-- redis.clients.jedis.commands.BinaryScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ClusterPipeline\n-- redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline\n-- redis.clients.jedis.commands.MultiKeyCommandsPipeline\n-- redis.clients.jedis.Client\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig,java.time.Duration)\n++ public null redis.clients.jedis.ClusterPipeline\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider,redis.clients.jedis.ClusterCommandObjects)\n\nThe error is triggered in the following specific lines in the previous code:\nimport redis.clients.jedis.commands.BasicRedisPipeline;\nimport redis.clients.jedis.commands.BinaryRedisPipeline;\nimport redis.clients.jedis.commands.BinaryScriptingCommandsPipeline;\nimport redis.clients.jedis.commands.ClusterPipeline;\nimport redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline;\nimport redis.clients.jedis.commands.MultiKeyCommandsPipeline;\nimport redis.clients.jedis.commands.RedisPipeline;\nimport redis.clients.jedis.commands.ScriptingCommandsPipeline;\n        MultiKeyBinaryRedisPipeline,\n        MultiKeyCommandsPipeline, ClusterPipeline,\n        BinaryScriptingCommandsPipeline, ScriptingCommandsPipeline,\n        BasicRedisPipeline, BinaryRedisPipeline, RedisPipeline, Closeable {\nwith the following error message:\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[4,36] cannot find symbol  symbol:   class BasicRedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[5,36] cannot find symbol  symbol:   class BinaryRedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[6,36] cannot find symbol  symbol:   class BinaryScriptingCommandsPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[7,36] cannot find symbol  symbol:   class ClusterPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[8,36] cannot find symbol  symbol:   class MultiKeyBinaryRedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[9,36] cannot find symbol  symbol:   class MultiKeyCommandsPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[10,36] cannot find symbol  symbol:   class RedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[11,36] cannot find symbol  symbol:   class ScriptingCommandsPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[21,9] cannot find symbol  symbol: class MultiKeyBinaryRedisPipeline\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[22,9] cannot find symbol  symbol: class MultiKeyCommandsPipeline\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[23,9] cannot find symbol  symbol: class BinaryScriptingCommandsPipeline\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[24,9] cannot find symbol  symbol: class BasicRedisPipeline\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import redis.clients.jedis.commands.BasicRedisPipeline;\nimport redis.clients.jedis.commands.BinaryRedisPipeline;\nimport redis.clients.jedis.commands.BinaryScriptingCommandsPipeline;\nimport redis.clients.jedis.commands.ClusterPipeline;\nimport redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline;\nimport redis.clients.jedis.commands.MultiKeyCommandsPipeline;\nimport redis.clients.jedis.commands.RedisPipeline;\nimport redis.clients.jedis.commands.ScriptingCommandsPipeline;\n        MultiKeyBinaryRedisPipeline,\n        MultiKeyCommandsPipeline, ClusterPipeline,\n        BinaryScriptingCommandsPipeline, ScriptingCommandsPipeline,\n        BasicRedisPipeline, BinaryRedisPipeline, RedisPipeline, Closeable {",
+    "error_message": "[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[4,36] cannot find symbol  symbol:   class BasicRedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[5,36] cannot find symbol  symbol:   class BinaryRedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[6,36] cannot find symbol  symbol:   class BinaryScriptingCommandsPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[7,36] cannot find symbol  symbol:   class ClusterPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[8,36] cannot find symbol  symbol:   class MultiKeyBinaryRedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[9,36] cannot find symbol  symbol:   class MultiKeyCommandsPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[10,36] cannot find symbol  symbol:   class RedisPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[11,36] cannot find symbol  symbol:   class ScriptingCommandsPipeline\n  location: package redis.clients.jedis.commands\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[21,9] cannot find symbol  symbol: class MultiKeyBinaryRedisPipeline\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[22,9] cannot find symbol  symbol: class MultiKeyCommandsPipeline\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[23,9] cannot find symbol  symbol: class BinaryScriptingCommandsPipeline\n[ERROR] /JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java:[24,9] cannot find symbol  symbol: class BasicRedisPipeline",
+    "api_diff": "~~ FIELD_TYPE_CHANGED <- redis.clients.jedis.JedisMonitor.client\n-- redis.clients.jedis.commands.BasicRedisPipeline\n-- redis.clients.jedis.MultiKeyPipelineBase.client\n-- redis.clients.jedis.commands.RedisPipeline\n-- redis.clients.jedis.BinaryJedis.client\n-- redis.clients.jedis.commands.BinaryRedisPipeline\n-- redis.clients.jedis.commands.BinaryScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ScriptingCommandsPipeline\n-- redis.clients.jedis.commands.ClusterPipeline\n-- redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline\n-- redis.clients.jedis.commands.MultiKeyCommandsPipeline\n-- redis.clients.jedis.Client\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig,org.apache.commons.pool2.impl.GenericObjectPoolConfig,java.time.Duration)\n++ public null redis.clients.jedis.ClusterPipeline\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(java.util.Set,redis.clients.jedis.JedisClientConfig)\n++ public ClusterPipeline redis.clients.jedis.ClusterPipeline(redis.clients.jedis.providers.ClusterConnectionProvider,redis.clients.jedis.ClusterCommandObjects)",
+    "original_code": "package com.falkordb;\n\nimport redis.clients.jedis.Response;\nimport redis.clients.jedis.commands.BasicRedisPipeline;\nimport redis.clients.jedis.commands.BinaryRedisPipeline;\nimport redis.clients.jedis.commands.BinaryScriptingCommandsPipeline;\nimport redis.clients.jedis.commands.ClusterPipeline;\nimport redis.clients.jedis.commands.MultiKeyBinaryRedisPipeline;\nimport redis.clients.jedis.commands.MultiKeyCommandsPipeline;\nimport redis.clients.jedis.commands.RedisPipeline;\nimport redis.clients.jedis.commands.ScriptingCommandsPipeline;\n\nimport java.io.Closeable;\nimport java.util.List;\nimport java.util.Map;\n\n/**\n * An interface which aligned to Jedis Pipeline interface\n */\npublic interface GraphPipeline extends\n        MultiKeyBinaryRedisPipeline,\n        MultiKeyCommandsPipeline, ClusterPipeline,\n        BinaryScriptingCommandsPipeline, ScriptingCommandsPipeline,\n        BasicRedisPipeline, BinaryRedisPipeline, RedisPipeline, Closeable {\n\n    /**\n     * Execute a Cypher query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query);\n\n    /**\n     * Execute a Cypher read-only query.\n     * @param query Cypher query\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query);\n\n    /**\n     * Execute a Cypher query with timeout.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query, long timeout);\n\n    /**\n     * Execute a Cypher read-only query with timeout.\n     * @param query Cypher query\n     * @param timeout timeout in milliseconds\n     * @return a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query, long timeout);\n\n    /**\n     * Executes a cypher query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query, Map<String, Object> params);\n\n    /**\n     * Executes a cypher read-only query with parameters.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params);\n\n    /**\n     * Executes a cypher query with parameters and timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> query(String query, Map<String, Object> params, long timeout);\n\n    /**\n     * Executes a cypher read-only query with parameters and timeout.\n     * @param query Cypher query.\n     * @param params parameters map.\n     * @param timeout timeout in milliseconds\n     * @return  a response which builds the result set with the query answer.\n     */\n    Response<ResultSet> readOnlyQuery(String query, Map<String, Object> params, long timeout);\n\n    /**\n     * Invokes stored procedures without arguments\n     * @param procedure procedure name to invoke\n     * @return a response which builds result set with the procedure data\n     */\n    Response<ResultSet> callProcedure(String procedure);\n\n    /**\n     * Invokes stored procedure with arguments\n     * @param procedure procedure name to invoke\n     * @param args procedure arguments\n     * @return a response which builds result set with the procedure data\n     */\n    Response<ResultSet> callProcedure(String procedure, List<String> args);\n\n    /**\n     * Invoke a stored procedure\n     * @param procedure - procedure to execute\n     * @param args - procedure arguments\n     * @param kwargs - procedure output arguments\n     * @return a response which builds result set with the procedure data\n     */\n    Response<ResultSet> callProcedure(String procedure, List<String> args  , Map<String, List<String>> kwargs);\n\n    /**\n     * Copies the graph\n     * @param destinationGraphId duplicated graph name\n     * @return a response which builds the copy running time statistics\n     */\n    Response<String> copyGraph(String destinationGraphId);\n\n    /**\n     * Deletes the entire graph\n     * @return a response which builds the delete running time statistics\n     */\n    Response<String> deleteGraph();\n\n    \n    /**\n     * Synchronize pipeline by reading all responses. This operation close the pipeline. Whenever\n     * possible try to avoid using this version and use Pipeline.sync() as it won't go through all the\n     * responses and generate the right response type (usually it is a waste of time).\n     * @return A list of all the responses in the order you executed them.\n     */\n    List<Object> syncAndReturnAll();\n    \n    /**\n     * Synchronize pipeline by reading all responses. This operation close the pipeline. In order to\n     * get return values from pipelined commands, capture the different Response&lt;?&gt; of the\n     * commands you execute.\n     */\n    void sync();\n    \n    /**\n     * Blocks until all the previous write commands are successfully transferred and acknowledged by\n     * at least the specified number of replicas. If the timeout, specified in milliseconds, is\n     * reached, the command returns even if the specified number of replicas were not yet reached.\n     * @param replicas successfully transferred and acknowledged by at least the specified number of\n     *          replicas\n     * @param timeout the time to block in milliseconds, a timeout of 0 means to block forever\n     * @return the number of replicas reached by all the writes performed in the context of the\n     *         current connection\n     */\n    Response<Long> waitReplicas(int replicas, long timeout);\n}\n",
+    "project": "JFalkorDB",
+    "libraryName": "jedis",
+    "libraryGroupID": "redis.clients",
+    "newVersion": "6.0.0",
+    "previousVersion": "3.10.0",
+    "breakingCommit": "24009637735a09b1c1bac0a32e2e5609710bb418"
+}

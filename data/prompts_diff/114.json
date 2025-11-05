@@ -1,0 +1,175 @@
+{
+    "absolute_path_to_file_in_container": "/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java",
+    "errors": [
+        {
+            "line_number": 19,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist",
+            "additional_info": "",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "62285832-b40b-50af-b968-29b573764107"
+        },
+        {
+            "line_number": 32,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[32,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 40,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[40,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 53,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[53,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 66,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[66,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 79,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[79,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 92,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[92,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 105,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[105,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 114,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[114,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 127,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[127,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        },
+        {
+            "line_number": 140,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[140,29] cannot find symbol",
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+            "file_name": "ProhibitLegacyUseTest.java",
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "b9f98ae9-e364-5c13-b397-777e099483b5"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\nimport org.junit.jupiter.api.Test;\n\nimport static org.assertj.core.api.Assertions.assertThat;\nimport static org.assertj.core.api.Assertions.assertThatNoException;\nimport static org.assertj.core.api.Assertions.assertThatThrownBy;\n\n@SuppressWarnings(\"deprecation\")\nclass ProhibitLegacyUseTest {\n\n    @Test\n    void test_defaultStubProject() throws Exception {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.execute();\n    }\n\n    @Test\n    void test_prohibitLegacyConfigHeader() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigHeader = \"header\";\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigInlineHeader() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigInlineHeader = \"inline header\";\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigIncludes() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigIncludes = new String[]{\"include\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigExcludes() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigExcludes = new String[]{\"exclude\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigKeywords() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigKeywords = new String[]{\"keyword\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_allowDefaultLegacyConfigKeywords() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigKeywords = new String[]{\"copyright\"};\n        assertThatNoException().isThrownBy(check::execute);\n    }\n\n    @Test\n    void test_prohibitLegacyConfigMulti() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigMulti = new Multi();\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigValidHeaders() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigValidHeaders = new String[]{\"valid\", \"headers\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigValidHeaderSections() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigHeaderSections = new HeaderSection[]{new HeaderSection()};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: maven-plugin-testing-harness 4.0.0-alpha-2->4.0.0-beta-4. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.apache.maven.plugin.testing.stubs.MavenProjectStub\n-- org.apache.maven.plugin.testing.stubs.ArtifactStub\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\nwith the following error message:\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[32,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[40,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[53,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[66,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[79,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[92,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[105,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[114,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[127,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[140,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();\n        check.project = new MavenProjectStub();",
+    "error_message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[32,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[40,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[53,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[66,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[79,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[92,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[105,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[114,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[127,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java:[140,29] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.ProhibitLegacyUseTest",
+    "api_diff": "-- org.apache.maven.plugin.testing.stubs.MavenProjectStub\n-- org.apache.maven.plugin.testing.stubs.ArtifactStub",
+    "original_code": "/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\nimport org.junit.jupiter.api.Test;\n\nimport static org.assertj.core.api.Assertions.assertThat;\nimport static org.assertj.core.api.Assertions.assertThatNoException;\nimport static org.assertj.core.api.Assertions.assertThatThrownBy;\n\n@SuppressWarnings(\"deprecation\")\nclass ProhibitLegacyUseTest {\n\n    @Test\n    void test_defaultStubProject() throws Exception {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.execute();\n    }\n\n    @Test\n    void test_prohibitLegacyConfigHeader() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigHeader = \"header\";\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigInlineHeader() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigInlineHeader = \"inline header\";\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigIncludes() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigIncludes = new String[]{\"include\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigExcludes() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigExcludes = new String[]{\"exclude\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigKeywords() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigKeywords = new String[]{\"keyword\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_allowDefaultLegacyConfigKeywords() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigKeywords = new String[]{\"copyright\"};\n        assertThatNoException().isThrownBy(check::execute);\n    }\n\n    @Test\n    void test_prohibitLegacyConfigMulti() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigMulti = new Multi();\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigValidHeaders() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigValidHeaders = new String[]{\"valid\", \"headers\"};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n\n    @Test\n    void test_prohibitLegacyConfigValidHeaderSections() {\n        LicenseCheckMojo check = new LicenseCheckMojo();\n        check.project = new MavenProjectStub();\n        check.prohibitLegacyUse = true;\n        check.legacyConfigHeaderSections = new HeaderSection[]{new HeaderSection()};\n        assertThatThrownBy(check::execute).satisfies(e -> {\n                    assertThat(e).isInstanceOf(MojoExecutionException.class);\n                    assertThat(e).hasMessage(\"Use of legacy parameters has been prohibited by configuration.\");\n                }\n        );\n    }\n}\n",
+    "project": "license-maven-plugin",
+    "libraryName": "maven-plugin-testing-harness",
+    "libraryGroupID": "org.apache.maven.plugin-testing",
+    "newVersion": "4.0.0-beta-4",
+    "previousVersion": "4.0.0-alpha-2",
+    "breakingCommit": "fb038ef3a078e45abab4ecc6728a3d0d89bbe01f"
+}

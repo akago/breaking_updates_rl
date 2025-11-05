@@ -1,0 +1,331 @@
+{
+    "absolute_path_to_file_in_container": "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java",
+    "errors": [
+        {
+            "line_number": 23,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[23,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "39aafda7-e132-57d5-8ee6-4285a599a4ac"
+        },
+        {
+            "line_number": 24,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[24,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "39aafda7-e132-57d5-8ee6-4285a599a4ac"
+        },
+        {
+            "line_number": 25,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[25,47] package com.google.api.services.translate.model does not exist",
+            "additional_info": "",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "39aafda7-e132-57d5-8ee6-4285a599a4ac"
+        },
+        {
+            "line_number": 43,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[43,38] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "4dc44538-5d4f-53ec-a72a-dac1f49fd18d"
+        },
+        {
+            "line_number": 45,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[45,29] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "4dc44538-5d4f-53ec-a72a-dac1f49fd18d"
+        },
+        {
+            "line_number": 47,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[47,41] cannot find symbol",
+            "additional_info": "  symbol: class DetectionsResourceItems",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "258bba98-dc25-58f4-99ac-8a4880736a66"
+        },
+        {
+            "line_number": 62,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[62,33] cannot find symbol",
+            "additional_info": "  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "435017f8-1f74-5634-9592-5a70e0548ebd"
+        },
+        {
+            "line_number": 64,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[64,29] cannot find symbol",
+            "additional_info": "  symbol: class LanguagesResource",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.LanguagesResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "2fe001a7-2d37-5078-933e-85228ab26f2d"
+        },
+        {
+            "line_number": 80,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[80,17] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "4dc44538-5d4f-53ec-a72a-dac1f49fd18d"
+        },
+        {
+            "line_number": 82,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[82,38] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "4dc44538-5d4f-53ec-a72a-dac1f49fd18d"
+        },
+        {
+            "line_number": 84,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[84,34] cannot find symbol",
+            "additional_info": "  symbol: class DetectionsResourceItems",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "258bba98-dc25-58f4-99ac-8a4880736a66"
+        },
+        {
+            "line_number": 91,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[91,21] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "4dc44538-5d4f-53ec-a72a-dac1f49fd18d"
+        },
+        {
+            "line_number": 94,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[94,14] cannot find symbol",
+            "additional_info": "  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.model.DetectionsResourceItems",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "4dc44538-5d4f-53ec-a72a-dac1f49fd18d"
+        },
+        {
+            "line_number": 121,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[121,33] cannot find symbol",
+            "additional_info": "  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.TranslateImpl",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "29d794ae-1d9d-54b3-aa9c-d4379fd42973"
+        },
+        {
+            "line_number": 123,
+            "message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[123,29] cannot find symbol",
+            "additional_info": "  symbol: class TranslationsResource",
+            "file_name": "TranslateImpl.java",
+            "BCs": [
+                {
+                    "element": "com.google.api.services.translate.Translate",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.api.services.translate.model.TranslationsResource",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)"
+            ],
+            "uid": "108472ec-a838-5da7-a535-cb68f4a28fef"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * Copyright 2016 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.cloud.translate;\n\nimport static com.google.cloud.RetryHelper.runWithRetries;\nimport static com.google.common.base.Preconditions.checkArgument;\nimport static com.google.common.base.Preconditions.checkState;\n\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\nimport com.google.cloud.BaseService;\nimport com.google.cloud.RetryHelper.RetryHelperException;\nimport com.google.cloud.translate.spi.v2.TranslateRpc;\nimport com.google.common.base.Function;\nimport com.google.common.collect.Lists;\nimport com.google.common.collect.Maps;\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.Iterator;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.concurrent.Callable;\n\nfinal class TranslateImpl extends BaseService<TranslateOptions> implements Translate {\n\n  private final TranslateRpc translateRpc;\n\n  private static final Function<List<DetectionsResourceItems>, Detection>\n      DETECTION_FROM_PB_FUNCTION =\n          new Function<List<DetectionsResourceItems>, Detection>() {\n            @Override\n            public Detection apply(List<DetectionsResourceItems> detectionPb) {\n              return Detection.fromPb(detectionPb.get(0));\n            }\n          };\n\n  TranslateImpl(TranslateOptions options) {\n    super(options);\n    translateRpc = options.getTranslateRpcV2();\n  }\n\n  @Override\n  public List<Language> listSupportedLanguages(final LanguageListOption... options) {\n    try {\n      return Lists.transform(\n          runWithRetries(\n              new Callable<List<LanguagesResource>>() {\n                @Override\n                public List<LanguagesResource> call() {\n                  return translateRpc.listSupportedLanguages(optionMap(options));\n                }\n              },\n              getOptions().getRetrySettings(),\n              EXCEPTION_HANDLER,\n              getOptions().getClock()),\n          Language.FROM_PB_FUNCTION);\n    } catch (RetryHelperException e) {\n      throw TranslateException.translateAndThrow(e);\n    }\n  }\n\n  @Override\n  public List<Detection> detect(final List<String> texts) {\n    try {\n      List<List<DetectionsResourceItems>> detectionsPb =\n          runWithRetries(\n              new Callable<List<List<DetectionsResourceItems>>>() {\n                @Override\n                public List<List<DetectionsResourceItems>> call() {\n                  return translateRpc.detect(texts);\n                }\n              },\n              getOptions().getRetrySettings(),\n              EXCEPTION_HANDLER,\n              getOptions().getClock());\n      Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();\n      Iterator<String> textIterator = texts.iterator();\n      while (detectionIterator.hasNext() && textIterator.hasNext()) {\n        List<DetectionsResourceItems> detectionPb = detectionIterator.next();\n        String text = textIterator.next();\n        checkState(\n            detectionPb != null && !detectionPb.isEmpty(), \"No detection found for text: %s\", text);\n        checkState(detectionPb.size() == 1, \"Multiple detections found for text: %s\", text);\n      }\n      return Lists.transform(detectionsPb, DETECTION_FROM_PB_FUNCTION);\n    } catch (RetryHelperException e) {\n      throw TranslateException.translateAndThrow(e);\n    }\n  }\n\n  @Override\n  public List<Detection> detect(String... texts) {\n    return detect(Arrays.asList(texts));\n  }\n\n  @Override\n  public Detection detect(String text) {\n    return detect(Collections.singletonList(text)).get(0);\n  }\n\n  @Override\n  public List<Translation> translate(final List<String> texts, final TranslateOption... options) {\n    try {\n      return Lists.transform(\n          runWithRetries(\n              new Callable<List<TranslationsResource>>() {\n                @Override\n                public List<TranslationsResource> call() {\n                  return translateRpc.translate(texts, optionMap(options));\n                }\n              },\n              getOptions().getRetrySettings(),\n              EXCEPTION_HANDLER,\n              getOptions().getClock()),\n          Translation.FROM_PB_FUNCTION);\n    } catch (RetryHelperException e) {\n      throw TranslateException.translateAndThrow(e);\n    }\n  }\n\n  @Override\n  public Translation translate(String text, TranslateOption... options) {\n    return translate(Collections.singletonList(text), options).get(0);\n  }\n\n  private Map<TranslateRpc.Option, ?> optionMap(Option... options) {\n    Map<TranslateRpc.Option, Object> optionMap = Maps.newEnumMap(TranslateRpc.Option.class);\n    for (Option option : options) {\n      Object prev = optionMap.put(option.getRpcOption(), option.getValue());\n      checkArgument(prev == null, \"Duplicate option %s\", option);\n    }\n    return optionMap;\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: google-api-services-translate v2-rev20170525-2.0.0->v3-rev20220805-2.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.google.api.services.translate.model.LanguagesResource\n-- com.google.api.services.translate.model.DetectionsResourceItems\n-- com.google.api.services.translate.model.TranslationsResource\n-- com.google.api.services.translate.Translate\n++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)\n\nThe error is triggered in the following specific lines in the previous code:\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\n  private static final Function<List<DetectionsResourceItems>, Detection>\n          new Function<List<DetectionsResourceItems>, Detection>() {\n            public Detection apply(List<DetectionsResourceItems> detectionPb) {\n              new Callable<List<LanguagesResource>>() {\n                public List<LanguagesResource> call() {\n      List<List<DetectionsResourceItems>> detectionsPb =\n              new Callable<List<List<DetectionsResourceItems>>>() {\n                public List<List<DetectionsResourceItems>> call() {\n      Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();\n        List<DetectionsResourceItems> detectionPb = detectionIterator.next();\n              new Callable<List<TranslationsResource>>() {\n                public List<TranslationsResource> call() {\nwith the following error message:\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[23,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[24,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[25,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[43,38] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[45,29] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[47,41] cannot find symbol  symbol: class DetectionsResourceItems\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[62,33] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[64,29] cannot find symbol  symbol: class LanguagesResource\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[80,17] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[82,38] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[84,34] cannot find symbol  symbol: class DetectionsResourceItems\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[91,21] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[94,14] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[121,33] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[123,29] cannot find symbol  symbol: class TranslationsResource\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\n  private static final Function<List<DetectionsResourceItems>, Detection>\n          new Function<List<DetectionsResourceItems>, Detection>() {\n            public Detection apply(List<DetectionsResourceItems> detectionPb) {\n              new Callable<List<LanguagesResource>>() {\n                public List<LanguagesResource> call() {\n      List<List<DetectionsResourceItems>> detectionsPb =\n              new Callable<List<List<DetectionsResourceItems>>>() {\n                public List<List<DetectionsResourceItems>> call() {\n      Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();\n        List<DetectionsResourceItems> detectionPb = detectionIterator.next();\n              new Callable<List<TranslationsResource>>() {\n                public List<TranslationsResource> call() {",
+    "error_message": "[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[23,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[24,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[25,47] package com.google.api.services.translate.model does not exist\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[43,38] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[45,29] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[47,41] cannot find symbol  symbol: class DetectionsResourceItems\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[62,33] cannot find symbol  symbol:   class LanguagesResource\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[64,29] cannot find symbol  symbol: class LanguagesResource\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[80,17] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[82,38] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[84,34] cannot find symbol  symbol: class DetectionsResourceItems\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[91,21] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[94,14] cannot find symbol  symbol:   class DetectionsResourceItems\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[121,33] cannot find symbol  symbol:   class TranslationsResource\n  location: class com.google.cloud.translate.TranslateImpl\n[ERROR] /google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java:[123,29] cannot find symbol  symbol: class TranslationsResource",
+    "api_diff": "-- com.google.api.services.translate.model.LanguagesResource\n-- com.google.api.services.translate.model.DetectionsResourceItems\n-- com.google.api.services.translate.model.TranslationsResource\n-- com.google.api.services.translate.Translate\n++ public Translate com.google.api.services.translate.v3.Translate(com.google.api.client.http.HttpTransport,com.google.api.client.json.JsonFactory,com.google.api.client.http.HttpRequestInitializer)",
+    "original_code": "/*\n * Copyright 2016 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\n\npackage com.google.cloud.translate;\n\nimport static com.google.cloud.RetryHelper.runWithRetries;\nimport static com.google.common.base.Preconditions.checkArgument;\nimport static com.google.common.base.Preconditions.checkState;\n\nimport com.google.api.services.translate.model.DetectionsResourceItems;\nimport com.google.api.services.translate.model.LanguagesResource;\nimport com.google.api.services.translate.model.TranslationsResource;\nimport com.google.cloud.BaseService;\nimport com.google.cloud.RetryHelper.RetryHelperException;\nimport com.google.cloud.translate.spi.v2.TranslateRpc;\nimport com.google.common.base.Function;\nimport com.google.common.collect.Lists;\nimport com.google.common.collect.Maps;\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.Iterator;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.concurrent.Callable;\n\nfinal class TranslateImpl extends BaseService<TranslateOptions> implements Translate {\n\n  private final TranslateRpc translateRpc;\n\n  private static final Function<List<DetectionsResourceItems>, Detection>\n      DETECTION_FROM_PB_FUNCTION =\n          new Function<List<DetectionsResourceItems>, Detection>() {\n            @Override\n            public Detection apply(List<DetectionsResourceItems> detectionPb) {\n              return Detection.fromPb(detectionPb.get(0));\n            }\n          };\n\n  TranslateImpl(TranslateOptions options) {\n    super(options);\n    translateRpc = options.getTranslateRpcV2();\n  }\n\n  @Override\n  public List<Language> listSupportedLanguages(final LanguageListOption... options) {\n    try {\n      return Lists.transform(\n          runWithRetries(\n              new Callable<List<LanguagesResource>>() {\n                @Override\n                public List<LanguagesResource> call() {\n                  return translateRpc.listSupportedLanguages(optionMap(options));\n                }\n              },\n              getOptions().getRetrySettings(),\n              EXCEPTION_HANDLER,\n              getOptions().getClock()),\n          Language.FROM_PB_FUNCTION);\n    } catch (RetryHelperException e) {\n      throw TranslateException.translateAndThrow(e);\n    }\n  }\n\n  @Override\n  public List<Detection> detect(final List<String> texts) {\n    try {\n      List<List<DetectionsResourceItems>> detectionsPb =\n          runWithRetries(\n              new Callable<List<List<DetectionsResourceItems>>>() {\n                @Override\n                public List<List<DetectionsResourceItems>> call() {\n                  return translateRpc.detect(texts);\n                }\n              },\n              getOptions().getRetrySettings(),\n              EXCEPTION_HANDLER,\n              getOptions().getClock());\n      Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();\n      Iterator<String> textIterator = texts.iterator();\n      while (detectionIterator.hasNext() && textIterator.hasNext()) {\n        List<DetectionsResourceItems> detectionPb = detectionIterator.next();\n        String text = textIterator.next();\n        checkState(\n            detectionPb != null && !detectionPb.isEmpty(), \"No detection found for text: %s\", text);\n        checkState(detectionPb.size() == 1, \"Multiple detections found for text: %s\", text);\n      }\n      return Lists.transform(detectionsPb, DETECTION_FROM_PB_FUNCTION);\n    } catch (RetryHelperException e) {\n      throw TranslateException.translateAndThrow(e);\n    }\n  }\n\n  @Override\n  public List<Detection> detect(String... texts) {\n    return detect(Arrays.asList(texts));\n  }\n\n  @Override\n  public Detection detect(String text) {\n    return detect(Collections.singletonList(text)).get(0);\n  }\n\n  @Override\n  public List<Translation> translate(final List<String> texts, final TranslateOption... options) {\n    try {\n      return Lists.transform(\n          runWithRetries(\n              new Callable<List<TranslationsResource>>() {\n                @Override\n                public List<TranslationsResource> call() {\n                  return translateRpc.translate(texts, optionMap(options));\n                }\n              },\n              getOptions().getRetrySettings(),\n              EXCEPTION_HANDLER,\n              getOptions().getClock()),\n          Translation.FROM_PB_FUNCTION);\n    } catch (RetryHelperException e) {\n      throw TranslateException.translateAndThrow(e);\n    }\n  }\n\n  @Override\n  public Translation translate(String text, TranslateOption... options) {\n    return translate(Collections.singletonList(text), options).get(0);\n  }\n\n  private Map<TranslateRpc.Option, ?> optionMap(Option... options) {\n    Map<TranslateRpc.Option, Object> optionMap = Maps.newEnumMap(TranslateRpc.Option.class);\n    for (Option option : options) {\n      Object prev = optionMap.put(option.getRpcOption(), option.getValue());\n      checkArgument(prev == null, \"Duplicate option %s\", option);\n    }\n    return optionMap;\n  }\n}\n",
+    "project": "google-cloud-java",
+    "libraryName": "google-api-services-translate",
+    "libraryGroupID": "com.google.apis",
+    "newVersion": "v3-rev20220805-2.0.0",
+    "previousVersion": "v2-rev20170525-2.0.0",
+    "breakingCommit": "3eb708f53f5f1ce897c3554bb73f5de5698dd171"
+}

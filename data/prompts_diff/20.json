@@ -1,0 +1,127 @@
+{
+    "absolute_path_to_file_in_container": "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java",
+    "errors": [
+        {
+            "line_number": 17,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[17,52] package org.spongepowered.api.network.ChannelBinding does not exist",
+            "additional_info": "",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "f1d595a0-6835-591b-8944-972d178baf64"
+        },
+        {
+            "line_number": 18,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[18,37] cannot find symbol",
+            "additional_info": "  symbol:   class ChannelBuf\n  location: package org.spongepowered.api.network",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.network.ChannelBuf",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "63ef5f51-44e1-57f9-9732-f0ddfbd9bc21"
+        },
+        {
+            "line_number": 19,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[19,37] cannot find symbol",
+            "additional_info": "  symbol:   class ChannelRegistrar\n  location: package org.spongepowered.api.network",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.network.ChannelRegistrar",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "4f8916ca-4c1d-5917-addf-1d8f6a64e7d1"
+        },
+        {
+            "line_number": 20,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[20,37] cannot find symbol",
+            "additional_info": "  symbol:   class RawDataListener\n  location: package org.spongepowered.api.network",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.network.RawDataListener",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "44837d7e-c6ae-5ff1-8aee-dba39c59e8dc"
+        },
+        {
+            "line_number": 26,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[26,49] cannot find symbol",
+            "additional_info": "  symbol: class RawDataListener",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.network.RawDataListener",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "61411e32-99da-5c8b-88dd-0cf6e22cf0b2"
+        },
+        {
+            "line_number": 29,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[29,19] cannot find symbol",
+            "additional_info": "  symbol:   class RawDataChannel\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [],
+            "Additions": [
+                "++ public abstract interface null org.spongepowered.api.network.channel.raw.RawDataChannel",
+                "++ public abstract interface null org.spongepowered.api.network.channel.raw.RawDataChannel"
+            ],
+            "uid": "b75ade49-29ef-5015-88fd-2fb23c39554b"
+        },
+        {
+            "line_number": 32,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[32,54] cannot find symbol",
+            "additional_info": "  symbol:   class ChannelRegistrar\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.network.ChannelRegistrar",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "d2566dc6-8879-585f-bb3d-592cdae082ac"
+        },
+        {
+            "line_number": 40,
+            "message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[40,31] cannot find symbol",
+            "additional_info": "  symbol:   class ChannelBuf\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener",
+            "file_name": "CheckPermissionListener.java",
+            "BCs": [
+                {
+                    "element": "org.spongepowered.api.network.ChannelBuf",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "32234844-eb2b-541c-9575-dc40c2f419ca"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.github.games647.changeskin.sponge.bungee;\n\nimport com.github.games647.changeskin.core.message.NamespaceKey;\nimport com.github.games647.changeskin.core.message.CheckPermMessage;\nimport com.github.games647.changeskin.core.message.PermResultMessage;\nimport com.github.games647.changeskin.core.model.skin.SkinModel;\nimport com.github.games647.changeskin.sponge.ChangeSkinSponge;\nimport com.google.common.io.ByteArrayDataInput;\nimport com.google.common.io.ByteArrayDataOutput;\nimport com.google.common.io.ByteStreams;\nimport com.google.inject.Inject;\n\nimport java.util.UUID;\n\nimport org.spongepowered.api.Platform.Type;\nimport org.spongepowered.api.entity.living.player.Player;\nimport org.spongepowered.api.network.ChannelBinding.RawDataChannel;\nimport org.spongepowered.api.network.ChannelBuf;\nimport org.spongepowered.api.network.ChannelRegistrar;\nimport org.spongepowered.api.network.RawDataListener;\nimport org.spongepowered.api.network.RemoteConnection;\n\nimport static com.github.games647.changeskin.core.message.PermResultMessage.PERMISSION_RESULT_CHANNEL;\nimport static com.github.games647.changeskin.sponge.PomData.ARTIFACT_ID;\n\npublic class CheckPermissionListener implements RawDataListener {\n\n    private final ChangeSkinSponge plugin;\n    private final RawDataChannel permissionsResultChannel;\n\n    @Inject\n    CheckPermissionListener(ChangeSkinSponge plugin, ChannelRegistrar channelRegistrar) {\n        this.plugin = plugin;\n\n        String combinedName = new NamespaceKey(ARTIFACT_ID, PERMISSION_RESULT_CHANNEL).getCombinedName();\n        permissionsResultChannel = channelRegistrar.getOrCreateRaw(plugin, combinedName);\n    }\n\n    @Override\n    public void handlePayload(ChannelBuf data, RemoteConnection connection, Type side) {\n\n        ByteArrayDataInput dataInput = ByteStreams.newDataInput(data.array());\n        CheckPermMessage checkMessage = new CheckPermMessage();\n        checkMessage.readFrom(dataInput);\n\n        CheckPermMessage message = new CheckPermMessage();\n        message.readFrom(dataInput);\n\n        checkPermissions((Player) connection, message);\n    }\n\n    private void checkPermissions(Player player, CheckPermMessage permMessage) {\n        UUID receiverUUID = permMessage.getReceiverUUD();\n        boolean op = permMessage.isOp();\n        SkinModel targetSkin = permMessage.getTargetSkin();\n        UUID skinProfile = targetSkin.getProfileId();\n\n        boolean success = op || checkBungeePerms(player, receiverUUID, permMessage.isSkinPerm(), skinProfile);\n        sendResultMessage(player, new PermResultMessage(success, targetSkin, receiverUUID));\n    }\n\n    private boolean checkBungeePerms(Player player, UUID receiverUUID, boolean skinPerm, UUID targetUUID) {\n        if (player.getUniqueId().equals(receiverUUID)) {\n            return checkPerm(player, \"command.setskin\", skinPerm, targetUUID);\n        }\n\n        return checkPerm(player, \"command.setskin.other\", skinPerm, targetUUID);\n    }\n\n    private boolean checkPerm(Player invoker, String node, boolean skinPerm, UUID targetUUID) {\n        String pluginName = plugin.getName().toLowerCase();\n        boolean hasCommandPerm = invoker.hasPermission(pluginName +  '.' + node);\n        if (skinPerm) {\n            return hasCommandPerm && plugin.hasSkinPermission(invoker, targetUUID, false);\n        }\n\n        return hasCommandPerm;\n    }\n\n    private void sendResultMessage(Player receiver, PermResultMessage resultMessage) {\n        ByteArrayDataOutput dataOutput = ByteStreams.newDataOutput();\n        resultMessage.writeTo(dataOutput);\n        permissionsResultChannel.sendTo(receiver, buf -> buf.writeByteArray(dataOutput.toByteArray()));\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: spongeapi 7.4.0->8.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.spongepowered.api.command.CommandManager\n-- org.spongepowered.api.command.CommandSource\n-- org.spongepowered.api.network.ChannelRegistrar\n-- org.spongepowered.api.plugin.Plugin\n-- org.spongepowered.api.event.game.state.GamePreInitializationEvent\n-- org.spongepowered.api.event.game.state.GameInitializationEvent\n-- org.spongepowered.api.event.game.state.GameStoppingServerEvent\n-- org.spongepowered.api.command.spec.CommandSpec\n-- org.spongepowered.api.network.ChannelBuf\n-- org.spongepowered.api.network.RawDataListener\n-- org.spongepowered.api.event.network.ClientConnectionEvent\n-- org.spongepowered.api.command.spec.CommandExecutor\n-- org.spongepowered.api.command.CommandException\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable,boolean)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,boolean)\n++ public abstract interface null org.spongepowered.api.command.CommandExecutor\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component)\n++ public abstract interface null org.spongepowered.api.network.channel.raw.RawDataChannel\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.spongepowered.api.network.ChannelBinding.RawDataChannel;\nimport org.spongepowered.api.network.ChannelBuf;\nimport org.spongepowered.api.network.ChannelRegistrar;\nimport org.spongepowered.api.network.RawDataListener;\npublic class CheckPermissionListener implements RawDataListener {\n    private final RawDataChannel permissionsResultChannel;\n    CheckPermissionListener(ChangeSkinSponge plugin, ChannelRegistrar channelRegistrar) {\n    public void handlePayload(ChannelBuf data, RemoteConnection connection, Type side) {\nwith the following error message:\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[17,52] package org.spongepowered.api.network.ChannelBinding does not exist\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[18,37] cannot find symbol  symbol:   class ChannelBuf\n  location: package org.spongepowered.api.network\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[19,37] cannot find symbol  symbol:   class ChannelRegistrar\n  location: package org.spongepowered.api.network\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[20,37] cannot find symbol  symbol:   class RawDataListener\n  location: package org.spongepowered.api.network\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[26,49] cannot find symbol  symbol: class RawDataListener\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[29,19] cannot find symbol  symbol:   class RawDataChannel\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[32,54] cannot find symbol  symbol:   class ChannelRegistrar\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[40,31] cannot find symbol  symbol:   class ChannelBuf\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.spongepowered.api.network.ChannelBinding.RawDataChannel;\nimport org.spongepowered.api.network.ChannelBuf;\nimport org.spongepowered.api.network.ChannelRegistrar;\nimport org.spongepowered.api.network.RawDataListener;\npublic class CheckPermissionListener implements RawDataListener {\n    private final RawDataChannel permissionsResultChannel;\n    CheckPermissionListener(ChangeSkinSponge plugin, ChannelRegistrar channelRegistrar) {\n    public void handlePayload(ChannelBuf data, RemoteConnection connection, Type side) {",
+    "error_message": "[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[17,52] package org.spongepowered.api.network.ChannelBinding does not exist\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[18,37] cannot find symbol  symbol:   class ChannelBuf\n  location: package org.spongepowered.api.network\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[19,37] cannot find symbol  symbol:   class ChannelRegistrar\n  location: package org.spongepowered.api.network\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[20,37] cannot find symbol  symbol:   class RawDataListener\n  location: package org.spongepowered.api.network\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[26,49] cannot find symbol  symbol: class RawDataListener\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[29,19] cannot find symbol  symbol:   class RawDataChannel\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[32,54] cannot find symbol  symbol:   class ChannelRegistrar\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener\n[ERROR] /ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java:[40,31] cannot find symbol  symbol:   class ChannelBuf\n  location: class com.github.games647.changeskin.sponge.bungee.CheckPermissionListener",
+    "api_diff": "-- org.spongepowered.api.command.CommandManager\n-- org.spongepowered.api.command.CommandSource\n-- org.spongepowered.api.network.ChannelRegistrar\n-- org.spongepowered.api.plugin.Plugin\n-- org.spongepowered.api.event.game.state.GamePreInitializationEvent\n-- org.spongepowered.api.event.game.state.GameInitializationEvent\n-- org.spongepowered.api.event.game.state.GameStoppingServerEvent\n-- org.spongepowered.api.command.spec.CommandSpec\n-- org.spongepowered.api.network.ChannelBuf\n-- org.spongepowered.api.network.RawDataListener\n-- org.spongepowered.api.event.network.ClientConnectionEvent\n-- org.spongepowered.api.command.spec.CommandExecutor\n-- org.spongepowered.api.command.CommandException\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable,boolean)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,java.lang.Throwable)\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component,boolean)\n++ public abstract interface null org.spongepowered.api.command.CommandExecutor\n++ public CommandException org.spongepowered.api.command.exception.CommandException(net.kyori.adventure.text.Component)\n++ public abstract interface null org.spongepowered.api.network.channel.raw.RawDataChannel",
+    "original_code": "package com.github.games647.changeskin.sponge.bungee;\n\nimport com.github.games647.changeskin.core.message.NamespaceKey;\nimport com.github.games647.changeskin.core.message.CheckPermMessage;\nimport com.github.games647.changeskin.core.message.PermResultMessage;\nimport com.github.games647.changeskin.core.model.skin.SkinModel;\nimport com.github.games647.changeskin.sponge.ChangeSkinSponge;\nimport com.google.common.io.ByteArrayDataInput;\nimport com.google.common.io.ByteArrayDataOutput;\nimport com.google.common.io.ByteStreams;\nimport com.google.inject.Inject;\n\nimport java.util.UUID;\n\nimport org.spongepowered.api.Platform.Type;\nimport org.spongepowered.api.entity.living.player.Player;\nimport org.spongepowered.api.network.ChannelBinding.RawDataChannel;\nimport org.spongepowered.api.network.ChannelBuf;\nimport org.spongepowered.api.network.ChannelRegistrar;\nimport org.spongepowered.api.network.RawDataListener;\nimport org.spongepowered.api.network.RemoteConnection;\n\nimport static com.github.games647.changeskin.core.message.PermResultMessage.PERMISSION_RESULT_CHANNEL;\nimport static com.github.games647.changeskin.sponge.PomData.ARTIFACT_ID;\n\npublic class CheckPermissionListener implements RawDataListener {\n\n    private final ChangeSkinSponge plugin;\n    private final RawDataChannel permissionsResultChannel;\n\n    @Inject\n    CheckPermissionListener(ChangeSkinSponge plugin, ChannelRegistrar channelRegistrar) {\n        this.plugin = plugin;\n\n        String combinedName = new NamespaceKey(ARTIFACT_ID, PERMISSION_RESULT_CHANNEL).getCombinedName();\n        permissionsResultChannel = channelRegistrar.getOrCreateRaw(plugin, combinedName);\n    }\n\n    @Override\n    public void handlePayload(ChannelBuf data, RemoteConnection connection, Type side) {\n\n        ByteArrayDataInput dataInput = ByteStreams.newDataInput(data.array());\n        CheckPermMessage checkMessage = new CheckPermMessage();\n        checkMessage.readFrom(dataInput);\n\n        CheckPermMessage message = new CheckPermMessage();\n        message.readFrom(dataInput);\n\n        checkPermissions((Player) connection, message);\n    }\n\n    private void checkPermissions(Player player, CheckPermMessage permMessage) {\n        UUID receiverUUID = permMessage.getReceiverUUD();\n        boolean op = permMessage.isOp();\n        SkinModel targetSkin = permMessage.getTargetSkin();\n        UUID skinProfile = targetSkin.getProfileId();\n\n        boolean success = op || checkBungeePerms(player, receiverUUID, permMessage.isSkinPerm(), skinProfile);\n        sendResultMessage(player, new PermResultMessage(success, targetSkin, receiverUUID));\n    }\n\n    private boolean checkBungeePerms(Player player, UUID receiverUUID, boolean skinPerm, UUID targetUUID) {\n        if (player.getUniqueId().equals(receiverUUID)) {\n            return checkPerm(player, \"command.setskin\", skinPerm, targetUUID);\n        }\n\n        return checkPerm(player, \"command.setskin.other\", skinPerm, targetUUID);\n    }\n\n    private boolean checkPerm(Player invoker, String node, boolean skinPerm, UUID targetUUID) {\n        String pluginName = plugin.getName().toLowerCase();\n        boolean hasCommandPerm = invoker.hasPermission(pluginName +  '.' + node);\n        if (skinPerm) {\n            return hasCommandPerm && plugin.hasSkinPermission(invoker, targetUUID, false);\n        }\n\n        return hasCommandPerm;\n    }\n\n    private void sendResultMessage(Player receiver, PermResultMessage resultMessage) {\n        ByteArrayDataOutput dataOutput = ByteStreams.newDataOutput();\n        resultMessage.writeTo(dataOutput);\n        permissionsResultChannel.sendTo(receiver, buf -> buf.writeByteArray(dataOutput.toByteArray()));\n    }\n}\n",
+    "project": "ChangeSkin",
+    "libraryName": "spongeapi",
+    "libraryGroupID": "org.spongepowered",
+    "newVersion": "8.0.0",
+    "previousVersion": "7.4.0",
+    "breakingCommit": "402082609522c66a3b790aedafd0570148a7d53f"
+}

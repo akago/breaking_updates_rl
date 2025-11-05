@@ -1,0 +1,52 @@
+{
+    "absolute_path_to_file_in_container": "/java-api/src/main/java/io/zold/api/TaxBeneficiaries.java",
+    "errors": [
+        {
+            "line_number": 29,
+            "message": "[ERROR] /java-api/src/main/java/io/zold/api/TaxBeneficiaries.java:[29,28] cannot find symbol",
+            "additional_info": "  symbol:   class LengthOf\n  location: package org.cactoos.iterable",
+            "file_name": "TaxBeneficiaries.java",
+            "BCs": [
+                {
+                    "element": "org.cactoos.io.LengthOf",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "org.cactoos.iterable.LengthOf",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "org.cactoos.iterator.LengthOf",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public final null org.cactoos.scalar.LengthOf",
+                "++ public final null org.cactoos.scalar.LengthOf",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Text)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Text)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input,int)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input,int)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(java.lang.Iterable)",
+                "++ public LengthOf org.cactoos.scalar.LengthOf(java.lang.Iterable)"
+            ],
+            "uid": "b0f58097-ef87-5d52-a347-5d829fc71532"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * The MIT License (MIT)\n *\n * Copyright (c) 2018-2023 Yegor Bugayenko\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy\n * of this software and associated documentation files (the \"Software\"), to deal\n * in the Software without restriction, including without limitation the rights\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n * copies of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included\n * in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n * FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n */\npackage io.zold.api;\n\nimport java.util.Comparator;\nimport org.cactoos.iterable.Filtered;\nimport org.cactoos.iterable.IterableEnvelope;\nimport org.cactoos.iterable.LengthOf;\nimport org.cactoos.iterable.Sorted;\n\n/**\n * {@link Remote} nodes that should receive taxes.\n *\n * @since 1.0\n */\npublic final class TaxBeneficiaries extends IterableEnvelope<Remote> {\n\n    /**\n     * Ctor.\n     *\n     * @param nodes Remote nodes to select from.\n     */\n    public TaxBeneficiaries(final Iterable<Remote> nodes) {\n        super(() -> new Sorted<>(\n            Comparator.comparing(Remote::score),\n            new Filtered<>(\n                // @checkstyle MagicNumberCheck (1 line)\n                n -> new LengthOf(n.score().suffixes()).intValue() >= 16,\n                nodes\n            )\n        ));\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: cactoos 0.35->0.55.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.cactoos.io.LengthOf\n-- org.cactoos.iterable.LengthOf\n-- org.cactoos.iterator.LengthOf\n-- org.cactoos.collection.CollectionOf\n-- org.cactoos.text.RandomText\n-- org.cactoos.collection.Filtered\n-- org.cactoos.scalar.CheckedScalar\n-- org.cactoos.scalar.UncheckedScalar\n-- org.cactoos.text.SplitText\n-- org.cactoos.scalar.IoCheckedScalar\n-- org.cactoos.scalar.SolidScalar\n-- org.cactoos.text.JoinedText\n-- org.cactoos.scalar.StickyScalar\n-- org.cactoos.text.TrimmedText\n++ public LengthOf org.cactoos.scalar.LengthOf(java.lang.Iterable)\n++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Text)\n++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input,int)\n++ public final null org.cactoos.scalar.LengthOf\n++ public Filtered org.cactoos.iterable.Filtered(java.lang.Iterable,org.cactoos.Func)\n++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input)\n++ public Filtered org.cactoos.iterator.Filtered(java.util.Iterator,org.cactoos.Func)\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.cactoos.iterable.LengthOf;\nwith the following error message:\n[ERROR] /java-api/src/main/java/io/zold/api/TaxBeneficiaries.java:[29,28] cannot find symbol  symbol:   class LengthOf\n  location: package org.cactoos.iterable\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.cactoos.iterable.LengthOf;",
+    "error_message": "[ERROR] /java-api/src/main/java/io/zold/api/TaxBeneficiaries.java:[29,28] cannot find symbol  symbol:   class LengthOf\n  location: package org.cactoos.iterable",
+    "api_diff": "-- org.cactoos.io.LengthOf\n-- org.cactoos.iterable.LengthOf\n-- org.cactoos.iterator.LengthOf\n-- org.cactoos.collection.CollectionOf\n-- org.cactoos.text.RandomText\n-- org.cactoos.collection.Filtered\n-- org.cactoos.scalar.CheckedScalar\n-- org.cactoos.scalar.UncheckedScalar\n-- org.cactoos.text.SplitText\n-- org.cactoos.scalar.IoCheckedScalar\n-- org.cactoos.scalar.SolidScalar\n-- org.cactoos.text.JoinedText\n-- org.cactoos.scalar.StickyScalar\n-- org.cactoos.text.TrimmedText\n++ public LengthOf org.cactoos.scalar.LengthOf(java.lang.Iterable)\n++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Text)\n++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input,int)\n++ public final null org.cactoos.scalar.LengthOf\n++ public Filtered org.cactoos.iterable.Filtered(java.lang.Iterable,org.cactoos.Func)\n++ public LengthOf org.cactoos.scalar.LengthOf(org.cactoos.Input)\n++ public Filtered org.cactoos.iterator.Filtered(java.util.Iterator,org.cactoos.Func)",
+    "original_code": "/*\n * The MIT License (MIT)\n *\n * Copyright (c) 2018-2023 Yegor Bugayenko\n *\n * Permission is hereby granted, free of charge, to any person obtaining a copy\n * of this software and associated documentation files (the \"Software\"), to deal\n * in the Software without restriction, including without limitation the rights\n * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n * copies of the Software, and to permit persons to whom the Software is\n * furnished to do so, subject to the following conditions:\n *\n * The above copyright notice and this permission notice shall be included\n * in all copies or substantial portions of the Software.\n *\n * THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n * FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE\n * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n * SOFTWARE.\n */\npackage io.zold.api;\n\nimport java.util.Comparator;\nimport org.cactoos.iterable.Filtered;\nimport org.cactoos.iterable.IterableEnvelope;\nimport org.cactoos.iterable.LengthOf;\nimport org.cactoos.iterable.Sorted;\n\n/**\n * {@link Remote} nodes that should receive taxes.\n *\n * @since 1.0\n */\npublic final class TaxBeneficiaries extends IterableEnvelope<Remote> {\n\n    /**\n     * Ctor.\n     *\n     * @param nodes Remote nodes to select from.\n     */\n    public TaxBeneficiaries(final Iterable<Remote> nodes) {\n        super(() -> new Sorted<>(\n            Comparator.comparing(Remote::score),\n            new Filtered<>(\n                // @checkstyle MagicNumberCheck (1 line)\n                n -> new LengthOf(n.score().suffixes()).intValue() >= 16,\n                nodes\n            )\n        ));\n    }\n}\n",
+    "project": "java-api",
+    "libraryName": "cactoos",
+    "libraryGroupID": "org.cactoos",
+    "newVersion": "0.55.0",
+    "previousVersion": "0.35",
+    "breakingCommit": "38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf"
+}

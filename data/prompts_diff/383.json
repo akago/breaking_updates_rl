@@ -1,0 +1,79 @@
+{
+    "absolute_path_to_file_in_container": "/lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java",
+    "errors": [
+        {
+            "line_number": 24,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[24,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "792fb44e-512b-5d04-a651-56b7b2caba1b"
+        },
+        {
+            "line_number": 25,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[25,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "792fb44e-512b-5d04-a651-56b7b2caba1b"
+        },
+        {
+            "line_number": 26,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[26,19] package javax.ws.rs does not exist",
+            "additional_info": "",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "792fb44e-512b-5d04-a651-56b7b2caba1b"
+        },
+        {
+            "line_number": 27,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[27,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "e2723947-46b8-579a-a7ec-f3de68486008"
+        },
+        {
+            "line_number": 28,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[28,24] package javax.ws.rs.core does not exist",
+            "additional_info": "",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "e2723947-46b8-579a-a7ec-f3de68486008"
+        },
+        {
+            "line_number": 31,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[31,2] cannot find symbol",
+            "additional_info": "  symbol: class Path",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "dc68487e-b8c5-5144-ae6a-6b6fadda924b"
+        },
+        {
+            "line_number": 32,
+            "message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[32,2] cannot find symbol",
+            "additional_info": "  symbol: class Produces",
+            "file_name": "StatusResource.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "16e73b52-1d89-5364-a7b4-c536944542fe"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n//\n// Wire\n// Copyright (C) 2016 Wire Swiss GmbH\n//\n// This program is free software: you can redistribute it and/or modify\n// it under the terms of the GNU General Public License as published by\n// the Free Software Foundation, either version 3 of the License, or\n// (at your option) any later version.\n//\n// This program is distributed in the hope that it will be useful,\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n// GNU General Public License for more details.\n//\n// You should have received a copy of the GNU General Public License\n// along with this program. If not, see http://www.gnu.org/licenses/.\n//\n\npackage com.wire.lithium.server.monitoring;\n\nimport io.swagger.annotations.Api;\nimport io.swagger.annotations.ApiOperation;\n\nimport javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n\n@Api\n@Path(\"/status\")\n@Produces(MediaType.TEXT_PLAIN)\npublic class StatusResource {\n    @GET\n    @ApiOperation(value = \"Status\")\n    public Response statusEmpty() {\n        return Response\n                .ok()\n                .build();\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: dropwizard-core 2.1.5->4.0.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)\n\nThe error is triggered in the following specific lines in the previous code:\nimport javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n@Path(\"/status\")\n@Produces(MediaType.TEXT_PLAIN)\nwith the following error message:\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[24,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[25,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[26,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[27,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[28,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[31,2] cannot find symbol  symbol: class Path\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[32,2] cannot find symbol  symbol: class Produces\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n@Path(\"/status\")\n@Produces(MediaType.TEXT_PLAIN)",
+    "error_message": "[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[24,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[25,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[26,19] package javax.ws.rs does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[27,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[28,24] package javax.ws.rs.core does not exist\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[31,2] cannot find symbol  symbol: class Path\n[ERROR] /lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java:[32,2] cannot find symbol  symbol: class Produces",
+    "api_diff": "-- io.dropwizard.Application\n-- io.dropwizard.setup.Environment\n-- io.dropwizard.setup.Bootstrap\n-- io.dropwizard.Configuration\n++ public Configuration io.dropwizard.core.Configuration()\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String,com.fasterxml.jackson.databind.ObjectMapper,jakarta.validation.ValidatorFactory,com.codahale.metrics.MetricRegistry,java.lang.ClassLoader,com.codahale.metrics.health.HealthCheckRegistry,io.dropwizard.core.Configuration)\n++ protected Application io.dropwizard.core.Application()\n++ public Bootstrap io.dropwizard.core.setup.Bootstrap(io.dropwizard.core.Application)\n++ public Environment io.dropwizard.core.setup.Environment(java.lang.String)",
+    "original_code": "//\n// Wire\n// Copyright (C) 2016 Wire Swiss GmbH\n//\n// This program is free software: you can redistribute it and/or modify\n// it under the terms of the GNU General Public License as published by\n// the Free Software Foundation, either version 3 of the License, or\n// (at your option) any later version.\n//\n// This program is distributed in the hope that it will be useful,\n// but WITHOUT ANY WARRANTY; without even the implied warranty of\n// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n// GNU General Public License for more details.\n//\n// You should have received a copy of the GNU General Public License\n// along with this program. If not, see http://www.gnu.org/licenses/.\n//\n\npackage com.wire.lithium.server.monitoring;\n\nimport io.swagger.annotations.Api;\nimport io.swagger.annotations.ApiOperation;\n\nimport javax.ws.rs.GET;\nimport javax.ws.rs.Path;\nimport javax.ws.rs.Produces;\nimport javax.ws.rs.core.MediaType;\nimport javax.ws.rs.core.Response;\n\n@Api\n@Path(\"/status\")\n@Produces(MediaType.TEXT_PLAIN)\npublic class StatusResource {\n    @GET\n    @ApiOperation(value = \"Status\")\n    public Response statusEmpty() {\n        return Response\n                .ok()\n                .build();\n    }\n}\n",
+    "project": "lithium",
+    "libraryName": "dropwizard-core",
+    "libraryGroupID": "io.dropwizard",
+    "newVersion": "4.0.0",
+    "previousVersion": "2.1.5",
+    "breakingCommit": "686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0"
+}

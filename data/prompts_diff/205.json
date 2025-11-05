@@ -1,0 +1,34 @@
+{
+    "absolute_path_to_file_in_container": "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java",
+    "errors": [
+        {
+            "line_number": 25,
+            "message": "[ERROR] /depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java:[25,7] cannot find symbol",
+            "additional_info": "  symbol:   variable log\n  location: class se.kth.depclean.core.analysis.ActualUsedClasses",
+            "file_name": "ActualUsedClasses.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "625e2367-2a9a-5bdb-b33f-7f57d91b011f"
+        },
+        {
+            "line_number": 28,
+            "message": "[ERROR] /depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java:[28,5] cannot find symbol",
+            "additional_info": "  symbol:   variable log\n  location: class se.kth.depclean.core.analysis.ActualUsedClasses",
+            "file_name": "ActualUsedClasses.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "625e2367-2a9a-5bdb-b33f-7f57d91b011f"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage se.kth.depclean.core.analysis;\n\nimport java.util.HashSet;\nimport java.util.Set;\nimport lombok.extern.slf4j.Slf4j;\nimport se.kth.depclean.core.model.ClassName;\nimport se.kth.depclean.core.model.ProjectContext;\n\n/**\n * Contains the actual classes used in the project (i.e. in classes, processors, configurations, etc.)\n */\n@Slf4j\npublic class ActualUsedClasses {\n\n  private final ProjectContext context;\n  private final Set<ClassName> classes = new HashSet<>();\n\n  public ActualUsedClasses(ProjectContext context) {\n    this.context = context;\n  }\n\n  private void registerClass(ClassName className) {\n    // Do not register class unknown to dependencies\n    if (context.hasNoDependencyOnClass(className)) {\n      log.debug(\"Class {} is not known to any dependency\", className);\n      return;\n    }\n    log.debug(\"## Registered class {}\", className);\n    classes.add(className);\n  }\n\n  public void registerClasses(Iterable<ClassName> classes) {\n    classes.forEach(this::registerClass);\n  }\n\n  public Set<ClassName> getRegisteredClasses() {\n    return classes;\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: guava 31.1-jre->32.0.0-android. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.google.common.collect.ImmutableSet.toImmutableSet\n-- com.google.common.collect.ImmutableSortedSetFauxverideShim.toImmutableSet\n\nThe error is triggered in the following specific lines in the previous code:\n      log.debug(\"Class {} is not known to any dependency\", className);\n    log.debug(\"## Registered class {}\", className);\nwith the following error message:\n[ERROR] /depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java:[25,7] cannot find symbol  symbol:   variable log\n  location: class se.kth.depclean.core.analysis.ActualUsedClasses\n[ERROR] /depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java:[28,5] cannot find symbol  symbol:   variable log\n  location: class se.kth.depclean.core.analysis.ActualUsedClasses\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "      log.debug(\"Class {} is not known to any dependency\", className);\n    log.debug(\"## Registered class {}\", className);",
+    "error_message": "[ERROR] /depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java:[25,7] cannot find symbol  symbol:   variable log\n  location: class se.kth.depclean.core.analysis.ActualUsedClasses\n[ERROR] /depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java:[28,5] cannot find symbol  symbol:   variable log\n  location: class se.kth.depclean.core.analysis.ActualUsedClasses",
+    "api_diff": "-- com.google.common.collect.ImmutableSet.toImmutableSet\n-- com.google.common.collect.ImmutableSortedSetFauxverideShim.toImmutableSet",
+    "original_code": "package se.kth.depclean.core.analysis;\n\nimport java.util.HashSet;\nimport java.util.Set;\nimport lombok.extern.slf4j.Slf4j;\nimport se.kth.depclean.core.model.ClassName;\nimport se.kth.depclean.core.model.ProjectContext;\n\n/**\n * Contains the actual classes used in the project (i.e. in classes, processors, configurations, etc.)\n */\n@Slf4j\npublic class ActualUsedClasses {\n\n  private final ProjectContext context;\n  private final Set<ClassName> classes = new HashSet<>();\n\n  public ActualUsedClasses(ProjectContext context) {\n    this.context = context;\n  }\n\n  private void registerClass(ClassName className) {\n    // Do not register class unknown to dependencies\n    if (context.hasNoDependencyOnClass(className)) {\n      log.debug(\"Class {} is not known to any dependency\", className);\n      return;\n    }\n    log.debug(\"## Registered class {}\", className);\n    classes.add(className);\n  }\n\n  public void registerClasses(Iterable<ClassName> classes) {\n    classes.forEach(this::registerClass);\n  }\n\n  public Set<ClassName> getRegisteredClasses() {\n    return classes;\n  }\n}\n",
+    "project": "depclean",
+    "libraryName": "guava",
+    "libraryGroupID": "com.google.guava",
+    "newVersion": "32.0.0-android",
+    "previousVersion": "31.1-jre",
+    "breakingCommit": "b86a5f84b44a9b50aee69745886c47123f721de3"
+}

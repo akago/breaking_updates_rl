@@ -1,0 +1,66 @@
+{
+    "absolute_path_to_file_in_container": "/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java",
+    "errors": [
+        {
+            "line_number": 18,
+            "message": "[ERROR] /java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[18,35] cannot find symbol",
+            "additional_info": "  symbol:   class PublishMetadata\n  location: package com.google.cloud.pubsublite",
+            "file_name": "PublisherFactory.java",
+            "BCs": [
+                {
+                    "element": "com.google.cloud.pubsublite.PublishMetadata",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.cloud.pubsublite.TopicPath.location",
+                    "nature": "MUTATION",
+                    "kind": "METHOD_RETURN_TYPE_CHANGED"
+                },
+                {
+                    "element": "com.google.cloud.pubsublite.internal.Publisher",
+                    "nature": "ADDITION",
+                    "kind": "METHOD_ADDED_TO_INTERFACE"
+                }
+            ],
+            "Additions": [],
+            "uid": "44e3ef98-6b9c-539b-8fbf-bd72c601e143"
+        },
+        {
+            "line_number": 24,
+            "message": "[ERROR] /java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[24,13] cannot find symbol",
+            "additional_info": "  symbol:   class PublishMetadata\n  location: interface com.google.pubsublite.kafka.sink.PublisherFactory",
+            "file_name": "PublisherFactory.java",
+            "BCs": [
+                {
+                    "element": "com.google.cloud.pubsublite.PublishMetadata",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                },
+                {
+                    "element": "com.google.cloud.pubsublite.TopicPath.location",
+                    "nature": "MUTATION",
+                    "kind": "METHOD_RETURN_TYPE_CHANGED"
+                },
+                {
+                    "element": "com.google.cloud.pubsublite.internal.Publisher",
+                    "nature": "ADDITION",
+                    "kind": "METHOD_ADDED_TO_INTERFACE"
+                }
+            ],
+            "Additions": [],
+            "uid": "cb4eaba6-2789-5b47-b213-d852564021f4"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * Copyright 2020 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.google.pubsublite.kafka.sink;\n\nimport com.google.cloud.pubsublite.PublishMetadata;\nimport com.google.cloud.pubsublite.internal.Publisher;\nimport java.util.Map;\n\ninterface PublisherFactory {\n\n  Publisher<PublishMetadata> newPublisher(Map<String, String> params);\n}\n\n'''\nThe error is caused by a change in the API of the dependency: google-cloud-pubsublite 0.6.0->0.18.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.google.cloud.pubsublite.PublishMetadata\n~~ METHOD_RETURN_TYPE_CHANGED <- com.google.cloud.pubsublite.TopicPath.location\n++ METHOD_ADDED_TO_INTERFACE <- com.google.cloud.pubsublite.internal.Publisher\n-- com.google.cloud.pubsublite.internal.wire.SinglePartitionPublisherBuilder$Builder.setContext\n\nThe error is triggered in the following specific lines in the previous code:\nimport com.google.cloud.pubsublite.PublishMetadata;\n  Publisher<PublishMetadata> newPublisher(Map<String, String> params);\nwith the following error message:\n[ERROR] /java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[18,35] cannot find symbol  symbol:   class PublishMetadata\n  location: package com.google.cloud.pubsublite\n[ERROR] /java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[24,13] cannot find symbol  symbol:   class PublishMetadata\n  location: interface com.google.pubsublite.kafka.sink.PublisherFactory\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import com.google.cloud.pubsublite.PublishMetadata;\n  Publisher<PublishMetadata> newPublisher(Map<String, String> params);",
+    "error_message": "[ERROR] /java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[18,35] cannot find symbol  symbol:   class PublishMetadata\n  location: package com.google.cloud.pubsublite\n[ERROR] /java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java:[24,13] cannot find symbol  symbol:   class PublishMetadata\n  location: interface com.google.pubsublite.kafka.sink.PublisherFactory",
+    "api_diff": "-- com.google.cloud.pubsublite.PublishMetadata\n~~ METHOD_RETURN_TYPE_CHANGED <- com.google.cloud.pubsublite.TopicPath.location\n++ METHOD_ADDED_TO_INTERFACE <- com.google.cloud.pubsublite.internal.Publisher\n-- com.google.cloud.pubsublite.internal.wire.SinglePartitionPublisherBuilder$Builder.setContext",
+    "original_code": "/*\n * Copyright 2020 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *       http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.google.pubsublite.kafka.sink;\n\nimport com.google.cloud.pubsublite.PublishMetadata;\nimport com.google.cloud.pubsublite.internal.Publisher;\nimport java.util.Map;\n\ninterface PublisherFactory {\n\n  Publisher<PublishMetadata> newPublisher(Map<String, String> params);\n}\n",
+    "project": "java-pubsub-group-kafka-connector",
+    "libraryName": "google-cloud-pubsublite",
+    "libraryGroupID": "com.google.cloud",
+    "newVersion": "0.18.0",
+    "previousVersion": "0.6.0",
+    "breakingCommit": "d54b56b91c11f21b97d4903143b04b7c1f10c255"
+}

@@ -1,0 +1,121 @@
+{
+    "absolute_path_to_file_in_container": "/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java",
+    "errors": [
+        {
+            "line_number": 6,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[6,22] cannot find symbol",
+            "additional_info": "  symbol:   class PNConfiguration\n  location: package com.pubnub.api",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.PNConfiguration",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "18efe283-304e-5f15-92f1-b7dfd7cf926d"
+        },
+        {
+            "line_number": 7,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[7,22] cannot find symbol",
+            "additional_info": "  symbol:   class PubNub\n  location: package com.pubnub.api",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.PubNub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "d7f54705-28a2-5ac1-a9c6-604f71f38cbe"
+        },
+        {
+            "line_number": 8,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[8,32] cannot find symbol",
+            "additional_info": "  symbol:   class SubscribeCallback\n  location: package com.pubnub.api.callbacks",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.callbacks.SubscribeCallback",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "66ac1e44-58c6-57a0-b706-f66013863702"
+        },
+        {
+            "line_number": 15,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[15,53] cannot find symbol",
+            "additional_info": "  symbol:   class PNMembershipResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "fb964469-c060-515c-9e22-fa47bcab701e"
+        },
+        {
+            "line_number": 16,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[16,53] cannot find symbol",
+            "additional_info": "  symbol:   class PNSpaceResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "c4a6ed06-b9c4-5be9-acf8-be813d61f42c"
+        },
+        {
+            "line_number": 17,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[17,53] cannot find symbol",
+            "additional_info": "  symbol:   class PNUserResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.models.consumer.pubsub.objects.PNUserResult",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "3eb72a92-182f-5e72-a8f9-1885e1ab817d"
+        },
+        {
+            "line_number": 32,
+            "message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[32,17] cannot find symbol",
+            "additional_info": "  symbol:   class PubNub\n  location: class info.bitrich.xchangestream.service.pubnub.PubnubStreamingService",
+            "file_name": "PubnubStreamingService.java",
+            "BCs": [
+                {
+                    "element": "com.pubnub.api.PubNub",
+                    "nature": "DELETION",
+                    "kind": "TYPE_REMOVED"
+                }
+            ],
+            "Additions": [],
+            "uid": "bfb48fd3-a6b1-52b5-92b3-a86d5d851669"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage info.bitrich.xchangestream.service.pubnub;\n\nimport com.fasterxml.jackson.databind.DeserializationFeature;\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.pubnub.api.PNConfiguration;\nimport com.pubnub.api.PubNub;\nimport com.pubnub.api.callbacks.SubscribeCallback;\nimport com.pubnub.api.enums.PNStatusCategory;\nimport com.pubnub.api.models.consumer.PNStatus;\nimport com.pubnub.api.models.consumer.pubsub.PNMessageResult;\nimport com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;\nimport com.pubnub.api.models.consumer.pubsub.PNSignalResult;\nimport com.pubnub.api.models.consumer.pubsub.message_actions.PNMessageActionResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNUserResult;\nimport io.reactivex.rxjava3.core.Completable;\nimport io.reactivex.rxjava3.core.Observable;\nimport io.reactivex.rxjava3.core.ObservableEmitter;\nimport java.io.IOException;\nimport java.util.Collections;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n/** Created by Lukas Zaoralek on 14.11.17. */\npublic class PubnubStreamingService {\n  private static final Logger LOG = LoggerFactory.getLogger(PubnubStreamingService.class);\n\n  private final PubNub pubnub;\n  private PNStatusCategory pnStatusCategory;\n  private final Map<String, ObservableEmitter<JsonNode>> subscriptions = new ConcurrentHashMap<>();\n  private final ObjectMapper mapper;\n\n  public PubnubStreamingService(String publicKey) {\n    mapper = new ObjectMapper();\n    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);\n    PNConfiguration pnConfiguration = new PNConfiguration();\n    pnConfiguration.setSubscribeKey(publicKey);\n    pubnub = new PubNub(pnConfiguration);\n    pnStatusCategory = PNStatusCategory.PNDisconnectedCategory;\n  }\n\n  public Completable connect() {\n    return Completable.create(\n        e -> {\n          pubnub.addListener(\n              new SubscribeCallback() {\n                @Override\n                public void status(PubNub pubNub, PNStatus pnStatus) {\n                  pnStatusCategory = pnStatus.getCategory();\n                  LOG.debug(\n                      \"PubNub status: {} {}\",\n                      pnStatusCategory.toString(),\n                      pnStatus.getStatusCode());\n                  if (pnStatusCategory == PNStatusCategory.PNConnectedCategory) {\n                    //              e.onComplete();\n                  } else if (pnStatus.isError()) {\n                    //              e.onError(pnStatus.getErrorData().getThrowable());\n                  }\n                }\n\n                @Override\n                public void message(PubNub pubNub, PNMessageResult pnMessageResult) {\n                  String channelName = pnMessageResult.getChannel();\n                  ObservableEmitter<JsonNode> subscription = subscriptions.get(channelName);\n                  LOG.debug(\"PubNub Message: {}\", pnMessageResult.toString());\n                  if (subscription != null) {\n                    JsonNode jsonMessage = null;\n                    try {\n                      jsonMessage = mapper.readTree(pnMessageResult.getMessage().toString());\n                    } catch (IOException ex) {\n                      ex.printStackTrace();\n                    }\n                    subscription.onNext(jsonMessage);\n                  } else {\n                    LOG.debug(\"No subscriber for channel {}.\", channelName);\n                  }\n                }\n\n                @Override\n                public void presence(PubNub pubNub, PNPresenceEventResult pnPresenceEventResult) {\n                  LOG.debug(\"PubNub presence: {}\", pnPresenceEventResult.toString());\n                }\n\n                @Override\n                public void signal(PubNub pubnub, PNSignalResult pnSignalResult) {\n                  LOG.debug(\"PubNub signal: {}\", pnSignalResult.toString());\n                }\n\n                @Override\n                public void user(PubNub pubnub, PNUserResult pnUserResult) {\n                  LOG.debug(\"PubNub user: {}\", pnUserResult.toString());\n                }\n\n                @Override\n                public void space(PubNub pubnub, PNSpaceResult pnSpaceResult) {\n                  LOG.debug(\"PubNub space: {}\", pnSpaceResult.toString());\n                }\n\n                @Override\n                public void membership(PubNub pubnub, PNMembershipResult pnMembershipResult) {\n                  LOG.debug(\"PubNub membership: {}\", pnMembershipResult.toString());\n                }\n\n                @Override\n                public void messageAction(\n                    PubNub pubnub, PNMessageActionResult pnMessageActionResult) {\n                  LOG.debug(\"PubNub messageAction: {}\", pnMessageActionResult.toString());\n                }\n              });\n          e.onComplete();\n        });\n  }\n\n  public Observable<JsonNode> subscribeChannel(String channelName) {\n    LOG.info(\"Subscribing to channel {}.\", channelName);\n    return Observable.<JsonNode>create(\n            e -> {\n              if (!subscriptions.containsKey(channelName)) {\n                subscriptions.put(channelName, e);\n                pubnub.subscribe().channels(Collections.singletonList(channelName)).execute();\n                LOG.debug(\"Subscribe channel: {}\", channelName);\n              }\n            })\n        .doOnDispose(\n            () -> {\n              LOG.debug(\"Unsubscribe channel: {}\", channelName);\n              pubnub.unsubscribe().channels(Collections.singletonList(channelName)).execute();\n            })\n        .share();\n  }\n\n  public Completable disconnect() {\n    return Completable.create(\n        completable -> {\n          pubnub.disconnect();\n          completable.onComplete();\n        });\n  }\n\n  public boolean isAlive() {\n    return (pnStatusCategory == PNStatusCategory.PNConnectedCategory);\n  }\n\n  public void useCompressedMessages(boolean compressedMessages) {\n    throw new UnsupportedOperationException();\n  }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: pubnub-gson 4.31.3->10.5.1. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- com.pubnub.api.PNConfiguration\n-- com.pubnub.api.PubNub\n-- com.pubnub.api.callbacks.SubscribeCallback\n-- com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult\n-- com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult\n-- com.pubnub.api.models.consumer.pubsub.objects.PNUserResult\n\nThe error is triggered in the following specific lines in the previous code:\nimport com.pubnub.api.PNConfiguration;\nimport com.pubnub.api.PubNub;\nimport com.pubnub.api.callbacks.SubscribeCallback;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNUserResult;\n  private final PubNub pubnub;\nwith the following error message:\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[6,22] cannot find symbol  symbol:   class PNConfiguration\n  location: package com.pubnub.api\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[7,22] cannot find symbol  symbol:   class PubNub\n  location: package com.pubnub.api\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[8,32] cannot find symbol  symbol:   class SubscribeCallback\n  location: package com.pubnub.api.callbacks\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[15,53] cannot find symbol  symbol:   class PNMembershipResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[16,53] cannot find symbol  symbol:   class PNSpaceResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[17,53] cannot find symbol  symbol:   class PNUserResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[32,17] cannot find symbol  symbol:   class PubNub\n  location: class info.bitrich.xchangestream.service.pubnub.PubnubStreamingService\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import com.pubnub.api.PNConfiguration;\nimport com.pubnub.api.PubNub;\nimport com.pubnub.api.callbacks.SubscribeCallback;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNUserResult;\n  private final PubNub pubnub;",
+    "error_message": "[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[6,22] cannot find symbol  symbol:   class PNConfiguration\n  location: package com.pubnub.api\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[7,22] cannot find symbol  symbol:   class PubNub\n  location: package com.pubnub.api\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[8,32] cannot find symbol  symbol:   class SubscribeCallback\n  location: package com.pubnub.api.callbacks\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[15,53] cannot find symbol  symbol:   class PNMembershipResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[16,53] cannot find symbol  symbol:   class PNSpaceResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[17,53] cannot find symbol  symbol:   class PNUserResult\n  location: package com.pubnub.api.models.consumer.pubsub.objects\n[ERROR] /XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java:[32,17] cannot find symbol  symbol:   class PubNub\n  location: class info.bitrich.xchangestream.service.pubnub.PubnubStreamingService",
+    "api_diff": "-- com.pubnub.api.PNConfiguration\n-- com.pubnub.api.PubNub\n-- com.pubnub.api.callbacks.SubscribeCallback\n-- com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult\n-- com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult\n-- com.pubnub.api.models.consumer.pubsub.objects.PNUserResult",
+    "original_code": "package info.bitrich.xchangestream.service.pubnub;\n\nimport com.fasterxml.jackson.databind.DeserializationFeature;\nimport com.fasterxml.jackson.databind.JsonNode;\nimport com.fasterxml.jackson.databind.ObjectMapper;\nimport com.pubnub.api.PNConfiguration;\nimport com.pubnub.api.PubNub;\nimport com.pubnub.api.callbacks.SubscribeCallback;\nimport com.pubnub.api.enums.PNStatusCategory;\nimport com.pubnub.api.models.consumer.PNStatus;\nimport com.pubnub.api.models.consumer.pubsub.PNMessageResult;\nimport com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;\nimport com.pubnub.api.models.consumer.pubsub.PNSignalResult;\nimport com.pubnub.api.models.consumer.pubsub.message_actions.PNMessageActionResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult;\nimport com.pubnub.api.models.consumer.pubsub.objects.PNUserResult;\nimport io.reactivex.rxjava3.core.Completable;\nimport io.reactivex.rxjava3.core.Observable;\nimport io.reactivex.rxjava3.core.ObservableEmitter;\nimport java.io.IOException;\nimport java.util.Collections;\nimport java.util.Map;\nimport java.util.concurrent.ConcurrentHashMap;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n/** Created by Lukas Zaoralek on 14.11.17. */\npublic class PubnubStreamingService {\n  private static final Logger LOG = LoggerFactory.getLogger(PubnubStreamingService.class);\n\n  private final PubNub pubnub;\n  private PNStatusCategory pnStatusCategory;\n  private final Map<String, ObservableEmitter<JsonNode>> subscriptions = new ConcurrentHashMap<>();\n  private final ObjectMapper mapper;\n\n  public PubnubStreamingService(String publicKey) {\n    mapper = new ObjectMapper();\n    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);\n    PNConfiguration pnConfiguration = new PNConfiguration();\n    pnConfiguration.setSubscribeKey(publicKey);\n    pubnub = new PubNub(pnConfiguration);\n    pnStatusCategory = PNStatusCategory.PNDisconnectedCategory;\n  }\n\n  public Completable connect() {\n    return Completable.create(\n        e -> {\n          pubnub.addListener(\n              new SubscribeCallback() {\n                @Override\n                public void status(PubNub pubNub, PNStatus pnStatus) {\n                  pnStatusCategory = pnStatus.getCategory();\n                  LOG.debug(\n                      \"PubNub status: {} {}\",\n                      pnStatusCategory.toString(),\n                      pnStatus.getStatusCode());\n                  if (pnStatusCategory == PNStatusCategory.PNConnectedCategory) {\n                    //              e.onComplete();\n                  } else if (pnStatus.isError()) {\n                    //              e.onError(pnStatus.getErrorData().getThrowable());\n                  }\n                }\n\n                @Override\n                public void message(PubNub pubNub, PNMessageResult pnMessageResult) {\n                  String channelName = pnMessageResult.getChannel();\n                  ObservableEmitter<JsonNode> subscription = subscriptions.get(channelName);\n                  LOG.debug(\"PubNub Message: {}\", pnMessageResult.toString());\n                  if (subscription != null) {\n                    JsonNode jsonMessage = null;\n                    try {\n                      jsonMessage = mapper.readTree(pnMessageResult.getMessage().toString());\n                    } catch (IOException ex) {\n                      ex.printStackTrace();\n                    }\n                    subscription.onNext(jsonMessage);\n                  } else {\n                    LOG.debug(\"No subscriber for channel {}.\", channelName);\n                  }\n                }\n\n                @Override\n                public void presence(PubNub pubNub, PNPresenceEventResult pnPresenceEventResult) {\n                  LOG.debug(\"PubNub presence: {}\", pnPresenceEventResult.toString());\n                }\n\n                @Override\n                public void signal(PubNub pubnub, PNSignalResult pnSignalResult) {\n                  LOG.debug(\"PubNub signal: {}\", pnSignalResult.toString());\n                }\n\n                @Override\n                public void user(PubNub pubnub, PNUserResult pnUserResult) {\n                  LOG.debug(\"PubNub user: {}\", pnUserResult.toString());\n                }\n\n                @Override\n                public void space(PubNub pubnub, PNSpaceResult pnSpaceResult) {\n                  LOG.debug(\"PubNub space: {}\", pnSpaceResult.toString());\n                }\n\n                @Override\n                public void membership(PubNub pubnub, PNMembershipResult pnMembershipResult) {\n                  LOG.debug(\"PubNub membership: {}\", pnMembershipResult.toString());\n                }\n\n                @Override\n                public void messageAction(\n                    PubNub pubnub, PNMessageActionResult pnMessageActionResult) {\n                  LOG.debug(\"PubNub messageAction: {}\", pnMessageActionResult.toString());\n                }\n              });\n          e.onComplete();\n        });\n  }\n\n  public Observable<JsonNode> subscribeChannel(String channelName) {\n    LOG.info(\"Subscribing to channel {}.\", channelName);\n    return Observable.<JsonNode>create(\n            e -> {\n              if (!subscriptions.containsKey(channelName)) {\n                subscriptions.put(channelName, e);\n                pubnub.subscribe().channels(Collections.singletonList(channelName)).execute();\n                LOG.debug(\"Subscribe channel: {}\", channelName);\n              }\n            })\n        .doOnDispose(\n            () -> {\n              LOG.debug(\"Unsubscribe channel: {}\", channelName);\n              pubnub.unsubscribe().channels(Collections.singletonList(channelName)).execute();\n            })\n        .share();\n  }\n\n  public Completable disconnect() {\n    return Completable.create(\n        completable -> {\n          pubnub.disconnect();\n          completable.onComplete();\n        });\n  }\n\n  public boolean isAlive() {\n    return (pnStatusCategory == PNStatusCategory.PNConnectedCategory);\n  }\n\n  public void useCompressedMessages(boolean compressedMessages) {\n    throw new UnsupportedOperationException();\n  }\n}\n",
+    "project": "XChange",
+    "libraryName": "pubnub-gson",
+    "libraryGroupID": "com.pubnub",
+    "newVersion": "10.5.1",
+    "previousVersion": "4.31.3",
+    "breakingCommit": "ddd3e8e4ea2ac3d45b18a8e5cbf357309ece323a"
+}

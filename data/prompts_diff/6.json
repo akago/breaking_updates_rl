@@ -1,0 +1,77 @@
+{
+    "absolute_path_to_file_in_container": "/liquibase-mssql/src/java/liquibase/ext/mssql/database/MSSQLDatabase.java",
+    "errors": [
+        {
+            "line_number": 18,
+            "message": "[ERROR] /liquibase-mssql/src/java/liquibase/ext/mssql/database/MSSQLDatabase.java:[18,24] cannot find symbol",
+            "additional_info": "  symbol:   method getInstance()\n  location: class liquibase.executor.ExecutorService",
+            "file_name": "MSSQLDatabase.java",
+            "BCs": [
+                {
+                    "element": "liquibase.executor.ExecutorService",
+                    "nature": "ADDITION",
+                    "kind": "METHOD_ABSTRACT_ADDED_TO_CLASS"
+                },
+                {
+                    "element": "liquibase.database.Database",
+                    "nature": "ADDITION",
+                    "kind": "METHOD_ADDED_TO_INTERFACE"
+                },
+                {
+                    "element": "liquibase.servicelocator.ServiceLocator.getInstance",
+                    "nature": "DELETION",
+                    "kind": "METHOD_REMOVED"
+                },
+                {
+                    "element": "liquibase.logging.LogFactory.getInstance",
+                    "nature": "MUTATION",
+                    "kind": "METHOD_NOW_FINAL"
+                },
+                {
+                    "element": "liquibase.executor.ExecutorService.getInstance",
+                    "nature": "DELETION",
+                    "kind": "METHOD_REMOVED"
+                }
+            ],
+            "Additions": [
+                "++ public static liquibase.command.CommandFactory liquibase.command.CommandFactory.getInstance()",
+                "++ public static liquibase.command.CommandFactory liquibase.command.CommandFactory.getInstance()",
+                "++ public static synchronized liquibase.database.ConnectionServiceFactory liquibase.database.ConnectionServiceFactory.getInstance()",
+                "++ public static synchronized liquibase.database.ConnectionServiceFactory liquibase.database.ConnectionServiceFactory.getInstance()",
+                "++ public static liquibase.pro.packaged.aZ liquibase.pro.packaged.aZ.getInstance()",
+                "++ public static liquibase.pro.packaged.aZ liquibase.pro.packaged.aZ.getInstance()",
+                "++ public static liquibase.pro.packaged.iD liquibase.pro.packaged.iD.getInstance()",
+                "++ public static liquibase.pro.packaged.iD liquibase.pro.packaged.iD.getInstance()",
+                "++ public static liquibase.pro.packaged.iI liquibase.pro.packaged.iI.getInstance()",
+                "++ public static liquibase.pro.packaged.iI liquibase.pro.packaged.iI.getInstance()",
+                "++ public final null liquibase.repackaged.net.sf.jsqlparser.schema.Database",
+                "++ public Database liquibase.repackaged.net.sf.jsqlparser.schema.Database(liquibase.repackaged.net.sf.jsqlparser.schema.Server,java.lang.String)",
+                "++ public Database liquibase.repackaged.net.sf.jsqlparser.schema.Database(java.lang.String)",
+                "++ public static transient liquibase.repackaged.org.apache.commons.lang3.CharSet liquibase.repackaged.org.apache.commons.lang3.CharSet.getInstance(java.lang.String[])",
+                "++ public static transient liquibase.repackaged.org.apache.commons.lang3.CharSet liquibase.repackaged.org.apache.commons.lang3.CharSet.getInstance(java.lang.String[])",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance()",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance()",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.Locale)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.Locale)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone,java.util.Locale)",
+                "++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone,java.util.Locale)"
+            ],
+            "uid": "67e73ae1-3f20-59f8-8f2d-58cc01a26d4b"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage liquibase.ext.mssql.database;\n\nimport liquibase.CatalogAndSchema;\nimport liquibase.exception.LiquibaseException;\nimport liquibase.executor.ExecutorService;\nimport liquibase.ext.mssql.statement.DropStoredProcedureStatement;\n\npublic class MSSQLDatabase extends liquibase.database.core.MSSQLDatabase {\n    \n    @Override\n    public int getPriority() {\n        return PRIORITY_DATABASE;\n    }\n    \n    @Override\n    public void dropDatabaseObjects(CatalogAndSchema schemaToDrop) throws LiquibaseException {\n        super.dropDatabaseObjects(schemaToDrop);\n        ExecutorService.getInstance().getExecutor(this).execute(new DropStoredProcedureStatement(this.getLiquibaseCatalogName(), this.getLiquibaseSchemaName()));\n    }\n}\n'''\nThe error is caused by a change in the API of the dependency: liquibase-core 3.4.2->4.8.0. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- liquibase.util.StringUtils\n++ METHOD_ABSTRACT_ADDED_TO_CLASS <- liquibase.executor.ExecutorService\n++ METHOD_ADDED_TO_INTERFACE <- liquibase.database.Database\n-- liquibase.servicelocator.ServiceLocator.getInstance\n~~ METHOD_NOW_FINAL <- liquibase.logging.LogFactory.getInstance\n-- liquibase.executor.ExecutorService.getInstance\n++ public final null liquibase.repackaged.net.sf.jsqlparser.schema.Database\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String)\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone)\n++ public static transient liquibase.repackaged.org.apache.commons.lang3.CharSet liquibase.repackaged.org.apache.commons.lang3.CharSet.getInstance(java.lang.String[])\n++ public static liquibase.pro.packaged.iI liquibase.pro.packaged.iI.getInstance()\n++ public static synchronized liquibase.database.ConnectionServiceFactory liquibase.database.ConnectionServiceFactory.getInstance()\n++ public static liquibase.pro.packaged.iD liquibase.pro.packaged.iD.getInstance()\n++ public Database liquibase.repackaged.net.sf.jsqlparser.schema.Database(java.lang.String)\n++ public StringUtils liquibase.repackaged.org.apache.commons.lang3.StringUtils()\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone,java.util.Locale)\n++ public Index liquibase.repackaged.net.sf.jsqlparser.statement.create.table.Index()\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.Locale)\n++ public Database liquibase.repackaged.net.sf.jsqlparser.schema.Database(liquibase.repackaged.net.sf.jsqlparser.schema.Server,java.lang.String)\n++ public static liquibase.pro.packaged.aZ liquibase.pro.packaged.aZ.getInstance()\n++ public static liquibase.command.CommandFactory liquibase.command.CommandFactory.getInstance()\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance()\n++ public final liquibase.repackaged.net.sf.jsqlparser.statement.create.table.Index liquibase.repackaged.net.sf.jsqlparser.parser.CCJSqlParser.Index()\n\nThe error is triggered in the following specific lines in the previous code:\n        ExecutorService.getInstance().getExecutor(this).execute(new DropStoredProcedureStatement(this.getLiquibaseCatalogName(), this.getLiquibaseSchemaName()));\nwith the following error message:\n[ERROR] /liquibase-mssql/src/java/liquibase/ext/mssql/database/MSSQLDatabase.java:[18,24] cannot find symbol  symbol:   method getInstance()\n  location: class liquibase.executor.ExecutorService\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "        ExecutorService.getInstance().getExecutor(this).execute(new DropStoredProcedureStatement(this.getLiquibaseCatalogName(), this.getLiquibaseSchemaName()));",
+    "error_message": "[ERROR] /liquibase-mssql/src/java/liquibase/ext/mssql/database/MSSQLDatabase.java:[18,24] cannot find symbol  symbol:   method getInstance()\n  location: class liquibase.executor.ExecutorService",
+    "api_diff": "-- liquibase.util.StringUtils\n++ METHOD_ABSTRACT_ADDED_TO_CLASS <- liquibase.executor.ExecutorService\n++ METHOD_ADDED_TO_INTERFACE <- liquibase.database.Database\n-- liquibase.servicelocator.ServiceLocator.getInstance\n~~ METHOD_NOW_FINAL <- liquibase.logging.LogFactory.getInstance\n-- liquibase.executor.ExecutorService.getInstance\n++ public final null liquibase.repackaged.net.sf.jsqlparser.schema.Database\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String)\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone)\n++ public static transient liquibase.repackaged.org.apache.commons.lang3.CharSet liquibase.repackaged.org.apache.commons.lang3.CharSet.getInstance(java.lang.String[])\n++ public static liquibase.pro.packaged.iI liquibase.pro.packaged.iI.getInstance()\n++ public static synchronized liquibase.database.ConnectionServiceFactory liquibase.database.ConnectionServiceFactory.getInstance()\n++ public static liquibase.pro.packaged.iD liquibase.pro.packaged.iD.getInstance()\n++ public Database liquibase.repackaged.net.sf.jsqlparser.schema.Database(java.lang.String)\n++ public StringUtils liquibase.repackaged.org.apache.commons.lang3.StringUtils()\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.TimeZone,java.util.Locale)\n++ public Index liquibase.repackaged.net.sf.jsqlparser.statement.create.table.Index()\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance(java.lang.String,java.util.Locale)\n++ public Database liquibase.repackaged.net.sf.jsqlparser.schema.Database(liquibase.repackaged.net.sf.jsqlparser.schema.Server,java.lang.String)\n++ public static liquibase.pro.packaged.aZ liquibase.pro.packaged.aZ.getInstance()\n++ public static liquibase.command.CommandFactory liquibase.command.CommandFactory.getInstance()\n++ public static liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat liquibase.repackaged.org.apache.commons.lang3.time.FastDateFormat.getInstance()\n++ public final liquibase.repackaged.net.sf.jsqlparser.statement.create.table.Index liquibase.repackaged.net.sf.jsqlparser.parser.CCJSqlParser.Index()",
+    "original_code": "package liquibase.ext.mssql.database;\n\nimport liquibase.CatalogAndSchema;\nimport liquibase.exception.LiquibaseException;\nimport liquibase.executor.ExecutorService;\nimport liquibase.ext.mssql.statement.DropStoredProcedureStatement;\n\npublic class MSSQLDatabase extends liquibase.database.core.MSSQLDatabase {\n    \n    @Override\n    public int getPriority() {\n        return PRIORITY_DATABASE;\n    }\n    \n    @Override\n    public void dropDatabaseObjects(CatalogAndSchema schemaToDrop) throws LiquibaseException {\n        super.dropDatabaseObjects(schemaToDrop);\n        ExecutorService.getInstance().getExecutor(this).execute(new DropStoredProcedureStatement(this.getLiquibaseCatalogName(), this.getLiquibaseSchemaName()));\n    }\n}",
+    "project": "liquibase-mssql",
+    "libraryName": "liquibase-core",
+    "libraryGroupID": "org.liquibase",
+    "newVersion": "4.8.0",
+    "previousVersion": "3.4.2",
+    "breakingCommit": "feb582661e77de66eadaa7550720a8751b266ee4"
+}

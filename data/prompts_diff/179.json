@@ -1,0 +1,36 @@
+{
+    "absolute_path_to_file_in_container": "/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java",
+    "errors": [
+        {
+            "line_number": 5,
+            "message": "[ERROR] /PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java:[5,30] package develop.p2p.lib does not exist",
+            "additional_info": "",
+            "file_name": "Neuron.java",
+            "BCs": [],
+            "Additions": [],
+            "uid": "bb5e1f9a-5688-5bea-8080-fc632d375e32"
+        },
+        {
+            "line_number": 50,
+            "message": "[ERROR] /PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java:[50,18] cannot find symbol",
+            "additional_info": "  symbol:   method sigmoid(double)\n  location: class ml.peya.plugins.Learn.Neuron",
+            "file_name": "Neuron.java",
+            "BCs": [],
+            "Additions": [
+                "++ public static D tokyo.peya.lib.LearnMath.sigmoid(double)"
+            ],
+            "uid": "a1c4484d-1ab1-5d54-9a42-3768fda3e758"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage ml.peya.plugins.Learn;\n\nimport java.util.ArrayList;\n\nimport static develop.p2p.lib.LearnMath.sigmoid;\n\n/**\n * \u91cd\u307f\u3092\u7a81\u3063\u8fbc\u3080\u5668\u3002\n */\npublic class Neuron\n{\n    /**\n     * \u52a0\u7b97\u3057\u305fWeight\u3002\n     */\n    private double sum;\n\n    /**\n     * \u5165\u529b\u7528\u5024\u3002\n     */\n    private double value = 0.0;\n\n    /**\n     * \u30b2\u30c3\u30bf\u30fc\u3002\n     *\n     * @return value\u53c2\u7167\u3002\n     */\n    public double getValue()\n    {\n        return value;\n    }\n\n    /**\n     * \u30bb\u30c3\u30bf\u30fc\u3002\n     *\n     * @param value value\u53c2\u7167\u3002\n     */\n    public void setValue(double value)\n    {\n        this.value = value;\n    }\n\n    /**\n     * ReLU\u95a2\u6570\u3067\u5024\u3092\u5f37\u3081\u3066\u51fa\u529b\u7cfb\u306b\u5165\u308c\u308b\u3002\n     *\n     * @param inputData Input\u30af\u30e9\u30b9\u306eArrayList\u30c7\u30fc\u30bf\u3002\n     */\n    public void input(ArrayList<Input> inputData)\n    {\n        inputData.parallelStream().forEachOrdered(input -> input(input.getWeightingValue()));\n        setValue(sigmoid(sum));\n    }\n\n    /**\n     * input(ArrayList)\u306e\u30aa\u30fc\u30d0\u30fc\u30ed\u30fc\u30c9\u3002\n     *\n     * @param value sum\u306b\u52a0\u7b97\u3059\u308b\u5024\u3002\n     */\n    public void input(double value)\n    {\n        sum += value;\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: PeyangSuperLibrary 114.191.9->114.191.98.10. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- develop.p2p.lib.WaveCreator\n++ public WaveCreator tokyo.peya.lib.WaveCreator(double,double,double)\n++ public static D tokyo.peya.lib.LearnMath.sigmoid(double)\n\nThe error is triggered in the following specific lines in the previous code:\nimport static develop.p2p.lib.LearnMath.sigmoid;\n        setValue(sigmoid(sum));\nwith the following error message:\n[ERROR] /PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java:[5,30] package develop.p2p.lib does not exist\n[ERROR] /PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java:[50,18] cannot find symbol  symbol:   method sigmoid(double)\n  location: class ml.peya.plugins.Learn.Neuron\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import static develop.p2p.lib.LearnMath.sigmoid;\n        setValue(sigmoid(sum));",
+    "error_message": "[ERROR] /PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java:[5,30] package develop.p2p.lib does not exist\n[ERROR] /PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java:[50,18] cannot find symbol  symbol:   method sigmoid(double)\n  location: class ml.peya.plugins.Learn.Neuron",
+    "api_diff": "-- develop.p2p.lib.WaveCreator\n++ public WaveCreator tokyo.peya.lib.WaveCreator(double,double,double)\n++ public static D tokyo.peya.lib.LearnMath.sigmoid(double)",
+    "original_code": "package ml.peya.plugins.Learn;\n\nimport java.util.ArrayList;\n\nimport static develop.p2p.lib.LearnMath.sigmoid;\n\n/**\n * \u91cd\u307f\u3092\u7a81\u3063\u8fbc\u3080\u5668\u3002\n */\npublic class Neuron\n{\n    /**\n     * \u52a0\u7b97\u3057\u305fWeight\u3002\n     */\n    private double sum;\n\n    /**\n     * \u5165\u529b\u7528\u5024\u3002\n     */\n    private double value = 0.0;\n\n    /**\n     * \u30b2\u30c3\u30bf\u30fc\u3002\n     *\n     * @return value\u53c2\u7167\u3002\n     */\n    public double getValue()\n    {\n        return value;\n    }\n\n    /**\n     * \u30bb\u30c3\u30bf\u30fc\u3002\n     *\n     * @param value value\u53c2\u7167\u3002\n     */\n    public void setValue(double value)\n    {\n        this.value = value;\n    }\n\n    /**\n     * ReLU\u95a2\u6570\u3067\u5024\u3092\u5f37\u3081\u3066\u51fa\u529b\u7cfb\u306b\u5165\u308c\u308b\u3002\n     *\n     * @param inputData Input\u30af\u30e9\u30b9\u306eArrayList\u30c7\u30fc\u30bf\u3002\n     */\n    public void input(ArrayList<Input> inputData)\n    {\n        inputData.parallelStream().forEachOrdered(input -> input(input.getWeightingValue()));\n        setValue(sigmoid(sum));\n    }\n\n    /**\n     * input(ArrayList)\u306e\u30aa\u30fc\u30d0\u30fc\u30ed\u30fc\u30c9\u3002\n     *\n     * @param value sum\u306b\u52a0\u7b97\u3059\u308b\u5024\u3002\n     */\n    public void input(double value)\n    {\n        sum += value;\n    }\n}\n",
+    "project": "PeyangSuperbAntiCheat",
+    "libraryName": "PeyangSuperLibrary",
+    "libraryGroupID": "com.github.P2P-Develop",
+    "newVersion": "114.191.98.10",
+    "previousVersion": "114.191.9",
+    "breakingCommit": "f78d34b82926216c0f203c0350f646d481c675e3"
+}
