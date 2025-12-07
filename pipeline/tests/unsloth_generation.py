@@ -1,6 +1,7 @@
 from unsloth import FastModel
 from unsloth.chat_templates import get_chat_template
 
+from pipeline.constants.constants import SYSTEM_PROMPT
 
 import torch
 import json
@@ -25,7 +26,7 @@ fourbit_models = [
 
 
 model, tokenizer = FastModel.from_pretrained(
-    model_name= "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
+    model_name= "/home/xchen6/breaking_updates_rl/results/sft/sft_gemma4b/3_epoch",
     # model_name = "/home/xchen6/breaking_updates_rl/results/grpo_gemma4b/checkpoint-200",
     max_seq_length = 30000, # Choose any for long context!
     load_in_4bit = True,  # 4 bit quantization to reduce memory
@@ -39,10 +40,11 @@ model, tokenizer = FastModel.from_pretrained(
 #     chat_template = "gemma-3", # change this to the right chat_template name
 # )           
             
-with open("/home/xchen6/breaking_updates_rl/data/prompts/9.json", "r") as f:
+with open("/home/xchen6/breaking_updates_rl/data/prompts_diff/9.json", "r") as f:
     prompt = json.loads(f.read())["prompt"]
     
 messages = [
+    {"role": "user", "content": }
     {"role": "user",   "content": prompt},
 ]
 

@@ -7,8 +7,7 @@ import argparse
 # os.environ["UNSLOTH_VLLM_STANDBY"] = "1"
 os.environ["UNSLOTH_ENABLE_LOGGING"] = "1"
 
-os.environ["UNSLOTH_COMPILE_DISABLE"] = "1"
-from unsloth import FastModel
+from unsloth import FastLanguageModel
 from unsloth.chat_templates import standardize_data_formats, get_chat_template
 import torch
 from pathlib import Path
@@ -23,40 +22,37 @@ import re
 from datasets import Dataset
 from datasets import load_dataset
 
-
-
-max_seq_length = 15000
+max_seq_length = 9000
 
 def cold_start(model, output, epoch):
-    model, tokenizer = FastModel.from_pretrained(
+    
+    model, tokenizer = FastLanguageModel.from_pretrained(
         model_name = model,
-        max_seq_length = max_seq_length, # Choose any for long context!
-        load_in_4bit = True,  # 4 bit quantization to reduce memory
-        load_in_8bit = False, # [NEW!] A bit more accurate, uses 2x memory
-        full_finetuning = False, # [NEW!] We have full finetuning now!
-        # fast_inference = True,
-        # attn_implementation="flash_attention_2"
+        max_seq_length = max_seq_length,
+        dtype = None,
+        load_in_4bit = True,
+        # token = "hf_...", # use one if using gated models like meta-llama/Llama-2-7b-hf
+    )
+    
+    model = FastLanguageModel.get_peft_model(
+        model,
+        r = 16, # Choose any number > 0 ! Suggested 8, 16, 32, 64, 128
+        target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
+                        "gate_proj", "up_proj", "down_proj",],
+        lora_alpha = 16,
+        lora_dropout = 0, # Supports any, but = 0 is optimized
+        bias = "none",    # Supports any, but = "none" is optimized
+        # [NEW] "unsloth" uses 30% less VRAM, fits 2x larger batch sizes!
+        use_gradient_checkpointing = "unsloth", # True or "unsloth" for very long context
+        random_state = 3407,
+        use_rslora = False,  # We support rank stabilized LoRA
+        loftq_config = None, # And LoftQ
     )
 
     tokenizer = get_chat_template(
         tokenizer,
-        chat_template = "gemma-3",
+        chat_template = "llama-3.1",
     )
-
-    model = FastModel.get_peft_model(
-        model,
-        finetune_vision_layers     = False, # Turn off for just text!
-        finetune_language_layers   = True,  # Should leave on!
-        finetune_attention_modules = True,  # Attention good for GRPO
-        finetune_mlp_modules       = True,  # SHould leave on always!
-        # use_gradient_checkpointing = "unsloth",
-        r = 16,           # Larger = higher accuracy, but might overfit
-        lora_alpha = 32,  # Recommended alpha == r at least
-        lora_dropout = 0.05,
-        bias = "none",
-        random_state = 2,
-    )
-
 
     DATASET_PATH = SFT_DATASET_PATH / "sft_data.jsonl"
     my_dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
@@ -75,12 +71,12 @@ def cold_start(model, output, epoch):
     # print(my_dataset[50])
     def formatting_prompts_func(examples):
         convos = examples["conversations"]
-        texts = [tokenizer.apply_chat_template(convo, tokenize = False, add_generation_prompt = False).removeprefix('<bos>') for convo in convos]
+        texts = [tokenizer.apply_chat_template(convo, tokenize = False, add_generation_prompt = False) for convo in convos]
         return { "text" : texts, }
     my_dataset = my_dataset.map(formatting_prompts_func, batched = True)
     # print(my_dataset[50]["text"])
 
-    max_prompt_length = 10000
+    max_prompt_length = 5000
     from trl import SFTTrainer, SFTConfig
     trainer = SFTTrainer(
         model = model,
@@ -89,7 +85,7 @@ def cold_start(model, output, epoch):
         eval_dataset = None, # Can set up evaluation!
         args = SFTConfig(
             dataset_text_field = "text",
-            per_device_train_batch_size = 1,
+            per_device_train_batch_size = 4,
             gradient_accumulation_steps = 8, # Use GA to mimic batch size!
             warmup_steps = 5,
             num_train_epochs = epoch, # Set this for 1 full training run.
@@ -110,10 +106,9 @@ def cold_start(model, output, epoch):
     from unsloth.chat_templates import train_on_responses_only
     trainer = train_on_responses_only(
         trainer,
-        instruction_part = "<start_of_turn>user\n",
-        response_part = "<start_of_turn>model\n",
+        instruction_part = "<|start_header_id|>user<|end_header_id|>\n\n",
+        response_part = "<|start_header_id|>assistant<|end_header_id|>\n\n",
     )
-
     print(tokenizer.decode(trainer.train_dataset[99]["input_ids"]))
     print(tokenizer.decode([tokenizer.pad_token_id if x == -100 else x for x in trainer.train_dataset[99]["labels"]]).replace(tokenizer.pad_token, " "))
     # model.save_pretrained("/home/xchen6/breaking_updates_rl/results/sft_gemma4b/lora_model")
@@ -122,7 +117,6 @@ def cold_start(model, output, epoch):
     trainer_stats = trainer.train()
     model.save_pretrained(str(output / f"{epoch}_epoch"))  # Local saving
     tokenizer.save_pretrained(str(output / f"{epoch}_epoch"))
-    model.save_pretrained_merged(str(output / "merged"), tokenizer, save_method = "merged_16bit",)
     
 
 def main(argv: list[str] | None = None) -> None:
@@ -131,10 +125,10 @@ def main(argv: list[str] | None = None) -> None:
 
     parser = argparse.ArgumentParser(description="evalute the completions")
     parser.add_argument("--output", "-o", type=Path,
-                        default=Path(__file__).parent.parent / "results" / "sft_gemma4b",
+                        default=Path(__file__).parent.parent / "results" / "llama8b",
                         help="Path to result folder containing completions")
     parser.add_argument("--model", "-m", type=str,
-                        default="unsloth/gemma-3-12b-it-unsloth-bnb-4bit",
+                        default="unsloth/meta-Llama-3.1-8B-Instruct",
                         help="model name or path")
     parser.add_argument("--epoch", "-e", type=int,
                         default=3,

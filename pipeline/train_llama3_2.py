@@ -22,13 +22,13 @@ import re
 from datasets import Dataset
 from datasets import load_dataset
 
-max_seq_length = 7000
+max_seq_length = 7000 + 20
 lora_rank = 16
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name = "unsloth/meta-Llama-3.1-8B-Instruct",
+    # model_name = "unsloth/meta-Llama-3.1-8B-Instruct",
     # model_name = "/home/xchen6/breaking_updates_rl/results/sft/llama8b/merged",
-    # model_name = "/home/xchen6/breaking_updates_rl/results/sft/llama3b/merged",
+    model_name = "/home/xchen6/breaking_updates_rl/results/sft/llama3b/merged",
     # model_name = "unsloth/Llama-3.2-3B-Instruct",
     max_seq_length = max_seq_length,
     load_in_4bit = True, # False for LoRA 16bit
@@ -84,7 +84,7 @@ training_args = GRPOConfig(
     weight_decay = 0.1,
     warmup_ratio = 0.1,
     lr_scheduler_type = "cosine",
-    optim = "paged_adamw_8bit",
+    optim = "adamw_8bit",
     # optim="adamw_torch_fused",
     logging_steps = 1,
     per_device_train_batch_size = 2,
@@ -94,12 +94,12 @@ training_args = GRPOConfig(
     max_completion_length = max_seq_length - max_prompt_length,
     # num_train_epochs = 1, # Set to 1 for a full training run
     max_steps = 500,
-    save_steps = 100,
-    max_grad_norm = 0.1,
+    save_steps = 50,
+    max_grad_norm = 1.0,
     report_to = "wandb", # Can use Weights & Biases
     vllm_enable_sleep_mode=True,
     reward_weights=[0.85, 0.1, 0.05],
-    output_dir = "/home/xchen6/breaking_updates_rl/results/rl/llama8b_dense_new",
+    output_dir = "/home/xchen6/breaking_updates_rl/results/grpo/llama3b_sparse",
 )
 
 def main():
@@ -107,7 +107,7 @@ def main():
         model = model,
         processing_class = tokenizer,
         reward_funcs = [
-        reward_func_diff_dense,
+        reward_func_diff_sparse,
         reward_check_format,
         reward_check_tag,
         ],
@@ -117,8 +117,8 @@ def main():
     trainer.train()
     
     # trainer.train(resume_from_checkpoint="/home/xchen6/breaking_updates_rl/results/grpo_llama/checkpoint-30")
-    model.save_pretrained("/home/xchen6/breaking_updates_rl/results/rl/llama8b_dense_new")
-    tokenizer.save_pretrained("/home/xchen6/breaking_updates_rl/results/rl/llama8b_dense_new")
+    model.save_pretrained("/home/xchen6/breaking_updates_rl/results/grpo/llama3b_sparse")
+    tokenizer.save_pretrained("/home/xchen6/breaking_updates_rl/results/grpo/llama3b_sparse")
     
 if __name__ == "__main__":
     main()

@@ -21,7 +21,8 @@ from pipeline.types.utils import extract_sr_edits, get_patched_content_from_diff
 
 logger = logging.getLogger(__name__)
 
-max_seq_length = 33000
+
+max_seq_length = 35000
 
 def evaluate(input: str, model_id: str) -> None:
     output_root = Path("/home/xchen6/breaking_updates_rl/results") / "_".join([model_id, datetime.now().strftime("%Y%m%d-%H%M%S")])
@@ -34,7 +35,7 @@ def evaluate(input: str, model_id: str) -> None:
         full_finetuning = False, # [NEW!] We have full finetuning now!
     )
 
-    logger.info(f"Generating patches with {model_id}")
+    print(f"Generating patches with {model_id}")
     
     test_ds = load_dataset(
         "json",
@@ -49,7 +50,6 @@ def evaluate(input: str, model_id: str) -> None:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         try:
             print(f'generating patch for {data["project"]}/{data["breakingCommit"]}/{buggy_file_name}')
-            logger.info(f'generating patch for {data["project"]}/{data["breakingCommit"]}/{buggy_file_name}')
             
             messages = [
                 {"role": "system", "content": SYSTEM_PROMPT},
@@ -65,12 +65,12 @@ def evaluate(input: str, model_id: str) -> None:
             print(f"input len:{input_len}")
             
             completion = ""
-            if input_len > 30000:
+            if input_len > 32000:
                 completion = ""
             else:
                 response = model.generate(
                     **tokenizer(text, return_tensors = "pt").to("cuda"),
-                    max_new_tokens = 3000, # Increase for longer outputs!
+                    max_new_tokens = 4000, # Increase for longer outputs!
                     # 0 temperature
                     do_sample=False,
                     # streamer = TextStreamer(tokenizer, skip_prompt = True),

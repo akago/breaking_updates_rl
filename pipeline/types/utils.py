@@ -65,9 +65,14 @@ def get_patched_content_from_diffs(diffs:list[str], content:str) -> str:
         content [str]:       the content of buggy file to be replaced
         """
         def extract_diff_blocks(diff_text: str):
-            # Extrac search and replace, both search or replace could be None
-            pattern = r'<<<<<<< SEARCH\n(.*?)\n=======\n(.*?)\n>>>>>>> REPLACE'
-            match = re.search(pattern, diff_text, re.DOTALL)
+            # Extract search and replace, both search or replace could be None
+            pattern = re.compile(
+                r"""^<<<<<<< SEARCH[ \t]*\r?\n(.*?)^=======[ \t]*\r?\n(.*?)^>>>>>>> REPLACE""", 
+                re.MULTILINE | re.DOTALL,
+            )
+            match = re.search(pattern, diff_text)
+            # # TODO: Make sure 
+            # matches= re.findall(pattern, diff_text, re.DOTALL)
             if match:
                 search_block = match.group(1) if match.group(1) else "" 
                 replace_block = match.group(2) if match.group(2) else "" 
@@ -76,8 +81,11 @@ def get_patched_content_from_diffs(diffs:list[str], content:str) -> str:
         for diff in diffs:
             diff = diff.strip()                
             original, replace = extract_diff_blocks(diff)
-            logging.info(f"The original: {original}")
-            logging.info(f"The replace: {replace}")
+            # indent doesn't matter for Java
+            original = original.strip()
+            replace = replace.strip()
+            print(f"The original: {original}")
+            print(f"The replace: {replace}")
             # possibily unify the indent
             if original in content:
                 content = content.replace(original, replace)
@@ -85,100 +93,75 @@ def get_patched_content_from_diffs(diffs:list[str], content:str) -> str:
                 logging.error(f"Could not find the search to be replaced:\n{original}")
         return content
 
-# HEADER_RE = re.compile(r'(?m)^###\s+(.+?)\s*$')
-# THINK_RE  = re.compile(r'<think>.*?</think>', re.DOTALL | re.IGNORECASE)
-# # 考虑用更宽松的匹配，符号数量大于2即可
-# BLOCK_RE  = re.compile(
-#     r'<<<<<<< SEARCH\s*\n'      # block start
-#     r'(.*?)'                    # group 1: search chunk
-#     r'\n=======\n'              # divider
-#     r'(.*?)'                    # group 2: replace chunk
-#     r'\n>>>>>>> REPLACE',       # end
-#     re.DOTALL
-# )
+def is_java_source_valid(source: str)-> bool:
+    lines = source.splitlines()
+    seen_type = False          # 是否已经看到过顶层类型定义
+    allow_imports = True       # 是否还允许 import（只在类型定义之前）
+    public_type_count = 0      # public 顶层类型数量
+    brace_depth = 0            # 大括号层级，粗略统计
 
-# def parse_search_replace_blocks(llm_response: str):
-#     """
-#     Parse APR-style SEARCH/REPLACE blocks from an LLM response.
+    type_pattern = re.compile(r'^(public\s+)?(class|interface|enum)\b')
 
-#     Returns a list of dicts:
-#       {
-#         "file":    str | None,  # nearest preceding '### path' header, or None if absent
-#         "search":  str,         # exact SEARCH chunk (including indentation/blank lines)
-#         "replace": str          # REPLACE chunk (as-is)
-#       }
+    for i, line in enumerate(lines):
+        line_no = i + 1
+        
+        stripped = line.strip()
+        # empty line
+        if not stripped:
+            brace_depth += line.count("{") - line.count("}")
+            continue
+        # Single-line comment
+        if stripped.startswith("//"):
+            brace_depth += line.count("{") - line.count("}")
+            continue
+        
+        if brace_depth == 0:
+            if stripped.startswith("package "):
+                brace_depth += line.count("{") - line.count("}")
+                continue
 
-#     Parsing rules:
-#     - Strips any `<think>...</think>` sections before scanning.
-#     - Associates each edit block with the closest preceding '### <path>' header (if any).
-#     - Works across/inside Markdown code fences; does not attempt to strip them.
-#     - Preserves all whitespace in search/replace chunks.
-#     """
-#     # 1) Remove <think> ... </think> to avoid accidental matches
-#     text = THINK_RE.sub('', llm_response)
+            if stripped.startswith("import "):
+                if not allow_imports:
+                    print("Import after type declaration")
+                    return False
+                brace_depth += line.count("{") - line.count("}")
+                continue
 
-#     # 2) Index all file headers with their character positions
-#     headers = []
-#     for m in HEADER_RE.finditer(text):
-#         headers.append((m.start(), m.group(1).strip()))
+            # Top-level type definition
+            if type_pattern.match(stripped):
+                seen_type = True
+                allow_imports = False
 
-#     # Helper to find nearest header before a given index
-#     def nearest_header(pos: int) -> Optional[str]:
-#         lo, hi = 0, len(headers) - 1
-#         best = None
-#         while lo <= hi:
-#             mid = (lo + hi) // 2
-#             if headers[mid][0] <= pos:
-#                 best = headers[mid][1]
-#                 lo = mid + 1
-#             else:
-#                 hi = mid - 1
-#         return best
+                if stripped.startswith("public "):
+                    public_type_count += 1
+                    if public_type_count > 1:
+                        print("Multiple public top-level types in one file")
+                        return False
 
-#     # 3) Extract all SEARCH/REPLACE blocks
-#     edits: = []
-#     for m in BLOCK_RE.finditer(text):
-#         start_idx = m.start()
-#         file_path = nearest_header(start_idx)
-#         search_chunk = m.group(1)
-#         replace_chunk = m.group(2)
+                brace_depth += line.count("{") - line.count("}")
+                continue
 
-#         # Preserve exact content; no trimming
-#         edits.append({
-#             "file": file_path,
-#             "search": search_chunk,
-#             "replace": replace_chunk,
-#         })
+        brace_depth += line.count("{") - line.count("}")
 
-# #     return edits
+    if brace_depth != 0:
+        print("Unbalanced braces in file")
+        return False
+    return True
 
-# # --- minimal demo ---
-# if __name__ == "__main__":
-#     demo = r"""
-#     <think>
-#     some internal reasoning
-#     </think>
+def remove_trailing_whitespace(text: str) -> str:
+    lines = text.splitlines(keepends=True)
+    cleaned = []
 
-#     ### src/main/java/com/example/client/ClientApp.java
-#     <<<<<<< SEARCH
-#     HttpClient client = HttpClient.create();
-#     client.connect(host);
-#     =======
-#     HttpClient client = HttpClient.create();
-#     client.connect(host, Duration.ofSeconds(5)); // new timeout param per API change
-#     >>>>>>> REPLACE
+    for line in lines:
+        # keep original line endings
+        if line.endswith("\r\n"):
+            core = line[:-2].rstrip(" \t")
+            cleaned.append(core + "\r\n")
+        elif line.endswith("\n"):
+            core = line[:-1].rstrip(" \t")
+            cleaned.append(core + "\n")
+        else:
+            # last line
+            cleaned.append(line.rstrip(" \t"))
 
-#     ### another/File.java
-#     <<<<<<< SEARCH
-#     int x = api.get();
-#     =======
-#     int x = api.fetch();
-#     >>>>>>> REPLACE
-#     """
-#     for e in parse_search_replace_blocks(demo):
-#         print("FILE:", e["file"])
-#         print("---- SEARCH ----")
-#         print(e["search"])
-#         print("---- REPLACE ---")
-#         print(e["replace"])
-#         print()
+    return "".join(cleaned)

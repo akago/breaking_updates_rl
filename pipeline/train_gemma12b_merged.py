@@ -6,14 +6,13 @@ os.environ["UNSLOTH_VLLM_STANDBY"] = "1"
 os.environ["UNSLOTH_ENABLE_LOGGING"] = "1"
 
 from unsloth import FastModel
-from unsloth.chat_templates import standardize_data_formats, get_chat_template
 import torch
 from pathlib import Path
 from pipeline.types.metrics import Patcher
 from pipeline.types.utils import extract_java_code
 from pipeline.types.rewards import reward_func_diff_dense, reward_func_diff_sparse, reward_check_format, reward_check_tag
 from pipeline.types.maven_error import MavenErrorLog, MavenErrorParser
-from pipeline.constants.constants import RESOURCES_PATH, SFT_DATASET_PATH, DATASET_DIFF_PATH, DATASET_FULL_GENERATION_PATH, SYSTEM_PROMPT
+from pipeline.constants.constants import RESOURCES_PATH, DATASET_DIFF_PATH, DATASET_FULL_GENERATION_PATH, SYSTEM_PROMPT
 from datetime import datetime, timezone
 
 import json
@@ -21,7 +20,7 @@ import re
 from datasets import Dataset
 from datasets import load_dataset
 
-max_seq_length = 7000
+max_seq_length = 7000 + 50
 
 fourbit_models = [
     # 4bit dynamic quants for superior accuracy and low memory use
@@ -38,17 +37,15 @@ fourbit_models = [
     "unsloth/Phi-4",
 ] # More models at https://huggingface.co/unsloth
 
-max_seq_length = 7000
-
 model, tokenizer = FastModel.from_pretrained(
-    # model_name = "/home/xchen6/breaking_updates_rl/results/sft/sft_gemma4b/merged",
-    model_name = "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
+    model_name = "/home/xchen6/breaking_updates_rl/results/sft/gemma12b/merged",
+    # model_name = "unsloth/gemma-3-12b-it-unsloth-bnb-4bit",
     max_seq_length = max_seq_length, # Choose any for long context!
     load_in_4bit = True,  # 4 bit quantization to reduce memory
     load_in_8bit = False, # [NEW!] A bit more accurate, uses 2x memory
     full_finetuning = False, # [NEW!] We have full finetuning now!
     fast_inference = True,
-    gpu_memory_utilization = 0.9,
+    gpu_memory_utilization = 0.8,
     dtype = torch.bfloat16,
     # attn_implementation="flash_attention_2"
     # token = "hf_...", # use one if using gated models
@@ -63,7 +60,7 @@ model = FastModel.get_peft_model(
     # use_gradient_checkpointing = "unsloth",
     r = 16,           # Larger = higher accuracy, but might overfit
     lora_alpha = 32,  # Recommended alpha == r at least
-    lora_dropout = 0.05,
+    lora_dropout = 0.0,
     bias = "none",
     random_state = 2,
 )
@@ -75,7 +72,6 @@ my_dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
 def keep_batch(batch):
     # return [tokenizer(prompt, return_tensors = "pt")["input_ids"].shape[-1] < 5000 and tokenizer(prompt, return_tensors = "pt")["input_ids"].shape[-1] + tokenizer(errors, return_tensors = "pt")["input_ids"].shape[-1] < 7000  for prompt, errors in zip(batch["prompt"], batch["errors"])]
     return [tokenizer(SYSTEM_PROMPT+t, return_tensors = "pt")["input_ids"].shape[-1] < 5000 for t in batch["prompt"]]
-
 my_dataset = my_dataset.filter(keep_batch, batched=True, batch_size=10_000)
 my_dataset = my_dataset.map(lambda x: {
     "prompt" : [
@@ -124,14 +120,14 @@ training_args = GRPOConfig(
     report_to = "wandb", # Can use Weights & Biases
     vllm_enable_sleep_mode=True,
     reward_weights=[0.85, 0.1, 0.05],
-    output_dir = "/home/xchen6/breaking_updates_rl/results/rl/gemma4b_merged_sparse",
+    output_dir = "/home/xchen6/breaking_updates_rl/results/grpo/gemma12b_no_dropout",
 )
 
 trainer = GRPOTrainer(
     model = model,
     processing_class = tokenizer,
     reward_funcs = [
-       reward_func_diff_sparse, 
+       reward_func_diff_dense, 
        reward_check_format, 
        reward_check_tag,
     ],
@@ -140,5 +136,5 @@ trainer = GRPOTrainer(
 )
 trainer.train()
 # trainer.train(resume_from_checkpoint="/home/xchen6/breaking_updates_rl/results/sft/sft_gemma4b/checkpoint-75")
-model.save_pretrained("/home/xchen6/breaking_updates_rl/results/rl/gemma4b_merged_sparse")
-tokenizer.save_pretrained("/home/xchen6/breaking_updates_rl/results/rl/gemma4b_merged_sparse")
+model.save_pretrained("/home/xchen6/breaking_updates_rl/results/grpo/gemma12b_no_dropout")
+tokenizer.save_pretrained("/home/xchen6/breaking_updates_rl/results/grpo/gemma12b_no_dropout")

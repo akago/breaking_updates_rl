@@ -15,7 +15,7 @@ class Patcher:
         self.project = project
 
     # to be fixed
-    def apply_patch(self) -> tuple[dict, bool]:
+    def apply_patch(self) -> tuple[str, bool]:
         with TemporaryDirectory(prefix="job-", suffix="-ol") as jobdir:
             overlay_dir = Path(jobdir) / "upper"    
             overlay_dir.mkdir(parents=True, exist_ok=True)
@@ -53,14 +53,49 @@ class Patcher:
                 proc.stdout.close()
                 return_code = proc.wait()
 
-            
-            # analyze the log and get maven errors
-            log_parser = MavenErrorParser()
-            error_log = MavenErrorLog.from_string("".join(buf), log_parser)
-            
             success = (return_code == 0)
+            return "".join(buf), success
+        
+    def apply_patch_with_test(self) -> tuple[str, bool]:
+        with TemporaryDirectory(prefix="job-", suffix="-ol") as jobdir:
+            overlay_dir = Path(jobdir) / "upper"    
+            overlay_dir.mkdir(parents=True, exist_ok=True)
+            # basenames = Path(container_file).name
+            # host_file = Path(jobdir) / basename
+            # host_file.write_text(patch)
+            
+            # bind the patch files to the corresponding original files in the container
+            bind_cmds_files = map(lambda x: f"{x[0]}:{x[1]}:ro", self.binding_pairs) # read-only bindings
+            bind_cmds = ",".join(bind_cmds_files) 
+            
+            # add ca certificates binding
+            # to avoid java ssl errors, add soft link the cacerts file in the container as well:  ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts"
+            bind_cmds += ",/etc/pki:/etc/pki:ro,/etc/ssl:/etc/ssl:ro"
+            
+            # replace the buggy file with patches by binding options in apptainer and run the tests
+            cmd = ["apptainer", "exec", 
+                "--pwd", f"/{self.project}", "--overlay", str(overlay_dir),
+                "-B", bind_cmds, self.container_path, 
+                "mvn", "-B", "clean", "test"]
+            buf = []  
+            logging.info(f"Running command: {' '.join(cmd)}")
+            with open(self.log_path, "w", encoding="utf-8") as log_file:
+                proc = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,         
+                    bufsize=1        
+                )
+                
+                for line in proc.stdout:
+                    log_file.write(line)
+                    buf.append(line)
+                proc.stdout.close()
+                return_code = proc.wait()
 
-            return error_log, success
+            success = (return_code == 0)
+            return "".join(buf), success
     
     def apply_patch_training(self, patch:str, container_file:str) -> tuple[str, bool]:
         """apply a patch for a single file during training"""
@@ -178,6 +213,9 @@ class Patcher:
         
         if success and not errors:
             return {
+                # "original_file_count": original_error_file_count,
+                # "original_error_count": original_error_count,
+                # wrong but keeping for backward compatibility
                 "original_file_count": original_error_count,
                 "original_error_count": original_error_file_count,
                 "build_success": True,

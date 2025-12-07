@@ -4,21 +4,9 @@ import logging
 import re
 import sys
 import argparse
+from pipeline.types.maven_error import MavenErrorLog, MavenErrorParser
 from pipeline.types.metrics import Patcher
-
-    
-def extract_java_code(text: str, before_marker: str | None = "<end_of_turn>"):
-    JAVA_BLOCK = re.compile(
-        r"```java\s*\n(.*?)\n```",  
-        flags=re.DOTALL | re.IGNORECASE
-    )
-    if before_marker and before_marker in text:
-        text = text.split(before_marker, 1)[0]
-    matches = JAVA_BLOCK.findall(text)
-    if matches:
-        return matches[0].strip()
-    else:
-        return ""
+from pipeline.types.utils import is_java_source_valid, remove_trailing_whitespace
 
 def patch_and_evaluate_project(input:str) -> dict:
     """
@@ -33,6 +21,7 @@ def patch_and_evaluate_project(input:str) -> dict:
     total_original_file_count = 0
     total_fixed_file_count = 0
     total_new_errors_count = 0
+    
     for folder in input_path.iterdir():
         if not folder.is_dir():
             continue
@@ -62,11 +51,23 @@ def patch_and_evaluate_project(input:str) -> dict:
             
             # java_code = extract_java_code(patch)
             java_code = patch
-            # failed to extract java code from completions
-            if java_code == "":
-                logging.warning(f"Failed to extract java code from {completion_file}")
+            
+            if "\n=======\n" in java_code:
+                logging.warning(f"Invalid patch with ======= in {completion_file}")
                 continue
-                
+            
+            # when llm generates multiple code snippets into one REPLACE block
+            if not is_java_source_valid(java_code):
+                logging.warning(f"Generated java code is not valid in {completion_file}")
+                continue
+            try:
+                clean_code = remove_trailing_whitespace(java_code)
+            except Exception as e:
+                logging.warning(f"Error while removing trailing whitespace in {completion_file}: {e}")
+                continue
+            if clean_code != "":
+                java_code = clean_code
+            
             temp_file_path.write_text(java_code)
             
             # (patch file on host, buggy file in the container)
@@ -74,10 +75,24 @@ def patch_and_evaluate_project(input:str) -> dict:
 
         patcher = Patcher(project=result_dict["project"], container_path=str(container_path), log_path=str(folder / f"{str(folder.name)}.log"), binding_pairs=patches_to_bind)
 
-        errorlog, success = patcher.apply_patch()
-        metrics = patcher.metrics(original_errors, errorlog.to_jsonable(), success)
+        
+        build_log, success = patcher.apply_patch()
+        
+        # try to run tests only if complation succeeds
+        if success:
+            _, success = patcher.apply_patch_with_test()                
+            
+        # handling cases for checkstyle errors
+        if "Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin" in build_log:
+            error_log = original_errors
+        else:
+            # analyze the log and get maven errors
+            log_parser = MavenErrorParser()
+            error_log = MavenErrorLog.from_string(build_log, log_parser).to_jsonable()
+        
+        metrics = patcher.metrics(original_errors, error_log, success)
         # save metrics
-        metrics_file = folder / "metrics.json"
+        metrics_file = folder / "metrics_new.json"
         with open(metrics_file, "w") as mf:
             json.dump(metrics, mf, indent=2)
         logging.info(f"\nMetrics saved to {metrics_file}")
@@ -105,7 +120,7 @@ def patch_and_evaluate_project(input:str) -> dict:
         "RelativeErrorFixRatio" : (total_fixed_error_count - total_new_errors_count) / total_original_error_count if total_original_error_count > 0 else 0.0
     }
     logging.info(f"Overall statistics: {statistics}")
-    with open(str(input_path / "overall_statistics.json"), "w") as sf:
+    with open(str(input_path / "overall_statistics_new.json"), "w") as sf:
         json.dump(statistics, sf, indent=2)
     return statistics
 
