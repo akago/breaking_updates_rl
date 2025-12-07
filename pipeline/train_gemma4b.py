@@ -69,7 +69,7 @@ model = FastModel.get_peft_model(
 )
 
 RESOURCES_PATH = Path(__file__).parent.parent/ "data" / "dataset"
-DATASET_PATH = DATASET_DIFF_PATH / "dataset.json"
+DATASET_PATH = DATASET_DIFF_PATH / "train.jsonl"
 my_dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
 
 def keep_batch(batch):
