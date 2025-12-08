@@ -3,7 +3,7 @@ End-to-end pipeline for fixing breaking Java dependency updates with large langu
 
 - **Real-world target**: Works on real-world Breaking Updates benchmark [BUMP](https://github.com/chains-project/bump).
 - **Fully reproducible**: Scripts cover dataset building, prompt formatting, training, and Apptainer-based evaluation.
-- **RL for code repair**: GRPO training with Unsloth 4-bit quantization to keep GPU cost low while using dense/sparse rewards.
+- **RL for code repair**: Designed rewards for GRPO training with Unsloth 4-bit quantization to keep GPU cost low.
 
 ## Repository map
 - `pipeline/create_dataset.py`: Filter benchmark metadata/logs, download sources/dependencies, categorize build failures, and emit dataset + container definitions.
