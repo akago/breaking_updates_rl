@@ -560,8 +560,5 @@ def main(argv: list[str] | None = None) -> None:
     breaking_dataset = BreakingDataset(args.input, args.output)
     breaking_dataset.build_dataset()
     
-    
-    
-    
 if __name__ == "__main__":
     main()

@@ -18,7 +18,6 @@ from datetime import datetime, timezone
 
 import json
 import re
-from datasets import Dataset
 from datasets import load_dataset
 
 max_seq_length = 7000
@@ -41,11 +40,13 @@ fourbit_models = [
 max_seq_length = 7000
 
 
-def train_rl():
+def train_rl(model_name:str, is_dense:bool, input_dir:str, output_dir:str):
 
+    output_dir = str(Path(output_dir) / f"{model_name}_{'dense' if is_dense else 'sparse'}")
+    
     model, tokenizer = FastModel.from_pretrained(
         # model_name = "/home/xchen6/breaking_updates_rl/results/sft/sft_gemma4b/merged",
-        model_name = "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
+        model_name = model_name,
         max_seq_length = max_seq_length, # Choose any for long context!
         load_in_4bit = True,  # 4 bit quantization to reduce memory
         load_in_8bit = False, # [NEW!] A bit more accurate, uses 2x memory
@@ -71,15 +72,13 @@ def train_rl():
         random_state = 2,
     )
 
-    RESOURCES_PATH = Path(__file__).parent.parent/ "data" / "dataset"
-    DATASET_PATH = DATASET_DIFF_PATH / "train.jsonl"
-    my_dataset = load_dataset("json", data_files=str(DATASET_PATH), split="train")
+    my_dataset = load_dataset("jsonl", data_files=input_dir)
 
     def keep_batch(batch):
         # return [tokenizer(prompt, return_tensors = "pt")["input_ids"].shape[-1] < 5000 and tokenizer(prompt, return_tensors = "pt")["input_ids"].shape[-1] + tokenizer(errors, return_tensors = "pt")["input_ids"].shape[-1] < 7000  for prompt, errors in zip(batch["prompt"], batch["errors"])]
         return [tokenizer(SYSTEM_PROMPT+t, return_tensors = "pt")["input_ids"].shape[-1] < 5000 for t in batch["prompt"]]
 
-    my_dataset = my_dataset.filter(keep_batch, batched=True, batch_size=10_000)
+    my_dataset = my_dataset.filter(keep_batch, batched=True, batch_size=10000)
     my_dataset = my_dataset.map(lambda x: {
         "prompt" : [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -127,14 +126,19 @@ def train_rl():
         report_to = "wandb", # Can use Weights & Biases
         vllm_enable_sleep_mode=True,
         reward_weights=[0.85, 0.1, 0.05],
-        output_dir = "/home/xchen6/breaking_updates_rl/results/rl/gemma4b_merged_sparse",
+        output_dir = output_dir,
     )
 
+    if is_dense:
+        reward_func_diff = reward_func_diff_dense
+    else:
+        reward_func_diff = reward_func_diff_sparse
+    
     trainer = GRPOTrainer(
         model = model,
         processing_class = tokenizer,
         reward_funcs = [
-        reward_func_diff_sparse, 
+        reward_func_diff, 
         reward_check_format, 
         reward_check_tag,
         ],
@@ -143,8 +147,8 @@ def train_rl():
     )
     trainer.train()
     # trainer.train(resume_from_checkpoint="/home/xchen6/breaking_updates_rl/results/sft/sft_gemma4b/checkpoint-75")
-    model.save_pretrained("/home/xchen6/breaking_updates_rl/results/rl/gemma4b_merged_sparse")
-    tokenizer.save_pretrained("/home/xchen6/breaking_updates_rl/results/rl/gemma4b_merged_sparse")
+    model.save_pretrained(output_dir)
+    tokenizer.save_pretrained(output_dir)
     
     
 from argparse import ArgumentParser
@@ -155,31 +159,31 @@ if __name__ == "__main__":
         "--model",
         "-m",
         type="str",
-        default="gemma4b",
-        help="Model to train: gemma4b, gemma12b, llama8b",
+        default="unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
+        help="Model name or path to pre-trained model",
     )    
     parser.add_argument(
-        "--reward",
-        "-r",
-        type="str",
-        default="dense",
-        help="Reward type: dense, sparse",
-    )    
-    parser.add_argument(
-        "--output_dir",
-        "-o",
-        type="str",
-        default=None,
-        help="Output directory to save the trained model",
-    )
+        "--dense",
+        "-d",
+        type=bool,
+        default=True,
+        help="Whether to use dense reward or sparse reward",
+    )  
     parser.add_argument(
         "--input_dir",
         "-i",
         type="str",
-        default=None,
+        default=str(DATASET_DIFF_PATH / "train.jsonl"),
         help="Input directory to load the pre-trained SFT model",
+    )  
+    parser.add_argument(
+        "--output_dir",
+        "-o",
+        type="str",
+        default=str(Path(__file__).parent.parent / "results" / "rl"),
+        help="Output directory to save the trained model",
     )
     
     args = parser.parse_args()
-    train_rl(args.model, args.reward, args.output_dir)
+    train_rl(args.model, args.dense, args.input_dir, args.output_dir)
     

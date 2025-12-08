@@ -43,8 +43,6 @@ def extract_java_code(text: str) -> str:
     
     return ensure_single_trailing_newline(m.group(1)) if m else ""
 
-
-
 def extract_sr_edits(text: str) -> list[str]:
     end_marker = "<end_of_turn>"
     if end_marker and end_marker in text:
@@ -84,8 +82,8 @@ def get_patched_content_from_diffs(diffs:list[str], content:str) -> str:
             # indent doesn't matter for Java
             original = original.strip()
             replace = replace.strip()
-            print(f"The original: {original}")
-            print(f"The replace: {replace}")
+            logging.info(f"The original: {original}")
+            logging.info(f"The replace: {replace}")
             # possibily unify the indent
             if original in content:
                 content = content.replace(original, replace)
@@ -95,11 +93,11 @@ def get_patched_content_from_diffs(diffs:list[str], content:str) -> str:
 
 def is_java_source_valid(source: str)-> bool:
     lines = source.splitlines()
-    seen_type = False          # 是否已经看到过顶层类型定义
-    allow_imports = True       # 是否还允许 import（只在类型定义之前）
-    public_type_count = 0      # public 顶层类型数量
-    brace_depth = 0            # 大括号层级，粗略统计
-
+    seen_type = False          # is top-level type declaration already seen
+    allow_imports = True       # whether imports are still allowed 
+    public_type_count = 0      # number of public top-level types
+    brace_depth = 0            # brace depth
+    
     type_pattern = re.compile(r'^(public\s+)?(class|interface|enum)\b')
 
     for i, line in enumerate(lines):
@@ -122,7 +120,7 @@ def is_java_source_valid(source: str)-> bool:
 
             if stripped.startswith("import "):
                 if not allow_imports:
-                    print("Import after type declaration")
+                    logging.error("Import after type declaration")
                     return False
                 brace_depth += line.count("{") - line.count("}")
                 continue
@@ -135,7 +133,7 @@ def is_java_source_valid(source: str)-> bool:
                 if stripped.startswith("public "):
                     public_type_count += 1
                     if public_type_count > 1:
-                        print("Multiple public top-level types in one file")
+                        logging.error("Multiple public top-level types in one file")
                         return False
 
                 brace_depth += line.count("{") - line.count("}")
@@ -144,7 +142,7 @@ def is_java_source_valid(source: str)-> bool:
         brace_depth += line.count("{") - line.count("}")
 
     if brace_depth != 0:
-        print("Unbalanced braces in file")
+        logging.error("Unbalanced braces in file")
         return False
     return True
 

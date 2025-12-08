@@ -1,124 +1,150 @@
-import os
 import json
-import pandas as pd
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 from pathlib import Path
-from collections import Counter
-from matplotlib.ticker import MaxNLocator
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 
-root_dir = Path(__file__).parent.parent.parent
+# ==== 路径设置 ====
+train_jsonlpath = "/home/xchen6/breaking_updates_rl/data/prompts_diff/train.jsonl"
+test_jsonlpath  = "/home/xchen6/breaking_updates_rl/data/prompts_diff/test.jsonl"
 
-index_file = str(root_dir / "dataset_metadata.json")
+out_dir = Path(__file__).parent.parent.parent / "data"
+out_dir.mkdir(parents=True, exist_ok=True)
 
+# ==== 读入数据 ====
+train_df = pd.read_json(train_jsonlpath, lines=True)
+test_df  = pd.read_json(test_jsonlpath,  lines=True)
 
-with open(index_file, "r", encoding="utf-8") as f:
-    index_data = json.load(f)
+# ==== 通用：从 “每个 commit 的值” -> “值的分布（直方）” ====
+def commit_value_dist(value_series: pd.Series) -> pd.Series:
+    """
+    value_series: index=breakingCommit, value=某个统计量（file 数 或 error 总数）
+    返回: Series，index 为整数统计量，value 为拥有该统计量的 commit 数
+    """
+    dist = value_series.value_counts()
+    dist.index = dist.index.astype(int)
+    return dist.sort_index()
 
-sample_files = index_data.get("success", [])
+# ==== 1. buggy file 数 ====
 
+# 每个 commit 对应的 buggy file 数
+files_per_commit_train = train_df.groupby("breakingCommit").size()
+files_per_commit_test  = test_df.groupby("breakingCommit").size()
 
-projects = []
-file_counts_per_sample = []
-error_counts_per_sample = []
-# for breaking_commit in sample_files:
-data_path = root_dir / "data" / "dataset"
-for folder in data_path.iterdir():
-    fpath = folder / "context.json"
-    if not fpath.exists():
-        continue
-    with open(fpath, "r", encoding="utf-8") as f:
-        meta = json.load(f)
-        project = meta.get("project")
-        if project:
-            projects.append(project)
+dist_files_train = commit_value_dist(files_per_commit_train)
+dist_files_test  = commit_value_dist(files_per_commit_test)
 
-            # Count errors in this project
-            buggy_files = meta.get("buggyFiles", {}) or {}
-            n_errors = sum(len(err_list) for err_list in buggy_files.values())
-            n_files = len(buggy_files.keys())
-            file_counts_per_sample.append(int(n_files))
-            error_counts_per_sample.append(int(n_errors))
-            
+# 统一横轴范围：train + test 的 min/max
+files_min = int(min(dist_files_train.index.min(), dist_files_test.index.min()))
+files_max = int(max(dist_files_train.index.max(), dist_files_test.index.max()))
+files_index = range(files_min, files_max + 1)
 
-df = pd.DataFrame(projects, columns=["project"])
-print(df["project"].value_counts())
-project_counts = df.value_counts().reset_index(name="num_commits")
-project_counts.columns = ["project", "num_commits"]
+dist_files_train_full = dist_files_train.reindex(files_index, fill_value=0)
+dist_files_test_full  = dist_files_test.reindex(files_index,  fill_value=0)
 
-save_dir = root_dir / "statistics"
+total_commits_train = files_per_commit_train.shape[0]
+total_commits_test  = files_per_commit_test.shape[0]
+total_files_train   = len(train_df)
+total_files_test    = len(test_df)
 
-# ---- Bar chart: commits per project 
-plt.figure(figsize=(12,6))
-plt.bar(project_counts["project"], project_counts["num_commits"])
-plt.xticks(rotation=45, ha="right")
-plt.ylabel("Number of Breaking Updates")
-plt.title("Distribution of Breaking Updates per Project")
-plt.text(
-    0.99, 0.95,
-    f"Total number of breaking updates: {len(projects)} across {project_counts.shape[0]} projects",
-    ha="right", va="top", transform=plt.gca().transAxes,
-    fontsize=10, color="dimgray"
+# ==== 2. error 总数 ====
+
+# 每个 buggy file 的错误数
+train_df["error_count"] = train_df["errors"].apply(len)
+test_df["error_count"]  = test_df["errors"].apply(len)
+
+# 每个 breaking commit 的错误总数
+errors_per_commit_train = train_df.groupby("breakingCommit")["error_count"].sum()
+errors_per_commit_test  = test_df.groupby("breakingCommit")["error_count"].sum()
+
+dist_errors_train = commit_value_dist(errors_per_commit_train)
+dist_errors_test  = commit_value_dist(errors_per_commit_test)
+
+errors_min = int(min(dist_errors_train.index.min(), dist_errors_test.index.min()))
+errors_max = int(max(dist_errors_train.index.max(), dist_errors_test.index.max()))
+errors_index = range(errors_min, errors_max + 1)
+
+dist_errors_train_full = dist_errors_train.reindex(errors_index, fill_value=0)
+dist_errors_test_full  = dist_errors_test.reindex(errors_index,  fill_value=0)
+
+total_errors_train = int(train_df["error_count"].sum())
+total_errors_test  = int(test_df["error_count"].sum())
+
+# ==== 3. 画图：一行两列 ====
+
+fig, axes = plt.subplots(
+    1, 2,
+    figsize=(14, 4),        # 每个子图宽度≈7，不比原来窄
+    constrained_layout=True # 自动压缩空白
 )
-plt.tight_layout()
-plt.savefig(save_dir / "project_distribution_bar.png", dpi=200, bbox_inches="tight")
-plt.show()
-plt.close()
 
+max_ticks = 20
+width = 0.4  # train/test 并排柱子的宽度
 
-#  how many projects have N commits
-max_cnt = int(project_counts["num_commits"].max())
-bins = range(1, max_cnt + 2)
-plt.figure(figsize=(8, 5))
-plt.hist(project_counts["num_commits"], bins=bins, align="left", rwidth=0.9)
-plt.xlabel("Breaking commits per project")
-plt.ylabel("Number of projects")
-plt.title("Distribution of Project Frequencies")
-plt.xticks(range(1, max_cnt + 1))
-plt.tight_layout()
-hist_path = save_dir / "project_distribution_hist.png"
-plt.savefig(hist_path, dpi=200, bbox_inches="tight")
-plt.close()
+# ---- 左图：buggy file 数分布 ----
+ax = axes[0]
+x_files = np.array(list(files_index), dtype=float)
 
-# how many projects have N buggy files
-plt.figure(figsize=(8, 5))
-plt.hist(file_counts_per_sample, bins=range(max(file_counts_per_sample)+2), align="left", rwidth=0.9)
-plt.xlabel("Number of Buggy Files per Project (N)")
-plt.ylabel("Number of Projects")
-plt.title("Distribution of Buggy Files per Project")
-plt.text(
-    0.99, 0.95,
-    f"Total buggy files number: {sum(file_counts_per_sample)} across {len(projects)} projects",
-    ha="right", va="top", transform=plt.gca().transAxes,
-    fontsize=10, color="dimgray"
+ax.bar(
+    x_files - width/2,
+    dist_files_train_full.values,
+    width=width,
+    label=f"Train (breaking updates={total_commits_train}, files={total_files_train})",
 )
-ax = plt.gca()
-ax.xaxis.set_major_locator(MaxNLocator(integer=True))
-plt.tight_layout()
-file_hist_path = save_dir / "file_distribution_hist.png"
-plt.savefig(file_hist_path, dpi=200, bbox_inches="tight")
-plt.close()
-
-# how many projects have N errors
- 
-plt.figure(figsize=(8, 5))
-plt.hist(error_counts_per_sample, bins=range(max(error_counts_per_sample)+2), align="left", rwidth=0.9)
-plt.xlabel("Number of Errors per Project (N)")
-plt.ylabel("Number of Projects")
-plt.title("Distribution of Errors per Project")
-plt.text(
-    0.99, 0.95,
-    f"Total errors: {sum(error_counts_per_sample)} across {len(projects)} projects",
-    ha="right", va="top", transform=plt.gca().transAxes,
-    fontsize=10, color="dimgray"
+ax.bar(
+    x_files + width/2,
+    dist_files_test_full.values,
+    width=width,
+    label=f"Test (breaking updates={total_commits_test}, files={total_files_test})",
 )
-plt.tight_layout()
 
-error_hist_path = save_dir / "error_distribution_hist.png"
-plt.savefig(error_hist_path, dpi=200, bbox_inches="tight")
-plt.close()
+ax.set_xlabel("Number of buggy files per breaking update")
+ax.set_ylabel("Breaking Update count")
+ax.set_title("Distribution of buggy file counts")
+ax.tick_params(axis="x", labelrotation=0)
+ax.legend(fontsize=8)
 
-# table view
-# import caas_jupyter_tools
-# caas_jupyter_tools.display_dataframe_to_user("Project distribution", project_counts)
+span_files = files_max - files_min + 1
+if span_files <= max_ticks:
+    ax.set_xticks(x_files)
+else:
+    step = span_files // max_ticks + 1
+    xticks = np.arange(files_min, files_max + 1, step)
+    ax.set_xticks(xticks)
+
+# ---- 右图：error 总数分布 ----
+ax = axes[1]
+x_err = np.array(list(errors_index), dtype=float)
+
+ax.bar(
+    x_err - width/2,
+    dist_errors_train_full.values,
+    width=width,
+    label=f"Train (breaking updates={total_commits_train}, errors={total_errors_train})",
+)
+ax.bar(
+    x_err + width/2,
+    dist_errors_test_full.values,
+    width=width,
+    label=f"Test (breaking updates={total_commits_test}, errors={total_errors_test})",
+)
+
+ax.set_xlabel("Total errors per breaking update")
+ax.set_ylabel("Breaking Update count")
+ax.set_title("Distribution of total errors")
+ax.tick_params(axis="x", labelrotation=0)
+ax.legend(fontsize=8)
+
+span_err = errors_max - errors_min + 1
+if span_err <= max_ticks:
+    ax.set_xticks(x_err)
+else:
+    step = span_err // max_ticks + 1
+    xticks = np.arange(errors_min, errors_max + 1, step)
+    ax.set_xticks(xticks)
+
+# 保存为一张图
+out_path = out_dir / "breakingCommit_train_test_distributions_row2.png"
+fig.savefig(out_path, dpi=300, bbox_inches="tight")
+plt.close(fig)
+print("saved to", out_path)
