@@ -82,13 +82,13 @@ def get_patched_content_from_diffs(diffs:list[str], content:str) -> str:
             # indent doesn't matter for Java
             original = original.strip()
             replace = replace.strip()
-            logging.info(f"The original: {original}")
-            logging.info(f"The replace: {replace}")
+            logging.info(f"The original: \n{original}\n")
+            logging.info(f"The replace: \n{replace}\n")
             # possibily unify the indent
             if original in content:
                 content = content.replace(original, replace)
             else:
-                logging.error(f"Could not find the search to be replaced:\n{original}")
+                logging.error(f"\nCould not find the search to be replaced:\n{original}\n")
         return content
 
 def is_java_source_valid(source: str)-> bool:

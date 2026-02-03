@@ -178,8 +178,70 @@ class Patcher:
             # build log, success status
             success = (return_code == 0)
             return "".join(buf), success        
+        
+    def apply_patches_training_test(self, patches: [tuple[str, str]],  # [(patch_str, file_path_in_container), ...]
+                                                                        ) -> tuple[str, bool]:
+        """apply multiple patches"""
+        with TemporaryDirectory(prefix="job-", suffix="-ol") as jobdir:
+            overlay_dir = Path(jobdir) / "upper"
+            overlay_dir.mkdir(parents=True, exist_ok=True)
 
+            jobdir_path = Path(jobdir)
             
+            bind_entries = []
+            for patch_str, file_path_in_container in patches:
+                container_path = Path(file_path_in_container)
+                base = container_path.name
+                host_file = jobdir_path / base
+                host_file.write_text(patch_str, encoding="utf-8")
+                bind_entries.append(f"{str(host_file)}:{file_path_in_container}:ro")
+            # Add ca certificates binding. To avoid java ssl errors, add soft link the cacerts file in the container as well:  ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts"
+            bind_entries.append("/etc/pki:/etc/pki:ro")
+            bind_entries.append("/etc/ssl:/etc/ssl:ro")
+
+            bind_cmds = ",".join(bind_entries)
+
+            # with ln command to avoid java ssl errors
+            cmd = [
+                "apptainer", "exec",
+                "--pwd", f"/{self.project}",
+                "--overlay", str(overlay_dir),
+                "-B", bind_cmds,
+                self.container_path,
+                "/bin/sh", "-c",
+                'ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts" && mvn -B clean test'
+            ]
+            # cmd = [
+            #     "apptainer", "exec",
+            #     "--pwd", f"/{self.project}",
+            #     "--overlay", str(overlay_dir),
+            #     "-B", bind_cmds,
+            #     self.container_path,
+            #     "mvn", "-B", "clean", "test"
+            # ]
+
+            buf = []
+            logging.info(f"[applying patches]===============Running command: {' '.join(cmd)}===============")
+            try:
+                proc = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    bufsize=1
+                )
+                
+                for line in proc.stdout:
+                    buf.append(line)
+                proc.stdout.close()
+                return_code = proc.wait()
+                logging.info(f"[applying patches]===============Return code: {return_code}\n")
+                success = (return_code == 0)
+                return "".join(buf), success
+            except Exception as e:
+                logging.error(f"Error while running command: {e}")
+                return "", False
+
     def get_metrics(self, original_errors: dict, current_errors: dict):
         """
         Given old and new errors in a buggy file, count the number of old errors, fixed errors and newly occurred errors in this file.

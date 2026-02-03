@@ -35,18 +35,18 @@ def merge_infos(df_per_file_status:pd.DataFrame, success_breaking_commits_list:l
     return df_per_file_status
 
 def main():
-    path_to_filter_log = "/home/xchen6/breaking_updates_rl/filter_distillation.sh_18560319.out"
+    path_to_filter_log = "/home/xchen6/breaking_updates_rl/filter_distillation.sh_18652395.out"
     commit_hash_list = extract_hash_all_passed_patch_from_log(path_to_filter_log)
     
     logging.info(f"Number of passing fixes of breaking commit: {len(commit_hash_list)}")
     
-    path_to_csv_info = "/home/xchen6/breaking_updates_rl/pipeline/distillation/data1.csv"
+    path_to_csv_info = "/home/xchen6/breaking_updates_rl/pipeline/distillation/data2.csv"
     # read csv file into dict
     df = pd.read_csv(path_to_csv_info)
     newinfos = merge_infos(df, commit_hash_list)
     
     # save to csv
-    output_path = "/home/xchen6/breaking_updates_rl/pipeline/distillation/data2.csv"
+    output_path = "/home/xchen6/breaking_updates_rl/pipeline/distillation/data2_with_build_success.csv"
     newinfos.to_csv(output_path, index=False)
     
 if __name__ == "__main__":
