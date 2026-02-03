@@ -96,88 +96,6 @@ class Patcher:
 
             success = (return_code == 0)
             return "".join(buf), success
-    
-    def apply_patch_training(self, patch:str, container_file:str) -> tuple[str, bool]:
-        """apply a patch for a single file during training"""
-        # create temporary directory for overlay fs
-        with TemporaryDirectory(prefix="job-", suffix="-ol") as jobdir:
-            overlay_dir = Path(jobdir) / "upper"    
-            overlay_dir.mkdir(parents=True, exist_ok=True)
-            basename = Path(container_file).name
-            host_file = Path(jobdir) / basename
-            host_file.write_text(patch)
-
-            bind_cmds = f"{str(host_file)}:{container_file}:ro,"
-            # Add ca certificates binding. To avoid java ssl errors, add soft link the cacerts file in the container as well:  ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts"
-            bind_cmds += "/etc/pki:/etc/pki:ro,/etc/ssl:/etc/ssl:ro"          
-              
-            # replace the buggy file with patches by binding options in apptainer and run the build
-            cmd = ["apptainer", "exec", 
-                "--pwd", f"/{self.project}", "--overlay", str(overlay_dir),
-                "-B", bind_cmds, self.container_path, 
-                "mvn", 
-                # "-Dmaven.repo.local=" + str(Path(jobdir)/".m2repo"), 
-                "-B", "-DskipTests", "clean", "test"]
-            buf = []  
-            logging.info(f"Running command: {' '.join(cmd)}")
-            proc = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,         
-                bufsize=1        
-            )
-            for line in proc.stdout:
-                # not need to write into disk
-                buf.append(line)
-            proc.stdout.close()
-            return_code = proc.wait()
-
-            # print("".join(buf))
-            # build log, success status
-            success = (return_code == 0)
-            return "".join(buf), success
-        
-    def apply_patch_training_test(self, patch:str, container_file:str) -> tuple[str, bool]:
-        """apply a patch for a single file during training"""
-        # create temporary directory for overlay fs
-        with TemporaryDirectory(prefix="job-", suffix="-ol") as jobdir:
-            overlay_dir = Path(jobdir) / "upper"    
-            overlay_dir.mkdir(parents=True, exist_ok=True)
-            basename = Path(container_file).name
-            host_file = Path(jobdir) / basename
-            host_file.write_text(patch)
-
-            bind_cmds = f"{str(host_file)}:{container_file}:ro,"
-            # Add ca certificates binding. To avoid java ssl errors, add soft link the cacerts file in the container as well:  ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts"
-            bind_cmds += "/etc/pki:/etc/pki:ro,/etc/ssl:/etc/ssl:ro"          
-              
-            # replace the buggy file with patches by binding options in apptainer and run the build
-            cmd = ["apptainer", "exec", 
-                "--pwd", f"/{self.project}", "--overlay", str(overlay_dir),
-                "-B", bind_cmds, self.container_path, 
-                "mvn", 
-                # "-Dmaven.repo.local=" + str(Path(jobdir)/".m2repo"), 
-                "-B", "clean", "test"]
-            buf = []  
-            logging.info(f"Running command: {' '.join(cmd)}")
-            proc = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,         
-                bufsize=1        
-            )
-            for line in proc.stdout:
-                # not need to write into disk
-                buf.append(line)
-            proc.stdout.close()
-            return_code = proc.wait()
-
-            # print("".join(buf))
-            # build log, success status
-            success = (return_code == 0)
-            return "".join(buf), success        
         
     def apply_patches_training_test(self, patches: [tuple[str, str]],  # [(patch_str, file_path_in_container), ...]
                                                                         ) -> tuple[str, bool]:
@@ -198,7 +116,6 @@ class Patcher:
             # Add ca certificates binding. To avoid java ssl errors, add soft link the cacerts file in the container as well:  ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts"
             bind_entries.append("/etc/pki:/etc/pki:ro")
             bind_entries.append("/etc/ssl:/etc/ssl:ro")
-
             bind_cmds = ",".join(bind_entries)
 
             # with ln command to avoid java ssl errors
@@ -211,15 +128,8 @@ class Patcher:
                 "/bin/sh", "-c",
                 'ln -sf /etc/pki/java/cacerts "$JAVA_HOME/lib/security/cacerts" && mvn -B clean test'
             ]
-            # cmd = [
-            #     "apptainer", "exec",
-            #     "--pwd", f"/{self.project}",
-            #     "--overlay", str(overlay_dir),
-            #     "-B", bind_cmds,
-            #     self.container_path,
-            #     "mvn", "-B", "clean", "test"
-            # ]
-
+            
+            # Execute the command and caputure the output
             buf = []
             logging.info(f"[applying patches]===============Running command: {' '.join(cmd)}===============")
             try:
@@ -332,3 +242,15 @@ class Patcher:
             "fixed_errors": fixed_errors,
             "new_errors": new_errors,
         }
+
+
+class MetricsResult:
+    def __init__(self, metrics: dict):
+        self.metrics = metrics
+        
+    def to_dict(self) -> dict:
+        return self.metrics
+    
+    def __str__(self):
+        return str(self.metrics)
+    
