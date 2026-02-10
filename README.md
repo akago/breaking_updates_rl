@@ -7,7 +7,7 @@
 
 
 ### BC type distribution
-- `bc_type_distribution_train_data.xlsx`: **file-level** BC Type distribution on the original train/test split. 
+- `bc_type_distribution_train_data.xlsx`: **file-level** BC Type distribution on the original train split. 
 
   Quick counts (#files with single BC Type): 
 
