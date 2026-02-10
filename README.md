@@ -8,7 +8,7 @@
 - Common fields: `prompt`, `original_code`, `api_diff`, `buggy_lines`, `error_message`, `errors` (with `BCs`), `breakingCommit`, etc.
 
 
-### Dataset structure (BC type distribution)
+### BC type distribution
 - `bc_type_distribution_train_data.xlsx`: **file-level** BC Type distribution on the original train/test split. 
 
   Quick counts (#files with single BC Type): 
