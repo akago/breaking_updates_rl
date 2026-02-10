@@ -1,6 +1,4 @@
-## Breaking Updates RL – Dataset
-
-### Dataset
+## Dataset
 - Location: `data/sft/` (file-level samples).
   - `sft_data_train.jsonl` – 265
   - `sft_data_test.jsonl` – 109
