@@ -3,7 +3,11 @@
   - `sft_data_train.jsonl` – 265
   - `sft_data_test.jsonl` – 109
   - `sft_data_train_build_success.jsonl` – 68
-- Common fields: `prompt`, `original_code`, `api_diff`, `buggy_lines`, `error_message`, `errors` (with `BCs`), `breakingCommit`, etc.
+- Common fields: `prompt`, `original_code`, `api_diff`, `buggy_lines`, `error_message`, `errors` (with `BCs`), `breakingCommit`, `file_success`, `build_success` etc.
+
+### Note
+- `file_success`: After applying the patch, recompilation shows that compilation errors in the the file are resolved.
+- `build_success`: After applying the patch, the project recompiles successfully and the test suite passes.
 
 
 ### BC type distribution
