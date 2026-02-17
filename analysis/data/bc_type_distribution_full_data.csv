@@ -1,0 +1,377 @@
+BC_kinds,#files with this BC_kinds,BC_kinds_count,absolute_path_to_file_in_container,file_success,breakingCommit,model,build_success
+NONE,107,0,/singer/singer-commons/src/main/java/com/pinterest/singer/loggingaudit/client/AuditEventKafkaSender.java,TRUE,067f5d2c81ff87c90755f4ed48f62eb5faa8ecf9,gpt-5,TRUE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/ModelConverter.java,TRUE,1ee7d41d41fa991bbd52fc226a217de8fccf8e32,gpt-5,FALSE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/DefaultModelConverter.java,TRUE,1ee7d41d41fa991bbd52fc226a217de8fccf8e32,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/model/ProjectContext.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/pipeline/common/executors/CreateDockerBuildExecutor.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/graph/DefaultCallGraph.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/DepCleanManager.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/Server.java,TRUE,10d7545c5771b03dd9f6122bd5973a759eb2cd03,gpt-5,TRUE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/monitoring/StatusCheckFilter.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/release/scm/perforce/P4Manager.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ValidHeaderMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+NONE,107,0,/pdb/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/abs/EngineGeneralTest.java,TRUE,43b3a858b77ec27fc8946aba292001c3de465012,gpt-5,FALSE
+NONE,107,0,/sherlock/src/main/java/com/yahoo/sherlock/store/redis/LettuceAnomalyReportAccessor.java,TRUE,7e1c7826b63cae9a472d707f4fb65b6add69b48e,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,FALSE,7fb959ccb8c9b32bd6cbc9fc95ed70c4d9c85575,gpt-5,FALSE
+NONE,107,0,/flacoco/src/main/java/fr/spoonlabs/flacoco/core/coverage/CoverageMatrix.java,TRUE,b8f92ff37d1aed054d8320283fd6d6a492703a55,gpt-5,TRUE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/pipeline/declarative/steps/CreateJFrogInstanceStep.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,FALSE,8fbb6deb112102ef7507a8e68c5215e5f481d03b,gpt-5,FALSE
+NONE,107,0,/takes/src/test/java/org/takes/facets/auth/social/PsFacebookTest.java,TRUE,d01e1d9741b590c12fec7edd95edf751e7850343,gpt-5,TRUE
+NONE,107,0,/flacoco/src/main/java/fr/spoonlabs/flacoco/core/test/strategies/classloader/finder/classes/impl/SourceFolderFinder.java,TRUE,b8f92ff37d1aed054d8320283fd6d6a492703a55,gpt-5,TRUE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/ModelConverter.java,TRUE,465aedb044d437742bb8e27a9f39f270f8a8982f,gpt-5,FALSE
+NONE,107,0,/allure-maven/src/main/java/io/qameta/allure/maven/AllureCommandline.java,TRUE,54857351e0b0a655970d7e2ccdb67f175cc5d688,gpt-5,TRUE
+NONE,107,0,/takes/src/test/java/org/takes/facets/auth/social/PsFacebookTest.java,TRUE,94c7324cf4cf0afcc11b5fce38a8cdefd2c00e7b,gpt-5,TRUE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestFromContent.java,TRUE,fab0f8d4f7322fa6da914c8c9f30baf740d46b99,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestedFlowable.java,FALSE,fab0f8d4f7322fa6da914c8c9f30baf740d46b99,gpt-5,FALSE
+NONE,107,0,/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/ModelConstructor.java,TRUE,1e17e176460ab4283e463e62fece844d341da7f0,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,FALSE,1fc5281e0688c44025fe2b390a7d6e3e3088f385,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/API.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestedFlowable.java,TRUE,5fca04bd287baf1534baff8cc23cc3dc26dc680d,gpt-5,FALSE
+NONE,107,0,/flink-faker/src/main/java/com/github/knaufk/flink/faker/DateTime.java,TRUE,1ef97ea6c5b6e34151fe6167001b69e003449f95,gpt-5,TRUE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/StrictTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+NONE,107,0,/allure-maven/src/main/java/io/qameta/allure/maven/AllureCommandline.java,TRUE,88c1f903cede03ff371059cdaf009dab12007043,gpt-5,TRUE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ClassFileVisitorUtils.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-maven-plugin/src/main/java/se/kth/depclean/wrapper/MavenDependencyManager.java,TRUE,2f01c46b96a8edf437edf20e6dbd848edcb27085,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/util/JarUtils.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestFromContent.java,TRUE,5fca04bd287baf1534baff8cc23cc3dc26dc680d,gpt-5,FALSE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/pipeline/scripted/steps/CreateJFrogPlatformInstanceStep.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/src/ImportsAnalyzer.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/DefaultModelConverter.java,TRUE,ec9d8acdf15dc77063042e87c8fc9a834e8ea8c5,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/ClientRepo.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/ModelConverter.java,TRUE,ec9d8acdf15dc77063042e87c8fc9a834e8ea8c5,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java,TRUE,28be199c825d419957bc753a9519e8e9ecc6a08e,gpt-5,TRUE
+NONE,107,0,/jclouds/apis/byon/src/main/java/org/jclouds/byon/domain/YamlNode.java,TRUE,b2edf635da83fd076262a41751c6f773c17f3b76,gpt-5,TRUE
+NONE,107,0,/singer/thrift-logger/src/main/java/com/pinterest/singer/client/logback/AppenderUtils.java,TRUE,61e96bfe3a32d6ef2e5d7912a518c78bd5474e74,gpt-5,TRUE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/monitoring/AccessEventJsonLayout.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/AbstractDebloater.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/asm/DependencyClassFileVisitor.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/pipeline/common/executors/ReleaseBundleDistributeExecutor.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/UseDefaultExcludesMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+NONE,107,0,/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java,TRUE,f78d34b82926216c0f203c0350f646d481c675e3,gpt-5,TRUE
+NONE,107,0,/flacoco/src/main/java/fr/spoonlabs/flacoco/core/coverage/framework/TestFrameworkStrategy.java,TRUE,b8f92ff37d1aed054d8320283fd6d6a492703a55,gpt-5,TRUE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/pipeline/common/executors/ReleaseBundleDeleteExecutor.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,TRUE,0e8625f492854a78c0e1ceff67b2abd7e081d42b,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestFromContent.java,FALSE,497b81f4446c257f693648cad7a64f62b23920a2,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/resources/MessageResource.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Utils/PlayerUtils.java,TRUE,f78d34b82926216c0f203c0350f646d481c675e3,gpt-5,TRUE
+NONE,107,0,/docker-adapter/src/test/java/com/artipie/docker/http/AuthTest.java,FALSE,d38182a8a0fe1ec039aed97e103864fce717a0be,gpt-5,FALSE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/DefaultModelConverter.java,TRUE,465aedb044d437742bb8e27a9f39f270f8a8982f,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestedFlowable.java,TRUE,497b81f4446c257f693648cad7a64f62b23920a2,gpt-5,FALSE
+NONE,107,0,/onebusaway-gtfs-modules/onebusaway-gtfs-hibernate/src/main/java/org/onebusaway/gtfs/impl/ServiceDateUserType.java,TRUE,7c62ae7f31ed9c994a9c1e6906fb9de391c1af5b,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,FALSE,d3af06df4613be146bb9f8034e1a8a3098050c82,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,FALSE,f26cd85b97b24c07a2e446f43ac8793619fa0724,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/DefaultProjectDependencyAnalyzer.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/pdb/src/test/java/com/feedzai/commons/sql/abstraction/engine/impl/abs/EngineGeneralTest.java,TRUE,d401e189fb6435110e3dc4ca1a94838f167e7ddf,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/UpdateMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/DefaultClassAnalyzer.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/jclouds/apis/byon/src/main/java/org/jclouds/byon/functions/NodesFromYamlStream.java,TRUE,b2edf635da83fd076262a41751c6f773c17f3b76,gpt-5,TRUE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/model/Dependency.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,FALSE,a80dac86d1caa3958c45c036d93a7d9231d88fbf,gpt-5,FALSE
+NONE,107,0,/artifactory-plugin/src/main/java/org/jfrog/hudson/pipeline/declarative/steps/CreateServerStep.java,TRUE,b5b64613a1a650a5784ff39386b4e00e05e5c21c,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/UseDefaultMappingMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/biapi/src/main/java/xdev/tableexport/export/ReportBuilder.java,TRUE,0abf7148300f40a1da0538ab060552bca4a2f1d8,gpt-5,TRUE
+NONE,107,0,/docker-adapter/src/test/java/com/artipie/docker/http/AuthScopeSliceTest.java,FALSE,d38182a8a0fe1ec039aed97e103864fce717a0be,gpt-5,FALSE
+NONE,107,0,/simplelocalize-cli/src/main/java/io/simplelocalize/cli/client/SimpleLocalizeClient.java,TRUE,741f3b5e20a91b0e9305ae79261e3c5e64971c98,gpt-5,FALSE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,TRUE,a26797cdeeecaa3b900ea1e0d5ec0cec66bf03ff,gpt-5,FALSE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,TRUE,dcc95f410847ab308db2f2a31ab13e32dc65c670,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ProjectDependencyAnalysisBuilder.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/YamlModelReader.java,TRUE,1e17e176460ab4283e463e62fece844d341da7f0,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/monitoring/WireAppenderFactory.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+NONE,107,0,/lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+NONE,107,0,/fluxtion/compiler/src/test/java/com/fluxtion/compiler/builder/factory/GraphOfInstancesTest.java,FALSE,b1a941400d68445d76056ab8833cd6d2e3455954,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestFromContent.java,TRUE,a0ec50cb297c4202e138627859a89ef032fa78ab,gpt-5,FALSE
+NONE,107,0,/simplelocalize-cli/src/main/java/io/simplelocalize/cli/configuration/ConfigurationLoader.java,TRUE,0a11c04038eae517540051dbf51f7f26b7221f20,gpt-5,TRUE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,TRUE,95b2c15de16fd9fd612ce73672e29b613ce7a909,gpt-5,FALSE
+NONE,107,0,/OCR4all/src/main/java/de/uniwue/helper/RecognitionHelper.java,FALSE,bd3ce213e2771c6ef7817c80818807a757d4e94a,gpt-5,FALSE
+NONE,107,0,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ResourceManagerImpl.java,FALSE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+NONE,107,0,/scoverage-maven-plugin/src/main/java/org/scoverage/plugin/SCoverageReportMojo.java,TRUE,c7c9590a206d4fb77dd05b9df391d888e6181667,gpt-5,TRUE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,TRUE,1820a966ae02ad8df44d0a0106cba65ceaf3aa95,gpt-5,FALSE
+NONE,107,0,/docker-adapter/src/main/java/com/artipie/docker/misc/DigestedFlowable.java,TRUE,a0ec50cb297c4202e138627859a89ef032fa78ab,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/UseDefaultExcludesMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/UpdateMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+NONE,107,0,/ecaudit/eclog/src/main/java/com/ericsson/bss/cassandra/ecaudit/eclog/config/EcLogYamlConfigLoader.java,TRUE,db035d7674422ccff83c99683edae833bef190a8,gpt-5,TRUE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/DefaultModelConverter.java,TRUE,45e01adbb96866c59fe2c319a509bf548443b8a2,gpt-5,FALSE
+NONE,107,0,/plexus-archiver/src/test/java/org/codehaus/plexus/archiver/DuplicateFilesTest.java,TRUE,3ff575ae202cdf76ddfa8a4228a1711a6fa1e921,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ValidHeaderMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+NONE,107,0,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/ModelConverter.java,TRUE,45e01adbb96866c59fe2c319a509bf548443b8a2,gpt-5,FALSE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,TRUE,90ffd2cd31edecf778d14d0015da9ceab7e53081,gpt-5,FALSE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,TRUE,07fad972bb884e9fa6143b4f870d08305811607d,gpt-5,FALSE
+NONE,107,0,/pay-adminusers/src/test/java/uk/gov/pay/adminusers/queue/event/EventMessageHandlerTest.java,TRUE,cbcafe129e143ef09401470e9d11de9758f298d0,gpt-5,FALSE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/UseDefaultMappingMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+NONE,107,0,/allure-maven/src/main/java/io/qameta/allure/maven/AllureCommandline.java,TRUE,16ae40b1e17e14ee3ae20ac211647e47399a01a9,gpt-5,TRUE
+NONE,107,0,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/StrictTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+NONE,107,0,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java,FALSE,5287fc631fa78e7f11d39983824cdd4215b9a03b,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ExcludesMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cluster/HazelcastClusterNodeInfo.java,TRUE,2b4d49d68112941b8abb818549389709d8327963,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,FALSE,7f411529addceb9e6e43898e84c559e209764f0a,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-s3/src/test/java/com/jcabi/s3/AwsOcketITCase.java,TRUE,24d4a90ec1b375751e71f33d18949405c9529d77,gpt-5,TRUE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/RemoveMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/pgpverify-maven-plugin/src/main/java/org/simplify4u/plugins/utils/MavenCompilerUtils.java,TRUE,cd5bb39f43e4570b875027073da3d4e43349ead1,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/TranslateRpc.java,TRUE,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java,FALSE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-http/src/main/java/com/jcabi/http/response/RestResponse.java,FALSE,cb541fd65c7b9bbc3424ea927f1dab223261d156,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-http/src/main/java/com/jcabi/http/mock/MkQueryMatchers.java,FALSE,cb541fd65c7b9bbc3424ea927f1dab223261d156,gpt-5,FALSE
+TYPE_REMOVED,165,1,/lithium/src/main/java/com/wire/lithium/Configuration.java,TRUE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+TYPE_REMOVED,165,1,/http/src/main/java/com/artipie/security/policy/YamlPolicyFactory.java,TRUE,4aab2869639226035c999c282f31efba15648ea3,gpt-5,TRUE
+TYPE_REMOVED,165,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Translation.java,TRUE,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AdditionalHeaderMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/config/PostNotFoundExceptionMapper.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/sign-maven-plugin/src/main/java/org/simplify4u/plugins/sign/KeyInfoFactory.java,FALSE,cb4e0721962b65ea6e1ab1e142f26b256d616a0a,gpt-5,FALSE
+TYPE_REMOVED,165,1,/lithium/src/main/java/com/wire/lithium/Server.java,FALSE,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,FALSE
+TYPE_REMOVED,165,1,/billy/billy-core/src/test/java/com/premiumminds/billy/core/test/AbstractTest.java,TRUE,44f2775c212f2bd024ba8973d15008630110bc2b,gpt-5,TRUE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/Messages.java,FALSE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-bitpay-client/src/main/java/com/bitpay/sdk/client/BitPayClient.java,TRUE,de0a83ba9708170ae984b049781321f04caa82b3,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/CsrfController.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java,FALSE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/GreetingController.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/billy/billy-core/src/test/java/com/premiumminds/billy/core/test/AbstractTest.java,FALSE,e1a4f594af136ac2cfe4cc4bbf3f8f2fb76f51c8,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-ssh/src/main/java/com/jcabi/ssh/Ssh.java,TRUE,54abbbde6a1233e1523a9b5f811ea100efb5dead,gpt-5,TRUE
+TYPE_REMOVED,165,1,/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Objects/Decorations.java,TRUE,f78d34b82926216c0f203c0350f646d481c675e3,gpt-5,TRUE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/LocaleController.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-ssh/src/main/java/com/jcabi/ssh/SshByPassword.java,TRUE,54abbbde6a1233e1523a9b5f811ea100efb5dead,gpt-5,TRUE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/TaskForm.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.java,TRUE,3f30dfff617fd652412260ecf648a25769a27101,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-github/src/main/java/com/jcabi/github/mock/MkGithub.java,TRUE,9717e34bcda74bd9ad94f6a52ddfd3fd179ea15b,gpt-5,FALSE
+TYPE_REMOVED,165,1,/myfaces-tobago/tobago-core/src/test/java/org/apache/myfaces/tobago/internal/mock/servlet/MockHttpSession.java,TRUE,6ac25d3a60ea29a41a37ad47b7feb2908ee84fff,gpt-5,TRUE
+TYPE_REMOVED,165,1,/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusterListener.java,FALSE,2b4d49d68112941b8abb818549389709d8327963,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java,TRUE,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,FALSE
+TYPE_REMOVED,165,1,/cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java,TRUE,4bba3fb6147e72946f64724fe55eee5d15ff6206,gpt-5,FALSE
+TYPE_REMOVED,165,1,/singer/singer/src/main/java/com/pinterest/singer/reader/ThriftReader.java,TRUE,867e69e208ff59d1f8baae7ed41d3e163a51bc65,gpt-5,FALSE
+TYPE_REMOVED,165,1,/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusteredCacheFactory.java,TRUE,2b4d49d68112941b8abb818549389709d8327963,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ReportTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/CompleteMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/wicket-crudifier/src/main/java/com/premiumminds/wicket/crudifier/form/elements/ListControlGroups.java,FALSE,1a2fb9f65e12d6c43a8472b9b035299b29a75ce8,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java,TRUE,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/CheckTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/singer/singer/src/main/java/com/pinterest/singer/utils/SimpleThriftLogger.java,TRUE,867e69e208ff59d1f8baae7ed41d3e163a51bc65,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/BaseCycloneDxMojo.java,TRUE,ec9d8acdf15dc77063042e87c8fc9a834e8ea8c5,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/MappingMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/sign-maven-plugin/src/main/java/org/simplify4u/plugins/sign/KeyInfoFactory.java,FALSE,ba5aa66400aa5d2c48eda4079dc53d4e33f59102,gpt-5,FALSE
+TYPE_REMOVED,165,1,/singer/thrift-logger/src/main/java/com/pinterest/singer/client/logback/AppenderUtils.java,TRUE,3572a1ecc0154c61e05505aed56055b9c5e539a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/liquibase-mssql/src/java/liquibase/ext/mssql/sqlgenerator/CreateIndexGeneratorMSSQL.java,TRUE,feb582661e77de66eadaa7550720a8751b266ee4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/LicenseSetTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/geostore/src/core/security/src/main/java/it/geosolutions/geostore/core/security/password/GeoStorePBEPasswordEncoder.java,FALSE,9a8b6fc7847a0782ae4c48d0e4f7056507c0397d,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/AlertMessage.java,TRUE,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,FALSE,5a5e35ac83ec73cf8b9ec080eb85e734d190cb85,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java,FALSE,b554e03428f2ba877c33a0fece7f0f00fb38a5fa,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java,TRUE,de0a83ba9708170ae984b049781321f04caa82b3,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,FALSE,2e6aca566211d065c07ec9a60dccd8f51b6d656e,gpt-5,FALSE
+TYPE_REMOVED,165,1,/liquibase-mssql/src/java/liquibase/ext/mssql/sqlgenerator/AddPrimaryKeyGeneratorMSSQL.java,TRUE,feb582661e77de66eadaa7550720a8751b266ee4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/wicket-crudifier/src/main/java/com/premiumminds/wicket/crudifier/form/elements/ListControlGroups.java,FALSE,d23bf06a2ea5e7f2440d08083dd04fb3c124caf7,gpt-5,FALSE
+TYPE_REMOVED,165,1,/dropwizard-pac4j/src/main/java/org/pac4j/dropwizard/J2EHelper.java,FALSE,115827c6675f532a4d33751d1a0c0ba394bbd304,gpt-5,FALSE
+TYPE_REMOVED,165,1,/qa-catalogue/src/main/java/de/gwdg/metadataqa/marc/MarcFactory.java,TRUE,43c824a24b09efd8b4b00449ce31cd121a6b23eb,gpt-5,FALSE
+TYPE_REMOVED,165,1,/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Detect/NPCTeleport.java,TRUE,f78d34b82926216c0f203c0350f646d481c675e3,gpt-5,TRUE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,TRUE,57b7dbadcbb369a568260fe87dde4678fe5fd0ce,gpt-5,TRUE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/SetCommand.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/UploadCommand.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/InvalidateCommand.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/UpdateSkinListener.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/InfoCommand.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/SelectCommand.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/LoginListener.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusteredCache.java,FALSE,2b4d49d68112941b8abb818549389709d8327963,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/ChangeSkinCommand.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinDownloader.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinApplier.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinChanger.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/NameResolver.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java,TRUE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/ChangeSkinSponge.java,FALSE,402082609522c66a3b790aedafd0570148a7d53f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,TRUE,9f2af24473f180098d38eddc7daf802a0a29e21e,gpt-5,TRUE
+TYPE_REMOVED,165,1,/pdb/src/main/java/com/feedzai/commons/sql/abstraction/engine/impl/mysql/MySqlQueryExceptionHandler.java,TRUE,0305beafdecb0b28f7c94264ed20cdc4e41ff067,gpt-5,TRUE
+TYPE_REMOVED,165,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Detection.java,TRUE,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-bitpay-client/src/setup/java/BitPaySetup.java,TRUE,de0a83ba9708170ae984b049781321f04caa82b3,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-simpledb/src/test/java/com/jcabi/simpledb/RegionITCase.java,FALSE,7d97e1c7331f6722eb1d8192bf0a2686f5a33798,gpt-5,TRUE
+TYPE_REMOVED,165,1,/geostore/src/core/security/src/main/java/it/geosolutions/geostore/core/security/password/GeoStoreDigestPasswordEncoder.java,FALSE,9a8b6fc7847a0782ae4c48d0e4f7056507c0397d,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/HeaderMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java,TRUE,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-bitpay-client/src/main/java/com/bitpay/sdk/Client.java,TRUE,de0a83ba9708170ae984b049781321f04caa82b3,gpt-5,FALSE
+TYPE_REMOVED,165,1,/smooks/core/src/main/java/org/smooks/engine/delivery/sax/ng/org/apache/xerces/dom/ElementImpl.java,TRUE,6f067d9679caa4a8b2086f1e2b4d177ab19cb3b3,gpt-5,TRUE
+TYPE_REMOVED,165,1,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/BaseCycloneDxMojo.java,TRUE,465aedb044d437742bb8e27a9f39f270f8a8982f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-s3/src/test/java/com/jcabi/s3/BucketRule.java,FALSE,24d4a90ec1b375751e71f33d18949405c9529d77,gpt-5,TRUE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,FALSE,7b662e0f86f8fbe05289cd60fc3602a353b1f8bb,gpt-5,FALSE
+TYPE_REMOVED,165,1,/assertj-vavr/src/main/java/org/assertj/vavr/api/ClassLoadingStrategyFactory.java,TRUE,1cc7071371953a7880c2c2c3a5a32c36af7f88f9,gpt-5,TRUE
+TYPE_REMOVED,165,1,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/BaseCycloneDxMojo.java,TRUE,1ee7d41d41fa991bbd52fc226a217de8fccf8e32,gpt-5,FALSE
+TYPE_REMOVED,165,1,/assertj-vavr/src/main/java/org/assertj/vavr/api/VavrAssumptions.java,TRUE,1cc7071371953a7880c2c2c3a5a32c36af7f88f9,gpt-5,TRUE
+TYPE_REMOVED,165,1,/HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java,FALSE,6ad104c4fb9263ad1bb29e6b33618b8225efd92d,gpt-5,TRUE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/QuietMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,TRUE,e9b58db708def3cad97b38842a38b3bf39cdeeaf,gpt-5,TRUE
+TYPE_REMOVED,165,1,/cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java,TRUE,3f30dfff617fd652412260ecf648a25769a27101,gpt-5,FALSE
+TYPE_REMOVED,165,1,/sign-maven-plugin/src/main/java/org/simplify4u/plugins/sign/KeyInfoFactory.java,TRUE,fb003dedfd6964a29a2642b20fe58eb0e85f0391,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/FailIfMissingMojoTest.java,TRUE,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/scheduler/safeplace/src/test/java/org/btrplace/safeplace/DSN.java,TRUE,165381d26b2c3d2278fde88c16f95807506451fe,gpt-5,TRUE
+TYPE_REMOVED,165,1,/billy/billy-core/src/test/java/com/premiumminds/billy/core/test/AbstractTest.java,TRUE,f6659d758a437f8b676481fe70671a68a6ee1cde,gpt-5,TRUE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AggregateMojoTest.java,FALSE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/LicenseSetTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ConstraintInfo.java,FALSE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/main/java/com/mycila/maven/plugin/license/dependencies/MavenProjectLicenses.java,TRUE,1c0972fc3d905b9f2a305a78f8a158a0b3fd8639,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/AdditionalHeaderMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/ByteArrayOutputStream.java,TRUE,ee0827d4c9bf80982241e8c3559dceb8b39063e4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/sign-maven-plugin/src/main/java/org/simplify4u/plugins/sign/KeyInfoFactory.java,FALSE,065dc3e56b588330508c8eaa8bba11e66b4d27c1,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ReportTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/testing/LocalResourceManagerHelper.java,TRUE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,TRUE,4eb48c3464b3aecfaf1756c5139e03568c1a5ee8,gpt-5,TRUE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/CheckTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/BaseCycloneDxMojo.java,TRUE,45e01adbb96866c59fe2c319a509bf548443b8a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/MappingMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/OffloadingOutputStream.java,TRUE,ee0827d4c9bf80982241e8c3559dceb8b39063e4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cluster/HazelcastClusterNodeInfo.java,TRUE,9545eb3a2687afc77b0a7da4d5d621807618d95c,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,TRUE,ddd3e8e4ea2ac3d45b18a8e5cbf357309ece323a,gpt-5,TRUE
+TYPE_REMOVED,165,1,/jcabi-http/src/main/java/com/jcabi/http/mock/MkQueryMatchers.java,FALSE,923a6b2027e3ca1762deb6a60fc0a768c284122b,gpt-5,FALSE
+TYPE_REMOVED,165,1,/guice/extensions/struts2/test/com/google/inject/struts2/Struts2FactoryTest.java,TRUE,6c53cd904bd66fc79af8687571e607c259226b81,gpt-5,TRUE
+TYPE_REMOVED,165,1,/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/jar/JarToolModularJarArchiver.java,TRUE,ee0827d4c9bf80982241e8c3559dceb8b39063e4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/guice/extensions/struts2/test/com/google/inject/struts2/Struts2FactoryTest.java,TRUE,acc50dabec6796c091b84c1ada2ae4cbcab8b562,gpt-5,TRUE
+TYPE_REMOVED,165,1,/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusteredCache.java,FALSE,9545eb3a2687afc77b0a7da4d5d621807618d95c,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/Project.java,TRUE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/spi/v1beta1/HttpResourceManagerRpc.java,FALSE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/open-pdf-sign/src/main/java/org/openpdfsign/Signer.java,TRUE,4a3efad6e00824e5814b9c8f571c9c98aad40281,gpt-5,FALSE
+TYPE_REMOVED,165,1,/guice/extensions/struts2/test/com/google/inject/struts2/Struts2FactoryTest.java,TRUE,979d6237a50840cd925cc1a33c415ffbbbc42846,gpt-5,TRUE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/RtTransaction.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/WalletsIn.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/sign-maven-plugin/src/main/java/org/simplify4u/plugins/sign/KeyInfoFactory.java,FALSE,1de351dd8e32ee336e7735e325acaad8f632520d,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/CsrfController.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java,FALSE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ExcludesMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/TaxBeneficiaries.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/RtNetwork.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/singer/thrift-logger/src/main/java/com/pinterest/singer/client/logback/AppenderUtils.java,TRUE,23a8e39dacd2caa10813fd384cf2aa6d8782f6a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/Wallet.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/Remote.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/Copies.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/QuietMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/java-api/src/main/java/io/zold/api/RtScore.java,TRUE,38c9915f0cfdf0c1a2b17c3c6f283c23a0aac0cf,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/PolicyMarshaller.java,TRUE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/CompleteMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ProhibitLegacyUseTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/config/PostNotFoundExceptionMapper.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/wicket-crudifier/src/main/java/com/premiumminds/wicket/crudifier/form/elements/ListControlGroups.java,FALSE,9218cc9c8e0018d01e2d7cfe0e77aae7b65b378f,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/Messages.java,FALSE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jcabi-http/src/main/java/com/jcabi/http/response/RestResponse.java,FALSE,923a6b2027e3ca1762deb6a60fc0a768c284122b,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/GreetingController.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/spi/v1beta1/ResourceManagerRpc.java,TRUE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/LocaleController.java,FALSE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/TaskForm.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/AlertMessage.java,TRUE,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,FALSE
+TYPE_REMOVED,165,1,/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ProjectInfo.java,FALSE,471d07e01cd0c79dc9bed5344ed46418f4c078a2,gpt-5,FALSE
+TYPE_REMOVED,165,1,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,FALSE,5719db615dc4164bc752addf7bce63041873c015,gpt-5,FALSE
+TYPE_REMOVED,165,1,/junit-quickcheck/core/src/test/java/com/pholser/junit/quickcheck/internal/generator/RegisterGeneratorsByConventionTest.java,TRUE,ff8b5b61548d50cf60b77784a181e917cb35033b,gpt-5,TRUE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/HeaderMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/FailIfMissingMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/RemoveMojoTest.java,TRUE,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,dc9f7910968cd0aa2090e390045ae053693e839a,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,2d733a58045b4bf3669aa00d875e77f9db48c29b,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,14fc5fa696f499cac48401b3a86882b3bf7d9b82,gpt-5,FALSE
+METHOD_REMOVED,52,1,/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/model/ProjectDependencyAnalysis.java,TRUE,b86a5f84b44a9b50aee69745886c47123f721de3,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java,TRUE,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,TRUE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,489aad6060454d0b7b34a144e0b345c5a3a199f5,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java,TRUE,1d9719e7a0e33685a44c513929c2bb0d0ba43f03,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java,TRUE,4977db6f19097a102992d792689c2721b41939cf,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java,TRUE,1d9719e7a0e33685a44c513929c2bb0d0ba43f03,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java,TRUE,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,TRUE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,ad80bdff62b1b0520d3fb9e8d627532a38a7c60c,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java,TRUE,4977db6f19097a102992d792689c2721b41939cf,gpt-5,TRUE
+METHOD_REMOVED,52,1,/sorald/sorald/src/main/java/sorald/sonar/SonarLintEngine.java,TRUE,c0f6ab75784dbc13ae8ff47298704c0756cf3a2c,gpt-5,TRUE
+METHOD_REMOVED,52,1,/sherlock/src/main/java/com/yahoo/sherlock/store/core/Client.java,TRUE,7e1c7826b63cae9a472d707f4fb65b6add69b48e,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java,TRUE,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java,TRUE,4977db6f19097a102992d792689c2721b41939cf,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java,TRUE,1d9719e7a0e33685a44c513929c2bb0d0ba43f03,gpt-5,TRUE
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUITargetLanguage.java,TRUE,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java,TRUE,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java,TRUE,4977db6f19097a102992d792689c2721b41939cf,gpt-5,TRUE
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUIChatMenu.java,TRUE,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,FALSE
+METHOD_REMOVED,52,1,/google-cloud-java/java-dns/src/main/java/com/google/cloud/dns/spi/v1/HttpDnsRpc.java,TRUE,7d0e38fa9d6a9f96afdc0143fa44b4145e3555d8,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,af6e5d1cc94f031f29b4838e7a8b56704c8c5de4,gpt-5,FALSE
+METHOD_REMOVED,52,1,/sorald/sorald/src/main/java/sorald/sonar/SonarLintEngine.java,TRUE,c0f6ab75784dbc13ae8ff47298704c0756cf3a2c,gpt-5,TRUE
+METHOD_REMOVED,52,1,/sorald/sorald/src/main/java/sorald/sonar/SonarLintEngine.java,TRUE,5adde4f1309a1078b39d013a30dc392c97ca7543,gpt-5,TRUE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,4b4c08d502d98d240855013ab76008f5e0243435,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java,TRUE,1d9719e7a0e33685a44c513929c2bb0d0ba43f03,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java,TRUE,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,TRUE
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUISourceLanguage.java,TRUE,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,FALSE
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUIMainMenu.java,TRUE,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,FALSE
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/WWCInventoryManager.java,TRUE,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,FALSE
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/configuration/ConfigurationMessagesOverridePossibleListGUI.java,TRUE,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java,TRUE,4977db6f19097a102992d792689c2721b41939cf,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java,TRUE,1d9719e7a0e33685a44c513929c2bb0d0ba43f03,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java,TRUE,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java,TRUE,4977db6f19097a102992d792689c2721b41939cf,gpt-5,TRUE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,c32185c43be158d32c7d13c5b816991954eb45fa,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java,TRUE,1d9719e7a0e33685a44c513929c2bb0d0ba43f03,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java,TRUE,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,TRUE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,a2b0fc53611f8705640773f18c8dd6a47eed3b7f,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,8502e85f9ee2ff90ce96b47b5904f011e81e8bb8,gpt-5,FALSE
+METHOD_REMOVED,52,1,/quickfixj/quickfixj-core/src/main/java/quickfix/mina/acceptor/AbstractSocketAcceptor.java,TRUE,00a7cc31784ac4a9cc27d506a73ae589d6df36d6,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,b6a48a6e557fad1ceda680618e0a34c7b8c5c087,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,250cafc7d6ae47d5d4803b5a5e58186eb81fa3b5,gpt-5,FALSE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,1d43bce1de6a81ac017c233d72f348d3c850299e,gpt-5,FALSE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java,TRUE,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java,TRUE,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java,TRUE,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java,TRUE,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,TRUE
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java,TRUE,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,TRUE
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,TRUE,ea33b5101edffc0242967cbf21c1016378b18483,gpt-5,FALSE
+METHOD_REMOVED,52,1,/sorald/sorald/src/main/java/sorald/sonar/SonarLintEngine.java,TRUE,3d29f9a6823fa68763d3148bc0353ac557f2a815,gpt-5,TRUE
+METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION,3,1,/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/ModelRepresenter.java,TRUE,a9df7b2235224fcabefa1d62e8956911aa5bb825,gpt-5,FALSE
+METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION,3,1,/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/ModelRepresenter.java,TRUE,249c3b394540fde4fcb72f66172af5e02b9c637e,gpt-5,FALSE
+METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION,3,1,/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/ModelRepresenter.java,TRUE,1e17e176460ab4283e463e62fece844d341da7f0,gpt-5,FALSE
+FIELD_REMOVED,3,1,/incrementals-tools/lib/src/main/java/io/jenkins/tools/incrementals/lib/UpdateChecker.java,TRUE,c09896887acf0fe59320e01145a7034cd8d4e326,gpt-5,TRUE
+FIELD_REMOVED,3,1,/incrementals-tools/lib/src/main/java/io/jenkins/tools/incrementals/lib/UpdateChecker.java,TRUE,5769bdad76925da568294cb8a40e7d4469699ac3,gpt-5,TRUE
+FIELD_REMOVED,3,1,/quickfixj/quickfixj-core/src/main/java/quickfix/mina/ssl/SSLFilter.java,TRUE,00a7cc31784ac4a9cc27d506a73ae589d6df36d6,gpt-5,FALSE
+SUPERTYPE_REMOVED,2,1,/ci-sauce/src/main/java/com/saucelabs/ci/sauceconnect/SauceConnectFourManager.java,TRUE,dbdc7d2c4a28a8d65edcd0cdece91c0bc357b869,gpt-5,TRUE
+SUPERTYPE_REMOVED,2,1,/arex-agent-java/arex-instrumentation/dubbo/arex-dubbo-apache-v2/src/main/java/io/arex/inst/dubbo/apache/v2/DubboConsumerExtractor.java,TRUE,dc9a40fde9a9fee5aaec3f60695385ba539406d4,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE,2,1,/snmpman/snmpman/src/main/java/com/oneandone/snmpman/SnmpmanAgent.java,TRUE,7f7de81d28b68b091bef2e6f6ffd1836167be6ea,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE,2,1,/snmpman/snmpman/src/main/java/com/oneandone/snmpman/SnmpmanAgent.java,TRUE,9461431622cf39efe60cf1eb03a94083780c5720,gpt-5,FALSE
+METHOD_PARAMETER_GENERICS_CHANGED,1,1,/metrics/metrics-caffeine/src/test/java/com/codahale/metrics/caffeine/MetricsStatsCounterTest.java,TRUE,aae1d8d8916bf15ca76f154e1bfc342b1cec44a6,gpt-5,TRUE
+METHOD_REMOVED; TYPE_REMOVED,4,2,/PGS/src/main/java/micycle/pgs/PGS_Meshing.java,TRUE,e70bd198fa1e1d65f86e071b8ebdd021141cfa95,gpt-5,FALSE
+METHOD_REMOVED; TYPE_REMOVED,4,2,/PGS/src/main/java/micycle/pgs/PGS_CirclePacking.java,TRUE,e70bd198fa1e1d65f86e071b8ebdd021141cfa95,gpt-5,FALSE
+METHOD_REMOVED; TYPE_REMOVED,4,2,/PGS/src/main/java/micycle/pgs/PGS_Meshing.java,TRUE,ef3f7be3e2755d4a0f9c23bdcbfe3b97198fb31b,gpt-5,FALSE
+METHOD_REMOVED; TYPE_REMOVED,4,2,/PGS/src/main/java/micycle/pgs/PGS_CirclePacking.java,TRUE,ef3f7be3e2755d4a0f9c23bdcbfe3b97198fb31b,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED,4,2,/pitest-mutation-testing-elements-plugin/src/main/java/org/pitest/elements/MutationReportListener.java,FALSE,5fcd0c3ad7727850c47602b17530dc355e5bd097,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED,4,2,/xsline/src/main/java/com/yegor256/xsline/StSchema.java,TRUE,c46fa660979b0a0098f504871fb0dc627f3dbc94,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED,4,2,/quickfixj/quickfixj-core/src/main/java/quickfix/mina/initiator/IoSessionInitiator.java,TRUE,00a7cc31784ac4a9cc27d506a73ae589d6df36d6,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED,4,2,/quickfixj/quickfixj-core/src/main/java/quickfix/mina/initiator/InitiatorProxyIoHandler.java,TRUE,00a7cc31784ac4a9cc27d506a73ae589d6df36d6,gpt-5,FALSE
+METHOD_RETURN_TYPE_CHANGED; TYPE_REMOVED,2,2,/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java,TRUE,88a20ece4db960e35fbfa39fcb40e61daceb15b1,gpt-5,FALSE
+METHOD_RETURN_TYPE_CHANGED; TYPE_REMOVED,2,2,/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java,TRUE,d54b56b91c11f21b97d4903143b04b7c1f10c255,gpt-5,FALSE
+METHOD_REMOVED; SUPERTYPE_REMOVED,1,2,/gauge-java/src/main/java/com/thoughtworks/gauge/scan/ClasspathScanner.java,TRUE,a4c360001134c2e3a9f7fbde88a07a9fd767e78e,gpt-5,TRUE
+METHOD_ABSTRACT_ADDED_TO_CLASS; TYPE_REMOVED,1,2,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,FALSE,f714a41f0ffe9720939d4980da5119d1f45bd770,gpt-5,FALSE
+METHOD_NOW_FINAL; METHOD_REMOVED,1,2,/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/DeferredScatterOutputStream.java,FALSE,ee0827d4c9bf80982241e8c3559dceb8b39063e4,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphContextImpl.java,FALSE,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java,FALSE,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/RedisGraphPipeline.java,FALSE,ea03f6488449fcfe8cd0a678b4c64891e1427a32,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphTransactionImpl.java,FALSE,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/RedisGraphTransaction.java,FALSE,ea03f6488449fcfe8cd0a678b4c64891e1427a32,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphPipeline.java,TRUE,ea03f6488449fcfe8cd0a678b4c64891e1427a32,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphTransaction.java,TRUE,ea03f6488449fcfe8cd0a678b4c64891e1427a32,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java,TRUE,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/ContextedRedisGraph.java,TRUE,ea03f6488449fcfe8cd0a678b4c64891e1427a32,gpt-5,FALSE
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/GraphTransaction.java,TRUE,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_RETURN_TYPE_CHANGED; TYPE_REMOVED,3,3,/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java,TRUE,88a20ece4db960e35fbfa39fcb40e61daceb15b1,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_RETURN_TYPE_CHANGED; TYPE_REMOVED,3,3,/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java,FALSE,88a20ece4db960e35fbfa39fcb40e61daceb15b1,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_RETURN_TYPE_CHANGED; TYPE_REMOVED,3,3,/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java,TRUE,d54b56b91c11f21b97d4903143b04b7c1f10c255,gpt-5,FALSE
+METHOD_REMOVED; METHOD_RETURN_TYPE_CHANGED; SUPERTYPE_REMOVED,2,3,/PGS/src/main/java/micycle/pgs/PGS_PointSet.java,TRUE,e70bd198fa1e1d65f86e071b8ebdd021141cfa95,gpt-5,FALSE
+METHOD_REMOVED; METHOD_RETURN_TYPE_CHANGED; SUPERTYPE_REMOVED,2,3,/PGS/src/main/java/micycle/pgs/PGS_PointSet.java,TRUE,ef3f7be3e2755d4a0f9c23bdcbfe3b97198fb31b,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; TYPE_REMOVED,1,3,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,ae16b526695fe275ab5e6a1992916875d26da860,gpt-5,FALSE
+CLASS_NOW_ABSTRACT; CLASS_NOW_FINAL; METHOD_REMOVED,1,3,/billy/billy-gin/src/main/java/com/premiumminds/billy/gin/services/impl/pdf/FOPPDFTransformer.java,TRUE,36859167815292f279e570d39dd2ddbcf1622dc6,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,7fb959ccb8c9b32bd6cbc9fc95ed70c4d9c85575,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,0e8625f492854a78c0e1ceff67b2abd7e081d42b,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,d3af06df4613be146bb9f8034e1a8a3098050c82,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,f26cd85b97b24c07a2e446f43ac8793619fa0724,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,8fbb6deb112102ef7507a8e68c5215e5f481d03b,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,1fc5281e0688c44025fe2b390a7d6e3e3088f385,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,95b2c15de16fd9fd612ce73672e29b613ce7a909,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,TRUE,5287fc631fa78e7f11d39983824cdd4215b9a03b,gpt-5,FALSE
+METHOD_ABSTRACT_ADDED_TO_CLASS; METHOD_ADDED_TO_INTERFACE; METHOD_NOW_FINAL; METHOD_REMOVED,1,4,/liquibase-mssql/src/java/liquibase/ext/mssql/database/MSSQLDatabase.java,TRUE,feb582661e77de66eadaa7550720a8751b266ee4,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; METHOD_RETURN_TYPE_CHANGED; TYPE_REMOVED,1,4,/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java,TRUE,d54b56b91c11f21b97d4903143b04b7c1f10c255,gpt-5,FALSE
+METHOD_ADDED_TO_INTERFACE; METHOD_NOW_FINAL; METHOD_NOW_STATIC; METHOD_REMOVED; SUPERTYPE_REMOVED,1,5,/bval/bval-jsr/src/test/java/org/apache/bval/jsr/DefaultMessageInterpolatorTest.java,TRUE,2dfaa41bfb97674d11f09a5885011f19808548a3,gpt-5,FALSE
