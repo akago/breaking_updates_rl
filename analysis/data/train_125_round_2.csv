@@ -124,4 +124,3 @@ TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/TaskContr
 METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/WWCInventoryManager.java,True,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,False,['METHOD_REMOVED']
 FIELD_REMOVED,3,1,/quickfixj/quickfixj-core/src/main/java/quickfix/mina/ssl/SSLFilter.java,True,00a7cc31784ac4a9cc27d506a73ae589d6df36d6,gpt-5,False,['FIELD_REMOVED']
 TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/ExcludesMojoTest.java,True,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,False,['TYPE_REMOVED']
-FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphContextImpl.java,False,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,False,"['FIELD_REMOVED', 'FIELD_TYPE_CHANGED', 'TYPE_REMOVED']"

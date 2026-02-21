@@ -1,0 +1,26 @@
+BC_kinds,#files with this BC_kinds,BC_kinds_count,absolute_path_to_file_in_container,file_success,breakingCommit,model,build_success,bc_types
+TYPE_REMOVED,165,1,/lithium/src/main/java/com/wire/lithium/Configuration.java,True,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,False,['TYPE_REMOVED']
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java,True,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,False,"['FIELD_REMOVED', 'FIELD_TYPE_CHANGED', 'TYPE_REMOVED']"
+TYPE_REMOVED,165,1,/java-bitpay-client/src/setup/java/BitPaySetup.java,True,de0a83ba9708170ae984b049781321f04caa82b3,gpt-5,False,['TYPE_REMOVED']
+METHOD_ABSTRACT_ADDED_TO_CLASS; TYPE_REMOVED,1,2,/XChange/xchange-stream-service-pubnub/src/main/java/info/bitrich/xchangestream/service/pubnub/PubnubStreamingService.java,False,f714a41f0ffe9720939d4980da5119d1f45bd770,gpt-5,False,"['METHOD_ABSTRACT_ADDED_TO_CLASS', 'TYPE_REMOVED']"
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/CompleteMojoTest.java,True,f3c21936175d1aada8ae02617b66d32a748953f4,gpt-5,False,['TYPE_REMOVED']
+TYPE_REMOVED,165,1,/singer/thrift-logger/src/main/java/com/pinterest/singer/client/logback/AppenderUtils.java,True,23a8e39dacd2caa10813fd384cf2aa6d8782f6a2,gpt-5,False,['TYPE_REMOVED']
+TYPE_REMOVED,165,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java,True,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,False,['TYPE_REMOVED']
+TYPE_REMOVED,165,1,/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/ByteArrayOutputStream.java,True,ee0827d4c9bf80982241e8c3559dceb8b39063e4,gpt-5,False,['TYPE_REMOVED']
+TYPE_REMOVED,165,1,/assertj-vavr/src/main/java/org/assertj/vavr/api/VavrAssumptions.java,True,1cc7071371953a7880c2c2c3a5a32c36af7f88f9,gpt-5,True,['TYPE_REMOVED']
+METHOD_REMOVED,52,1,/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUITargetLanguage.java,True,832e0f184efdad0fcf15d14cb7af5e30239ff454,gpt-5,False,['METHOD_REMOVED']
+METHOD_REMOVED; TYPE_REMOVED,4,2,/PGS/src/main/java/micycle/pgs/PGS_CirclePacking.java,True,e70bd198fa1e1d65f86e071b8ebdd021141cfa95,gpt-5,False,"['METHOD_REMOVED', 'TYPE_REMOVED']"
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java,True,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,True,['METHOD_REMOVED']
+METHOD_REMOVED,52,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java,True,e95500250fb1c490cefebb0ce36549844b45bf6d,gpt-5,True,['METHOD_REMOVED']
+TYPE_REMOVED,165,1,/assertj-vavr/src/main/java/org/assertj/vavr/api/ClassLoadingStrategyFactory.java,True,1cc7071371953a7880c2c2c3a5a32c36af7f88f9,gpt-5,True,['TYPE_REMOVED']
+METHOD_ADDED_TO_INTERFACE,2,1,/snmpman/snmpman/src/main/java/com/oneandone/snmpman/SnmpmanAgent.java,True,7f7de81d28b68b091bef2e6f6ffd1836167be6ea,gpt-5,False,['METHOD_ADDED_TO_INTERFACE']
+METHOD_REMOVED,52,1,/nem/nis/src/main/java/org/nem/specific/deploy/appconfig/NisAppConfig.java,True,b6a48a6e557fad1ceda680618e0a34c7b8c5c087,gpt-5,False,['METHOD_REMOVED']
+METHOD_REMOVED; SUPERTYPE_REMOVED,1,2,/gauge-java/src/main/java/com/thoughtworks/gauge/scan/ClasspathScanner.java,True,a4c360001134c2e3a9f7fbde88a07a9fd767e78e,gpt-5,True,"['METHOD_REMOVED', 'SUPERTYPE_REMOVED']"
+TYPE_REMOVED,165,1,/jakartaee-mvc-sample/src/main/java/com/example/web/GreetingController.java,True,500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6,gpt-5,False,['TYPE_REMOVED']
+TYPE_REMOVED,165,1,/liquibase-mssql/src/java/liquibase/ext/mssql/sqlgenerator/AddPrimaryKeyGeneratorMSSQL.java,True,feb582661e77de66eadaa7550720a8751b266ee4,gpt-5,False,['TYPE_REMOVED']
+METHOD_REMOVED; TYPE_REMOVED,4,2,/PGS/src/main/java/micycle/pgs/PGS_CirclePacking.java,True,ef3f7be3e2755d4a0f9c23bdcbfe3b97198fb31b,gpt-5,False,"['METHOD_REMOVED', 'TYPE_REMOVED']"
+TYPE_REMOVED,165,1,/guice/extensions/struts2/test/com/google/inject/struts2/Struts2FactoryTest.java,True,6c53cd904bd66fc79af8687571e607c259226b81,gpt-5,True,['TYPE_REMOVED']
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,8,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,True,95b2c15de16fd9fd612ce73672e29b613ce7a909,gpt-5,False,"['METHOD_ADDED_TO_INTERFACE', 'METHOD_REMOVED', 'SUPERTYPE_REMOVED', 'TYPE_REMOVED']"
+METHOD_ABSTRACT_ADDED_TO_CLASS; METHOD_ADDED_TO_INTERFACE; METHOD_NOW_FINAL; METHOD_REMOVED,1,4,/liquibase-mssql/src/java/liquibase/ext/mssql/database/MSSQLDatabase.java,True,feb582661e77de66eadaa7550720a8751b266ee4,gpt-5,False,"['METHOD_ABSTRACT_ADDED_TO_CLASS', 'METHOD_ADDED_TO_INTERFACE', 'METHOD_NOW_FINAL', 'METHOD_REMOVED']"
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,10,3,/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphTransactionImpl.java,False,24009637735a09b1c1bac0a32e2e5609710bb418,gpt-5,False,"['FIELD_REMOVED', 'FIELD_TYPE_CHANGED', 'TYPE_REMOVED']"
+METHOD_REMOVED,52,1,/google-cloud-java/java-dns/src/main/java/com/google/cloud/dns/spi/v1/HttpDnsRpc.java,True,7d0e38fa9d6a9f96afdc0143fa44b4145e3555d8,gpt-5,False,['METHOD_REMOVED']
