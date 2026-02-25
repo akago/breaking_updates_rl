@@ -1,2 +1,2 @@
-BC_kinds,#files with this BC_kinds,BC_kinds_count,absolute_path_to_file_in_container,file_success,breakingCommit,model,build_success,bc_types
-TYPE_REMOVED,165,1,/lithium/src/main/java/com/wire/lithium/Configuration.java,True,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,False,['TYPE_REMOVED']
+BC_kinds,#files with this BC_kinds,BC_kinds_count,absolute_path_to_file_in_container,file_success,breakingCommit,model,build_success,bc_types,project
+TYPE_REMOVED,165,1,/lithium/src/main/java/com/wire/lithium/Configuration.java,True,686ea4e18114ac180e35ca1c07e1f2e6dfbffbe0,gpt-5,False,['TYPE_REMOVED'],lithium
