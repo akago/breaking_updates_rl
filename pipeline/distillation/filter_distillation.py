@@ -17,7 +17,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 
 
-SFT_JSON_PATH = SFT_DATASET_PATH / "sft_data.jsonl"
+SFT_JSON_PATH = SFT_DATASET_PATH / "sft_data_updated.jsonl"
 
 
 def filter_test_success(patches_per_bu: dict) -> tuple[dict, dict]:
@@ -95,7 +95,7 @@ def main():
     
     
     # aggregate at project level
-    patches_per_bu = aggragate_by_bu(pseudo_patches,to_save=True)
+    patches_per_bu = aggragate_by_bu(pseudo_patches)
     
     logging.info("number of breaking updates:", len(patches_per_bu))
 

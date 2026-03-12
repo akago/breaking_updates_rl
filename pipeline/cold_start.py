@@ -114,8 +114,8 @@ def cold_start(model, output, epoch):
         response_part = "<start_of_turn>model\n",
     )
 
-    print(tokenizer.decode(trainer.train_dataset[99]["input_ids"]))
-    print(tokenizer.decode([tokenizer.pad_token_id if x == -100 else x for x in trainer.train_dataset[99]["labels"]]).replace(tokenizer.pad_token, " "))
+    # print(tokenizer.decode(trainer.train_dataset[99]["input_ids"]))
+    # print(tokenizer.decode([tokenizer.pad_token_id if x == -100 else x for x in trainer.train_dataset[99]["labels"]]).replace(tokenizer.pad_token, " "))
     # model.save_pretrained("/home/xchen6/breaking_updates_rl/results/sft_gemma4b/lora_model")
     # tokenizer.save_pretrained("/home/xchen6/breaking_updates_rl/results/sft_gemma4b/lora_model")
 

@@ -96,7 +96,7 @@ if __name__ == "__main__":
     # parser.add_argument("input", help="Ruta al archivo .jsonl de entrada")
     # parser.add_argument("output", help="Ruta al archivo .csv de salida")
     # args = parser.parse_args()
-    input_file = "/home/xchen6/breaking_updates_rl/data/sft/sft_data.jsonl"
-    data_output = "data1.csv"
+    input_file = "/home/xchen6/breaking_updates_rl/data/sft/sft_data_updated.jsonl"
+    data_output = "data2.csv"
     convert_jsonl_to_breaking_csv(input_file, data_output)
  
