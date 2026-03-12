@@ -124,7 +124,8 @@ class BUTrainingset(BUDataset):
         """Splits the dataset into parts by breaking change type at file level."""
         flattened_data = self.flatten()
         # TODO: filter by bc_type
-        filtered_data = [item for item in flattened_data if bc_type in BreakingUpdateSample.get_bc_types_file_level(item)]
+        # filtered_data = [item for item in flattened_data if bc_type in BreakingUpdateSample.get_bc_types_file_level(item)]
+        filtered_data = [item for item in flattened_data if bc_type in BreakingUpdateSample.get_bc_types_file_level(item) and len(BreakingUpdateSample.get_bc_types_file_level(item))==1]
         if shuffle:
             random.seed(seed)
             random.shuffle(filtered_data)
