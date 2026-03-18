@@ -1,0 +1,17 @@
+generation:
+  backend: unsloth
+  input_path: /home/xchen6/breaking_updates_rl/data/prompts_diff/test.jsonl
+  output_base_dir: /home/xchen6/breaking_updates_rl/results
+  model_id: unsloth/gemma-3-12b-it-unsloth-bnb-4bit
+  max_seq_length: 35000
+  max_input_tokens: 32000
+  max_new_tokens: 4000
+  load_in_4bit: true
+  load_in_8bit: false
+  full_finetuning: false
+
+evaluation:
+  backend: container_patcher
+  input_path: /home/xchen6/breaking_updates_rl/results/your_run_folder
+  run_tests: true
+  stats_filename: overall_statistics_new.json

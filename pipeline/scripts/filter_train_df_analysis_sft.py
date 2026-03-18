@@ -24,7 +24,7 @@ from typing import Any
 
 CSV_PATH = Path("analysis/data/train_df_analysis.csv")
 INPUT_DATA = Path("data/sft/sft_data_train.jsonl")
-OUTPUT_JSON = Path("analysis/data/train_df_analysis.json")
+OUTPUT_JSON = Path("analysis/data/test_set.json")
 
 
 def load_target_keys(csv_path: Path) -> set[tuple[str, str]]:
