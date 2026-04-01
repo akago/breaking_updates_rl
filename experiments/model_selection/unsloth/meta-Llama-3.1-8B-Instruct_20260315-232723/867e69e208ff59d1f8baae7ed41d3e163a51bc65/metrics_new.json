@@ -1,0 +1,15 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 4,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 2,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/singer/singer/src/main/java/com/pinterest/singer/reader/ThriftReader.java": 2,
+    "/singer/singer/src/main/java/com/pinterest/singer/utils/SimpleThriftLogger.java": 0
+  },
+  "new_errors": {
+    "/singer/singer/src/main/java/com/pinterest/singer/utils/SimpleThriftLogger.java": 0
+  }
+}

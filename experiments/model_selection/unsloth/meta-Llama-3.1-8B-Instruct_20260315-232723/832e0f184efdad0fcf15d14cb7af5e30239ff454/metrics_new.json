@@ -1,0 +1,17 @@
+{
+  "original_file_count": 6,
+  "original_error_count": 16,
+  "build_success": false,
+  "fixed_file_count": 6,
+  "fixed_error_count": 16,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUISourceLanguage.java": 4,
+    "/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUIChatMenu.java": 2,
+    "/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUITargetLanguage.java": 1,
+    "/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/WWCInventoryManager.java": 1,
+    "/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/wwctranslategui/WWCTranslateGUIMainMenu.java": 7,
+    "/WorldwideChat/src/main/java/com/expl0itz/worldwidechat/inventory/configuration/ConfigurationMessagesOverridePossibleListGUI.java": 1
+  },
+  "new_errors": {}
+}

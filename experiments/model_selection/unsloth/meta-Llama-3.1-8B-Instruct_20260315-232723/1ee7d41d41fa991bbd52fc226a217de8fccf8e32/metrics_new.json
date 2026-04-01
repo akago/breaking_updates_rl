@@ -1,0 +1,16 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 3,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 7,
+  "fixed_errors": {
+    "/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/BaseCycloneDxMojo.java": 0
+  },
+  "new_errors": {
+    "/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/BaseCycloneDxMojo.java": 0,
+    "/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/ModelConverter.java": 2,
+    "/cyclonedx-maven-plugin/src/main/java/org/cyclonedx/maven/DefaultModelConverter.java": 5
+  }
+}

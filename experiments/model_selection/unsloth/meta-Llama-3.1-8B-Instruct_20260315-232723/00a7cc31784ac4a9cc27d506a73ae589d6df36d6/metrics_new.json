@@ -1,0 +1,20 @@
+{
+  "original_file_count": 4,
+  "original_error_count": 5,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/initiator/InitiatorProxyIoHandler.java": 0,
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/acceptor/AbstractSocketAcceptor.java": 0,
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/initiator/IoSessionInitiator.java": 0,
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/ssl/SSLFilter.java": 0
+  },
+  "new_errors": {
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/initiator/InitiatorProxyIoHandler.java": 0,
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/acceptor/AbstractSocketAcceptor.java": 0,
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/initiator/IoSessionInitiator.java": 0,
+    "/quickfixj/quickfixj-core/src/main/java/quickfix/mina/ssl/SSLFilter.java": 0
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "original_file_count": 5,
+  "original_error_count": 70,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 15,
+  "new_errors_count": 25,
+  "fixed_errors": {
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/RedisGraphTransaction.java": 6,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/RedisGraphPipeline.java": 5,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphTransaction.java": 4,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/ContextedRedisGraph.java": 0,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphPipeline.java": 0
+  },
+  "new_errors": {
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/RedisGraphTransaction.java": 13,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/RedisGraphPipeline.java": 9,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphTransaction.java": 1,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/impl/api/ContextedRedisGraph.java": 2,
+    "/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphPipeline.java": 0
+  }
+}

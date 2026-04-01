@@ -1,0 +1,21 @@
+{
+  "original_file_count": 4,
+  "original_error_count": 11,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 3,
+  "fixed_errors": {
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/ByteArrayOutputStream.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/DeferredScatterOutputStream.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/jar/JarToolModularJarArchiver.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/OffloadingOutputStream.java": 0
+  },
+  "new_errors": {
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/ByteArrayOutputStream.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/DeferredScatterOutputStream.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/jar/JarToolModularJarArchiver.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/OffloadingOutputStream.java": 0,
+    "/plexus-archiver/src/main/java/org/codehaus/plexus/archiver/zip/AbstractZipUnArchiver.java": 3
+  }
+}

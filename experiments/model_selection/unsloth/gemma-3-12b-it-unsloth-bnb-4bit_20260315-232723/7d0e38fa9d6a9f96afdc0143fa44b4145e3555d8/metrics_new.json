@@ -1,0 +1,14 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 9,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/google-cloud-java/java-dns/src/main/java/com/google/cloud/dns/spi/v1/HttpDnsRpc.java": 0
+  },
+  "new_errors": {
+    "/google-cloud-java/java-dns/src/main/java/com/google/cloud/dns/spi/v1/HttpDnsRpc.java": 0
+  }
+}

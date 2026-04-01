@@ -1,0 +1,24 @@
+{
+  "original_file_count": 6,
+  "original_error_count": 6,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java": 0
+  },
+  "new_errors": {
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java": 0,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java": 0
+  }
+}

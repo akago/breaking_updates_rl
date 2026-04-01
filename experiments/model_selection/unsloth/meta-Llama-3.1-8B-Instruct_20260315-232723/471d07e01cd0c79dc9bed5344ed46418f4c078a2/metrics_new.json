@@ -1,0 +1,28 @@
+{
+  "original_file_count": 7,
+  "original_error_count": 77,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 2,
+  "new_errors_count": 21,
+  "fixed_errors": {
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ProjectInfo.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/testing/LocalResourceManagerHelper.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/spi/v1beta1/ResourceManagerRpc.java": 1,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/PolicyMarshaller.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ConstraintInfo.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/spi/v1beta1/HttpResourceManagerRpc.java": 1,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/Project.java": 0
+  },
+  "new_errors": {
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ProjectInfo.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/testing/LocalResourceManagerHelper.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/spi/v1beta1/ResourceManagerRpc.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/PolicyMarshaller.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ConstraintInfo.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/spi/v1beta1/HttpResourceManagerRpc.java": 3,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/Project.java": 0,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/OrgPolicyInfo.java": 16,
+    "/google-cloud-java/java-resourcemanager/google-cloud-resourcemanager/src/main/java/com/google/cloud/resourcemanager/ResourceManagerImpl.java": 2
+  }
+}

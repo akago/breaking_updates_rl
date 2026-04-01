@@ -1,0 +1,16 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 5,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 1,
+  "new_errors_count": 2,
+  "fixed_errors": {
+    "/geostore/src/core/security/src/main/java/it/geosolutions/geostore/core/security/password/GeoStoreDigestPasswordEncoder.java": 0,
+    "/geostore/src/core/security/src/main/java/it/geosolutions/geostore/core/security/password/GeoStorePBEPasswordEncoder.java": 1
+  },
+  "new_errors": {
+    "/geostore/src/core/security/src/main/java/it/geosolutions/geostore/core/security/password/GeoStoreDigestPasswordEncoder.java": 0,
+    "/geostore/src/core/security/src/main/java/it/geosolutions/geostore/core/security/password/GeoStorePBEPasswordEncoder.java": 2
+  }
+}

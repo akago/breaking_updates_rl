@@ -1,0 +1,16 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 2,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/jcabi-s3/src/test/java/com/jcabi/s3/AwsOcketITCase.java": 0,
+    "/jcabi-s3/src/test/java/com/jcabi/s3/BucketRule.java": 0
+  },
+  "new_errors": {
+    "/jcabi-s3/src/test/java/com/jcabi/s3/AwsOcketITCase.java": 0,
+    "/jcabi-s3/src/test/java/com/jcabi/s3/BucketRule.java": 0
+  }
+}

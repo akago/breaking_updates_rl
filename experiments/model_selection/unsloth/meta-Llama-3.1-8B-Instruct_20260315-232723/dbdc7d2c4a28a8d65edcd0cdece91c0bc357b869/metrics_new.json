@@ -1,0 +1,14 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 1,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 1,
+  "new_errors_count": 2,
+  "fixed_errors": {
+    "/ci-sauce/src/main/java/com/saucelabs/ci/sauceconnect/SauceConnectFourManager.java": 1
+  },
+  "new_errors": {
+    "/ci-sauce/src/main/java/com/saucelabs/ci/sauceconnect/SauceConnectFourManager.java": 2
+  }
+}

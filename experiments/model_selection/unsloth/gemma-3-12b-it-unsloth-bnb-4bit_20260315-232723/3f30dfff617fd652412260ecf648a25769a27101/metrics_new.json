@@ -1,0 +1,13 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 10,
+  "build_success": false,
+  "fixed_file_count": 2,
+  "fixed_error_count": 10,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/Replaceable.java": 2,
+    "/cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.java": 8
+  },
+  "new_errors": {}
+}

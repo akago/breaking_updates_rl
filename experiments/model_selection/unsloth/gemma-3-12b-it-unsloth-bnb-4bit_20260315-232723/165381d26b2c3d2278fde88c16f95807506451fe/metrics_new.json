@@ -1,0 +1,12 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 1,
+  "build_success": true,
+  "fixed_file_count": 1,
+  "fixed_error_count": 2,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/scheduler/safeplace/src/test/java/org/btrplace/safeplace/DSN.java": 2
+  },
+  "new_errors": {}
+}

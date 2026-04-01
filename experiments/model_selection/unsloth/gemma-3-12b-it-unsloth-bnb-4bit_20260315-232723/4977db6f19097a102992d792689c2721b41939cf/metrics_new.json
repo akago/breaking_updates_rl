@@ -1,0 +1,17 @@
+{
+  "original_file_count": 6,
+  "original_error_count": 6,
+  "build_success": true,
+  "fixed_file_count": 6,
+  "fixed_error_count": 6,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Bounds_.java": 1,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Node_.java": 1,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Context_.java": 1,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Entry_.java": 1,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java": 1,
+    "/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java": 1
+  },
+  "new_errors": {}
+}

@@ -1,0 +1,86 @@
+{
+    "absolute_path_to_file_in_container": "/jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java",
+    "errors": [
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "javax.mvc.locale.LocaleResolver",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "",
+            "file_name": "QueryParamLocaleResolver.java",
+            "line_number": 10,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[10,24] package javax.mvc.locale does not exist",
+            "uid": "804a2cbb-c13f-54e6-921f-57c94ff47fa9"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "javax.mvc.locale.LocaleResolver",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "",
+            "file_name": "QueryParamLocaleResolver.java",
+            "line_number": 11,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[11,24] package javax.mvc.locale does not exist",
+            "uid": "804a2cbb-c13f-54e6-921f-57c94ff47fa9"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "javax.mvc.locale.LocaleResolver",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "  symbol: class LocaleResolver",
+            "file_name": "QueryParamLocaleResolver.java",
+            "line_number": 35,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[35,50] cannot find symbol",
+            "uid": "5f79adc8-9690-5caf-8218-9c526b88e5b2"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "javax.mvc.locale.LocaleResolver",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                },
+                {
+                    "element": "javax.mvc.locale.LocaleResolverContext",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "  symbol:   class LocaleResolverContext\n  location: class com.example.web.QueryParamLocaleResolver",
+            "file_name": "QueryParamLocaleResolver.java",
+            "line_number": 41,
+            "message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[41,39] cannot find symbol",
+            "uid": "14e58a3f-e191-57f9-ad1a-0d148637782e"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\npackage com.example.web;\n// https://www.mvc-spec.org/learn/cookbook/custom_localeresolver_en.html\n\nimport java.util.Locale;\nimport java.util.logging.Level;\nimport java.util.logging.Logger;\nimport javax.annotation.Priority;\nimport javax.enterprise.context.ApplicationScoped;\nimport javax.inject.Inject;\nimport javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\nimport javax.ws.rs.core.UriInfo;\n\n/**\n * Resolver to get the {@link Locale} to use from the requests query param <i>lang</i>.\n *\n * In case there is no request param with this name, the {@link Locale} will be resolved by a higher prioritised\n * implementation.\n *\n * Example usage:\n * <pre>\n * {@code\n * # Use default locale\n * curl -X GET <your-url>\n *\n * # Set german locale by query param\n * curl -X GET <your-url>?lang=de-DE\n * }\n * </pre>\n *\n * @author Tobias Erdle\n */\n@Priority(1)\n@ApplicationScoped\npublic class QueryParamLocaleResolver implements LocaleResolver {\n    \n    @Inject\n    Logger log;\n    \n    @Override\n    public Locale resolveLocale(final LocaleResolverContext context) {\n        final String queryLang = context.getUriInfo()\n                .getQueryParameters()\n                .getFirst(\"lang\");\n        log.log(Level.INFO, \"QueryParamLocaleResolver::resolveLocale:lang:{0}\", queryLang);\n        return queryLang != null ? Locale.forLanguageTag(queryLang) : null;\n    }\n}\n\n'''\nThe error is caused by a change in the API of the dependency: jakarta.mvc-api 1.1.0->2.0.1. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- javax.mvc.RedirectScoped\n-- javax.mvc.Controller\n-- javax.mvc.Models\n-- javax.mvc.binding.BindingResult\n-- javax.mvc.View\n-- javax.mvc.security.CsrfProtected\n-- javax.mvc.binding.MvcBinding\n-- javax.mvc.MvcContext\n-- javax.mvc.UriRef\n-- javax.mvc.event.BeforeControllerEvent\n-- javax.mvc.event.BeforeProcessViewEvent\n-- javax.mvc.event.AfterControllerEvent\n-- javax.mvc.event.AfterProcessViewEvent\n-- javax.mvc.event.ControllerRedirectEvent\n-- javax.mvc.locale.LocaleResolver\n-- javax.mvc.locale.LocaleResolverContext\n++ public abstract interface null jakarta.mvc.event.AfterControllerEvent\n++ public abstract interface null jakarta.mvc.binding.MvcBinding\n++ public abstract interface null jakarta.mvc.event.ControllerRedirectEvent\n++ public abstract interface null jakarta.mvc.Models\n++ public abstract interface null jakarta.mvc.UriRef\n++ public abstract interface null jakarta.mvc.View\n++ public abstract interface null jakarta.mvc.RedirectScoped\n++ public abstract interface null jakarta.mvc.event.BeforeProcessViewEvent\n++ public abstract interface null jakarta.mvc.Controller\n++ public abstract interface null jakarta.mvc.event.AfterProcessViewEvent\n++ public abstract interface null jakarta.mvc.event.BeforeControllerEvent\n++ public abstract interface null jakarta.mvc.security.CsrfProtected\n\nThe error is triggered in the following specific lines in the previous code:\nimport javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\npublic class QueryParamLocaleResolver implements LocaleResolver {\n    public Locale resolveLocale(final LocaleResolverContext context) {\nwith the following error message:\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[10,24] package javax.mvc.locale does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[11,24] package javax.mvc.locale does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[35,50] cannot find symbol  symbol: class LocaleResolver\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[41,39] cannot find symbol  symbol:   class LocaleResolverContext\n  location: class com.example.web.QueryParamLocaleResolver\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\npublic class QueryParamLocaleResolver implements LocaleResolver {\n    public Locale resolveLocale(final LocaleResolverContext context) {",
+    "error_message": "[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[10,24] package javax.mvc.locale does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[11,24] package javax.mvc.locale does not exist\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[35,50] cannot find symbol  symbol: class LocaleResolver\n[ERROR] /jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java:[41,39] cannot find symbol  symbol:   class LocaleResolverContext\n  location: class com.example.web.QueryParamLocaleResolver",
+    "api_diff": "-- javax.mvc.RedirectScoped\n-- javax.mvc.Controller\n-- javax.mvc.Models\n-- javax.mvc.binding.BindingResult\n-- javax.mvc.View\n-- javax.mvc.security.CsrfProtected\n-- javax.mvc.binding.MvcBinding\n-- javax.mvc.MvcContext\n-- javax.mvc.UriRef\n-- javax.mvc.event.BeforeControllerEvent\n-- javax.mvc.event.BeforeProcessViewEvent\n-- javax.mvc.event.AfterControllerEvent\n-- javax.mvc.event.AfterProcessViewEvent\n-- javax.mvc.event.ControllerRedirectEvent\n-- javax.mvc.locale.LocaleResolver\n-- javax.mvc.locale.LocaleResolverContext\n++ public abstract interface null jakarta.mvc.event.AfterControllerEvent\n++ public abstract interface null jakarta.mvc.binding.MvcBinding\n++ public abstract interface null jakarta.mvc.event.ControllerRedirectEvent\n++ public abstract interface null jakarta.mvc.Models\n++ public abstract interface null jakarta.mvc.UriRef\n++ public abstract interface null jakarta.mvc.View\n++ public abstract interface null jakarta.mvc.RedirectScoped\n++ public abstract interface null jakarta.mvc.event.BeforeProcessViewEvent\n++ public abstract interface null jakarta.mvc.Controller\n++ public abstract interface null jakarta.mvc.event.AfterProcessViewEvent\n++ public abstract interface null jakarta.mvc.event.BeforeControllerEvent\n++ public abstract interface null jakarta.mvc.security.CsrfProtected",
+    "original_code": "package com.example.web;\n// https://www.mvc-spec.org/learn/cookbook/custom_localeresolver_en.html\n\nimport java.util.Locale;\nimport java.util.logging.Level;\nimport java.util.logging.Logger;\nimport javax.annotation.Priority;\nimport javax.enterprise.context.ApplicationScoped;\nimport javax.inject.Inject;\nimport javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\nimport javax.ws.rs.core.UriInfo;\n\n/**\n * Resolver to get the {@link Locale} to use from the requests query param <i>lang</i>.\n *\n * In case there is no request param with this name, the {@link Locale} will be resolved by a higher prioritised\n * implementation.\n *\n * Example usage:\n * <pre>\n * {@code\n * # Use default locale\n * curl -X GET <your-url>\n *\n * # Set german locale by query param\n * curl -X GET <your-url>?lang=de-DE\n * }\n * </pre>\n *\n * @author Tobias Erdle\n */\n@Priority(1)\n@ApplicationScoped\npublic class QueryParamLocaleResolver implements LocaleResolver {\n    \n    @Inject\n    Logger log;\n    \n    @Override\n    public Locale resolveLocale(final LocaleResolverContext context) {\n        final String queryLang = context.getUriInfo()\n                .getQueryParameters()\n                .getFirst(\"lang\");\n        log.log(Level.INFO, \"QueryParamLocaleResolver::resolveLocale:lang:{0}\", queryLang);\n        return queryLang != null ? Locale.forLanguageTag(queryLang) : null;\n    }\n}\n",
+    "project": "jakartaee-mvc-sample",
+    "libraryName": "jakarta.mvc-api",
+    "libraryGroupID": "jakarta.mvc",
+    "newVersion": "2.0.1",
+    "previousVersion": "1.1.0",
+    "breakingCommit": "500d9c021d34b307b1a70d3f29fb7f9b5ab9d1a6",
+    "label": "<think>\nThe compilation errors stem from jakarta.mvc-api 2.0.1 removing the LocaleResolver and LocaleResolverContext SPI (previously under javax.mvc.locale). They are not reintroduced under jakarta.* in 2.0.1, so the class cannot implement or reference them anymore. To adapt, we must:\n- Remove imports of the removed types and the implements clause.\n- Remove the method that depends on the removed API.\n- Migrate other javax.* imports to jakarta.* to align with Jakarta EE namespace changes (Priority, ApplicationScoped, Inject). Also remove unused imports (Locale, Level, UriInfo).\nThese minimal changes ensure the code compiles against the new API. The resolver functionality is inherently removed due to the API deletion; if locale handling is still needed, it should be reimplemented using JAX-RS mechanisms in future changes, but that\u2019s beyond the compilation fix scope.\n</think>\n```java\n<<<<<<< SEARCH\npackage com.example.web;\n// https://www.mvc-spec.org/learn/cookbook/custom_localeresolver_en.html\n\nimport java.util.Locale;\nimport java.util.logging.Level;\nimport java.util.logging.Logger;\nimport javax.annotation.Priority;\nimport javax.enterprise.context.ApplicationScoped;\nimport javax.inject.Inject;\nimport javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\nimport javax.ws.rs.core.UriInfo;\n=======\npackage com.example.web;\n// https://www.mvc-spec.org/learn/cookbook/custom_localeresolver_en.html\n\nimport java.util.logging.Logger;\nimport jakarta.annotation.Priority;\nimport jakarta.enterprise.context.ApplicationScoped;\nimport jakarta.inject.Inject;\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\npublic class QueryParamLocaleResolver implements LocaleResolver {\n=======\npublic class QueryParamLocaleResolver {\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\n    @Override\n    public Locale resolveLocale(final LocaleResolverContext context) {\n        final String queryLang = context.getUriInfo()\n                .getQueryParameters()\n                .getFirst(\"lang\");\n        log.log(Level.INFO, \"QueryParamLocaleResolver::resolveLocale:lang:{0}\", queryLang);\n        return queryLang != null ? Locale.forLanguageTag(queryLang) : null;\n    }\n=======\n    // LocaleResolver SPI was removed in Jakarta MVC 2.0; this class is kept as a placeholder.\n>>>>>>> REPLACE\n```",
+    "model": "unsloth/meta-Llama-3.1-8B-Instruct",
+    "accepted": false,
+    "patch": "package com.example.web;\n// https://www.mvc-spec.org/learn/cookbook/custom_localeresolver_en.html\n\nimport java.util.Locale;\nimport java.util.logging.Level;\nimport java.util.logging.Logger;\nimport javax.annotation.Priority;\nimport javax.enterprise.context.ApplicationScoped;\nimport javax.inject.Inject;\nimport javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\nimport javax.ws.rs.core.UriInfo;\n\n/**\n * Resolver to get the {@link Locale} to use from the requests query param <i>lang</i>.\n *\n * In case there is no request param with this name, the {@link Locale} will be resolved by a higher prioritised\n * implementation.\n *\n * Example usage:\n * <pre>\n * {@code\n * # Use default locale\n * curl -X GET <your-url>\n *\n * # Set german locale by query param\n * curl -X GET <your-url>?lang=de-DE\n * }\n * </pre>\n *\n * @author Tobias Erdle\n */\n@Priority(1)\n@ApplicationScoped\npublic class QueryParamLocaleResolver implements LocaleResolver {\n    \n    @Inject\n    Logger log;\n    \n    @Override\n    public Locale resolveLocale(final LocaleResolverContext context) {\n        final String queryLang = context.getUriInfo()\n                .getQueryParameters()\n                .getFirst(\"lang\");\n        log.log(Level.INFO, \"QueryParamLocaleResolver::resolveLocale:lang:{0}\", queryLang);\n        return queryLang != null ? Locale.forLanguageTag(queryLang) : null;\n    }\n}\n",
+    "raw_completion": "<think>\nThe client code is failing due to the changes in the jakarta.mvc-api dependency version 1.1.0 to 2.0.1. The specific changes causing the failure are the removal of the javax.mvc.locale package and the introduction of the jakarta.mvc.locale package. The client code is trying to import and use classes from the javax.mvc.locale package, which no longer exists in the updated dependency.\n\nTo fix this issue, we need to update the import statements to use the new package name. We also need to update the class names to match the new package.\n\nThe client code is using the LocaleResolver and LocaleResolverContext classes from the javax.mvc.locale package. In the updated dependency, these classes are now located in the jakarta.mvc.locale package.\n\nWe can fix this by updating the import statements to use the new package name and updating the class names to match the new package.\n\nAdditionally, we need to update the class name of the QueryParamLocaleResolver class to implement the new interface name, which is jakarta.mvc.locale.LocaleResolver.\n\n</think>\n\n```java\n<<<<<<< SEARCH\nimport javax.mvc.locale.LocaleResolver;\nimport javax.mvc.locale.LocaleResolverContext;\n>>>>>>> REPLACE\nimport jakarta.mvc.locale.LocaleResolver;\nimport jakarta.mvc.locale.LocaleResolverContext;\n\n<<<<<<< SEARCH\npublic class QueryParamLocaleResolver implements LocaleResolver {\n    public Locale resolveLocale(final LocaleResolverContext context) {\n>>>>>>> REPLACE\npublic class QueryParamLocaleResolver implements jakarta.mvc.locale.LocaleResolver {\n    public Locale resolveLocale(final jakarta.mvc.locale.LocaleResolverContext context) {\n```\n\nNote: The above fix assumes that the jakarta.mvc.locale package is available in the project's classpath. If not, you may need to add the necessary dependencies or adjust the import statements accordingly."
+}
