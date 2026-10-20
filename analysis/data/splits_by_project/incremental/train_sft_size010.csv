@@ -1,0 +1,11 @@
+BC_kinds,BC_kinds_count,absolute_path_to_file_in_container,file_success,breakingCommit,model,build_success,bc_types,project
+TYPE_REMOVED,1,/java-bitpay-client/src/main/java/com/bitpay/sdk/Client.java,True,de0a83ba9708170ae984b049781321f04caa82b3,gpt-5,False,['TYPE_REMOVED'],java-bitpay-client
+METHOD_ADDED_TO_INTERFACE; METHOD_REMOVED; SUPERTYPE_REMOVED; TYPE_REMOVED,4,/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java,True,7fb959ccb8c9b32bd6cbc9fc95ed70c4d9c85575,gpt-5,False,"['METHOD_ADDED_TO_INTERFACE', 'METHOD_REMOVED', 'SUPERTYPE_REMOVED', 'TYPE_REMOVED']",jadler
+TYPE_REMOVED,1,/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java,True,fb038ef3a078e45abab4ecc6728a3d0d89bbe01f,gpt-5,False,['TYPE_REMOVED'],license-maven-plugin
+FIELD_REMOVED; FIELD_TYPE_CHANGED; TYPE_REMOVED,3,/JRedisGraph/src/main/java/com/redislabs/redisgraph/RedisGraphTransaction.java,True,ea03f6488449fcfe8cd0a678b4c64891e1427a32,gpt-5,False,"['FIELD_REMOVED', 'FIELD_TYPE_CHANGED', 'TYPE_REMOVED']",JRedisGraph
+TYPE_REMOVED,1,/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java,True,3eb708f53f5f1ce897c3554bb73f5de5698dd171,gpt-5,False,['TYPE_REMOVED'],google-cloud-java
+METHOD_REMOVED,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Tree_.java,True,7d832b086a800bbd42be97bf65e044d738ffc597,gpt-5,True,['METHOD_REMOVED'],rtree
+METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION,1,/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/ModelRepresenter.java,True,1e17e176460ab4283e463e62fece844d341da7f0,gpt-5,False,['METHOD_NO_LONGER_THROWS_CHECKED_EXCEPTION'],polyglot-maven
+TYPE_REMOVED,1,/jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java,True,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,False,['TYPE_REMOVED'],jakartaee-mvc-sample
+TYPE_REMOVED,1,/jakartaee-mvc-sample/src/main/java/com/example/web/AlertMessage.java,True,5cf5a482bd430d81257b4ecd85b3d4f7da911621,gpt-5,False,['TYPE_REMOVED'],jakartaee-mvc-sample
+METHOD_REMOVED,1,/rtree/src/main/java/com/github/davidmoten/rtree/fbs/generated/Geometry_.java,True,4977db6f19097a102992d792689c2721b41939cf,gpt-5,True,['METHOD_REMOVED'],rtree
