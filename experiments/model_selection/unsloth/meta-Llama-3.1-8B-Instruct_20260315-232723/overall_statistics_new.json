@@ -1,0 +1,15 @@
+{
+  "successful_fixes": 2,
+  "total_projects": 126,
+  "total_original_error_count": 1253,
+  "total_fixed_error_count": 214,
+  "total_original_file_count": 268,
+  "total_fixed_file_count": 44,
+  "evaluated_original_error_count": 1251,
+  "evaluated_original_file_count": 270,
+  "baseline_input_path": "/home/xchen6/breaking_updates_rl/analysis/data/full_data_without_none.json",
+  "BuildSuccessRate": 0.015873015873015872,
+  "FileFixSuccessRate": 0.16417910447761194,
+  "CompilationErrorFixRate": 0.1707901037509976,
+  "RelativeErrorFixRatio": -0.028731045490822026
+}

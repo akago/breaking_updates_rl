@@ -1,0 +1,27 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 18,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 80,
+  "fixed_errors": {
+    "/lithium/src/main/java/com/wire/lithium/Server.java": 0,
+    "/lithium/src/main/java/com/wire/lithium/Configuration.java": 0
+  },
+  "new_errors": {
+    "/lithium/src/main/java/com/wire/lithium/Server.java": 0,
+    "/lithium/src/main/java/com/wire/lithium/Configuration.java": 0,
+    "/lithium/src/main/java/com/wire/lithium/server/monitoring/VersionResource.java": 8,
+    "/lithium/src/main/java/com/wire/lithium/server/resources/MessageResource.java": 7,
+    "/lithium/src/main/java/com/wire/lithium/ClientRepo.java": 4,
+    "/lithium/src/main/java/com/wire/lithium/server/resources/BotsResource.java": 12,
+    "/lithium/src/main/java/com/wire/lithium/server/monitoring/RequestMdcFactoryFilter.java": 7,
+    "/lithium/src/main/java/com/wire/lithium/server/monitoring/WireAppenderFactory.java": 8,
+    "/lithium/src/main/java/com/wire/lithium/API.java": 16,
+    "/lithium/src/main/java/com/wire/lithium/server/monitoring/StatusCheckFilter.java": 2,
+    "/lithium/src/main/java/com/wire/lithium/server/monitoring/AccessEventJsonLayout.java": 1,
+    "/lithium/src/main/java/com/wire/lithium/server/filters/AuthenticationFilter.java": 9,
+    "/lithium/src/main/java/com/wire/lithium/server/monitoring/StatusResource.java": 6
+  }
+}

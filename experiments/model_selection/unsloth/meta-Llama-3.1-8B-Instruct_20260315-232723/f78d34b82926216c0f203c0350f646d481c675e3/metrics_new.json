@@ -1,0 +1,17 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 7,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 5,
+  "new_errors_count": 4,
+  "fixed_errors": {
+    "/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Objects/Decorations.java": 0,
+    "/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Detect/NPCTeleport.java": 5
+  },
+  "new_errors": {
+    "/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Objects/Decorations.java": 0,
+    "/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Learn/Neuron.java": 2,
+    "/PeyangSuperbAntiCheat/src/main/java/ml/peya/plugins/Utils/PlayerUtils.java": 2
+  }
+}

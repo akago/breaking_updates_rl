@@ -1,0 +1,12 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 1,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 1,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/polyglot-maven/polyglot-yaml/src/main/java/org/sonatype/maven/polyglot/yaml/ModelRepresenter.java": 1
+  },
+  "new_errors": {}
+}

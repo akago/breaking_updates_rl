@@ -1,0 +1,27 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 25,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 68,
+  "fixed_errors": {
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/model/ProjectDependencyAnalysis.java": 0
+  },
+  "new_errors": {
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/model/ProjectDependencyAnalysis.java": 0,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/AbstractDebloater.java": 7,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/model/Dependency.java": 7,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/DepCleanManager.java": 2,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/model/ProjectContext.java": 8,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ActualUsedClasses.java": 2,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ClassFileVisitorUtils.java": 2,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/DefaultClassAnalyzer.java": 1,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/DefaultProjectDependencyAnalyzer.java": 6,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/ProjectDependencyAnalysisBuilder.java": 27,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/asm/DependencyClassFileVisitor.java": 1,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/graph/DefaultCallGraph.java": 2,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/analysis/src/ImportsAnalyzer.java": 1,
+    "/depclean/depclean-core/src/main/java/se/kth/depclean/core/util/JarUtils.java": 2
+  }
+}

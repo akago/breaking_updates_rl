@@ -1,0 +1,14 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 15,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 10,
+  "new_errors_count": 1,
+  "fixed_errors": {
+    "/wicket-crudifier/src/main/java/com/premiumminds/wicket/crudifier/form/elements/ListControlGroups.java": 10
+  },
+  "new_errors": {
+    "/wicket-crudifier/src/main/java/com/premiumminds/wicket/crudifier/form/elements/ListControlGroups.java": 1
+  }
+}

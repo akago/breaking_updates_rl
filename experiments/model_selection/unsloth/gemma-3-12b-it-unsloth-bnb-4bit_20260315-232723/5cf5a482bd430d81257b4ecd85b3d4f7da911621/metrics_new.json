@@ -1,0 +1,23 @@
+{
+  "original_file_count": 10,
+  "original_error_count": 57,
+  "build_success": false,
+  "fixed_file_count": 9,
+  "fixed_error_count": 55,
+  "new_errors_count": 1,
+  "fixed_errors": {
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/AlertMessage.java": 2,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/TaskController.java": 12,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/TaskForm.java": 3,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/LocaleController.java": 4,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/GreetingController.java": 8,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/Messages.java": 1,
+    "/jakartaee-mvc-sample/src/main/java/com/example/config/PostNotFoundExceptionMapper.java": 1,
+    "/jakartaee-mvc-sample/src/main/java/com/example/MvcEventListener.java": 10,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/QueryParamLocaleResolver.java": 4,
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/CsrfController.java": 10
+  },
+  "new_errors": {
+    "/jakartaee-mvc-sample/src/main/java/com/example/web/GreetingController.java": 1
+  }
+}

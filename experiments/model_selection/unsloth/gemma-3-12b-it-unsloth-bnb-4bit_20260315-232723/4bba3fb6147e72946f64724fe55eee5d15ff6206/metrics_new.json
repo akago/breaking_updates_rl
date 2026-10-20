@@ -1,0 +1,14 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 2,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 2,
+  "new_errors_count": 2,
+  "fixed_errors": {
+    "/cdi-test/cdi-test-api/src/main/java/de/hilling/junit/cdi/annotations/GlobalTestImplementation.java": 2
+  },
+  "new_errors": {
+    "/cdi-test/cdi-test-core/src/main/java/de/hilling/junit/cdi/scope/CallRedirectionInterceptor.java": 2
+  }
+}

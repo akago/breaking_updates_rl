@@ -1,0 +1,22 @@
+{
+  "original_file_count": 5,
+  "original_error_count": 70,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/JFalkorDB/src/main/java/com/falkordb/GraphTransaction.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphTransactionImpl.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphContextImpl.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java": 0
+  },
+  "new_errors": {
+    "/JFalkorDB/src/main/java/com/falkordb/GraphTransaction.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphTransactionImpl.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphPipelineImpl.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/impl/api/GraphContextImpl.java": 0,
+    "/JFalkorDB/src/main/java/com/falkordb/GraphPipeline.java": 0
+  }
+}

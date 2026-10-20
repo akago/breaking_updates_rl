@@ -1,0 +1,12 @@
+{
+  "original_file_count": 3,
+  "original_error_count": 1,
+  "build_success": true,
+  "fixed_file_count": 1,
+  "fixed_error_count": 3,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/guice/extensions/struts2/test/com/google/inject/struts2/Struts2FactoryTest.java": 3
+  },
+  "new_errors": {}
+}

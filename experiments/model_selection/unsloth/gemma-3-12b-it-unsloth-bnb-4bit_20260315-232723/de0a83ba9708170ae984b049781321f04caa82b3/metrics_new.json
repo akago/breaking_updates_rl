@@ -1,0 +1,18 @@
+{
+  "original_file_count": 4,
+  "original_error_count": 38,
+  "build_success": false,
+  "fixed_file_count": 2,
+  "fixed_error_count": 7,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/java-bitpay-client/src/main/java/com/bitpay/sdk/client/BitPayClient.java": 4,
+    "/java-bitpay-client/src/setup/java/BitPaySetup.java": 3,
+    "/java-bitpay-client/src/main/java/com/bitpay/sdk/Client.java": 0,
+    "/java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java": 0
+  },
+  "new_errors": {
+    "/java-bitpay-client/src/main/java/com/bitpay/sdk/Client.java": 0,
+    "/java-bitpay-client/src/main/java/com/bitpay/sdk/util/KeyUtils.java": 0
+  }
+}

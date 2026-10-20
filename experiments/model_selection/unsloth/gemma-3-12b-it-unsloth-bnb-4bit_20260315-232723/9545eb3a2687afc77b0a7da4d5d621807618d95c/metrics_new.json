@@ -1,0 +1,17 @@
+{
+  "original_file_count": 2,
+  "original_error_count": 7,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 2,
+  "new_errors_count": 17,
+  "fixed_errors": {
+    "/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusteredCache.java": 0,
+    "/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cluster/HazelcastClusterNodeInfo.java": 2
+  },
+  "new_errors": {
+    "/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusteredCache.java": 0,
+    "/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusteredCacheFactory.java": 6,
+    "/openfire-hazelcast-plugin/src/java/org/jivesoftware/openfire/plugin/util/cache/ClusterListener.java": 11
+  }
+}

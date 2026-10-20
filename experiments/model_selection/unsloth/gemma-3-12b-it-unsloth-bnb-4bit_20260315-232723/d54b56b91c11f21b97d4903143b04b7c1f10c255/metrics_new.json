@@ -1,0 +1,17 @@
+{
+  "original_file_count": 3,
+  "original_error_count": 7,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 3,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PubSubLiteSinkTask.java": 2,
+    "/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java": 1,
+    "/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java": 0
+  },
+  "new_errors": {
+    "/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactory.java": 0,
+    "/java-pubsub-group-kafka-connector/src/main/java/com/google/pubsublite/kafka/sink/PublisherFactoryImpl.java": 0
+  }
+}

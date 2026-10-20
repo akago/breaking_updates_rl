@@ -1,0 +1,15 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 6,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 1,
+  "new_errors_count": 2,
+  "fixed_errors": {
+    "/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java": 1
+  },
+  "new_errors": {
+    "/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java": 1,
+    "/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java": 1
+  }
+}

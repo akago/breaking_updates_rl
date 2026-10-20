@@ -1,0 +1,14 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 3,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 0,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java": 0
+  },
+  "new_errors": {
+    "/HAP-Java/src/main/java/io/github/hapjava/server/impl/crypto/ChachaDecoder.java": 0
+  }
+}

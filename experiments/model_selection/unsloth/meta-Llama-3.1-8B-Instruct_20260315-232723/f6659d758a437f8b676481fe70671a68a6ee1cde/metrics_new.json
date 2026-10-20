@@ -1,0 +1,14 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 2,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 1,
+  "new_errors_count": 1,
+  "fixed_errors": {
+    "/billy/billy-core/src/test/java/com/premiumminds/billy/core/test/AbstractTest.java": 1
+  },
+  "new_errors": {
+    "/billy/billy-core/src/test/java/com/premiumminds/billy/core/test/AbstractTest.java": 1
+  }
+}

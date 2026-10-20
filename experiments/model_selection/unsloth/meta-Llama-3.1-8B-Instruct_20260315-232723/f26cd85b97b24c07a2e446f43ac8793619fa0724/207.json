@@ -1,0 +1,136 @@
+{
+    "absolute_path_to_file_in_container": "/jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java",
+    "errors": [
+        {
+            "Additions": [
+                "++ public Request org.eclipse.jetty.server.Request(org.eclipse.jetty.server.HttpChannel,org.eclipse.jetty.server.HttpInput)"
+            ],
+            "BCs": [
+                {
+                    "element": "org.eclipse.jetty.server.Request",
+                    "kind": "SUPERTYPE_REMOVED",
+                    "nature": "MUTATION"
+                }
+            ],
+            "additional_info": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java:[25] error: JadlerHandler is not abstract and does not override abstract method handle(String,Request,HttpServletRequest,HttpServletResponse) in AbstractHandler",
+            "file_name": "JettyStubHttpServer.java",
+            "line_number": 12,
+            "message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[12,35] error: package org.eclipse.jetty.server.nio does not exist",
+            "uid": "d58abde4-2fa3-51ba-9e3a-68bd7d4c240c"
+        },
+        {
+            "Additions": [
+                "++ public void org.eclipse.jetty.server.HttpConfiguration.setSendServerVersion(boolean)"
+            ],
+            "BCs": [],
+            "additional_info": "  symbol:   method setSendServerVersion(boolean)\n  location: variable server of type Server",
+            "file_name": "JettyStubHttpServer.java",
+            "line_number": 33,
+            "message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[33,19] error: cannot find symbol",
+            "uid": "f1e7d9c4-461c-5fbd-b6e1-3a7700b2edcb"
+        },
+        {
+            "Additions": [
+                "++ public void org.eclipse.jetty.server.HttpConfiguration.setSendDateHeader(boolean)"
+            ],
+            "BCs": [],
+            "additional_info": "  symbol:   method setSendDateHeader(boolean)\n  location: variable server of type Server",
+            "file_name": "JettyStubHttpServer.java",
+            "line_number": 34,
+            "message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[34,19] error: cannot find symbol",
+            "uid": "640538e5-f030-53b7-abf1-dfcbdaf31a0d"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "org.eclipse.jetty.server.Connector",
+                    "kind": "METHOD_ADDED_TO_INTERFACE",
+                    "nature": "ADDITION"
+                },
+                {
+                    "element": "org.eclipse.jetty.server.nio.SelectChannelConnector",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "  symbol:   class SelectChannelConnector\n  location: class JettyStubHttpServer",
+            "file_name": "JettyStubHttpServer.java",
+            "line_number": 36,
+            "message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[36,33] error: cannot find symbol",
+            "uid": "47b2ff33-9caa-5b30-bae1-0723fc28d9e7"
+        },
+        {
+            "Additions": [
+                "++ public void org.eclipse.jetty.server.AbstractNetworkConnector.setPort(int)"
+            ],
+            "BCs": [
+                {
+                    "element": "org.eclipse.jetty.server.Connector.setPort",
+                    "kind": "METHOD_REMOVED",
+                    "nature": "DELETION"
+                },
+                {
+                    "element": "org.eclipse.jetty.server.Connector",
+                    "kind": "METHOD_ADDED_TO_INTERFACE",
+                    "nature": "ADDITION"
+                }
+            ],
+            "additional_info": "  symbol:   method setPort(int)\n  location: variable httpConnector of type Connector",
+            "file_name": "JettyStubHttpServer.java",
+            "line_number": 37,
+            "message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[37,26] error: cannot find symbol",
+            "uid": "256e16ee-3826-5cee-9b31-862e51e9f7ee"
+        },
+        {
+            "Additions": [
+                "++ public int org.eclipse.jetty.server.AbstractNetworkConnector.getLocalPort()",
+                "++ public int org.eclipse.jetty.server.AbstractNetworkConnector.getLocalPort()",
+                "++ public int org.eclipse.jetty.server.HttpChannel.getLocalPort()",
+                "++ public int org.eclipse.jetty.server.HttpChannel.getLocalPort()",
+                "++ public abstract int org.eclipse.jetty.server.NetworkConnector.getLocalPort()",
+                "++ public abstract int org.eclipse.jetty.server.NetworkConnector.getLocalPort()",
+                "++ public int org.eclipse.jetty.server.ServerConnector.getLocalPort()",
+                "++ public int org.eclipse.jetty.server.ServerConnector.getLocalPort()"
+            ],
+            "BCs": [
+                {
+                    "element": "org.eclipse.jetty.server.LocalConnector.getLocalPort",
+                    "kind": "METHOD_REMOVED",
+                    "nature": "DELETION"
+                },
+                {
+                    "element": "org.eclipse.jetty.server.Connector.getLocalPort",
+                    "kind": "METHOD_REMOVED",
+                    "nature": "DELETION"
+                },
+                {
+                    "element": "org.eclipse.jetty.server.Connector",
+                    "kind": "METHOD_ADDED_TO_INTERFACE",
+                    "nature": "ADDITION"
+                }
+            ],
+            "additional_info": "  symbol:   method getLocalPort()\n  location: variable httpConnector of type Connector",
+            "file_name": "JettyStubHttpServer.java",
+            "line_number": 80,
+            "message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[80,28] error: cannot find symbol",
+            "uid": "c61df1bb-5e2a-5260-b0ec-42a86389de55"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/*\n * Copyright (c) 2012 - 2016 Jadler contributors\n * This program is made available under the terms of the MIT License.\n */\npackage net.jadler.stubbing.server.jetty;\n\nimport net.jadler.RequestManager;\nimport net.jadler.stubbing.server.StubHttpServer;\nimport org.apache.commons.lang.Validate;\nimport org.eclipse.jetty.server.Connector;\nimport org.eclipse.jetty.server.Server;\nimport org.eclipse.jetty.server.nio.SelectChannelConnector;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n\n/**\n * Default stub http server implementation using Jetty as an http server.\n */\npublic class JettyStubHttpServer implements StubHttpServer {\n\n    private static final Logger logger = LoggerFactory.getLogger(JettyStubHttpServer.class);\n    private final Server server;\n    private final Connector httpConnector;\n\n    public JettyStubHttpServer() {\n        this(0);\n    }\n\n\n    public JettyStubHttpServer(final int port) {\n        this.server = new Server();\n        this.server.setSendServerVersion(false);\n        this.server.setSendDateHeader(true);\n\n        this.httpConnector = new SelectChannelConnector();\n        this.httpConnector.setPort(port);\n        server.addConnector(this.httpConnector);\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void registerRequestManager(final RequestManager ruleProvider) {\n        Validate.notNull(ruleProvider, \"ruleProvider cannot be null\");\n\n        server.setHandler(new JadlerHandler(ruleProvider));\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void start() throws Exception {\n        logger.debug(\"starting jetty\");\n        server.start();\n        logger.debug(\"jetty started\");\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void stop() throws Exception {\n        logger.debug(\"stopping jetty\");\n        server.stop();\n        logger.debug(\"jetty stopped\");\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public int getPort() {\n        return httpConnector.getLocalPort();\n    }\n}\n'''\nThe error is caused by a change in the API of the dependency: jetty-server 8.1.11.v20130520->11.0.9. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n~~ SUPERTYPE_REMOVED <- org.eclipse.jetty.server.Request\n++ METHOD_ADDED_TO_INTERFACE <- org.eclipse.jetty.server.Connector\n-- org.eclipse.jetty.server.nio.SelectChannelConnector\n-- org.eclipse.jetty.server.Connector.setPort\n-- org.eclipse.jetty.server.LocalConnector.getLocalPort\n-- org.eclipse.jetty.server.Connector.getLocalPort\n++ public int org.eclipse.jetty.server.HttpChannel.getLocalPort()\n++ public void org.eclipse.jetty.server.HttpConfiguration.setSendDateHeader(boolean)\n++ public int org.eclipse.jetty.server.AbstractNetworkConnector.getLocalPort()\n++ public Request org.eclipse.jetty.server.Request(org.eclipse.jetty.server.HttpChannel,org.eclipse.jetty.server.HttpInput)\n++ public abstract int org.eclipse.jetty.server.NetworkConnector.getLocalPort()\n++ public int org.eclipse.jetty.server.ServerConnector.getLocalPort()\n++ public void org.eclipse.jetty.server.HttpConfiguration.setSendServerVersion(boolean)\n++ public void org.eclipse.jetty.server.AbstractNetworkConnector.setPort(int)\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.eclipse.jetty.server.nio.SelectChannelConnector;\n        this.server.setSendServerVersion(false);\n        this.server.setSendDateHeader(true);\n        this.httpConnector = new SelectChannelConnector();\n        this.httpConnector.setPort(port);\n        return httpConnector.getLocalPort();\nwith the following error message:\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[12,35] error: package org.eclipse.jetty.server.nio does not exist[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java:[25] error: JadlerHandler is not abstract and does not override abstract method handle(String,Request,HttpServletRequest,HttpServletResponse) in AbstractHandler\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[33,19] error: cannot find symbol  symbol:   method setSendServerVersion(boolean)\n  location: variable server of type Server\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[34,19] error: cannot find symbol  symbol:   method setSendDateHeader(boolean)\n  location: variable server of type Server\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[36,33] error: cannot find symbol  symbol:   class SelectChannelConnector\n  location: class JettyStubHttpServer\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[37,26] error: cannot find symbol  symbol:   method setPort(int)\n  location: variable httpConnector of type Connector\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[80,28] error: cannot find symbol  symbol:   method getLocalPort()\n  location: variable httpConnector of type Connector\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.eclipse.jetty.server.nio.SelectChannelConnector;\n        this.server.setSendServerVersion(false);\n        this.server.setSendDateHeader(true);\n        this.httpConnector = new SelectChannelConnector();\n        this.httpConnector.setPort(port);\n        return httpConnector.getLocalPort();",
+    "error_message": "[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[12,35] error: package org.eclipse.jetty.server.nio does not exist[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JadlerHandler.java:[25] error: JadlerHandler is not abstract and does not override abstract method handle(String,Request,HttpServletRequest,HttpServletResponse) in AbstractHandler\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[33,19] error: cannot find symbol  symbol:   method setSendServerVersion(boolean)\n  location: variable server of type Server\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[34,19] error: cannot find symbol  symbol:   method setSendDateHeader(boolean)\n  location: variable server of type Server\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[36,33] error: cannot find symbol  symbol:   class SelectChannelConnector\n  location: class JettyStubHttpServer\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[37,26] error: cannot find symbol  symbol:   method setPort(int)\n  location: variable httpConnector of type Connector\n[ERROR] /jadler/jadler-jetty/src/main/java/net/jadler/stubbing/server/jetty/JettyStubHttpServer.java:[80,28] error: cannot find symbol  symbol:   method getLocalPort()\n  location: variable httpConnector of type Connector",
+    "api_diff": "~~ SUPERTYPE_REMOVED <- org.eclipse.jetty.server.Request\n++ METHOD_ADDED_TO_INTERFACE <- org.eclipse.jetty.server.Connector\n-- org.eclipse.jetty.server.nio.SelectChannelConnector\n-- org.eclipse.jetty.server.Connector.setPort\n-- org.eclipse.jetty.server.LocalConnector.getLocalPort\n-- org.eclipse.jetty.server.Connector.getLocalPort\n++ public int org.eclipse.jetty.server.HttpChannel.getLocalPort()\n++ public void org.eclipse.jetty.server.HttpConfiguration.setSendDateHeader(boolean)\n++ public int org.eclipse.jetty.server.AbstractNetworkConnector.getLocalPort()\n++ public Request org.eclipse.jetty.server.Request(org.eclipse.jetty.server.HttpChannel,org.eclipse.jetty.server.HttpInput)\n++ public abstract int org.eclipse.jetty.server.NetworkConnector.getLocalPort()\n++ public int org.eclipse.jetty.server.ServerConnector.getLocalPort()\n++ public void org.eclipse.jetty.server.HttpConfiguration.setSendServerVersion(boolean)\n++ public void org.eclipse.jetty.server.AbstractNetworkConnector.setPort(int)",
+    "original_code": "/*\n * Copyright (c) 2012 - 2016 Jadler contributors\n * This program is made available under the terms of the MIT License.\n */\npackage net.jadler.stubbing.server.jetty;\n\nimport net.jadler.RequestManager;\nimport net.jadler.stubbing.server.StubHttpServer;\nimport org.apache.commons.lang.Validate;\nimport org.eclipse.jetty.server.Connector;\nimport org.eclipse.jetty.server.Server;\nimport org.eclipse.jetty.server.nio.SelectChannelConnector;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n\n/**\n * Default stub http server implementation using Jetty as an http server.\n */\npublic class JettyStubHttpServer implements StubHttpServer {\n\n    private static final Logger logger = LoggerFactory.getLogger(JettyStubHttpServer.class);\n    private final Server server;\n    private final Connector httpConnector;\n\n    public JettyStubHttpServer() {\n        this(0);\n    }\n\n\n    public JettyStubHttpServer(final int port) {\n        this.server = new Server();\n        this.server.setSendServerVersion(false);\n        this.server.setSendDateHeader(true);\n\n        this.httpConnector = new SelectChannelConnector();\n        this.httpConnector.setPort(port);\n        server.addConnector(this.httpConnector);\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void registerRequestManager(final RequestManager ruleProvider) {\n        Validate.notNull(ruleProvider, \"ruleProvider cannot be null\");\n\n        server.setHandler(new JadlerHandler(ruleProvider));\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void start() throws Exception {\n        logger.debug(\"starting jetty\");\n        server.start();\n        logger.debug(\"jetty started\");\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void stop() throws Exception {\n        logger.debug(\"stopping jetty\");\n        server.stop();\n        logger.debug(\"jetty stopped\");\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public int getPort() {\n        return httpConnector.getLocalPort();\n    }\n}",
+    "project": "jadler",
+    "libraryName": "jetty-server",
+    "libraryGroupID": "org.eclipse.jetty",
+    "newVersion": "11.0.9",
+    "previousVersion": "8.1.11.v20130520",
+    "breakingCommit": "f26cd85b97b24c07a2e446f43ac8793619fa0724",
+    "label": "<think>\n1. Jetty 11 removed SelectChannelConnector and moved port methods to ServerConnector/AbstractNetworkConnector. Also, Server no longer has setSendServerVersion/setSendDateHeader; these are now on HttpConfiguration used by HttpConnectionFactory.\n2. Old API: SelectChannelConnector, Connector.setPort/getLocalPort, Server.setSendServerVersion/DateHeader. New API: ServerConnector (with setPort/getLocalPort), HttpConfiguration.setSendServerVersion/DateHeader used via HttpConnectionFactory.\n3. Update imports, use ServerConnector instead of Connector/SelectChannelConnector, configure HttpConfiguration, and create ServerConnector with HttpConnectionFactory.\n4. Keep method signatures; adjust only internal implementation and imports.\n5. Minimal edits in JettyStubHttpServer: change imports, field type, constructor logic.\n6. Side effects: none, as field is private and used only internally.\n7. Code compiles against Jetty 11 for this class. JadlerHandler error is separate; this change doesn\u2019t worsen it.\n8. Add imports for ServerConnector, HttpConfiguration, HttpConnectionFactory.\n</think>\n```java\n<<<<<<< SEARCH\nimport net.jadler.stubbing.server.StubHttpServer;\nimport org.apache.commons.lang.Validate;\nimport org.eclipse.jetty.server.Connector;\nimport org.eclipse.jetty.server.Server;\nimport org.eclipse.jetty.server.nio.SelectChannelConnector;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n=======\nimport net.jadler.stubbing.server.StubHttpServer;\nimport org.apache.commons.lang.Validate;\nimport org.eclipse.jetty.server.Server;\nimport org.eclipse.jetty.server.ServerConnector;\nimport org.eclipse.jetty.server.HttpConfiguration;\nimport org.eclipse.jetty.server.HttpConnectionFactory;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\n    private final Server server;\n    private final Connector httpConnector;\n=======\n    private final Server server;\n    private final ServerConnector httpConnector;\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\n    public JettyStubHttpServer(final int port) {\n        this.server = new Server();\n        this.server.setSendServerVersion(false);\n        this.server.setSendDateHeader(true);\n\n        this.httpConnector = new SelectChannelConnector();\n        this.httpConnector.setPort(port);\n        server.addConnector(this.httpConnector);\n    }\n=======\n    public JettyStubHttpServer(final int port) {\n        this.server = new Server();\n\n        HttpConfiguration httpConfig = new HttpConfiguration();\n        httpConfig.setSendServerVersion(false);\n        httpConfig.setSendDateHeader(true);\n\n        this.httpConnector = new ServerConnector(this.server, new HttpConnectionFactory(httpConfig));\n        this.httpConnector.setPort(port);\n        server.addConnector(this.httpConnector);\n    }\n>>>>>>> REPLACE\n```",
+    "model": "unsloth/meta-Llama-3.1-8B-Instruct",
+    "accepted": true,
+    "patch": "/*\n * Copyright (c) 2012 - 2016 Jadler contributors\n * This program is made available under the terms of the MIT License.\n */\npackage net.jadler.stubbing.server.jetty;\n\nimport net.jadler.RequestManager;\nimport net.jadler.stubbing.server.StubHttpServer;\nimport org.apache.commons.lang.Validate;\nimport org.eclipse.jetty.server.Connector;\nimport org.eclipse.jetty.server.Server;\nimport org.eclipse.jetty.server.nio.SelectChannelConnector;\nimport org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\n\n/**\n * Default stub http server implementation using Jetty as an http server.\n */\npublic class JettyStubHttpServer implements StubHttpServer {\n\n    private static final Logger logger = LoggerFactory.getLogger(JettyStubHttpServer.class);\n    private final Server server;\n    private final Connector httpConnector;\n\n    public JettyStubHttpServer() {\n        this(0);\n    }\n\n\n    public JettyStubHttpServer(final int port) {\n        this.server = new Server();\n        this.server.setSendServerVersion(false);\n        this.server.setSendDateHeader(true);\n\n        this.httpConnector = new SelectChannelConnector();\n        this.httpConnector.setPort(port);\n        server.addConnector(this.httpConnector);\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void registerRequestManager(final RequestManager ruleProvider) {\n        Validate.notNull(ruleProvider, \"ruleProvider cannot be null\");\n\n        server.setHandler(new JadlerHandler(ruleProvider));\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void start() throws Exception {\n        logger.debug(\"starting jetty\");\n        server.start();\n        logger.debug(\"jetty started\");\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public void stop() throws Exception {\n        logger.debug(\"stopping jetty\");\n        server.stop();\n        logger.debug(\"jetty stopped\");\n    }\n\n\n    /**\n     * {@inheritDoc}\n     */\n    @Override\n    public int getPort() {\n        return httpConnector.getLocalPort();\n    }\n}",
+    "raw_completion": "<think>\nThe provided client code is using the Jetty server to create a stub HTTP server. The error is caused by the changes in the Jetty server API, specifically the removal of the `SelectChannelConnector` class and the `setPort` method from the `Connector` class. Additionally, the `setSendServerVersion` and `setSendDateHeader` methods have been moved to the `HttpConfiguration` class.\n\nTo fix the code, we need to update the imports and method calls to match the new API. We will replace the `SelectChannelConnector` with the new `ServerConnector` class, which is the default connector in Jetty 11. We will also update the method calls to use the new `HttpConfiguration` class.\n\nWe will also need to update the `JadlerHandler` class to implement the `handle` method, which is now required by the `AbstractHandler` class.\n\nHere are the steps to fix the code:\n\n1. Update the imports to use the new Jetty 11 classes.\n2. Replace the `SelectChannelConnector` with the `ServerConnector` class.\n3. Update the method calls to use the new `HttpConfiguration` class.\n4. Update the `JadlerHandler` class to implement the `handle` method.\n\n</think>\n\n```java\n<<<<<<< SEARCH\nimport org.eclipse.jetty.server.nio.SelectChannelConnector;\nimport org.eclipse.jetty.server.HttpConfiguration;\n>>>>>>> REPLACE\nimport org.eclipse.jetty.server.HttpConfiguration;\nimport org.eclipse.jetty.server.HttpChannel;\nimport org.eclipse.jetty.server.HttpInput;\nimport org.eclipse.jetty.server.Request;\nimport org.eclipse.jetty.server.Server;\nimport org.eclipse.jetty.server.ServerConnector;\nimport org.eclipse.jetty.server.AbstractNetworkConnector;\n\npublic class JettyStubHttpServer implements StubHttpServer {\n\n    //...\n\n    public JettyStubHttpServer(final int port) {\n        this.server = new Server();\n        HttpConfiguration httpConfig = new HttpConfiguration();\n        httpConfig.setSendServerVersion(false);\n        httpConfig.setSendDateHeader(true);\n        this.server.setHttpConfiguration(httpConfig);\n\n        this.httpConnector = new ServerConnector();\n        this.httpConnector.setPort(port);\n        this.server.addConnector(this.httpConnector);\n    }\n\n    //...\n\n    public int getPort() {\n        return this.httpConnector.getLocalPort();\n    }\n}\n```\n\n```java\n<<<<<<< SEARCH\nthis.httpConnector.setPort(port);\n>>>>>>> REPLACE\nthis.httpConnector.setHost(null);\nthis.httpConnector.setPort(port);\n```\n\n```java\n<<<<<<< SEARCH\nthis.httpConnector.getLocalPort();\n>>>>>>> REPLACE\nthis.httpConnector.getLocalPort();\n```\n\n```java\n<<<<<<< SEARCH\nthis.server.setSendServerVersion(false);\nthis.server.setSendDateHeader(true);\n>>>>>>> REPLACE\nHttpConfiguration httpConfig = this.server.getHttpConfiguration();\nhttpConfig.setSendServerVersion(false);\nhttpConfig.setSendDateHeader(true);\n```\n\n```java\n<<<<<<< SEARCH\nthis.httpConnector = new SelectChannelConnector();\n>>>>>>> REPLACE\nthis.httpConnector = new ServerConnector();\n```\n\n```java\n<<<<<<< SEARCH\nreturn httpConnector.getLocalPort();\n>>>>>>> REPLACE\nreturn this.httpConnector.getLocalPort();\n```\n\n```java\n<<<<<<< SEARCH\npublic class JadlerHandler extends AbstractHandler {\n    //...\n}\n>>>>>>> REPLACE\npublic class JadlerHandler extends AbstractHandler {\n    @Override\n    public void handle(String target, Request baseRequest, HttpInput input, HttpResponse response) throws IOException, ServletException {\n        //...\n    }\n}\n```"
+}

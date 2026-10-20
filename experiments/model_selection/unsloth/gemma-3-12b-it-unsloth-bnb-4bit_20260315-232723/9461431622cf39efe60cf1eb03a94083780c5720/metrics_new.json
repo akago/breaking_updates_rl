@@ -1,0 +1,12 @@
+{
+  "original_file_count": 1,
+  "original_error_count": 1,
+  "build_success": false,
+  "fixed_file_count": 1,
+  "fixed_error_count": 1,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/snmpman/snmpman/src/main/java/com/oneandone/snmpman/SnmpmanAgent.java": 1
+  },
+  "new_errors": {}
+}

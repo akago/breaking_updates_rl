@@ -1,0 +1,14 @@
+{
+  "original_file_count": 3,
+  "original_error_count": 7,
+  "build_success": false,
+  "fixed_file_count": 3,
+  "fixed_error_count": 7,
+  "new_errors_count": 0,
+  "fixed_errors": {
+    "/PGS/src/main/java/micycle/pgs/PGS_CirclePacking.java": 4,
+    "/PGS/src/main/java/micycle/pgs/PGS_Meshing.java": 2,
+    "/PGS/src/main/java/micycle/pgs/PGS_PointSet.java": 1
+  },
+  "new_errors": {}
+}

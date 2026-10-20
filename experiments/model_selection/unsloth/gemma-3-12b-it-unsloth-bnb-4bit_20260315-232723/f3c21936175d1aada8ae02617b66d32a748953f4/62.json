@@ -1,0 +1,75 @@
+{
+    "absolute_path_to_file_in_container": "/license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java",
+    "errors": [
+        {
+            "Additions": [],
+            "BCs": [],
+            "additional_info": "",
+            "file_name": "IncludesMojoTest.java",
+            "line_number": 19,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist",
+            "uid": "c696c384-ac3c-570c-bb1e-4be6eea76a74"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest",
+            "file_name": "IncludesMojoTest.java",
+            "line_number": 32,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[32,25] cannot find symbol",
+            "uid": "ae5a11aa-e41d-5fcc-9349-8eea4eb892bf"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest",
+            "file_name": "IncludesMojoTest.java",
+            "line_number": 43,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[43,25] cannot find symbol",
+            "uid": "ae5a11aa-e41d-5fcc-9349-8eea4eb892bf"
+        },
+        {
+            "Additions": [],
+            "BCs": [
+                {
+                    "element": "org.apache.maven.plugin.testing.stubs.MavenProjectStub",
+                    "kind": "TYPE_REMOVED",
+                    "nature": "DELETION"
+                }
+            ],
+            "additional_info": "  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest",
+            "file_name": "IncludesMojoTest.java",
+            "line_number": 56,
+            "message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[56,25] cannot find symbol",
+            "uid": "ae5a11aa-e41d-5fcc-9349-8eea4eb892bf"
+        }
+    ],
+    "prompt": "\nThe following Java client code fails: \n'''java\n/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\nimport org.junit.jupiter.api.Assertions;\nimport org.junit.jupiter.api.Test;\n\nimport java.io.File;\n\nclass IncludesMojoTest {\n\n  @Test\n  void test_include() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"inexisting\"};\n    check.strictCheck = true;\n    check.execute();\n  }\n\n  @Test\n  void test_include_and_fail() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"doc1.txt\"};\n    check.strictCheck = true;\n    Assertions.assertThrows(MojoExecutionException.class, () -> {\n      check.execute();\n    });\n  }\n\n  @Test\n  void test_include_overrides_default_exclusion() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/issues/issue-71\");\n    check.legacyConfigHeader = \"../../check/header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"**/.travis.yml\"};\n    Assertions.assertThrows(MojoExecutionException.class, () -> {\n      check.execute();\n    });\n  }\n\n}\n\n'''\nThe error is caused by a change in the API of the dependency: maven-plugin-testing-harness 4.0.0-alpha-2->4.0.0-beta-3. \nThe new library version includes the following relevant backward incompatible changes on API. \n(API changes format: lines starting with '--' denote removed members, '++' denote added ones, '~~' denote mutations with change kind) \n-- org.apache.maven.plugin.testing.stubs.MavenProjectStub\n-- org.apache.maven.plugin.testing.stubs.ArtifactStub\n\nThe error is triggered in the following specific lines in the previous code:\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n    check.project = new MavenProjectStub();\n    check.project = new MavenProjectStub();\n    check.project = new MavenProjectStub();\nwith the following error message:\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[32,25] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[43,25] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[56,25] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest\n\nPlease apply your reasoning and generate the fix following the system instruction.\n",
+    "buggy_lines": "import org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n    check.project = new MavenProjectStub();\n    check.project = new MavenProjectStub();\n    check.project = new MavenProjectStub();",
+    "error_message": "[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[19,45] package org.apache.maven.plugin.testing.stubs does not exist\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[32,25] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[43,25] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest\n[ERROR] /license-maven-plugin/license-maven-plugin/src/test/java/com/mycila/maven/plugin/license/IncludesMojoTest.java:[56,25] cannot find symbol  symbol:   class MavenProjectStub\n  location: class com.mycila.maven.plugin.license.IncludesMojoTest",
+    "api_diff": "-- org.apache.maven.plugin.testing.stubs.MavenProjectStub\n-- org.apache.maven.plugin.testing.stubs.ArtifactStub",
+    "original_code": "/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\nimport org.junit.jupiter.api.Assertions;\nimport org.junit.jupiter.api.Test;\n\nimport java.io.File;\n\nclass IncludesMojoTest {\n\n  @Test\n  void test_include() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"inexisting\"};\n    check.strictCheck = true;\n    check.execute();\n  }\n\n  @Test\n  void test_include_and_fail() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"doc1.txt\"};\n    check.strictCheck = true;\n    Assertions.assertThrows(MojoExecutionException.class, () -> {\n      check.execute();\n    });\n  }\n\n  @Test\n  void test_include_overrides_default_exclusion() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/issues/issue-71\");\n    check.legacyConfigHeader = \"../../check/header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"**/.travis.yml\"};\n    Assertions.assertThrows(MojoExecutionException.class, () -> {\n      check.execute();\n    });\n  }\n\n}\n",
+    "project": "license-maven-plugin",
+    "libraryName": "maven-plugin-testing-harness",
+    "libraryGroupID": "org.apache.maven.plugin-testing",
+    "newVersion": "4.0.0-beta-3",
+    "previousVersion": "4.0.0-alpha-2",
+    "breakingCommit": "f3c21936175d1aada8ae02617b66d32a748953f4",
+    "label": "<think>\nThe compilation error arises because MavenProjectStub was removed from maven-plugin-testing-harness in the new version. The test code imports and instantiates MavenProjectStub three times. Since MavenProjectStub extended MavenProject and is no longer available, the straightforward migration is to use MavenProject directly from org.apache.maven.project.MavenProject. LicenseCheckMojo likely expects a MavenProject, so assigning a new MavenProject instance should compile and behave similarly for these tests. No method signatures are changed. We must update the import and replace the three instantiations. This change should not introduce side effects, as MavenProject has a default constructor and is commonly used in tests.\n</think>\n```java\n<<<<<<< SEARCH\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n=======\nimport org.apache.maven.project.MavenProject;\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\n    check.project = new MavenProjectStub();\n=======\n    check.project = new MavenProject();\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\n    check.project = new MavenProjectStub();\n=======\n    check.project = new MavenProject();\n>>>>>>> REPLACE\n```\n```java\n<<<<<<< SEARCH\n    check.project = new MavenProjectStub();\n=======\n    check.project = new MavenProject();\n>>>>>>> REPLACE\n```",
+    "model": "unsloth/gemma-3-12b-it-unsloth-bnb-4bit",
+    "accepted": true,
+    "patch": "/**\n * Copyright (C) 2008 Mycila (mathieu.carbou@gmail.com)\n * <p>\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n * <p>\n * http://www.apache.org/licenses/LICENSE-2.0\n * <p>\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\npackage com.mycila.maven.plugin.license;\n\nimport org.apache.maven.plugin.MojoExecutionException;\nimport org.apache.maven.plugin.testing.MavenProjectStub;\nimport org.junit.jupiter.api.Assertions;\nimport org.junit.jupiter.api.Test;\n\nimport java.io.File;\n\nclass IncludesMojoTest {\n\n  @Test\n  void test_include() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"inexisting\"};\n    check.strictCheck = true;\n    check.execute();\n  }\n\n  @Test\n  void test_include_and_fail() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/check\");\n    check.legacyConfigHeader = \"header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"doc1.txt\"};\n    check.strictCheck = true;\n    Assertions.assertThrows(MojoExecutionException.class, () -> {\n      check.execute();\n    });\n  }\n\n  @Test\n  void test_include_overrides_default_exclusion() throws Exception {\n    LicenseCheckMojo check = new LicenseCheckMojo();\n    check.defaultBasedir = new File(\"src/test/resources/issues/issue-71\");\n    check.legacyConfigHeader = \"../../check/header.txt\";\n    check.project = new MavenProjectStub();\n    check.legacyConfigIncludes = new String[]{\"**/.travis.yml\"};\n    Assertions.assertThrows(MojoExecutionException.class, () -> {\n      check.execute();\n    });\n  }\n\n}\n",
+    "raw_completion": "```java\n<<<<<<< SEARCH\nimport org.apache.maven.plugin.testing.stubs.MavenProjectStub;\n=======\nimport org.apache.maven.plugin.testing.MavenProjectStub;\n>>>>>>> REPLACE\n```"
+}

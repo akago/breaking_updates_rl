@@ -1,0 +1,11 @@
+{
+  "stage": "evaluation",
+  "created_at": "2026-03-18T22:57:46.797260",
+  "config": {
+    "input_path": "/home/xchen6/breaking_updates_rl/experiments/model_selection/allenai/Olmo-3-7B-Instruct_20260318-105317",
+    "backend": "container_patcher",
+    "run_tests": true,
+    "stats_filename": "overall_statistics_new.json",
+    "baseline_input_path": null
+  }
+}

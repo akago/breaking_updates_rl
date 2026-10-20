@@ -1,0 +1,24 @@
+{
+  "original_file_count": 6,
+  "original_error_count": 50,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 8,
+  "new_errors_count": 5,
+  "fixed_errors": {
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Translation.java": 2,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java": 2,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java": 1,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Detection.java": 2,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/TranslateRpc.java": 0,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java": 1
+  },
+  "new_errors": {
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Translation.java": 1,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/HttpTranslateRpc.java": 1,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Language.java": 1,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/Detection.java": 1,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/spi/v2/TranslateRpc.java": 0,
+    "/google-cloud-java/java-translate/google-cloud-translate/src/main/java/com/google/cloud/translate/TranslateImpl.java": 1
+  }
+}

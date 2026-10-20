@@ -1,0 +1,42 @@
+{
+  "original_file_count": 15,
+  "original_error_count": 91,
+  "build_success": false,
+  "fixed_file_count": 0,
+  "fixed_error_count": 4,
+  "new_errors_count": 4,
+  "fixed_errors": {
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinChanger.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/LoginListener.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinDownloader.java": 1,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/InfoCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/SetCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/ChangeSkinCommand.java": 1,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java": 1,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinApplier.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/InvalidateCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/UploadCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/ChangeSkinSponge.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/SelectCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/UpdateSkinListener.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/NameResolver.java": 1
+  },
+  "new_errors": {
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinChanger.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/LoginListener.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinDownloader.java": 1,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/InfoCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/SetCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/ChangeSkinCommand.java": 1,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinUploader.java": 1,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/SkinApplier.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/CheckPermissionListener.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/InvalidateCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/UploadCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/ChangeSkinSponge.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/command/SelectCommand.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/bungee/UpdateSkinListener.java": 0,
+    "/ChangeSkin/sponge/src/main/java/com/github/games647/changeskin/sponge/task/NameResolver.java": 1
+  }
+}

@@ -31,7 +31,6 @@ HF_CACHE_DIR = (
 )
 
 DATA_PATH = Path(__file__).parent.parent.parent / "data"
-RESOURCES_PATH = DATA_PATH / "dataset"
-DATASET_FULL_GENERATION_PATH = DATA_PATH / "prompts"
-DATASET_DIFF_PATH = DATA_PATH / "prompts_diff"
+RESOURCES_PATH = DATA_PATH / "resources"
+DATASET_DIFF_PATH = DATA_PATH / "prompts"
 SFT_DATASET_PATH = DATA_PATH / "sft"
